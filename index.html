@@ -1,304 +1,207 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ESSENSE — Programme Architecture</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Playfair+Display+SC:wght@400&family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
-<style>
-:root {
-  --parchment: #EDE8DF;
-  --parchment-dark: #E0D9CE;
-  --parchment-deeper: #D4CBBB;
-  --ink: #1C1C1A;
-  --ink-mid: #3A3A36;
-  --ink-light: #6B6860;
-  --ink-faint: #9A9590;
-  --white: #FAF8F4;
-  --line: rgba(28,28,26,0.10);
-  --line-strong: rgba(28,28,26,0.22);
-  --founder-bg:#EEE8F5; --founder-border:#9B7EC8; --founder-text:#3D1F6B;
-  --exec-bg:#FFF5D0;    --exec-border:#C9970A;    --exec-text:#5A3800;
-  --consult-bg:#D8EDD8; --consult-border:#4A8C4A;  --consult-text:#1A4A1A;
-  --org-bg:#D0E8F2;     --org-border:#2A7A9A;      --org-text:#0A3A4A;
-}
-*{margin:0;padding:0;box-sizing:border-box;}
-body{background:var(--parchment);font-family:'EB Garamond',Georgia,serif;color:var(--ink);-webkit-font-smoothing:antialiased;}
+From: <Saved by Blink>
+Snapshot-Content-Location: file:///Users/as/Downloads/ESSENSE_Programme_Architecture_8.html
+Subject: =?utf-8?Q?ESSENSE=20=E2=80=94=20Programme=20Architecture?=
+Date: Sun, 8 Mar 2026 21:19:21 +0000
+MIME-Version: 1.0
+Content-Type: multipart/related;
+	type="text/html";
+	boundary="----MultipartBoundary--JqwY4qIgVEyQkRdSd3MZy4LQeGYqZ3BQnAXyxWN4He----"
 
-/* ── TOPBAR ── */
-.topbar{position:sticky;top:0;z-index:100;background:var(--ink);display:flex;align-items:center;justify-content:space-between;padding:11px 40px;gap:16px;}
-.topbar-logo{display:flex;align-items:center;gap:11px;flex-shrink:0;}
-.topbar-name{font-family:'Playfair Display SC',serif;font-size:9px;letter-spacing:2px;color:var(--parchment);line-height:1.5;}
-.pillar-tabs{display:flex;gap:2px;background:rgba(255,255,255,0.07);border-radius:8px;padding:3px;}
-.pillar-tab{background:none;border:none;cursor:pointer;padding:7px 18px;border-radius:5px;font-family:'Playfair Display SC',serif;font-size:11px;font-style:normal;letter-spacing:1px;color:rgba(237,232,223,0.4);transition:all 0.2s;white-space:nowrap;line-height:1.2;text-align:center;}
-.pillar-tab .re{font-style:normal;font-size:9px;letter-spacing:1.5px;display:block;font-family:'EB Garamond',serif;margin-bottom:2px;opacity:0.55;text-transform:none;letter-spacing:2px;}
-.pillar-tab.active{background:var(--parchment);color:var(--ink);}
-.pillar-tab.active .re{opacity:0.45;}
-.topbar-right{display:flex;align-items:center;gap:10px;flex-shrink:0;}
-.mode-toggle{display:flex;gap:2px;background:rgba(255,255,255,0.07);border-radius:6px;padding:3px;}
-.mode-btn{background:none;border:none;cursor:pointer;padding:5px 11px;border-radius:4px;font-family:'EB Garamond',serif;font-size:11px;color:rgba(237,232,223,0.4);transition:all 0.2s;}
-.mode-btn.active{background:var(--parchment);color:var(--ink);}
 
-/* ── MAIN ── */
-.main{max-width:1360px;margin:0 auto;padding:44px 40px 80px;}
+------MultipartBoundary--JqwY4qIgVEyQkRdSd3MZy4LQeGYqZ3BQnAXyxWN4He----
+Content-Type: text/html
+Content-ID: <frame-4DE6A655E87A732B2EFC5CDFE5B5EC32@mhtml.blink>
+Content-Transfer-Encoding: quoted-printable
+Content-Location: file:///Users/as/Downloads/ESSENSE_Programme_Architecture_8.html
 
-/* ── KPI STRIP ── */
-.kpi-strip{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:var(--line-strong);border:1px solid var(--line-strong);border-radius:4px;margin-bottom:36px;overflow:hidden;}
-.kpi-cell{background:var(--parchment-dark);padding:14px 18px;}
-.kpi-num{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:var(--ink);line-height:1;}
-.kpi-label{font-family:'EB Garamond',serif;font-size:11px;font-style:italic;color:var(--ink-light);margin-top:4px;line-height:1.4;}
+<!DOCTYPE html><html lang=3D"en"><head><meta http-equiv=3D"Content-Type" co=
+ntent=3D"text/html; charset=3DUTF-8"><link rel=3D"stylesheet" type=3D"text/=
+css" href=3D"cid:css-35404f2b-5507-4c69-81b1-973a11ed6114@mhtml.blink" /><l=
+ink rel=3D"stylesheet" type=3D"text/css" href=3D"cid:css-148e7938-bc67-4e19=
+-a20b-d61ab8e848c5@mhtml.blink" /><link rel=3D"stylesheet" type=3D"text/css=
+" href=3D"cid:css-7f1967d7-1a39-4d6d-b927-1a6c43bd0315@mhtml.blink" /><link=
+ rel=3D"stylesheet" type=3D"text/css" href=3D"cid:css-3abb57ec-3aa7-4f35-aa=
+b0-df5bc398a3cf@mhtml.blink" /><link rel=3D"stylesheet" type=3D"text/css" h=
+ref=3D"cid:css-7c40818e-a248-414d-92f9-fb8d49ad4379@mhtml.blink" />
 
-/* ── PILLAR PANEL ── */
-.pillar-panel{display:none;}
-.pillar-panel.active{display:block;}
+<meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scale=3D1.=
+0">
+<title>ESSENSE =E2=80=94 Programme Architecture</title>
+<link href=3D"https://fonts.googleapis.com/css2?family=3DPlayfair+Display:i=
+tal,wght@0,400;0,600;0,700;1,400;1,600&amp;family=3DPlayfair+Display+SC:wgh=
+t@400&amp;family=3DEB+Garamond:ital,wght@0,400;0,500;1,400;1,500&amp;displa=
+y=3Dswap" rel=3D"stylesheet">
 
-.pillar-header{display:grid;grid-template-columns:auto 1fr;gap:48px;align-items:center;padding-bottom:28px;margin-bottom:36px;border-bottom:1px solid var(--line-strong);}
-.pillar-re{font-family:'EB Garamond',serif;font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--ink-light);margin-bottom:3px;}
-.pillar-title{font-family:'Playfair Display',serif;font-size:50px;font-weight:700;letter-spacing:-2px;line-height:0.92;}
-.pillar-title em{font-style:italic;font-weight:400;}
-.pillar-right{display:flex;flex-direction:column;gap:12px;border-left:2px solid var(--line-strong);padding-left:40px;}
-.pillar-question{font-family:'Playfair Display',serif;font-size:17px;font-style:italic;font-weight:400;color:var(--ink-mid);line-height:1.5;}
-.pillar-layer{font-family:'EB Garamond',serif;font-size:12px;color:var(--ink-faint);display:flex;align-items:center;gap:8px;}
-.layer-dot{width:6px;height:6px;border-radius:50%;background:var(--ink-faint);flex-shrink:0;}
-.pillar-phase{font-family:'EB Garamond',serif;font-size:12px;font-style:italic;color:var(--ink-light);padding:5px 12px;border:1px solid var(--line-strong);border-radius:2px;width:fit-content;}
-
-/* ── MATRIX ── */
-.matrix{display:flex;flex-direction:column;gap:1px;background:var(--line-strong);border:1px solid var(--line-strong);border-radius:4px;overflow:hidden;}
-.matrix-header{display:grid;background:var(--parchment-darker,#D8D0C2);}
-.matrix-row{display:grid;background:var(--parchment);border-bottom:1px solid var(--line);transition:background 0.12s;}
-.matrix-row:last-child{border-bottom:none;}
-.matrix-row:hover{background:var(--white);}
-
-.matrix-corner{padding:12px 18px;border-right:1px solid var(--line-strong);}
-.matrix-corner-label{font-family:'EB Garamond',serif;font-size:10px;font-style:italic;color:var(--ink-faint);}
-.format-header{padding:11px 14px;border-right:1px solid var(--line-strong);text-align:center;}
-.format-header:last-child{border-right:none;}
-.format-name{font-family:'Playfair Display',serif;font-size:12px;font-weight:600;color:var(--ink);display:block;}
-.format-desc{font-family:'EB Garamond',serif;font-size:10px;font-style:italic;color:var(--ink-light);display:block;margin-top:2px;}
-
-.aud-cell{padding:16px 18px;border-right:1px solid var(--line-strong);display:flex;flex-direction:column;justify-content:center;gap:7px;}
-.aud-badge{display:inline-block;padding:3px 11px;border-radius:20px;font-family:'EB Garamond',serif;font-size:11px;font-weight:500;width:fit-content;}
-.aud-badge.founder{background:var(--founder-bg);color:var(--founder-text);border:1px solid var(--founder-border);}
-.aud-badge.exec   {background:var(--exec-bg);   color:var(--exec-text);   border:1px solid var(--exec-border);}
-.aud-badge.consult{background:var(--consult-bg);color:var(--consult-text);border:1px solid var(--consult-border);}
-.aud-badge.org    {background:var(--org-bg);    color:var(--org-text);    border:1px solid var(--org-border);}
-.aud-tagline{font-family:'EB Garamond',serif;font-size:12px;font-style:italic;color:var(--ink-light);line-height:1.5;}
-
-.prog-cell{padding:12px 14px;border-right:1px solid var(--line);vertical-align:top;}
-.prog-cell:last-child{border-right:none;}
-.prog-cell.empty{background:rgba(28,28,26,0.018);}
-.empty-label{font-family:'EB Garamond',serif;font-size:11px;font-style:italic;color:var(--ink-faint);text-align:center;padding:6px 0;}
-
-.prog-entry{background:var(--white);border:1px solid var(--line-strong);border-radius:3px;padding:10px 12px;margin-bottom:7px;cursor:pointer;transition:all 0.12s;}
-.prog-entry:last-child{margin-bottom:0;}
-.prog-entry:hover{border-color:var(--ink-light);}
-.prog-entry.expanded{border-color:var(--ink);}
-.prog-name{font-family:'Playfair Display',serif;font-size:13px;font-weight:600;color:var(--ink);line-height:1.25;margin-bottom:4px;}
-.prog-name em{font-style:italic;font-weight:400;}
-.prog-meta{display:flex;gap:5px;flex-wrap:wrap;align-items:center;}
-.pip-year{font-family:'EB Garamond',serif;font-size:9px;padding:1px 6px;border-radius:2px;border:1px solid var(--line-strong);color:var(--ink-faint);}
-.pip-year.y2026{background:var(--ink);color:var(--parchment);border-color:var(--ink);}
-.pip-year.y2027{background:var(--parchment-deeper);color:var(--ink-mid);}
-.pip-year.y2028{color:var(--ink-faint);}
-.pip-int{font-family:'EB Garamond',serif;font-size:9px;font-style:italic;color:var(--ink-light);padding:1px 6px;background:var(--parchment-dark);border-radius:2px;}
-.pip-launch{font-family:'EB Garamond',serif;font-size:9px;color:var(--ink-mid);padding:1px 6px;border:1px solid var(--line-strong);border-radius:2px;}
-.prog-detail{display:none;margin-top:8px;padding-top:8px;border-top:1px solid var(--line);font-family:'EB Garamond',serif;font-size:12px;line-height:1.7;color:var(--ink-mid);}
-.prog-entry.expanded .prog-detail{display:block;}
-
-/* ── PHILOSOPHY BAR ── */
-.philosophy-bar{background:var(--ink);color:var(--parchment);padding:18px 32px;border-radius:3px;margin-bottom:24px;text-align:center;}
-.philosophy-quote{font-family:'Playfair Display',serif;font-size:22px;line-height:1.3;font-weight:700;}
-.philosophy-quote em{font-style:italic;font-weight:400;}
-
-/* ── TARGETS PANEL ── */
-.targets-panel{display:none;}
-.targets-panel.active{display:block;}
-.targets-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line-strong);border:1px solid var(--line-strong);border-radius:4px;overflow:hidden;margin-bottom:28px;}
-.target-cell{background:var(--white);padding:22px 24px;}
-.target-num{font-family:'Playfair Display',serif;font-size:32px;font-weight:700;letter-spacing:-1px;line-height:1;}
-.target-dim{font-family:'EB Garamond',serif;font-size:13px;font-weight:500;color:var(--ink);margin-top:6px;margin-bottom:4px;}
-.target-note{font-family:'EB Garamond',serif;font-size:13px;font-style:italic;color:var(--ink-light);line-height:1.5;}
-
-.phase-list{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line-strong);border:1px solid var(--line-strong);border-radius:4px;overflow:hidden;}
-.phase-cell{background:var(--parchment);padding:20px 22px;}
-.phase-title{font-family:'Playfair Display',serif;font-size:15px;font-weight:600;margin-bottom:4px;}
-.phase-sub{font-family:'EB Garamond',serif;font-size:11px;font-style:italic;color:var(--ink-light);margin-bottom:12px;}
-.phase-items{list-style:none;display:flex;flex-direction:column;gap:5px;}
-.phase-items li{font-family:'EB Garamond',serif;font-size:12px;color:var(--ink-mid);line-height:1.5;padding-left:12px;position:relative;}
-.phase-items li::before{content:'—';position:absolute;left:0;color:var(--ink-faint);font-size:10px;}
-
-/* ── PRINT ── */
-body.print-mode .topbar{display:none;}
-body.print-mode .main{padding:28px;}
-body.print-mode .prog-detail{display:block!important;}
-body.print-mode .matrix-row:hover{background:var(--parchment);}
-
-/* ── FOOTER ── */
-.page-footer{margin-top:48px;padding-top:22px;border-top:1px solid var(--line-strong);display:flex;justify-content:space-between;align-items:center;}
-.footer-school{font-family:'Playfair Display SC',serif;font-size:9px;letter-spacing:2px;color:var(--ink-mid);line-height:1.5;}
-.footer-tagline{font-family:'Playfair Display',serif;font-size:13px;font-style:italic;color:var(--ink-light);}
-.footer-meta{font-family:'EB Garamond',serif;font-size:10px;font-style:italic;color:var(--ink-faint);}
-
-/* nav underline tab for Targets */
-.nav-targets-btn{background:none;border:none;cursor:pointer;font-family:'EB Garamond',serif;font-size:11px;font-style:italic;color:rgba(237,232,223,0.4);padding:5px 11px;border-radius:4px;transition:all 0.2s;}
-.nav-targets-btn.active{background:rgba(255,255,255,0.12);color:rgba(237,232,223,0.85);}
-
-/* ── EDIT MODE ── */
-.edit-btn{background:none;border:1px solid rgba(237,232,223,0.25);cursor:pointer;padding:5px 13px;border-radius:4px;font-family:'EB Garamond',serif;font-size:11px;color:rgba(237,232,223,0.5);transition:all 0.2s;display:flex;align-items:center;gap:6px;}
-.edit-btn:hover{border-color:rgba(237,232,223,0.6);color:rgba(237,232,223,0.9);}
-.edit-btn.editing{background:#4A8C4A;border-color:#4A8C4A;color:#fff;}
-.edit-banner{display:none;background:#4A8C4A;color:#fff;text-align:center;padding:9px 20px;font-family:'EB Garamond',serif;font-size:13px;position:sticky;top:52px;z-index:99;gap:16px;align-items:center;justify-content:center;}
-.edit-banner.visible{display:flex;}
-.edit-banner strong{font-weight:600;}
-.save-btn{background:rgba(255,255,255,0.2);border:1px solid rgba(255,255,255,0.4);color:#fff;padding:4px 14px;border-radius:3px;cursor:pointer;font-family:'EB Garamond',serif;font-size:12px;transition:all 0.15s;}
-.save-btn:hover{background:rgba(255,255,255,0.35);}
-
-body.edit-mode [contenteditable]{outline:none;border-bottom:1px dashed rgba(74,140,74,0.5);cursor:text;min-width:20px;display:inline-block;}
-body.edit-mode [contenteditable]:hover{background:rgba(74,140,74,0.06);border-radius:2px;}
-body.edit-mode [contenteditable]:focus{background:rgba(74,140,74,0.1);border-bottom:1px solid #4A8C4A;border-radius:2px 2px 0 0;}
-body.edit-mode .prog-entry{cursor:default;}
-body.edit-mode .prog-entry:hover{border-color:rgba(74,140,74,0.4);}
-
-.edit-hint{display:none;font-family:'EB Garamond',serif;font-size:11px;font-style:italic;color:#4A8C4A;margin-left:6px;opacity:0.7;}
-body.edit-mode .edit-hint{display:inline;}
-</style>
 </head>
 <body>
 
-<!-- ══ TOPBAR ══ -->
-<div class="topbar">
-  <div class="topbar-logo">
-    <svg width="22" height="22" viewBox="0 0 40 40" fill="none"><path d="M20 20 C20 20 20 12 12 12 C4 12 4 20 4 20 C4 28 12 32 20 32 C28 32 36 24 36 16 C36 8 28 4 20 4 C10 4 2 12 2 22" stroke="#EDE8DF" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>
-    <div class="topbar-name">ESSENSE<br>BUSINESS SCHOOL</div>
+<!-- =E2=95=90=E2=95=90 TOPBAR =E2=95=90=E2=95=90 -->
+<div class=3D"topbar">
+  <div class=3D"topbar-logo">
+    <svg width=3D"22" height=3D"22" viewBox=3D"0 0 40 40" fill=3D"none"><pa=
+th d=3D"M20 20 C20 20 20 12 12 12 C4 12 4 20 4 20 C4 28 12 32 20 32 C28 32 =
+36 24 36 16 C36 8 28 4 20 4 C10 4 2 12 2 22" stroke=3D"#EDE8DF" stroke-widt=
+h=3D"1.5" fill=3D"none" stroke-linecap=3D"round"></path></svg>
+    <div class=3D"topbar-name">ESSENSE<br>BUSINESS SCHOOL</div>
   </div>
 
-  <div class="pillar-tabs">
-    <button class="pillar-tab active" onclick="showPillar('sense',this)">
-      <span class="re">RE —</span>SENSE THE WORLD
+  <div class=3D"pillar-tabs">
+    <button class=3D"pillar-tab active">
+      <span class=3D"re">RE =E2=80=94</span>SENSE THE WORLD
     </button>
-    <button class="pillar-tab" onclick="showPillar('fine',this)">
-      <span class="re">RE —</span>FINE THE LEADER
+    <button class=3D"pillar-tab">
+      <span class=3D"re">RE =E2=80=94</span>FINE THE LEADER
     </button>
-    <button class="pillar-tab" onclick="showPillar('design',this)">
-      <span class="re">RE —</span>DESIGN THE BUSINESS
+    <button class=3D"pillar-tab">
+      <span class=3D"re">RE =E2=80=94</span>DESIGN THE BUSINESS
     </button>
-    <button class="pillar-tab" onclick="showPillar('source',this)">
-      <span class="re">RE —</span>SOURCE THE MASTERY
+    <button class=3D"pillar-tab">
+      <span class=3D"re">RE =E2=80=94</span>SOURCE THE MASTERY
     </button>
   </div>
 
-  <div class="topbar-right">
-    <button class="nav-targets-btn" onclick="showTargets(this)">2026 Targets</button>
-    <button class="edit-btn" id="editBtn" onclick="toggleEditMode(this)">
-      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+  <div class=3D"topbar-right">
+    <button class=3D"nav-targets-btn">2026 Targets</button>
+    <button class=3D"nav-targets-btn">Pathways Canvas</button>
+    <button class=3D"edit-btn" id=3D"editBtn">
+      <svg width=3D"12" height=3D"12" viewBox=3D"0 0 24 24" fill=3D"none" s=
+troke=3D"currentColor" stroke-width=3D"2"><path d=3D"M11 4H4a2 2 0 0 0-2 2v=
+14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d=3D"M18.5 2.5a2.121 2.1=
+21 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
       Edit
     </button>
-    <div class="mode-toggle">
-      <button class="mode-btn active" onclick="setMode('interactive',this)">Interactive</button>
-      <button class="mode-btn" onclick="setMode('print',this)">Print</button>
+    <div class=3D"mode-toggle">
+      <button class=3D"mode-btn active">Interactive</button>
+      <button class=3D"mode-btn">Print</button>
     </div>
   </div>
 </div>
 
-<!-- ══ EDIT BANNER ══ -->
-<div class="edit-banner" id="editBanner">
-  <strong>Edit mode on</strong> — click any text to edit it directly
-  <button class="save-btn" onclick="saveHTML()">⬇ Download updated file</button>
-  <button class="save-btn" onclick="toggleEditMode(document.getElementById('editBtn'))">Done editing</button>
+<!-- =E2=95=90=E2=95=90 EDIT BANNER =E2=95=90=E2=95=90 -->
+<div class=3D"edit-banner" id=3D"editBanner">
+  <strong>Edit mode on</strong> =E2=80=94 click any text to edit it directl=
+y
+  <button class=3D"save-btn">=E2=AC=87 Download updated file</button>
+  <button class=3D"save-btn">Done editing</button>
 </div>
 
-<div class="main">
+<div class=3D"main">
 
-<!-- ══ KPI STRIP ══ -->
-<div class="kpi-strip">
-  <div class="kpi-cell"><div class="kpi-num">£150–200k</div><div class="kpi-label">Revenue target · sustain team + infrastructure</div></div>
-  <div class="kpi-cell"><div class="kpi-num">5,000</div><div class="kpi-label">Email community · owned relational ecosystem</div></div>
-  <div class="kpi-cell"><div class="kpi-num">10–20k</div><div class="kpi-label">Aligned listeners · depth over mass</div></div>
-  <div class="kpi-cell"><div class="kpi-num">450+</div><div class="kpi-label">Qualified inquiries · quality over quantity</div></div>
-  <div class="kpi-cell"><div class="kpi-num">April 2026</div><div class="kpi-label">Website + socials launch · hard deadline</div></div>
+<!-- =E2=95=90=E2=95=90 KPI STRIP =E2=95=90=E2=95=90 -->
+<div class=3D"kpi-strip">
+  <div class=3D"kpi-cell"><div class=3D"kpi-num">=C2=A3150=E2=80=93200k</di=
+v><div class=3D"kpi-label">Revenue target =C2=B7 sustain team + infrastruct=
+ure</div></div>
+  <div class=3D"kpi-cell"><div class=3D"kpi-num">5,000</div><div class=3D"k=
+pi-label">Email community =C2=B7 owned relational ecosystem</div></div>
+  <div class=3D"kpi-cell"><div class=3D"kpi-num">10=E2=80=9320k</div><div c=
+lass=3D"kpi-label">Aligned listeners =C2=B7 depth over mass</div></div>
+  <div class=3D"kpi-cell"><div class=3D"kpi-num">450+</div><div class=3D"kp=
+i-label">Qualified inquiries =C2=B7 quality over quantity</div></div>
+  <div class=3D"kpi-cell"><div class=3D"kpi-num">April 2026</div><div class=
+=3D"kpi-label">Website + socials launch =C2=B7 hard deadline</div></div>
 </div>
 
-<!-- ══ PHILOSOPHY BAR ══ -->
-<div class="philosophy-bar">
-  <div class="philosophy-quote">Business, <em>in tune with life.</em></div>
+<!-- =E2=95=90=E2=95=90 PHILOSOPHY BAR =E2=95=90=E2=95=90 -->
+<div class=3D"philosophy-bar">
+  <div class=3D"philosophy-quote">Business, <em>in tune with life.</em></di=
+v>
 </div>
 
-<!-- ══════════════════════════════════
+<!-- =E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=95=
+=90=E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=95=90=
+=E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=
+=95=90=E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=95=
+=90=E2=95=90
      TARGETS VIEW
-══════════════════════════════════ -->
-<div class="targets-panel" id="panel-targets">
+=E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=
+=95=90=E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=95=
+=90=E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=95=90=
+=E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=
+=95=90 -->
+<div class=3D"targets-panel" id=3D"panel-targets">
 
-  <div class="pillar-header">
+  <div class=3D"pillar-header">
     <div>
-      <div class="pillar-re">Strategic Foundation</div>
-      <div class="pillar-title">2026<br><em>Roadmap</em></div>
+      <div class=3D"pillar-re">Strategic Foundation</div>
+      <div class=3D"pillar-title">2026<br><em>Roadmap</em></div>
     </div>
-    <div class="pillar-right">
-      <div class="pillar-question">"The timeline reflects the natural maturation of an institution — not a product launch."</div>
-      <div class="pillar-layer"><span class="layer-dot"></span>Not a traditional funnel. An ecosystem journey.</div>
-    </div>
-  </div>
-
-  <div class="targets-grid">
-    <div class="target-cell">
-      <div class="target-num">£150–200k</div>
-      <div class="target-dim">Financial Vitality</div>
-      <div class="target-note">Sustain team and infrastructure. Cover launch + operating costs of school and retreats.</div>
-    </div>
-    <div class="target-cell">
-      <div class="target-num">10–20k</div>
-      <div class="target-dim">Field Resonance</div>
-      <div class="target-note">Aligned listeners across podcast, content platform. Depth over mass.</div>
-    </div>
-    <div class="target-cell">
-      <div class="target-num">5,000</div>
-      <div class="target-dim">Community Cohesion</div>
-      <div class="target-note">Owned email community. Highly aligned founders, executives, institutional leaders.</div>
-    </div>
-    <div class="target-cell">
-      <div class="target-num">450+</div>
-      <div class="target-dim">Lead Alignment</div>
-      <div class="target-note">Qualified inquiries. Quality over quantity — resonant participants not generic leads.</div>
-    </div>
-    <div class="target-cell">
-      <div class="target-num">April 2026</div>
-      <div class="target-dim">Website + Socials Launch</div>
-      <div class="target-note">Hard launch deadline. Website, email capture, and first nurture sequence live.</div>
-    </div>
-    <div class="target-cell">
-      <div class="target-num">Institutional</div>
-      <div class="target-dim">Narrative + Partnerships</div>
-      <div class="target-note">Move from initiative to institution. Position for values-aligned investors-as-stewards and strategic partnerships.</div>
+    <div class=3D"pillar-right">
+      <div class=3D"pillar-question">"The timeline reflects the natural mat=
+uration of an institution =E2=80=94 not a product launch."</div>
+      <div class=3D"pillar-layer"><span class=3D"layer-dot"></span>Not a tr=
+aditional funnel. An ecosystem journey.</div>
     </div>
   </div>
 
-  <div class="phase-list">
-    <div class="phase-cell">
-      <div class="phase-title">Phase 1</div>
-      <div class="phase-sub">Authority & Audience Formation</div>
-      <ul class="phase-items">
-        <li>Speaking engagements (corporate, conferences, private leadership circles)</li>
-        <li>ESSENSE Dialogues — online talks and salons</li>
-        <li>Book Club & Podcast launch</li>
-        <li>Founder narrative on LinkedIn, 2–3×/week</li>
+  <div class=3D"targets-grid">
+    <div class=3D"target-cell">
+      <div class=3D"target-num">=C2=A3150=E2=80=93200k</div>
+      <div class=3D"target-dim">Financial Vitality</div>
+      <div class=3D"target-note">Sustain team and infrastructure. Cover lau=
+nch + operating costs of school and retreats.</div>
+    </div>
+    <div class=3D"target-cell">
+      <div class=3D"target-num">10=E2=80=9320k</div>
+      <div class=3D"target-dim">Field Resonance</div>
+      <div class=3D"target-note">Aligned listeners across podcast, content =
+platform. Depth over mass.</div>
+    </div>
+    <div class=3D"target-cell">
+      <div class=3D"target-num">5,000</div>
+      <div class=3D"target-dim">Community Cohesion</div>
+      <div class=3D"target-note">Owned email community. Highly aligned foun=
+ders, executives, institutional leaders.</div>
+    </div>
+    <div class=3D"target-cell">
+      <div class=3D"target-num">450+</div>
+      <div class=3D"target-dim">Lead Alignment</div>
+      <div class=3D"target-note">Qualified inquiries. Quality over quantity=
+ =E2=80=94 resonant participants not generic leads.</div>
+    </div>
+    <div class=3D"target-cell">
+      <div class=3D"target-num">April 2026</div>
+      <div class=3D"target-dim">Website + Socials Launch</div>
+      <div class=3D"target-note">Hard launch deadline. Website, email captu=
+re, and first nurture sequence live.</div>
+    </div>
+    <div class=3D"target-cell">
+      <div class=3D"target-num">Institutional</div>
+      <div class=3D"target-dim">Narrative + Partnerships</div>
+      <div class=3D"target-note">Move from initiative to institution. Posit=
+ion for values-aligned investors-as-stewards and strategic partnerships.</d=
+iv>
+    </div>
+  </div>
+
+  <div class=3D"phase-list">
+    <div class=3D"phase-cell">
+      <div class=3D"phase-title">Phase 1</div>
+      <div class=3D"phase-sub">Authority &amp; Audience Formation</div>
+      <ul class=3D"phase-items">
+        <li>Speaking engagements (corporate, conferences, private leadershi=
+p circles)</li>
+        <li>ESSENSE Dialogues =E2=80=94 online talks and salons</li>
+        <li>Book Club &amp; Podcast launch</li>
+        <li>Founder narrative on LinkedIn, 2=E2=80=933=C3=97/week</li>
         <li>Manifesto article live</li>
       </ul>
     </div>
-    <div class="phase-cell">
-      <div class="phase-title">Phase 2</div>
-      <div class="phase-sub">Structured Programmes & Community</div>
-      <ul class="phase-items">
-        <li>Business Redesign Lab — cohort launch</li>
+    <div class=3D"phase-cell">
+      <div class=3D"phase-title">Phase 2</div>
+      <div class=3D"phase-sub">Structured Programmes &amp; Community</div>
+      <ul class=3D"phase-items">
+        <li>Business Redesign Lab =E2=80=94 cohort launch</li>
         <li>Shadow Work retreats (UK, Portugal, Europe)</li>
-        <li>1:1 advisory — limited capacity, premium</li>
+        <li>1:1 advisory =E2=80=94 limited capacity, premium</li>
         <li>Re/Sense the Feminine online course</li>
         <li>Certification interest waitlist</li>
       </ul>
     </div>
-    <div class="phase-cell">
-      <div class="phase-title">Phase 3</div>
-      <div class="phase-sub">Institutional Foundation</div>
-      <ul class="phase-items">
+    <div class=3D"phase-cell">
+      <div class=3D"phase-title">Phase 3</div>
+      <div class=3D"phase-sub">Institutional Foundation</div>
+      <ul class=3D"phase-items">
         <li>Business Alchemy beta cohort preparation</li>
         <li>Faculty and advisor ecosystem onboarding</li>
         <li>Early partner + institutional collaborations</li>
@@ -306,10 +209,10 @@ body.edit-mode .edit-hint{display:inline;}
         <li>Testimonials curated in ESSENSE language</li>
       </ul>
     </div>
-    <div class="phase-cell">
-      <div class="phase-title">Phase 4</div>
-      <div class="phase-sub">Publishing & Intellectual Platform</div>
-      <ul class="phase-items">
+    <div class=3D"phase-cell">
+      <div class=3D"phase-title">Phase 4</div>
+      <div class=3D"phase-sub">Publishing &amp; Intellectual Platform</div>
+      <ul class=3D"phase-items">
         <li>Book manuscript development + publication pathway</li>
         <li>Podcast long-form intellectual content platform</li>
         <li>Waitlist + application system live</li>
@@ -322,430 +225,663 @@ body.edit-mode .edit-hint{display:inline;}
 </div>
 
 
-<!-- ══════════════════════════════════
-     RE—SENSE
-══════════════════════════════════ -->
-<div class="pillar-panel active" id="panel-sense">
-  <div class="pillar-header">
+<!-- =E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=95=
+=90=E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=95=90=
+=E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=
+=95=90=E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=95=
+=90=E2=95=90
+     RE=E2=80=94SENSE
+=E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=
+=95=90=E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=95=
+=90=E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=95=90=
+=E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=
+=95=90 -->
+<div class=3D"pillar-panel active" id=3D"panel-sense">
+  <div class=3D"pillar-header">
     <div>
-      <div class="pillar-re">Re —</div>
-      <div class="pillar-title">sense<br><em>the world</em></div>
+      <div class=3D"pillar-re">Re =E2=80=94</div>
+      <div class=3D"pillar-title">sense<br><em>the world</em></div>
     </div>
-    <div class="pillar-right">
-      <div class="pillar-question">"What is happening in the world right now — and where is my place in it?"</div>
-      <div class="pillar-layer"><span class="layer-dot"></span>Developmental layer: Foundational Field + Relational Field</div>
-      <div class="pillar-phase">Phase 1 — Authority & Audience Formation · 2026</div>
+    <div class=3D"pillar-right">
+      <div class=3D"pillar-question">"What is happening in the world right =
+now =E2=80=94 and where is my place in it?"</div>
+      <div class=3D"pillar-layer"><span class=3D"layer-dot"></span>Developm=
+ental layer: Foundational Field + Relational Field</div>
+      <div class=3D"pillar-phase">Phase 1 =E2=80=94 Authority &amp; Audienc=
+e Formation =C2=B7 2026</div>
     </div>
   </div>
 
-  <div class="matrix" id="m-sense">
-    <style>#m-sense .matrix-header,#m-sense .matrix-row{grid-template-columns:155px repeat(5,1fr);}</style>
-    <div class="matrix-header">
-      <div class="matrix-corner"><span class="matrix-corner-label">Audience × Format</span></div>
-      <div class="format-header"><span class="format-name">Subscriptions</span><span class="format-desc">Ongoing access</span></div>
-      <div class="format-header"><span class="format-name">"Makes Sense?" Talks</span><span class="format-desc">Online dialogue series</span></div>
-      <div class="format-header"><span class="format-name">Book Club + Podcast</span><span class="format-desc">Long-form dialogue</span></div>
-      <div class="format-header"><span class="format-name">Online Course</span><span class="format-desc">Self-paced</span></div>
-      <div class="format-header"><span class="format-name">Immersions</span><span class="format-desc">1-day in-person</span></div>
+  <div class=3D"matrix" id=3D"m-sense">
+   =20
+    <div class=3D"matrix-header">
+      <div class=3D"matrix-corner"><span class=3D"matrix-corner-label">Audi=
+ence =C3=97 Format</span></div>
+      <div class=3D"format-header"><span class=3D"format-name">Subscription=
+s</span><span class=3D"format-desc">Ongoing access</span></div>
+      <div class=3D"format-header"><span class=3D"format-name">"Makes Sense=
+?" Talks</span><span class=3D"format-desc">Online dialogue series</span></d=
+iv>
+      <div class=3D"format-header"><span class=3D"format-name">Book Club + =
+Podcast</span><span class=3D"format-desc">Long-form dialogue</span></div>
+      <div class=3D"format-header"><span class=3D"format-name">Online Cours=
+e</span><span class=3D"format-desc">Self-paced</span></div>
+      <div class=3D"format-header"><span class=3D"format-name">Immersions</=
+span><span class=3D"format-desc">1-day in-person</span></div>
     </div>
 
     <!-- Founders -->
-    <div class="matrix-row">
-      <div class="aud-cell">
-        <span class="aud-badge founder">Founders</span>
-        <span class="aud-tagline">Success with inner misalignment. Resensing their role as creators, not operators.</span>
+    <div class=3D"matrix-row">
+      <div class=3D"aud-cell">
+        <span class=3D"aud-badge founder">Founders</span>
+        <span class=3D"aud-tagline">Success with inner misalignment. Resens=
+ing their role as creators, not operators.</span>
       </div>
-      <div class="prog-cell">
-        <div class="prog-entry" onclick="toggleEntry(this)">
-          <div class="prog-name">ESSENSE Newsletter</div>
-          <div class="prog-meta"><span class="pip-year y2026">2026</span><span class="pip-int">Free → Paid</span><span class="pip-launch">Soft launch</span></div>
-          <div class="prog-detail">Weekly thinking on business, consciousness, and living systems. Primary list-building channel. Free tier plus paid premium for deeper content. Founder-voiced — the intellectual authority engine.</div>
-        </div>
-      </div>
-      <div class="prog-cell">
-        <div class="prog-entry" onclick="toggleEntry(this)">
-          <div class="prog-name">"Makes Sense?" Talks</div>
-          <div class="prog-meta"><span class="pip-year y2026">2026</span><span class="pip-year y2027">2027</span><span class="pip-year y2028">2028</span><span class="pip-int">12 talks/year</span><span class="pip-launch">Yearly subscription</span></div>
-          <div class="prog-detail">Yearly online subscription (12 talks). Light-entry product and community builder. Ongoing inquiry container. Speaker curation, theme design, moderation. September–December 2026 pilot, then full subscription model from 2027 onwards.</div>
-        </div>
-        <div class="prog-entry" onclick="toggleEntry(this)">
-          <div class="prog-name">Your ESSENSE Day</div>
-          <div class="prog-meta"><span class="pip-year y2026">2026</span><span class="pip-year y2027">2027</span><span class="pip-year y2028">2028</span><span class="pip-int">1 day</span><span class="pip-launch">Paid · In-person</span></div>
-          <div class="prog-detail">1-day immersion format. London and other locations. First physical proof of the ESSENSE ecosystem in 2026. Scales to multiple events per year from 2027.</div>
+      <div class=3D"prog-cell">
+        <div class=3D"prog-entry">
+          <div class=3D"prog-name">ESSENSE Newsletter</div>
+          <div class=3D"prog-meta"><span class=3D"pip-year y2026">2026</spa=
+n><span class=3D"pip-int">Free =E2=86=92 Paid</span><span class=3D"pip-laun=
+ch">Soft launch</span></div>
+          <div class=3D"prog-detail">Weekly thinking on business, conscious=
+ness, and living systems. Primary list-building channel. Free tier plus pai=
+d premium for deeper content. Founder-voiced =E2=80=94 the intellectual aut=
+hority engine.</div>
         </div>
       </div>
-      <div class="prog-cell">
-        <div class="prog-entry" onclick="toggleEntry(this)">
-          <div class="prog-name">Book Club + Podcast</div>
-          <div class="prog-meta"><span class="pip-year y2026">2026</span><span class="pip-year y2027">2027</span><span class="pip-year y2028">2028</span><span class="pip-int">Free</span><span class="pip-launch">Pilot May 2026</span></div>
-          <div class="prog-detail">Curated author dialogues paired with applied business conversations. Pilot from May 2026 then autumn rhythm. Co-hosting and discussion arc design. Free access builds the intellectual community. Shared sensemaking environment.</div>
+      <div class=3D"prog-cell">
+        <div class=3D"prog-entry">
+          <div class=3D"prog-name">"Makes Sense?" Talks</div>
+          <div class=3D"prog-meta"><span class=3D"pip-year y2026">2026</spa=
+n><span class=3D"pip-year y2027">2027</span><span class=3D"pip-year y2028">=
+2028</span><span class=3D"pip-int">12 talks/year</span><span class=3D"pip-l=
+aunch">Yearly subscription</span></div>
+          <div class=3D"prog-detail">Yearly online subscription (12 talks).=
+ Light-entry product and community builder. Ongoing inquiry container. Spea=
+ker curation, theme design, moderation. September=E2=80=93December 2026 pil=
+ot, then full subscription model from 2027 onwards.</div>
+        </div>
+        <div class=3D"prog-entry">
+          <div class=3D"prog-name">Your ESSENSE Day</div>
+          <div class=3D"prog-meta"><span class=3D"pip-year y2026">2026</spa=
+n><span class=3D"pip-year y2027">2027</span><span class=3D"pip-year y2028">=
+2028</span><span class=3D"pip-int">1 day</span><span class=3D"pip-launch">P=
+aid =C2=B7 In-person</span></div>
+          <div class=3D"prog-detail">1-day immersion format. London and oth=
+er locations. First physical proof of the ESSENSE ecosystem in 2026. Scales=
+ to multiple events per year from 2027.</div>
         </div>
       </div>
-      <div class="prog-cell">
-        <div class="prog-entry" onclick="toggleEntry(this)">
-          <div class="prog-name">Re/Sense the Feminine</div>
-          <div class="prog-meta"><span class="pip-year y2026">2026</span><span class="pip-year y2027">2027</span><span class="pip-year y2028">2028</span><span class="pip-int">Online</span></div>
-          <div class="prog-detail">Shadow integration, strategic clarity, regenerative leadership. Bridges worldview shift with early inner work.</div>
-        </div>
-        <div class="prog-entry" onclick="toggleEntry(this)">
-          <div class="prog-name">ESSENSE Online Courses</div>
-          <div class="prog-meta"><span class="pip-year y2027">2027</span><span class="pip-year y2028">2028</span><span class="pip-int">Self-paced</span></div>
-          <div class="prog-detail">Further online courses developed from 2027. Structured entry points into ESSENSE methodology for different audiences. Scalable, evergreen revenue alongside the deeper programmes.</div>
+      <div class=3D"prog-cell">
+        <div class=3D"prog-entry">
+          <div class=3D"prog-name">Book Club + Podcast</div>
+          <div class=3D"prog-meta"><span class=3D"pip-year y2026">2026</spa=
+n><span class=3D"pip-year y2027">2027</span><span class=3D"pip-year y2028">=
+2028</span><span class=3D"pip-int">Free</span><span class=3D"pip-launch">Pi=
+lot May 2026</span></div>
+          <div class=3D"prog-detail">Curated author dialogues paired with a=
+pplied business conversations. Pilot from May 2026 then autumn rhythm. Co-h=
+osting and discussion arc design. Free access builds the intellectual commu=
+nity. Shared sensemaking environment.</div>
         </div>
       </div>
-      <div class="prog-cell">
-        <div class="prog-entry" onclick="toggleEntry(this)">
-          <div class="prog-name">Your ESSENSE Day</div>
-          <div class="prog-meta"><span class="pip-year y2026">2026</span><span class="pip-year y2027">2027</span><span class="pip-year y2028">2028</span><span class="pip-int">1 day</span></div>
-          <div class="prog-detail">1-day format for founders. Combines worldview shift with first taste of the ESSENSE community. Direct conversion path toward Retreats and Redesign Lab.</div>
+      <div class=3D"prog-cell">
+        <div class=3D"prog-entry">
+          <div class=3D"prog-name">Re/Sense the Feminine</div>
+          <div class=3D"prog-meta"><span class=3D"pip-year y2026">2026</spa=
+n><span class=3D"pip-year y2027">2027</span><span class=3D"pip-year y2028">=
+2028</span><span class=3D"pip-int">Online</span></div>
+          <div class=3D"prog-detail">Shadow integration, strategic clarity,=
+ regenerative leadership. Bridges worldview shift with early inner work.</d=
+iv>
+        </div>
+        <div class=3D"prog-entry">
+          <div class=3D"prog-name">ESSENSE Online Courses</div>
+          <div class=3D"prog-meta"><span class=3D"pip-year y2027">2027</spa=
+n><span class=3D"pip-year y2028">2028</span><span class=3D"pip-int">Self-pa=
+ced</span></div>
+          <div class=3D"prog-detail">Further online courses developed from =
+2027. Structured entry points into ESSENSE methodology for different audien=
+ces. Scalable, evergreen revenue alongside the deeper programmes.</div>
+        </div>
+      </div>
+      <div class=3D"prog-cell">
+        <div class=3D"prog-entry">
+          <div class=3D"prog-name">Your ESSENSE Day</div>
+          <div class=3D"prog-meta"><span class=3D"pip-year y2026">2026</spa=
+n><span class=3D"pip-year y2027">2027</span><span class=3D"pip-year y2028">=
+2028</span><span class=3D"pip-int">1 day</span></div>
+          <div class=3D"prog-detail">1-day format for founders. Combines wo=
+rldview shift with first taste of the ESSENSE community. Direct conversion =
+path toward Retreats and Redesign Lab.</div>
         </div>
       </div>
     </div>
 
-    <div class="matrix-row">
-      <div class="aud-cell">
-        <span class="aud-badge exec">Executives</span>
-        <span class="aud-tagline">Tired of "run faster" culture. Sensing the Grand Shift — old playbooks no longer work.</span>
+    <div class=3D"matrix-row">
+      <div class=3D"aud-cell">
+        <span class=3D"aud-badge exec">Executives</span>
+        <span class=3D"aud-tagline">Tired of "run faster" culture. Sensing =
+the Grand Shift =E2=80=94 old playbooks no longer work.</span>
       </div>
-      <div class="prog-cell">
-        <div class="prog-entry" onclick="toggleEntry(this)">
-          <div class="prog-name">ESSENSE Newsletter</div>
-          <div class="prog-meta"><span class="pip-year y2026">2026</span><span class="pip-int">Free → Paid</span></div>
-          <div class="prog-detail">Executives are heavy consumers of worldview-shifting content. Often forward to boards and teams — important lateral referral channel.</div>
+      <div class=3D"prog-cell">
+        <div class=3D"prog-entry">
+          <div class=3D"prog-name">ESSENSE Newsletter</div>
+          <div class=3D"prog-meta"><span class=3D"pip-year y2026">2026</spa=
+n><span class=3D"pip-int">Free =E2=86=92 Paid</span></div>
+          <div class=3D"prog-detail">Executives are heavy consumers of worl=
+dview-shifting content. Often forward to boards and teams =E2=80=94 importa=
+nt lateral referral channel.</div>
         </div>
       </div>
-      <div class="prog-cell">
-        <div class="prog-entry" onclick="toggleEntry(this)">
-          <div class="prog-name">"Makes Sense?" Talks</div>
-          <div class="prog-meta"><span class="pip-year y2026">2026</span><span class="pip-year y2027">2027</span><span class="pip-year y2028">2028</span><span class="pip-int">12 talks/year</span></div>
-          <div class="prog-detail">Yearly subscription (12 talks). Executives often enter here before committing to a longer programme. Low friction, high quality — the trust-building moment.</div>
+      <div class=3D"prog-cell">
+        <div class=3D"prog-entry">
+          <div class=3D"prog-name">"Makes Sense?" Talks</div>
+          <div class=3D"prog-meta"><span class=3D"pip-year y2026">2026</spa=
+n><span class=3D"pip-year y2027">2027</span><span class=3D"pip-year y2028">=
+2028</span><span class=3D"pip-int">12 talks/year</span></div>
+          <div class=3D"prog-detail">Yearly subscription (12 talks). Execut=
+ives often enter here before committing to a longer programme. Low friction=
+, high quality =E2=80=94 the trust-building moment.</div>
         </div>
       </div>
-      <div class="prog-cell">
-        <div class="prog-entry" onclick="toggleEntry(this)">
-          <div class="prog-name">Book Club + Podcast</div>
-          <div class="prog-meta"><span class="pip-year y2026">2026</span><span class="pip-year y2027">2027</span><span class="pip-year y2028">2028</span><span class="pip-int">Free</span></div>
-          <div class="prog-detail">Author dialogues with applied executive framing. High credibility format for this audience. Often the entry point before exploring deeper programmes.</div>
+      <div class=3D"prog-cell">
+        <div class=3D"prog-entry">
+          <div class=3D"prog-name">Book Club + Podcast</div>
+          <div class=3D"prog-meta"><span class=3D"pip-year y2026">2026</spa=
+n><span class=3D"pip-year y2027">2027</span><span class=3D"pip-year y2028">=
+2028</span><span class=3D"pip-int">Free</span></div>
+          <div class=3D"prog-detail">Author dialogues with applied executiv=
+e framing. High credibility format for this audience. Often the entry point=
+ before exploring deeper programmes.</div>
         </div>
       </div>
-      <div class="prog-cell">
-        <div class="prog-entry" onclick="toggleEntry(this)">
-          <div class="prog-name">Re/Sense the Feminine</div>
-          <div class="prog-meta"><span class="pip-year y2026">2026</span><span class="pip-year y2027">2027</span><span class="pip-year y2028">2028</span><span class="pip-int">Online</span></div>
-          <div class="prog-detail">Executives test the ESSENSE framework through this online programme. Works well for time-constrained senior leaders before committing to a cohort.</div>
+      <div class=3D"prog-cell">
+        <div class=3D"prog-entry">
+          <div class=3D"prog-name">Re/Sense the Feminine</div>
+          <div class=3D"prog-meta"><span class=3D"pip-year y2026">2026</spa=
+n><span class=3D"pip-year y2027">2027</span><span class=3D"pip-year y2028">=
+2028</span><span class=3D"pip-int">Online</span></div>
+          <div class=3D"prog-detail">Executives test the ESSENSE framework =
+through this online programme. Works well for time-constrained senior leade=
+rs before committing to a cohort.</div>
         </div>
-        <div class="prog-entry" onclick="toggleEntry(this)">
-          <div class="prog-name">ESSENSE Online Courses</div>
-          <div class="prog-meta"><span class="pip-year y2027">2027</span><span class="pip-year y2028">2028</span><span class="pip-int">Self-paced</span></div>
-          <div class="prog-detail">Further online courses from 2027. Structured entry into ESSENSE methodology for executives who prefer self-paced exploration before cohort commitment.</div>
+        <div class=3D"prog-entry">
+          <div class=3D"prog-name">ESSENSE Online Courses</div>
+          <div class=3D"prog-meta"><span class=3D"pip-year y2027">2027</spa=
+n><span class=3D"pip-year y2028">2028</span><span class=3D"pip-int">Self-pa=
+ced</span></div>
+          <div class=3D"prog-detail">Further online courses from 2027. Stru=
+ctured entry into ESSENSE methodology for executives who prefer self-paced =
+exploration before cohort commitment.</div>
         </div>
       </div>
-      <div class="prog-cell">
-        <div class="prog-entry" onclick="toggleEntry(this)">
-          <div class="prog-name">Your ESSENSE Day</div>
-          <div class="prog-meta"><span class="pip-year y2026">2026</span><span class="pip-year y2027">2027</span><span class="pip-year y2028">2028</span><span class="pip-int">1 day · In-person</span></div>
-          <div class="prog-detail">High-value in-person format. Preferred entry point for executives who want a curated physical experience before longer programme commitment.</div>
+      <div class=3D"prog-cell">
+        <div class=3D"prog-entry">
+          <div class=3D"prog-name">Your ESSENSE Day</div>
+          <div class=3D"prog-meta"><span class=3D"pip-year y2026">2026</spa=
+n><span class=3D"pip-year y2027">2027</span><span class=3D"pip-year y2028">=
+2028</span><span class=3D"pip-int">1 day =C2=B7 In-person</span></div>
+          <div class=3D"prog-detail">High-value in-person format. Preferred=
+ entry point for executives who want a curated physical experience before l=
+onger programme commitment.</div>
         </div>
       </div>
     </div>
 
     <!-- Consultants -->
-    <div class="matrix-row">
-      <div class="aud-cell">
-        <span class="aud-badge consult">Consultants</span>
-        <span class="aud-tagline">Done some inner work but haven't translated it into business design. Seeking a mature field.</span>
+    <div class=3D"matrix-row">
+      <div class=3D"aud-cell">
+        <span class=3D"aud-badge consult">Consultants</span>
+        <span class=3D"aud-tagline">Done some inner work but haven't transl=
+ated it into business design. Seeking a mature field.</span>
       </div>
-      <div class="prog-cell">
-        <div class="prog-entry" onclick="toggleEntry(this)">
-          <div class="prog-name">ESSENSE Newsletter</div>
-          <div class="prog-meta"><span class="pip-year y2026">2026</span><span class="pip-int">Free → Paid</span></div>
-          <div class="prog-detail">Consultants use the newsletter to stay current and share with clients. Important referral channel — they're often the bridge between ESSENSE and organisations.</div>
+      <div class=3D"prog-cell">
+        <div class=3D"prog-entry">
+          <div class=3D"prog-name">ESSENSE Newsletter</div>
+          <div class=3D"prog-meta"><span class=3D"pip-year y2026">2026</spa=
+n><span class=3D"pip-int">Free =E2=86=92 Paid</span></div>
+          <div class=3D"prog-detail">Consultants use the newsletter to stay=
+ current and share with clients. Important referral channel =E2=80=94 they'=
+re often the bridge between ESSENSE and organisations.</div>
         </div>
       </div>
-      <div class="prog-cell">
-        <div class="prog-entry" onclick="toggleEntry(this)">
-          <div class="prog-name">"Makes Sense?" Talks</div>
-          <div class="prog-meta"><span class="pip-year y2026">2026</span><span class="pip-year y2027">2027</span><span class="pip-year y2028">2028</span><span class="pip-int">12 talks/year</span></div>
-          <div class="prog-detail">Consultants participate and often bring clients. Natural referral moment — they see the quality of the ecosystem first-hand, often converting to practitioner track.</div>
+      <div class=3D"prog-cell">
+        <div class=3D"prog-entry">
+          <div class=3D"prog-name">"Makes Sense?" Talks</div>
+          <div class=3D"prog-meta"><span class=3D"pip-year y2026">2026</spa=
+n><span class=3D"pip-year y2027">2027</span><span class=3D"pip-year y2028">=
+2028</span><span class=3D"pip-int">12 talks/year</span></div>
+          <div class=3D"prog-detail">Consultants participate and often brin=
+g clients. Natural referral moment =E2=80=94 they see the quality of the ec=
+osystem first-hand, often converting to practitioner track.</div>
         </div>
       </div>
-      <div class="prog-cell">
-        <div class="prog-entry" onclick="toggleEntry(this)">
-          <div class="prog-name">Book Club + Podcast</div>
-          <div class="prog-meta"><span class="pip-year y2026">2026</span><span class="pip-year y2027">2027</span><span class="pip-year y2028">2028</span><span class="pip-int">Free</span></div>
-          <div class="prog-detail">High relevance for consultants building their own intellectual frameworks. Often entry point before exploring practitioner certification (2028).</div>
+      <div class=3D"prog-cell">
+        <div class=3D"prog-entry">
+          <div class=3D"prog-name">Book Club + Podcast</div>
+          <div class=3D"prog-meta"><span class=3D"pip-year y2026">2026</spa=
+n><span class=3D"pip-year y2027">2027</span><span class=3D"pip-year y2028">=
+2028</span><span class=3D"pip-int">Free</span></div>
+          <div class=3D"prog-detail">High relevance for consultants buildin=
+g their own intellectual frameworks. Often entry point before exploring pra=
+ctitioner certification (2028).</div>
         </div>
       </div>
-      <div class="prog-cell">
-        <div class="prog-entry" onclick="toggleEntry(this)">
-          <div class="prog-name">Re/Sense the Feminine</div>
-          <div class="prog-meta"><span class="pip-year y2026">2026</span><span class="pip-year y2027">2027</span><span class="pip-year y2028">2028</span><span class="pip-int">Online</span></div>
-          <div class="prog-detail">Foundational ESSENSE methodology for consultants. Prerequisite before advancing to certification programmes in 2028. Evergreen entry point.</div>
+      <div class=3D"prog-cell">
+        <div class=3D"prog-entry">
+          <div class=3D"prog-name">Re/Sense the Feminine</div>
+          <div class=3D"prog-meta"><span class=3D"pip-year y2026">2026</spa=
+n><span class=3D"pip-year y2027">2027</span><span class=3D"pip-year y2028">=
+2028</span><span class=3D"pip-int">Online</span></div>
+          <div class=3D"prog-detail">Foundational ESSENSE methodology for c=
+onsultants. Prerequisite before advancing to certification programmes in 20=
+28. Evergreen entry point.</div>
         </div>
-        <div class="prog-entry" onclick="toggleEntry(this)">
-          <div class="prog-name">ESSENSE Online Courses</div>
-          <div class="prog-meta"><span class="pip-year y2027">2027</span><span class="pip-year y2028">2028</span><span class="pip-int">Self-paced</span></div>
-          <div class="prog-detail">Further online courses from 2027. Consultants use these to deepen methodology and prepare for practitioner certification track.</div>
+        <div class=3D"prog-entry">
+          <div class=3D"prog-name">ESSENSE Online Courses</div>
+          <div class=3D"prog-meta"><span class=3D"pip-year y2027">2027</spa=
+n><span class=3D"pip-year y2028">2028</span><span class=3D"pip-int">Self-pa=
+ced</span></div>
+          <div class=3D"prog-detail">Further online courses from 2027. Cons=
+ultants use these to deepen methodology and prepare for practitioner certif=
+ication track.</div>
         </div>
       </div>
-      <div class="prog-cell"><div class="empty-label">—</div></div>
+      <div class=3D"prog-cell"><div class=3D"empty-label">=E2=80=94</div></=
+div>
     </div>
 
     <!-- Organisations -->
-    <div class="matrix-row">
-      <div class="aud-cell">
-        <span class="aud-badge org">Organisations</span>
-        <span class="aud-tagline">CEO-led; executive teams becoming conscious stewards — sensing and evolving as a living whole.</span>
+    <div class=3D"matrix-row">
+      <div class=3D"aud-cell">
+        <span class=3D"aud-badge org">Organisations</span>
+        <span class=3D"aud-tagline">CEO-led; executive teams becoming consc=
+ious stewards =E2=80=94 sensing and evolving as a living whole.</span>
       </div>
-      <div class="prog-cell"><div class="empty-label">—</div></div>
-      <div class="prog-cell"><div class="empty-label">—</div></div>
-      <div class="prog-cell"><div class="empty-label">—</div></div>
-      <div class="prog-cell"><div class="empty-label">—</div></div>
-      <div class="prog-cell"><div class="empty-label">—</div></div>
+      <div class=3D"prog-cell"><div class=3D"empty-label">=E2=80=94</div></=
+div>
+      <div class=3D"prog-cell"><div class=3D"empty-label">=E2=80=94</div></=
+div>
+      <div class=3D"prog-cell"><div class=3D"empty-label">=E2=80=94</div></=
+div>
+      <div class=3D"prog-cell"><div class=3D"empty-label">=E2=80=94</div></=
+div>
+      <div class=3D"prog-cell"><div class=3D"empty-label">=E2=80=94</div></=
+div>
     </div>
   </div>
 </div>
 
 
-<!-- ══════════════════════════════════
-     RE—FINE
-══════════════════════════════════ -->
-<div class="pillar-panel" id="panel-fine">
-  <div class="pillar-header">
+<!-- =E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=95=
+=90=E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=95=90=
+=E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=
+=95=90=E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=95=
+=90=E2=95=90
+     RE=E2=80=94FINE
+=E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=
+=95=90=E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=95=
+=90=E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=95=90=
+=E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=
+=95=90 -->
+<div class=3D"pillar-panel" id=3D"panel-fine">
+  <div class=3D"pillar-header">
     <div>
-      <div class="pillar-re">Re —</div>
-      <div class="pillar-title">fine<br><em>the leader</em></div>
+      <div class=3D"pillar-re">Re =E2=80=94</div>
+      <div class=3D"pillar-title">fine<br><em>the leader</em></div>
     </div>
-    <div class="pillar-right">
-      <div class="pillar-question">"Who am I becoming — and how do I lead from wholeness?"</div>
-      <div class="pillar-layer"><span class="layer-dot"></span>Developmental layer: Personal Development Field</div>
-      <div class="pillar-phase">Phase 2 — Structured Programmes · 2026 → Phase 3 Flagship 2027</div>
+    <div class=3D"pillar-right">
+      <div class=3D"pillar-question">"Who am I becoming =E2=80=94 and how d=
+o I lead from wholeness?"</div>
+      <div class=3D"pillar-layer"><span class=3D"layer-dot"></span>Developm=
+ental layer: Personal Development Field</div>
+      <div class=3D"pillar-phase">Phase 2 =E2=80=94 Structured Programmes =
+=C2=B7 2026 =E2=86=92 Phase 3 Flagship 2027</div>
     </div>
   </div>
 
-  <div class="matrix" id="m-fine">
-    <style>#m-fine .matrix-header,#m-fine .matrix-row{grid-template-columns:155px repeat(4,1fr);}</style>
-    <div class="matrix-header">
-      <div class="matrix-corner"><span class="matrix-corner-label">Audience × Format</span></div>
-      <div class="format-header"><span class="format-name">Retreats</span><span class="format-desc">Shadow Work · Immersions</span></div>
-      <div class="format-header"><span class="format-name">Individual Journey</span><span class="format-desc">1:1 Advisory</span></div>
-      <div class="format-header"><span class="format-name">Cohort Journey</span><span class="format-desc">Group programme</span></div>
-      <div class="format-header"><span class="format-name">Flagship</span><span class="format-desc">Business Alchemy</span></div>
+  <div class=3D"matrix" id=3D"m-fine">
+   =20
+    <div class=3D"matrix-header">
+      <div class=3D"matrix-corner"><span class=3D"matrix-corner-label">Audi=
+ence =C3=97 Format</span></div>
+      <div class=3D"format-header"><span class=3D"format-name">Retreats</sp=
+an><span class=3D"format-desc">Shadow Work =C2=B7 Immersions</span></div>
+      <div class=3D"format-header"><span class=3D"format-name">Individual J=
+ourney</span><span class=3D"format-desc">1:1 Advisory</span></div>
+      <div class=3D"format-header"><span class=3D"format-name">Cohort Journ=
+ey</span><span class=3D"format-desc">Group programme</span></div>
+      <div class=3D"format-header"><span class=3D"format-name">Flagship</sp=
+an><span class=3D"format-desc">Business Alchemy</span></div>
     </div>
 
-    <div class="matrix-row">
-      <div class="aud-cell">
-        <span class="aud-badge founder">Founders</span>
-        <span class="aud-tagline">In transition from success to meaning. Looking for mature community to re-sense their role as creators and stewards.</span>
+    <div class=3D"matrix-row">
+      <div class=3D"aud-cell">
+        <span class=3D"aud-badge founder">Founders</span>
+        <span class=3D"aud-tagline">In transition from success to meaning. =
+Looking for mature community to re-sense their role as creators and steward=
+s.</span>
       </div>
-      <div class="prog-cell">
-        <div class="prog-entry" onclick="toggleEntry(this)">
-          <div class="prog-name">Shadow Work for Leaders</div>
-          <div class="prog-meta"><span class="pip-year y2026">2026</span><span class="pip-int">7 days</span><span class="pip-launch">UK</span></div>
-          <div class="prog-detail">Nature-based immersion retreat. Shadow integration and inner operating system evolution. Inner clarity as foundation for outer redesign. UK, 7 days.</div>
+      <div class=3D"prog-cell">
+        <div class=3D"prog-entry">
+          <div class=3D"prog-name">Shadow Work for Leaders</div>
+          <div class=3D"prog-meta"><span class=3D"pip-year y2026">2026</spa=
+n><span class=3D"pip-int">7 days</span><span class=3D"pip-launch">UK</span>=
+</div>
+          <div class=3D"prog-detail">Nature-based immersion retreat. Shadow=
+ integration and inner operating system evolution. Inner clarity as foundat=
+ion for outer redesign. UK, 7 days.</div>
         </div>
-        <div class="prog-entry" onclick="toggleEntry(this)">
-          <div class="prog-name">Leadership Essence Retreat</div>
-          <div class="prog-meta"><span class="pip-year y2026">2026</span><span class="pip-int">5 days</span><span class="pip-launch">UK</span></div>
-          <div class="prog-detail">Deep leadership retreat combining inner maturity and regenerative leadership development. 5 days, UK.</div>
+        <div class=3D"prog-entry">
+          <div class=3D"prog-name">Leadership Essence Retreat</div>
+          <div class=3D"prog-meta"><span class=3D"pip-year y2026">2026</spa=
+n><span class=3D"pip-int">5 days</span><span class=3D"pip-launch">UK</span>=
+</div>
+          <div class=3D"prog-detail">Deep leadership retreat combining inne=
+r maturity and regenerative leadership development. 5 days, UK.</div>
         </div>
-        <div class="prog-entry" onclick="toggleEntry(this)">
-          <div class="prog-name">Feminine Shadow Journey</div>
-          <div class="prog-meta"><span class="pip-year y2026">2026</span><span class="pip-int">6 days</span><span class="pip-launch">UK</span></div>
-          <div class="prog-detail">Shadow integration for leaders working with the feminine dimension of leadership. Relational intelligence and systemic sensing capacity. 6 days, UK.</div>
-        </div>
-      </div>
-      <div class="prog-cell">
-        <div class="prog-entry" onclick="toggleEntry(this)">
-          <div class="prog-name">ESSENSE Individual Journey</div>
-          <div class="prog-meta"><span class="pip-year y2026">2026</span><span class="pip-int">1 year</span><span class="pip-launch">Limited capacity</span></div>
-          <div class="prog-detail">1-year individual development + coaching track. Personalised inner work, regenerative strategy, and business redesign woven together. Premium positioning, limited places.</div>
-        </div>
-        <div class="prog-entry" onclick="toggleEntry(this)">
-          <div class="prog-name">Mini-Board with ESSENSE</div>
-          <div class="prog-meta"><span class="pip-year y2026">2026</span><span class="pip-int">1:1 strategic</span><span class="pip-launch">Invitation</span></div>
-          <div class="prog-detail">1:1 strategic and inner mentoring with ESSENSE founders. Peer-level advisory for founders navigating complex decisions. Intimate, high-trust container.</div>
-        </div>
-      </div>
-      <div class="prog-cell">
-        <div class="prog-entry" onclick="toggleEntry(this)">
-          <div class="prog-name">Business Redesign Lab</div>
-          <div class="prog-meta"><span class="pip-year y2026">2026</span><span class="pip-int">6 months</span><span class="pip-launch">Cohort · June–Nov</span></div>
-          <div class="prog-detail">June–November 2026. Cohort of founders and executives redesigning businesses as living systems. Programme architecture, speaker coordination, delivery stewardship. Core 2026 revenue programme.</div>
+        <div class=3D"prog-entry">
+          <div class=3D"prog-name">Feminine Shadow Journey</div>
+          <div class=3D"prog-meta"><span class=3D"pip-year y2026">2026</spa=
+n><span class=3D"pip-int">6 days</span><span class=3D"pip-launch">UK</span>=
+</div>
+          <div class=3D"prog-detail">Shadow integration for leaders working=
+ with the feminine dimension of leadership. Relational intelligence and sys=
+temic sensing capacity. 6 days, UK.</div>
         </div>
       </div>
-      <div class="prog-cell">
-        <div class="prog-entry" onclick="toggleEntry(this)">
-          <div class="prog-name">Business Alchemy</div>
-          <div class="prog-meta"><span class="pip-year y2027">2027</span><span class="pip-int">Year-long cohort</span><span class="pip-launch">Applications 2026</span></div>
-          <div class="prog-detail">The ESSENSE flagship. Launches January 2027 — applications and waitlist open late 2026. Full programme stewardship, curriculum implementation, guest faculty coordination. The centrepiece of the entire ecosystem.</div>
+      <div class=3D"prog-cell">
+        <div class=3D"prog-entry">
+          <div class=3D"prog-name">ESSENSE Individual Journey</div>
+          <div class=3D"prog-meta"><span class=3D"pip-year y2026">2026</spa=
+n><span class=3D"pip-int">1 year</span><span class=3D"pip-launch">Limited c=
+apacity</span></div>
+          <div class=3D"prog-detail">1-year individual development + coachi=
+ng track. Personalised inner work, regenerative strategy, and business rede=
+sign woven together. Premium positioning, limited places.</div>
+        </div>
+        <div class=3D"prog-entry">
+          <div class=3D"prog-name">Mini-Board with ESSENSE</div>
+          <div class=3D"prog-meta"><span class=3D"pip-year y2026">2026</spa=
+n><span class=3D"pip-int">1:1 strategic</span><span class=3D"pip-launch">In=
+vitation</span></div>
+          <div class=3D"prog-detail">1:1 strategic and inner mentoring with=
+ ESSENSE founders. Peer-level advisory for founders navigating complex deci=
+sions. Intimate, high-trust container.</div>
         </div>
       </div>
-    </div>
-
-    <div class="matrix-row">
-      <div class="aud-cell">
-        <span class="aud-badge exec">Executives</span>
-        <span class="aud-tagline">Top Executive: inner work + strategic redesign. Chief Transformation Officer: embedding regeneration in how the company operates — not just what it claims.</span>
-      </div>
-      <div class="prog-cell">
-        <div class="prog-entry" onclick="toggleEntry(this)">
-          <div class="prog-name">Shadow Work for Leaders</div>
-          <div class="prog-meta"><span class="pip-year y2026">2026</span><span class="pip-int">7 days</span><span class="pip-launch">UK</span></div>
-          <div class="prog-detail">Senior executives prefer retreat formats as first point of depth. 7 days, UK. Discreet, intimate, nature-based shadow integration.</div>
-        </div>
-        <div class="prog-entry" onclick="toggleEntry(this)">
-          <div class="prog-name">Feminine Shadow Journey</div>
-          <div class="prog-meta"><span class="pip-year y2026">2026</span><span class="pip-int">6 days</span><span class="pip-launch">UK</span></div>
-          <div class="prog-detail">Shadow integration for leaders working with the feminine dimension of leadership. Relational intelligence and systemic sensing capacity. 6 days, UK.</div>
+      <div class=3D"prog-cell">
+        <div class=3D"prog-entry">
+          <div class=3D"prog-name">Business Redesign Lab</div>
+          <div class=3D"prog-meta"><span class=3D"pip-year y2026">2026</spa=
+n><span class=3D"pip-int">6 months</span><span class=3D"pip-launch">Cohort =
+=C2=B7 June=E2=80=93Nov</span></div>
+          <div class=3D"prog-detail">June=E2=80=93November 2026. Cohort of =
+founders and executives redesigning businesses as living systems. Programme=
+ architecture, speaker coordination, delivery stewardship. Core 2026 revenu=
+e programme.</div>
         </div>
       </div>
-      <div class="prog-cell">
-        <div class="prog-entry" onclick="toggleEntry(this)">
-          <div class="prog-name">ESSENSE Individual Journey</div>
-          <div class="prog-meta"><span class="pip-year y2026">2026</span><span class="pip-int">1 year · 1:1</span><span class="pip-launch">Premium</span></div>
-          <div class="prog-detail">1:1 advisory for senior executives who won't join a cohort. Discreet, high-trust, deeply personalised. Often the preferred format for C-suite leaders who need privacy.</div>
-        </div>
-      </div>
-      <div class="prog-cell">
-        <div class="prog-entry" onclick="toggleEntry(this)">
-          <div class="prog-name">Business Redesign Lab</div>
-          <div class="prog-meta"><span class="pip-year y2026">2026</span><span class="pip-int">6 months</span></div>
-          <div class="prog-detail">Executives join the same cohort as founders. Cross-pollination of experience is intentional — different vantage points, shared transformation arc.</div>
-        </div>
-      </div>
-      <div class="prog-cell">
-        <div class="prog-entry" onclick="toggleEntry(this)">
-          <div class="prog-name">Business Alchemy</div>
-          <div class="prog-meta"><span class="pip-year y2027">2027</span><span class="pip-int">Year-long</span></div>
-          <div class="prog-detail">Flagship inner–outer transformation. Executives who complete ReSense Course and a retreat often progress here. The full arc from inner clarity to outer architecture.</div>
+      <div class=3D"prog-cell">
+        <div class=3D"prog-entry">
+          <div class=3D"prog-name">Business Alchemy</div>
+          <div class=3D"prog-meta"><span class=3D"pip-year y2027">2027</spa=
+n><span class=3D"pip-int">Year-long cohort</span><span class=3D"pip-launch"=
+>Applications 2026</span></div>
+          <div class=3D"prog-detail">The ESSENSE flagship. Launches January=
+ 2027 =E2=80=94 applications and waitlist open late 2026. Full programme st=
+ewardship, curriculum implementation, guest faculty coordination. The centr=
+epiece of the entire ecosystem.</div>
         </div>
       </div>
     </div>
 
-    <div class="matrix-row">
-      <div class="aud-cell">
-        <span class="aud-badge consult">Consultants</span>
-        <span class="aud-tagline">Ecosystem architects — developmental practitioners integrating inner maturity, relational intelligence, and systemic design capacity.</span>
+    <div class=3D"matrix-row">
+      <div class=3D"aud-cell">
+        <span class=3D"aud-badge exec">Executives</span>
+        <span class=3D"aud-tagline">Top Executive: inner work + strategic r=
+edesign. Chief Transformation Officer: embedding regeneration in how the co=
+mpany operates =E2=80=94 not just what it claims.</span>
       </div>
-      <div class="prog-cell">
-        <div class="prog-entry" onclick="toggleEntry(this)">
-          <div class="prog-name">Practitioner Retreats</div>
-          <div class="prog-meta"><span class="pip-year y2027">2027</span><span class="pip-int">3–5 days</span></div>
-          <div class="prog-detail">Retreats designed for consultants and facilitators deepening their own practice. Inner maturity as the foundation of systemic work — you can only take clients as deep as you've gone yourself.</div>
+      <div class=3D"prog-cell">
+        <div class=3D"prog-entry">
+          <div class=3D"prog-name">Shadow Work for Leaders</div>
+          <div class=3D"prog-meta"><span class=3D"pip-year y2026">2026</spa=
+n><span class=3D"pip-int">7 days</span><span class=3D"pip-launch">UK</span>=
+</div>
+          <div class=3D"prog-detail">Senior executives prefer retreat forma=
+ts as first point of depth. 7 days, UK. Discreet, intimate, nature-based sh=
+adow integration.</div>
+        </div>
+        <div class=3D"prog-entry">
+          <div class=3D"prog-name">Feminine Shadow Journey</div>
+          <div class=3D"prog-meta"><span class=3D"pip-year y2026">2026</spa=
+n><span class=3D"pip-int">6 days</span><span class=3D"pip-launch">UK</span>=
+</div>
+          <div class=3D"prog-detail">Shadow integration for leaders working=
+ with the feminine dimension of leadership. Relational intelligence and sys=
+temic sensing capacity. 6 days, UK.</div>
         </div>
       </div>
-      <div class="prog-cell">
-        <div class="prog-entry" onclick="toggleEntry(this)">
-          <div class="prog-name">Individual Supervision</div>
-          <div class="prog-meta"><span class="pip-year y2027">2027</span><span class="pip-int">Ongoing</span></div>
-          <div class="prog-detail">1:1 supervision for consultants working with ESSENSE methodology in their own client engagements. Developmental and methodological support.</div>
+      <div class=3D"prog-cell">
+        <div class=3D"prog-entry">
+          <div class=3D"prog-name">ESSENSE Individual Journey</div>
+          <div class=3D"prog-meta"><span class=3D"pip-year y2026">2026</spa=
+n><span class=3D"pip-int">1 year =C2=B7 1:1</span><span class=3D"pip-launch=
+">Premium</span></div>
+          <div class=3D"prog-detail">1:1 advisory for senior executives who=
+ won't join a cohort. Discreet, high-trust, deeply personalised. Often the =
+preferred format for C-suite leaders who need privacy.</div>
         </div>
       </div>
-      <div class="prog-cell"><div class="empty-label">—</div></div>
-      <div class="prog-cell"><div class="empty-label">—</div></div>
+      <div class=3D"prog-cell">
+        <div class=3D"prog-entry">
+          <div class=3D"prog-name">Business Redesign Lab</div>
+          <div class=3D"prog-meta"><span class=3D"pip-year y2026">2026</spa=
+n><span class=3D"pip-int">6 months</span></div>
+          <div class=3D"prog-detail">Executives join the same cohort as fou=
+nders. Cross-pollination of experience is intentional =E2=80=94 different v=
+antage points, shared transformation arc.</div>
+        </div>
+      </div>
+      <div class=3D"prog-cell">
+        <div class=3D"prog-entry">
+          <div class=3D"prog-name">Business Alchemy</div>
+          <div class=3D"prog-meta"><span class=3D"pip-year y2027">2027</spa=
+n><span class=3D"pip-int">Year-long</span></div>
+          <div class=3D"prog-detail">Flagship inner=E2=80=93outer transform=
+ation. Executives who complete ReSense Course and a retreat often progress =
+here. The full arc from inner clarity to outer architecture.</div>
+        </div>
+      </div>
     </div>
 
-    <div class="matrix-row">
-      <div class="aud-cell">
-        <span class="aud-badge org">Organisations</span>
-        <span class="aud-tagline">Leadership teams and boards becoming conscious stewards — sensing, guiding, and evolving the system as a living whole.</span>
+    <div class=3D"matrix-row">
+      <div class=3D"aud-cell">
+        <span class=3D"aud-badge consult">Consultants</span>
+        <span class=3D"aud-tagline">Ecosystem architects =E2=80=94 developm=
+ental practitioners integrating inner maturity, relational intelligence, an=
+d systemic design capacity.</span>
       </div>
-      <div class="prog-cell"><div class="empty-label">—</div></div>
-      <div class="prog-cell"><div class="empty-label">—</div></div>
-      <div class="prog-cell"><div class="empty-label">—</div></div>
-      <div class="prog-cell"><div class="empty-label">—</div></div>
+      <div class=3D"prog-cell">
+        <div class=3D"prog-entry">
+          <div class=3D"prog-name">Practitioner Retreats</div>
+          <div class=3D"prog-meta"><span class=3D"pip-year y2027">2027</spa=
+n><span class=3D"pip-int">3=E2=80=935 days</span></div>
+          <div class=3D"prog-detail">Retreats designed for consultants and =
+facilitators deepening their own practice. Inner maturity as the foundation=
+ of systemic work =E2=80=94 you can only take clients as deep as you've gon=
+e yourself.</div>
+        </div>
+      </div>
+      <div class=3D"prog-cell">
+        <div class=3D"prog-entry">
+          <div class=3D"prog-name">Individual Supervision</div>
+          <div class=3D"prog-meta"><span class=3D"pip-year y2027">2027</spa=
+n><span class=3D"pip-int">Ongoing</span></div>
+          <div class=3D"prog-detail">1:1 supervision for consultants workin=
+g with ESSENSE methodology in their own client engagements. Developmental a=
+nd methodological support.</div>
+        </div>
+      </div>
+      <div class=3D"prog-cell"><div class=3D"empty-label">=E2=80=94</div></=
+div>
+      <div class=3D"prog-cell"><div class=3D"empty-label">=E2=80=94</div></=
+div>
+    </div>
+
+    <div class=3D"matrix-row">
+      <div class=3D"aud-cell">
+        <span class=3D"aud-badge org">Organisations</span>
+        <span class=3D"aud-tagline">Leadership teams and boards becoming co=
+nscious stewards =E2=80=94 sensing, guiding, and evolving the system as a l=
+iving whole.</span>
+      </div>
+      <div class=3D"prog-cell"><div class=3D"empty-label">=E2=80=94</div></=
+div>
+      <div class=3D"prog-cell"><div class=3D"empty-label">=E2=80=94</div></=
+div>
+      <div class=3D"prog-cell"><div class=3D"empty-label">=E2=80=94</div></=
+div>
+      <div class=3D"prog-cell"><div class=3D"empty-label">=E2=80=94</div></=
+div>
     </div>
   </div>
 </div>
 
 
-<!-- ══════════════════════════════════
-     RE—DESIGN
-══════════════════════════════════ -->
-<div class="pillar-panel" id="panel-design">
-  <div class="pillar-header">
+<!-- =E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=95=
+=90=E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=95=90=
+=E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=
+=95=90=E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=95=
+=90=E2=95=90
+     RE=E2=80=94DESIGN
+=E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=
+=95=90=E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=95=
+=90=E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=95=90=
+=E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=
+=95=90 -->
+<div class=3D"pillar-panel" id=3D"panel-design">
+  <div class=3D"pillar-header">
     <div>
-      <div class="pillar-re">Re —</div>
-      <div class="pillar-title">design<br><em>the business</em></div>
+      <div class=3D"pillar-re">Re =E2=80=94</div>
+      <div class=3D"pillar-title">design<br><em>the business</em></div>
     </div>
-    <div class="pillar-right">
-      <div class="pillar-question">"How do I rebuild my business as a living system — from the inside out?"</div>
-      <div class="pillar-layer"><span class="layer-dot"></span>Developmental layer: Personal Development + Organisational Field</div>
-      <div class="pillar-phase">Phase 2 — Labs · Phase 3 — Institutional · 2026–2028</div>
+    <div class=3D"pillar-right">
+      <div class=3D"pillar-question">"How do I rebuild my business as a liv=
+ing system =E2=80=94 from the inside out?"</div>
+      <div class=3D"pillar-layer"><span class=3D"layer-dot"></span>Developm=
+ental layer: Personal Development + Organisational Field</div>
+      <div class=3D"pillar-phase">Phase 2 =E2=80=94 Labs =C2=B7 Phase 3 =E2=
+=80=94 Institutional =C2=B7 2026=E2=80=932028</div>
     </div>
   </div>
 
-  <div class="matrix" id="m-design">
-    <style>#m-design .matrix-header,#m-design .matrix-row{grid-template-columns:155px repeat(2,1fr);}</style>
-    <div class="matrix-header">
-      <div class="matrix-corner"><span class="matrix-corner-label">Audience × Format</span></div>
-      <div class="format-header"><span class="format-name">Cohort Journey</span><span class="format-desc">Business Redesign Lab</span></div>
-      <div class="format-header"><span class="format-name">Flagship</span><span class="format-desc">Business Alchemy</span></div>
+  <div class=3D"matrix" id=3D"m-design">
+   =20
+    <div class=3D"matrix-header">
+      <div class=3D"matrix-corner"><span class=3D"matrix-corner-label">Audi=
+ence =C3=97 Format</span></div>
+      <div class=3D"format-header"><span class=3D"format-name">Cohort Journ=
+ey</span><span class=3D"format-desc">Business Redesign Lab</span></div>
+      <div class=3D"format-header"><span class=3D"format-name">Flagship</sp=
+an><span class=3D"format-desc">Business Alchemy</span></div>
     </div>
 
-    <div class="matrix-row">
-      <div class="aud-cell">
-        <span class="aud-badge founder">Founders</span>
-        <span class="aud-tagline">Redesigning the business alongside redesigning themselves — simultaneously. Living system redesign capacity.</span>
+    <div class=3D"matrix-row">
+      <div class=3D"aud-cell">
+        <span class=3D"aud-badge founder">Founders</span>
+        <span class=3D"aud-tagline">Redesigning the business alongside rede=
+signing themselves =E2=80=94 simultaneously. Living system redesign capacit=
+y.</span>
       </div>
-      <div class="prog-cell">
-        <div class="prog-entry" onclick="toggleEntry(this)">
-          <div class="prog-name">Business Redesign Lab</div>
-          <div class="prog-meta"><span class="pip-year y2026">2026</span><span class="pip-int">6 months</span><span class="pip-launch">Cohort · June–Nov</span></div>
-          <div class="prog-detail">Cohort of founders redesigning their businesses as living systems. Business models and organisational life redesigned from the inside out. Programme architecture, speaker coordination, delivery stewardship. Core 2026 revenue programme.</div>
+      <div class=3D"prog-cell">
+        <div class=3D"prog-entry">
+          <div class=3D"prog-name">Business Redesign Lab</div>
+          <div class=3D"prog-meta"><span class=3D"pip-year y2026">2026</spa=
+n><span class=3D"pip-int">6 months</span><span class=3D"pip-launch">Cohort =
+=C2=B7 June=E2=80=93Nov</span></div>
+          <div class=3D"prog-detail">Cohort of founders redesigning their b=
+usinesses as living systems. Business models and organisational life redesi=
+gned from the inside out. Programme architecture, speaker coordination, del=
+ivery stewardship. Core 2026 revenue programme.</div>
         </div>
       </div>
-      <div class="prog-cell">
-        <div class="prog-entry" onclick="toggleEntry(this)">
-          <div class="prog-name">Business Alchemy</div>
-          <div class="prog-meta"><span class="pip-year y2027">2027</span><span class="pip-int">Year-long</span></div>
-          <div class="prog-detail">Flagship business redesign dimension. Strategy, culture, and structure redesigned as living systems. Inner clarity becomes outer architecture. Stewardship and regenerative architecture.</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="matrix-row">
-      <div class="aud-cell">
-        <span class="aud-badge exec">Executives</span>
-        <span class="aud-tagline">Top Exec turning personal transformation into board-level strategy. CTO embedding regeneration in company operations — not just what it claims.</span>
-      </div>
-      <div class="prog-cell">
-        <div class="prog-entry" onclick="toggleEntry(this)">
-          <div class="prog-name">Business Redesign Lab</div>
-          <div class="prog-meta"><span class="pip-year y2026">2026</span><span class="pip-int">6 months</span></div>
-          <div class="prog-detail">Executives join founders in the same cohort. Cross-pollination intentional — different organisational vantage points enrich the collective redesign process.</div>
-        </div>
-      </div>
-      <div class="prog-cell">
-        <div class="prog-entry" onclick="toggleEntry(this)">
-          <div class="prog-name">Business Alchemy</div>
-          <div class="prog-meta"><span class="pip-year y2027">2027</span><span class="pip-int">Year-long</span></div>
-          <div class="prog-detail">Executives bring organisational complexity into the programme. Richer learning for the whole cohort — real systems being redesigned in real time.</div>
+      <div class=3D"prog-cell">
+        <div class=3D"prog-entry">
+          <div class=3D"prog-name">Business Alchemy</div>
+          <div class=3D"prog-meta"><span class=3D"pip-year y2027">2027</spa=
+n><span class=3D"pip-int">Year-long</span></div>
+          <div class=3D"prog-detail">Flagship business redesign dimension. =
+Strategy, culture, and structure redesigned as living systems. Inner clarit=
+y becomes outer architecture. Stewardship and regenerative architecture.</d=
+iv>
         </div>
       </div>
     </div>
 
-    <div class="matrix-row">
-      <div class="aud-cell">
-        <span class="aud-badge consult">Consultants</span>
-        <span class="aud-tagline">Applying living systems design methodology in client organisations. Partners, faculty, investors-as-stewards co-creating the ecosystem.</span>
+    <div class=3D"matrix-row">
+      <div class=3D"aud-cell">
+        <span class=3D"aud-badge exec">Executives</span>
+        <span class=3D"aud-tagline">Top Exec turning personal transformatio=
+n into board-level strategy. CTO embedding regeneration in company operatio=
+ns =E2=80=94 not just what it claims.</span>
       </div>
-      <div class="prog-cell"><div class="empty-label">—</div></div>
-      <div class="prog-cell"><div class="empty-label">—</div></div>
+      <div class=3D"prog-cell">
+        <div class=3D"prog-entry">
+          <div class=3D"prog-name">Business Redesign Lab</div>
+          <div class=3D"prog-meta"><span class=3D"pip-year y2026">2026</spa=
+n><span class=3D"pip-int">6 months</span></div>
+          <div class=3D"prog-detail">Executives join founders in the same c=
+ohort. Cross-pollination intentional =E2=80=94 different organisational van=
+tage points enrich the collective redesign process.</div>
+        </div>
+      </div>
+      <div class=3D"prog-cell">
+        <div class=3D"prog-entry">
+          <div class=3D"prog-name">Business Alchemy</div>
+          <div class=3D"prog-meta"><span class=3D"pip-year y2027">2027</spa=
+n><span class=3D"pip-int">Year-long</span></div>
+          <div class=3D"prog-detail">Executives bring organisational comple=
+xity into the programme. Richer learning for the whole cohort =E2=80=94 rea=
+l systems being redesigned in real time.</div>
+        </div>
+      </div>
     </div>
 
-    <div class="matrix-row">
-      <div class="aud-cell">
-        <span class="aud-badge org">Organisations</span>
-        <span class="aud-tagline">Through immersive ecosystem assessments, leadership inquiry, onsite immersions, and campfire trust circles — shifting from extractive to regenerative.</span>
+    <div class=3D"matrix-row">
+      <div class=3D"aud-cell">
+        <span class=3D"aud-badge consult">Consultants</span>
+        <span class=3D"aud-tagline">Applying living systems design methodol=
+ogy in client organisations. Partners, faculty, investors-as-stewards co-cr=
+eating the ecosystem.</span>
       </div>
-      <div class="prog-cell"><div class="empty-label">—</div></div>
-      <div class="prog-cell">
-        <div class="prog-entry" onclick="toggleEntry(this)">
-          <div class="prog-name">Organisational Immersions</div>
-          <div class="prog-meta"><span class="pip-year y2027">2027</span><span class="pip-year y2028">2028</span><span class="pip-int">Custom</span></div>
-          <div class="prog-detail">Immersive organisational programmes: ecosystem assessment, leadership inquiry, onsite immersions, systemic intervention, campfire trust circles. Partners with organisations shifting from extractive to regenerative operating modes. From 2027.</div>
+      <div class=3D"prog-cell"><div class=3D"empty-label">=E2=80=94</div></=
+div>
+      <div class=3D"prog-cell"><div class=3D"empty-label">=E2=80=94</div></=
+div>
+    </div>
+
+    <div class=3D"matrix-row">
+      <div class=3D"aud-cell">
+        <span class=3D"aud-badge org">Organisations</span>
+        <span class=3D"aud-tagline">Through immersive ecosystem assessments=
+, leadership inquiry, onsite immersions, and campfire trust circles =E2=80=
+=94 shifting from extractive to regenerative.</span>
+      </div>
+      <div class=3D"prog-cell"><div class=3D"empty-label">=E2=80=94</div></=
+div>
+      <div class=3D"prog-cell">
+        <div class=3D"prog-entry">
+          <div class=3D"prog-name">Organisational Immersions</div>
+          <div class=3D"prog-meta"><span class=3D"pip-year y2027">2027</spa=
+n><span class=3D"pip-year y2028">2028</span><span class=3D"pip-int">Custom<=
+/span></div>
+          <div class=3D"prog-detail">Immersive organisational programmes: e=
+cosystem assessment, leadership inquiry, onsite immersions, systemic interv=
+ention, campfire trust circles. Partners with organisations shifting from e=
+xtractive to regenerative operating modes. From 2027.</div>
         </div>
       </div>
     </div>
@@ -753,218 +889,1789 @@ body.edit-mode .edit-hint{display:inline;}
 </div>
 
 
-<!-- ══════════════════════════════════
-     RE—SOURCE
-══════════════════════════════════ -->
-<div class="pillar-panel" id="panel-source">
-  <div class="pillar-header">
+<!-- =E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=95=
+=90=E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=95=90=
+=E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=
+=95=90=E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=95=
+=90=E2=95=90
+     RE=E2=80=94SOURCE
+=E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=
+=95=90=E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=95=
+=90=E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=95=90=
+=E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=
+=95=90 -->
+<div class=3D"pillar-panel" id=3D"panel-source">
+  <div class=3D"pillar-header">
     <div>
-      <div class="pillar-re">Re —</div>
-      <div class="pillar-title">source<br><em>the mastery</em></div>
+      <div class=3D"pillar-re">Re =E2=80=94</div>
+      <div class=3D"pillar-title">source<br><em>the mastery</em></div>
     </div>
-    <div class="pillar-right">
-      <div class="pillar-question">"What specific competencies do I need — with rigour and recognition?"</div>
-      <div class="pillar-layer"><span class="layer-dot"></span>Developmental layer: Institutional Field</div>
-      <div class="pillar-phase">Phase 3–4 — Ecosystem Infrastructure · 2027–2028</div>
+    <div class=3D"pillar-right">
+      <div class=3D"pillar-question">"What specific competencies do I need =
+=E2=80=94 with rigour and recognition?"</div>
+      <div class=3D"pillar-layer"><span class=3D"layer-dot"></span>Developm=
+ental layer: Institutional Field</div>
+      <div class=3D"pillar-phase">Phase 3=E2=80=934 =E2=80=94 Ecosystem Inf=
+rastructure =C2=B7 2027=E2=80=932028</div>
     </div>
   </div>
 
-  <div class="matrix" id="m-source">
-    <style>#m-source .matrix-header,#m-source .matrix-row{grid-template-columns:155px repeat(2,1fr);}</style>
-    <div class="matrix-header">
-      <div class="matrix-corner"><span class="matrix-corner-label">Audience × Format</span></div>
-      <div class="format-header"><span class="format-name">Community Ecosystem</span><span class="format-desc">Future Ancestors field</span></div>
-      <div class="format-header"><span class="format-name">Transformative Presence</span><span class="format-desc">In-person · 3 months</span></div>
+  <div class=3D"matrix" id=3D"m-source">
+   =20
+    <div class=3D"matrix-header">
+      <div class=3D"matrix-corner"><span class=3D"matrix-corner-label">Audi=
+ence =C3=97 Format</span></div>
+      <div class=3D"format-header"><span class=3D"format-name">Community Ec=
+osystem</span><span class=3D"format-desc">Future Ancestors field</span></di=
+v>
+      <div class=3D"format-header"><span class=3D"format-name">Transformati=
+ve Presence</span><span class=3D"format-desc">In-person =C2=B7 3 months</sp=
+an></div>
     </div>
 
-    <div class="matrix-row">
-      <div class="aud-cell">
-        <span class="aud-badge founder">Founders</span>
-        <span class="aud-tagline">Alumni staying in the field as Future Ancestors — long-term stewards and referral base.</span>
+    <div class=3D"matrix-row">
+      <div class=3D"aud-cell">
+        <span class=3D"aud-badge founder">Founders</span>
+        <span class=3D"aud-tagline">Alumni staying in the field as Future A=
+ncestors =E2=80=94 long-term stewards and referral base.</span>
       </div>
-      <div class="prog-cell">
-        <div class="prog-entry" onclick="toggleEntry(this)">
-          <div class="prog-name">Community Ecosystem</div>
-          <div class="prog-meta"><span class="pip-year y2027">2027</span><span class="pip-int">Continuous</span></div>
-          <div class="prog-detail">The living field — alumni, participants, faculty, partners. A community of Future Ancestors in ongoing relationship. Experience rhythm support from 2027. Long-term retention and referral engine. Seed a core field of early Leader-Stewards / Future Ancestors.</div>
+      <div class=3D"prog-cell">
+        <div class=3D"prog-entry">
+          <div class=3D"prog-name">Community Ecosystem</div>
+          <div class=3D"prog-meta"><span class=3D"pip-year y2027">2027</spa=
+n><span class=3D"pip-int">Continuous</span></div>
+          <div class=3D"prog-detail">The living field =E2=80=94 alumni, par=
+ticipants, faculty, partners. A community of Future Ancestors in ongoing re=
+lationship. Experience rhythm support from 2027. Long-term retention and re=
+ferral engine. Seed a core field of early Leader-Stewards / Future Ancestor=
+s.</div>
         </div>
       </div>
-      <div class="prog-cell"><div class="empty-label">—</div></div>
+      <div class=3D"prog-cell"><div class=3D"empty-label">=E2=80=94</div></=
+div>
     </div>
 
-    <div class="matrix-row">
-      <div class="aud-cell">
-        <span class="aud-badge exec">Executives</span>
-        <span class="aud-tagline">Alumni peer network for ongoing accountability, collective intelligence, and stewardship of the ecosystem.</span>
+    <div class=3D"matrix-row">
+      <div class=3D"aud-cell">
+        <span class=3D"aud-badge exec">Executives</span>
+        <span class=3D"aud-tagline">Alumni peer network for ongoing account=
+ability, collective intelligence, and stewardship of the ecosystem.</span>
       </div>
-      <div class="prog-cell">
-        <div class="prog-entry" onclick="toggleEntry(this)">
-          <div class="prog-name">Community Ecosystem</div>
-          <div class="prog-meta"><span class="pip-year y2027">2027</span><span class="pip-int">Continuous</span></div>
-          <div class="prog-detail">Alumni community with regular gatherings, peer circles, and access to ongoing ESSENSE thinking and events. The network that makes stewardship durable beyond programme completion.</div>
+      <div class=3D"prog-cell">
+        <div class=3D"prog-entry">
+          <div class=3D"prog-name">Community Ecosystem</div>
+          <div class=3D"prog-meta"><span class=3D"pip-year y2027">2027</spa=
+n><span class=3D"pip-int">Continuous</span></div>
+          <div class=3D"prog-detail">Alumni community with regular gatherin=
+gs, peer circles, and access to ongoing ESSENSE thinking and events. The ne=
+twork that makes stewardship durable beyond programme completion.</div>
         </div>
       </div>
-      <div class="prog-cell"><div class="empty-label">—</div></div>
+      <div class=3D"prog-cell"><div class=3D"empty-label">=E2=80=94</div></=
+div>
     </div>
 
-    <div class="matrix-row">
-      <div class="aud-cell">
-        <span class="aud-badge consult">Consultants</span>
-        <span class="aud-tagline">Credentialled ecosystem architects within the ESSENSE practitioner network. Certification interest waitlist open 2026.</span>
+    <div class=3D"matrix-row">
+      <div class=3D"aud-cell">
+        <span class=3D"aud-badge consult">Consultants</span>
+        <span class=3D"aud-tagline">Credentialled ecosystem architects with=
+in the ESSENSE practitioner network. Certification interest waitlist open 2=
+026.</span>
       </div>
-      <div class="prog-cell">
-        <div class="prog-entry" onclick="toggleEntry(this)">
-          <div class="prog-name">Practitioner Community</div>
-          <div class="prog-meta"><span class="pip-year y2027">2027</span><span class="pip-int">Continuous</span></div>
-          <div class="prog-detail">Dedicated practitioner community — peer supervision, methodology development, shared client opportunities. Relationships with regenerative practitioners, systems thinkers and artists who become early speakers and partners.</div>
+      <div class=3D"prog-cell">
+        <div class=3D"prog-entry">
+          <div class=3D"prog-name">Practitioner Community</div>
+          <div class=3D"prog-meta"><span class=3D"pip-year y2027">2027</spa=
+n><span class=3D"pip-int">Continuous</span></div>
+          <div class=3D"prog-detail">Dedicated practitioner community =E2=
+=80=94 peer supervision, methodology development, shared client opportuniti=
+es. Relationships with regenerative practitioners, systems thinkers and art=
+ists who become early speakers and partners.</div>
         </div>
       </div>
-      <div class="prog-cell">
-        <div class="prog-entry" onclick="toggleEntry(this)">
-          <div class="prog-name">Transformative Presence</div>
-          <div class="prog-meta"><span class="pip-year y2027">2027</span><span class="pip-int">3 months</span><span class="pip-launch">In-person</span></div>
-          <div class="prog-detail">In-person 3-month practitioner programme. Deep embodied development for consultants, coaches, and facilitators working within the ESSENSE methodology. Rigour, recognition, and community. Waitlist opens 2026.</div>
+      <div class=3D"prog-cell">
+        <div class=3D"prog-entry">
+          <div class=3D"prog-name">Transformative Presence</div>
+          <div class=3D"prog-meta"><span class=3D"pip-year y2027">2027</spa=
+n><span class=3D"pip-int">3 months</span><span class=3D"pip-launch">In-pers=
+on</span></div>
+          <div class=3D"prog-detail">In-person 3-month practitioner program=
+me. Deep embodied development for consultants, coaches, and facilitators wo=
+rking within the ESSENSE methodology. Rigour, recognition, and community. W=
+aitlist opens 2026.</div>
         </div>
       </div>
     </div>
 
-    <div class="matrix-row">
-      <div class="aud-cell">
-        <span class="aud-badge org">Organisations</span>
-        <span class="aud-tagline">Long-term partnership for leadership development and systemic evolution.</span>
+    <div class=3D"matrix-row">
+      <div class=3D"aud-cell">
+        <span class=3D"aud-badge org">Organisations</span>
+        <span class=3D"aud-tagline">Long-term partnership for leadership de=
+velopment and systemic evolution.</span>
       </div>
-      <div class="prog-cell"><div class="empty-label">—</div></div>
-      <div class="prog-cell"><div class="empty-label">—</div></div>
+      <div class=3D"prog-cell"><div class=3D"empty-label">=E2=80=94</div></=
+div>
+      <div class=3D"prog-cell"><div class=3D"empty-label">=E2=80=94</div></=
+div>
     </div>
   </div>
 </div>
 
+
+<!-- =E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=95=
+=90=E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=95=90=
+=E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=
+=95=90=E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=95=
+=90=E2=95=90
+     PATHWAYS CANVAS
+=E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=
+=95=90=E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=95=
+=90=E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=95=90=
+=E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=95=90=E2=
+=95=90 -->
+<div class=3D"canvas-panel" id=3D"panel-canvas">
+
+  <div class=3D"pillar-header">
+    <div>
+      <div class=3D"pillar-re">Programme</div>
+      <div class=3D"pillar-title">Pathways<br><em>Canvas</em></div>
+    </div>
+    <div class=3D"pillar-right">
+      <div class=3D"pillar-question">"What is this programme, who is it for=
+, and what does it change?"</div>
+      <div class=3D"pillar-layer"><span class=3D"layer-dot"></span>Conventi=
+onal business canvas =C2=B7 ESSENSE reframe =C2=B7 side by side</div>
+      <div class=3D"pillar-phase">2026 Programmes =C2=B7 Living document</d=
+iv>
+    </div>
+  </div>
+
+  <!-- Programme selector -->
+  <div class=3D"canvas-nav">
+    <button class=3D"canvas-prog-btn active">"Makes Sense?" Talks</button>
+    <button class=3D"canvas-prog-btn">Book Club + Podcast</button>
+    <button class=3D"canvas-prog-btn">Your ESSENSE Day</button>
+    <button class=3D"canvas-prog-btn">Re/Sense the Feminine</button>
+    <button class=3D"canvas-prog-btn">Business Redesign Lab</button>
+    <button class=3D"canvas-prog-btn">Shadow Work for Leaders</button>
+    <button class=3D"canvas-prog-btn">Leadership Essence Retreat</button>
+    <button class=3D"canvas-prog-btn">Feminine Shadow Journey</button>
+    <button class=3D"canvas-prog-btn">ESSENSE Individual Journey</button>
+    <button class=3D"canvas-prog-btn">Mini-Board with ESSENSE</button>
+    <button class=3D"canvas-prog-btn">Business Alchemy</button>
+  </div>
+
+  <!-- =E2=94=80=E2=94=80 MAKES SENSE? TALKS =E2=94=80=E2=94=80 -->
+  <div class=3D"canvas-card active" id=3D"canvas-makes-sense">
+    <div class=3D"canvas-title-row">
+      <div class=3D"canvas-prog-title">"Makes Sense?" Talks</div>
+      <div class=3D"canvas-prog-meta">Online =C2=B7 Yearly subscription =C2=
+=B7 12 talks/year =C2=B7 2026=E2=80=932028</div>
+    </div>
+    <div class=3D"canvas-grid">
+      <div class=3D"canvas-cell">
+        <span class=3D"canvas-field-label">Customer Segments</span>
+        <span class=3D"canvas-field-label-alt">Who is ready =E2=80=94 the p=
+erson at the threshold</span>
+        <div class=3D"canvas-field-value"><ul><li>Founders &amp; scaling CE=
+Os sensing the Grand Shift</li><li>Executives tired of "run faster" culture=
+</li><li>Consultants building new frameworks</li><li>ESSENSE alumni seeking=
+ ongoing inquiry</li></ul></div>
+      </div>
+      <div class=3D"canvas-cell">
+        <span class=3D"canvas-field-label">Problem / Pain</span>
+        <span class=3D"canvas-field-label-alt">The tension they carry =E2=
+=80=94 what brought them here</span>
+        <div class=3D"canvas-field-value">Leaders sense their current model=
+ of success is incomplete but lack language, framework, or community to exp=
+lore alternative ways of thinking. They feel alone in their questions.</div=
+>
+      </div>
+      <div class=3D"canvas-cell">
+        <span class=3D"canvas-field-label">Value Proposition</span>
+        <span class=3D"canvas-field-label-alt">The transformation offered =
+=E2=80=94 from =E2=86=92 to</span>
+        <div class=3D"canvas-field-value">
+          <div class=3D"canvas-transform"><span class=3D"canvas-transform-f=
+rom">Isolated in questioning</span><span class=3D"canvas-transform-arrow">=
+=E2=86=92</span><span class=3D"canvas-transform-to">Shared worldview + coll=
+ective sensemaking</span></div>
+          <div class=3D"canvas-transform" style=3D"margin-top:8px"><span cl=
+ass=3D"canvas-transform-from">Information without depth</span><span class=
+=3D"canvas-transform-arrow">=E2=86=92</span><span class=3D"canvas-transform=
+-to">Ideas metabolised collectively</span></div>
+        </div>
+      </div>
+    </div>
+    <div class=3D"canvas-grid">
+      <div class=3D"canvas-cell">
+        <span class=3D"canvas-field-label">Key Activities</span>
+        <span class=3D"canvas-field-label-alt">How we work =E2=80=94 method=
+ology and container</span>
+        <div class=3D"canvas-field-value"><ul><li>Monthly live inquiry talk=
+ (90=E2=80=93120 min)</li><li>One core question/theme framed per session</l=
+i><li>Facilitated live dialogue + structured reflection</li><li>Light pre-r=
+eads or prompts</li><li>Post-session summary and key insights</li></ul></di=
+v>
+      </div>
+      <div class=3D"canvas-cell">
+        <span class=3D"canvas-field-label">Channels</span>
+        <span class=3D"canvas-field-label-alt">How they find us =E2=80=94 r=
+esonance pathways</span>
+        <div class=3D"canvas-field-value"><ul><li>Podcast + Book Club audie=
+nce</li><li>LinkedIn thought leadership</li><li>Referrals &amp; alumni netw=
+ork</li><li>Retreat and programme ecosystem</li></ul></div>
+      </div>
+      <div class=3D"canvas-cell">
+        <span class=3D"canvas-field-label">Key Partners</span>
+        <span class=3D"canvas-field-label-alt">Who we co-create with</span>
+        <div class=3D"canvas-field-value"><ul><li>Guest experts and thinker=
+s</li><li>Alumni network and referrals</li><li>Tech providers (Zoom + commu=
+nity platform)</li><li>Speaker / programme producer</li></ul></div>
+      </div>
+    </div>
+    <div class=3D"canvas-grid-wide">
+      <div class=3D"canvas-cell">
+        <span class=3D"canvas-field-label">Key Resources</span>
+        <span class=3D"canvas-field-label-alt">What we steward =E2=80=94 fa=
+culty, space, time</span>
+        <div class=3D"canvas-field-value"><ul><li>Founder's intellectual ca=
+pital and facilitation</li><li>Topic research and synthesis</li><li>Communi=
+ty platform (Zoom + Circle/Heartbeat)</li><li>Content repurposing workflow =
+(recordings =E2=86=92 clips =E2=86=92 posts)</li><li>Operations support</li=
+></ul></div>
+      </div>
+      <div class=3D"canvas-cell">
+        <span class=3D"canvas-field-label">Revenue Streams</span>
+        <span class=3D"canvas-field-label-alt">Life-value exchange =E2=80=
+=94 investment and pricing</span>
+        <div class=3D"canvas-field-value"><ul><li>Annual subscription: =C2=
+=A3649 (11 sessions)</li><li>Break-even: 17 participants</li><li>Target 202=
+6: 40 participants =E2=86=92 =C2=A315,552 profit</li><li>Target 2027: 50 pa=
+rticipants =E2=86=92 =C2=A322,042 profit</li></ul></div>
+      </div>
+    </div>
+    <div class=3D"canvas-grid-full">
+      <div class=3D"canvas-cell" style=3D"background:var(--parchment-dark)"=
+>
+        <span class=3D"canvas-field-label">Cost Structure</span>
+        <span class=3D"canvas-field-label-alt">What sustains this =E2=80=94=
+ operational foundations</span>
+        <div class=3D"canvas-field-value">Speaker =C2=A38,800 =C2=B7 Operat=
+ions =C2=A3622 =C2=B7 Producer =C2=A3686 =C2=B7 Tools =C2=A3300 =E2=86=92 <=
+strong>Total =C2=A310,408/year</strong></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- =E2=94=80=E2=94=80 BOOK CLUB + PODCAST =E2=94=80=E2=94=80 -->
+  <div class=3D"canvas-card" id=3D"canvas-book-club">
+    <div class=3D"canvas-title-row">
+      <div class=3D"canvas-prog-title">Book Club + Podcast</div>
+      <div class=3D"canvas-prog-meta">Online =C2=B7 Free =C2=B7 Pilot May 2=
+026</div>
+    </div>
+    <div class=3D"canvas-grid">
+      <div class=3D"canvas-cell">
+        <span class=3D"canvas-field-label">Customer Segments</span>
+        <span class=3D"canvas-field-label-alt">Who is ready =E2=80=94 the p=
+erson at the threshold</span>
+        <div class=3D"canvas-field-value"><ul><li>Founders and leaders at t=
+he edge of old models</li><li>Consultants and practitioners building intell=
+ectual frameworks</li><li>ESSENSE alumni continuing the journey</li><li>Cur=
+ious new entrants to the ecosystem</li></ul></div>
+      </div>
+      <div class=3D"canvas-cell">
+        <span class=3D"canvas-field-label">Problem / Pain</span>
+        <span class=3D"canvas-field-label-alt">The tension they carry</span=
+>
+        <div class=3D"canvas-field-value">Content consumed individually is =
+rarely metabolised collectively. Most podcasts offer information without de=
+pth, leaving leaders without a sustained field for real thinking to unfold.=
+</div>
+      </div>
+      <div class=3D"canvas-cell">
+        <span class=3D"canvas-field-label">Value Proposition</span>
+        <span class=3D"canvas-field-label-alt">The transformation offered</=
+span>
+        <div class=3D"canvas-field-value">
+          <div class=3D"canvas-transform"><span class=3D"canvas-transform-f=
+rom">Information without depth</span><span class=3D"canvas-transform-arrow"=
+>=E2=86=92</span><span class=3D"canvas-transform-to">Collective sensemaking=
+ field</span></div>
+          <div class=3D"canvas-transform" style=3D"margin-top:8px"><span cl=
+ass=3D"canvas-transform-from">Isolated thinking</span><span class=3D"canvas=
+-transform-arrow">=E2=86=92</span><span class=3D"canvas-transform-to">Share=
+d perception over time</span></div>
+        </div>
+      </div>
+    </div>
+    <div class=3D"canvas-grid-wide">
+      <div class=3D"canvas-cell">
+        <span class=3D"canvas-field-label">Key Activities</span>
+        <span class=3D"canvas-field-label-alt">How we work</span>
+        <div class=3D"canvas-field-value"><ul><li>Curated author dialogues =
+paired with applied business conversations</li><li>Reflective podcast episo=
+des designed for integration</li><li>ESSENSE Book Club exploring foundation=
+al texts</li><li>Shared reflection spaces within ESSENSE community</li></ul=
+></div>
+      </div>
+      <div class=3D"canvas-cell">
+        <span class=3D"canvas-field-label">Channels + Revenue</span>
+        <span class=3D"canvas-field-label-alt">How they find us =C2=B7 Life=
+-value exchange</span>
+        <div class=3D"canvas-field-value"><ul><li>Organic: Spotify, Apple, =
+LinkedIn, newsletter</li><li>Speaker networks and referrals</li><li>Free ac=
+cess =E2=80=94 primary list-building and authority channel</li><li>Gateway =
+into Talks, Retreats, Individual Journey, Lab</li></ul></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- =E2=94=80=E2=94=80 YOUR ESSENSE DAY =E2=94=80=E2=94=80 -->
+  <div class=3D"canvas-card" id=3D"canvas-essense-day">
+    <div class=3D"canvas-title-row">
+      <div class=3D"canvas-prog-title">Your ESSENSE Day</div>
+      <div class=3D"canvas-prog-meta">In-person =C2=B7 1 day =C2=B7 =C2=A35=
+00/participant =C2=B7 2026=E2=80=932028</div>
+    </div>
+    <div class=3D"canvas-grid">
+      <div class=3D"canvas-cell">
+        <span class=3D"canvas-field-label">Customer Segments</span>
+        <span class=3D"canvas-field-label-alt">Who is ready</span>
+        <div class=3D"canvas-field-value"><ul><li>Busy founders and executi=
+ves considering deeper programmes</li><li>Prospects wanting a first physica=
+l ESSENSE experience</li><li>Leadership teams wanting shared language</li><=
+/ul></div>
+      </div>
+      <div class=3D"canvas-cell">
+        <span class=3D"canvas-field-label">Problem / Pain</span>
+        <span class=3D"canvas-field-label-alt">The tension they carry</span=
+>
+        <div class=3D"canvas-field-value">Leaders want depth but cannot yet=
+ commit to a long programme. They need a single experience that creates eno=
+ugh clarity and trust to take the next step.</div>
+      </div>
+      <div class=3D"canvas-cell">
+        <span class=3D"canvas-field-label">Value Proposition</span>
+        <span class=3D"canvas-field-label-alt">The transformation offered</=
+span>
+        <div class=3D"canvas-field-value">
+          <div class=3D"canvas-transform"><span class=3D"canvas-transform-f=
+rom">Abstract curiosity</span><span class=3D"canvas-transform-arrow">=E2=86=
+=92</span><span class=3D"canvas-transform-to">Embodied clarity in one day</=
+span></div>
+          <div style=3D"margin-top:10px;font-family:'EB Garamond',serif;fon=
+t-size:13px;font-style:italic;color:var(--ink-light)">Four bodies =C2=B7 Fo=
+ur elements: Earth / Water / Air / Fire =E2=86=92 Aether (intent for Busine=
+ss)</div>
+        </div>
+      </div>
+    </div>
+    <div class=3D"canvas-grid-wide">
+      <div class=3D"canvas-cell">
+        <span class=3D"canvas-field-label">Key Activities + Resources</span=
+>
+        <span class=3D"canvas-field-label-alt">How we work =C2=B7 What we s=
+teward</span>
+        <div class=3D"canvas-field-value"><ul><li>4 =C3=97 2-hour immersive=
+ blocks (8 hours total)</li><li>Body / Earth =E2=80=94 Emotion / Water =E2=
+=80=94 Mental / Air =E2=80=94 Causal / Fire</li><li>Closing: intent for bus=
+iness (Aether)</li><li>Venue logistics, facilitation, materials</li></ul></=
+div>
+      </div>
+      <div class=3D"canvas-cell">
+        <span class=3D"canvas-field-label">Revenue Streams</span>
+        <span class=3D"canvas-field-label-alt">Life-value exchange</span>
+        <div class=3D"canvas-field-value"><ul><li>=C2=A3500 per participant=
+</li><li>Break-even: 10 participants</li><li>15 participants =E2=86=92 =C2=
+=A32,031 profit (34% margin)</li><li>20 participants =E2=86=92 =C2=A33,881 =
+profit (48% margin)</li><li>2026: 1 day =C2=B7 2027: 3 days =C2=B7 2028: 4 =
+days</li></ul></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- =E2=94=80=E2=94=80 RE/SENSE THE FEMININE =E2=94=80=E2=94=80 -->
+  <div class=3D"canvas-card" id=3D"canvas-resense-feminine">
+    <div class=3D"canvas-title-row">
+      <div class=3D"canvas-prog-title">Re/Sense the Feminine</div>
+      <div class=3D"canvas-prog-meta">Online =C2=B7 Self-paced + live circl=
+es =C2=B7 =C2=A3349 =C2=B7 2026=E2=80=932028</div>
+    </div>
+    <div class=3D"canvas-grid">
+      <div class=3D"canvas-cell">
+        <span class=3D"canvas-field-label">Customer Segments</span>
+        <span class=3D"canvas-field-label-alt">Who is ready</span>
+        <div class=3D"canvas-field-value"><ul><li>Women and men exploring f=
+eminine leadership dimensions</li><li>Leaders disconnected from embodied an=
+d relational intelligence</li><li>New audience entry-level participants</li=
+><li>Consultants preparing for practitioner pathway</li></ul></div>
+      </div>
+      <div class=3D"canvas-cell">
+        <span class=3D"canvas-field-label">Problem / Pain</span>
+        <span class=3D"canvas-field-label-alt">The tension they carry</span=
+>
+        <div class=3D"canvas-field-value">Modern leadership culture over-em=
+phasises linear, control-based modes while intuitive, relational, regenerat=
+ive capacities remain underdeveloped. The feminine has been archetypally fr=
+agmented =E2=80=94 associated with vulnerability without power.</div>
+      </div>
+      <div class=3D"canvas-cell">
+        <span class=3D"canvas-field-label">Value Proposition</span>
+        <span class=3D"canvas-field-label-alt">The transformation offered</=
+span>
+        <div class=3D"canvas-field-value">
+          <div class=3D"canvas-transform"><span class=3D"canvas-transform-f=
+rom">Fragmented relational intelligence</span><span class=3D"canvas-transfo=
+rm-arrow">=E2=86=92</span><span class=3D"canvas-transform-to">Whole, adapti=
+ve leadership</span></div>
+          <div class=3D"canvas-transform" style=3D"margin-top:8px"><span cl=
+ass=3D"canvas-transform-from">Control-based operating</span><span class=3D"=
+canvas-transform-arrow">=E2=86=92</span><span class=3D"canvas-transform-to"=
+>Regenerative, life-responsive presence</span></div>
+        </div>
+      </div>
+    </div>
+    <div class=3D"canvas-grid-wide">
+      <div class=3D"canvas-cell">
+        <span class=3D"canvas-field-label">Key Activities + Method</span>
+        <span class=3D"canvas-field-label-alt">How we work</span>
+        <div class=3D"canvas-field-value"><ul><li>Recorded content + workbo=
+oks (self-paced)</li><li>Fortnightly live integration circles (2h)</li><li>=
+Shadow integration, strategic clarity, regenerative leadership</li><li>Jung=
+ian psychology, integral theory, somatic practice</li><li>2 launches per ye=
+ar</li></ul></div>
+      </div>
+      <div class=3D"canvas-cell">
+        <span class=3D"canvas-field-label">Revenue Streams</span>
+        <span class=3D"canvas-field-label-alt">Life-value exchange</span>
+        <div class=3D"canvas-field-value"><ul><li>=C2=A3349 per participant=
+</li><li>Break-even: 53 participants/year</li><li>80 participants =E2=86=92=
+ =C2=A39,050 profit</li><li>150 participants =E2=86=92 =C2=A332,080 profit<=
+/li><li>2026: 1 cohort =C2=B7 2027=E2=80=932028: 2 cohorts</li></ul></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- =E2=94=80=E2=94=80 BUSINESS REDESIGN LAB =E2=94=80=E2=94=80 -->
+  <div class=3D"canvas-card" id=3D"canvas-redesign-lab">
+    <div class=3D"canvas-title-row">
+      <div class=3D"canvas-prog-title">Business Redesign Lab</div>
+      <div class=3D"canvas-prog-meta">Online cohort =C2=B7 6 months =C2=B7 =
+=C2=A3660/participant =C2=B7 June=E2=80=93Nov 2026</div>
+    </div>
+    <div class=3D"canvas-grid">
+      <div class=3D"canvas-cell">
+        <span class=3D"canvas-field-label">Customer Segments</span>
+        <span class=3D"canvas-field-label-alt">Who is ready</span>
+        <div class=3D"canvas-field-value"><ul><li>Founders and small leader=
+ship teams</li><li>Purpose-driven SMEs</li><li>Executives ready to redesign=
+ how their organisation operates</li><li>ESSENSE alumni and consultants</li=
+></ul></div>
+      </div>
+      <div class=3D"canvas-cell">
+        <span class=3D"canvas-field-label">Problem / Pain</span>
+        <span class=3D"canvas-field-label-alt">The tension they carry</span=
+>
+        <div class=3D"canvas-field-value">Founders recognise their business=
+ models and structures are no longer aligned with emerging realities =E2=80=
+=94 internally, culturally, ecologically =E2=80=94 but lack frameworks to r=
+edesign them with systemic intelligence.</div>
+      </div>
+      <div class=3D"canvas-cell">
+        <span class=3D"canvas-field-label">Value Proposition</span>
+        <span class=3D"canvas-field-label-alt">The transformation offered</=
+span>
+        <div class=3D"canvas-field-value">
+          <div class=3D"canvas-transform"><span class=3D"canvas-transform-f=
+rom">Extractive architecture</span><span class=3D"canvas-transform-arrow">=
+=E2=86=92</span><span class=3D"canvas-transform-to">Living system redesign<=
+/span></div>
+          <div class=3D"canvas-transform" style=3D"margin-top:8px"><span cl=
+ass=3D"canvas-transform-from">Isolated problem-solving</span><span class=3D=
+"canvas-transform-arrow">=E2=86=92</span><span class=3D"canvas-transform-to=
+">Collective intelligence + accountability</span></div>
+        </div>
+      </div>
+    </div>
+    <div class=3D"canvas-grid-wide">
+      <div class=3D"canvas-cell">
+        <span class=3D"canvas-field-label">Key Activities + Resources</span=
+>
+        <span class=3D"canvas-field-label-alt">How we work</span>
+        <div class=3D"canvas-field-value"><ul><li>Monthly cohort sessions (=
+2.5h) over 6 months</li><li>Case clinics and real business challenges</li><=
+li>ESSENSE frameworks, templates, diagnostics</li><li>Peer accountability a=
+nd community moderation</li><li>Miro boards and worksheets</li></ul></div>
+      </div>
+      <div class=3D"canvas-cell">
+        <span class=3D"canvas-field-label">Revenue Streams</span>
+        <span class=3D"canvas-field-label-alt">Life-value exchange</span>
+        <div class=3D"canvas-field-value"><ul><li>=C2=A3660 per participant=
+ (=C2=A3110 =C3=97 6 sessions)</li><li>Break-even: 11 participants</li><li>=
+25 participants =E2=86=92 =C2=A39,666 profit (target 2026)</li><li>30 parti=
+cipants =E2=86=92 =C2=A312,966 profit (target 2027)</li><li>2026: 1 cohort =
+=C2=B7 2027=E2=80=932028: 2 cohorts</li></ul></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- =E2=94=80=E2=94=80 SHADOW WORK FOR LEADERS =E2=94=80=E2=94=80 -->
+  <div class=3D"canvas-card" id=3D"canvas-shadow-work">
+    <div class=3D"canvas-title-row">
+      <div class=3D"canvas-prog-title">Shadow Work for Leaders</div>
+      <div class=3D"canvas-prog-meta">In-person retreat =C2=B7 7 days =C2=
+=B7 =C2=A33,750/participant =C2=B7 UK =C2=B7 2026</div>
+    </div>
+    <div class=3D"canvas-grid">
+      <div class=3D"canvas-cell">
+        <span class=3D"canvas-field-label">Customer Segments</span>
+        <span class=3D"canvas-field-label-alt">Who is ready</span>
+        <div class=3D"canvas-field-value"><ul><li>Founders and executives s=
+eeking embodied transformation</li><li>Leaders needing reset and breakthrou=
+gh</li><li>Those who have done cognitive work but not somatic integration</=
+li></ul></div>
+      </div>
+      <div class=3D"canvas-cell">
+        <span class=3D"canvas-field-label">Problem / Pain</span>
+        <span class=3D"canvas-field-label-alt">The tension they carry</span=
+>
+        <div class=3D"canvas-field-value">Many leadership patterns and orga=
+nisational dysfunctions originate in unconscious psychological structures. =
+Without confronting these, leaders unconsciously recreate fragmentation, co=
+ntrol patterns, and burnout.</div>
+      </div>
+      <div class=3D"canvas-cell">
+        <span class=3D"canvas-field-label">Value Proposition</span>
+        <span class=3D"canvas-field-label-alt">The transformation offered</=
+span>
+        <div class=3D"canvas-field-value">
+          <div class=3D"canvas-transform"><span class=3D"canvas-transform-f=
+rom">Unintegrated shadow driving decisions</span><span class=3D"canvas-tran=
+sform-arrow">=E2=86=92</span><span class=3D"canvas-transform-to">Embodied m=
+aturity + clear leadership</span></div>
+          <div class=3D"canvas-transform" style=3D"margin-top:8px"><span cl=
+ass=3D"canvas-transform-from">Reactive, pattern-driven</span><span class=3D=
+"canvas-transform-arrow">=E2=86=92</span><span class=3D"canvas-transform-to=
+">Choosing from wholeness</span></div>
+        </div>
+      </div>
+    </div>
+    <div class=3D"canvas-grid-wide">
+      <div class=3D"canvas-cell">
+        <span class=3D"canvas-field-label">Key Activities + Method</span>
+        <span class=3D"canvas-field-label-alt">How we work</span>
+        <div class=3D"canvas-field-value"><ul><li>Nature-based 7-day immers=
+ion, UK</li><li>Shadow integration and inner operating system work</li><li>=
+Somatic practices, breathwork, group process</li><li>Certified Shadow Work =
+practitioners + psychological safety</li><li>Pre-work + post-retreat integr=
+ation support</li><li>Small group: 10=E2=80=9316 participants</li></ul></di=
+v>
+      </div>
+      <div class=3D"canvas-cell">
+        <span class=3D"canvas-field-label">Revenue Streams</span>
+        <span class=3D"canvas-field-label-alt">Life-value exchange</span>
+        <div class=3D"canvas-field-value"><ul><li>=C2=A33,750 per participa=
+nt (all-inclusive)</li><li>Break-even: 9 participants</li><li>12 participan=
+ts =E2=86=92 =C2=A311,980 profit (27% margin)</li><li>14 participants =E2=
+=86=92 =C2=A319,480 profit (37% margin)</li><li>2026=E2=80=932028: 2 retrea=
+ts/year</li></ul></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- =E2=94=80=E2=94=80 LEADERSHIP ESSENCE RETREAT =E2=94=80=E2=94=80 -->
+  <div class=3D"canvas-card" id=3D"canvas-leadership-retreat">
+    <div class=3D"canvas-title-row">
+      <div class=3D"canvas-prog-title">Leadership Essence Retreat</div>
+      <div class=3D"canvas-prog-meta">In-person =C2=B7 5 days =C2=B7 UK =C2=
+=B7 2026</div>
+    </div>
+    <div class=3D"canvas-grid">
+      <div class=3D"canvas-cell">
+        <span class=3D"canvas-field-label">Customer Segments</span>
+        <span class=3D"canvas-field-label-alt">Who is ready</span>
+        <div class=3D"canvas-field-value"><ul><li>Founders and senior execu=
+tives at a leadership threshold</li><li>Leaders seeking deeper coherence be=
+tween inner and outer</li><li>Those ready for multi-day developmental immer=
+sion</li></ul></div>
+      </div>
+      <div class=3D"canvas-cell">
+        <span class=3D"canvas-field-label">Problem / Pain</span>
+        <span class=3D"canvas-field-label-alt">The tension they carry</span=
+>
+        <div class=3D"canvas-field-value">Leaders have built external succe=
+ss but feel disconnected from their deeper identity and purpose. Daily prof=
+essional life offers no space for the depth of reflection that leadership t=
+ransformation requires.</div>
+      </div>
+      <div class=3D"canvas-cell">
+        <span class=3D"canvas-field-label">Value Proposition</span>
+        <span class=3D"canvas-field-label-alt">The transformation offered</=
+span>
+        <div class=3D"canvas-field-value">
+          <div class=3D"canvas-transform"><span class=3D"canvas-transform-f=
+rom">Success without coherence</span><span class=3D"canvas-transform-arrow"=
+>=E2=86=92</span><span class=3D"canvas-transform-to">Inner maturity + regen=
+erative leadership</span></div>
+          <div class=3D"canvas-transform" style=3D"margin-top:8px"><span cl=
+ass=3D"canvas-transform-from">Performing leadership</span><span class=3D"ca=
+nvas-transform-arrow">=E2=86=92</span><span class=3D"canvas-transform-to">L=
+eading from essence</span></div>
+        </div>
+      </div>
+    </div>
+    <div class=3D"canvas-grid-wide">
+      <div class=3D"canvas-cell">
+        <span class=3D"canvas-field-label">Key Activities + Method</span>
+        <span class=3D"canvas-field-label-alt">How we work</span>
+        <div class=3D"canvas-field-value"><ul><li>5-day nature-based retrea=
+t, UK</li><li>Inner maturity and regenerative leadership development</li><l=
+i>Guest contributors and experiential facilitation</li><li>Individual and g=
+roup process work</li><li>Pre-work + post-retreat integration</li></ul></di=
+v>
+      </div>
+      <div class=3D"canvas-cell">
+        <span class=3D"canvas-field-label">Revenue + Pathway</span>
+        <span class=3D"canvas-field-label-alt">Life-value exchange =C2=B7 W=
+hat comes next</span>
+        <div class=3D"canvas-field-value"><ul><li>Pricing TBD</li><li>Leads=
+ to: Individual Journey, Business Redesign Lab, Business Alchemy</li><li>20=
+26: 1 retreat =C2=B7 2027: 1 retreat =C2=B7 2028: 2 retreats</li></ul></div=
+>
+      </div>
+    </div>
+  </div>
+
+  <!-- =E2=94=80=E2=94=80 FEMININE SHADOW JOURNEY =E2=94=80=E2=94=80 -->
+  <div class=3D"canvas-card" id=3D"canvas-feminine-shadow">
+    <div class=3D"canvas-title-row">
+      <div class=3D"canvas-prog-title">Feminine Shadow Journey</div>
+      <div class=3D"canvas-prog-meta">In-person retreat =C2=B7 6 days =C2=
+=B7 42 Acres Somerset UK =C2=B7 18=E2=80=9324 May 2026</div>
+    </div>
+    <div class=3D"canvas-grid">
+      <div class=3D"canvas-cell">
+        <span class=3D"canvas-field-label">Customer Segments</span>
+        <span class=3D"canvas-field-label-alt">Who is ready</span>
+        <div class=3D"canvas-field-value"><ul><li>Women founders and execut=
+ives feeling muted, flat, disconnected</li><li>Women leaders holding everyt=
+hing together but feeling tired inside</li><li>Women seeking to reclaim the=
+ir emotional truth and inner power</li><li>Small intimate group: 8=E2=80=93=
+12 women</li></ul></div>
+      </div>
+      <div class=3D"canvas-cell">
+        <span class=3D"canvas-field-label">Problem / Pain</span>
+        <span class=3D"canvas-field-label-alt">The tension they carry</span=
+>
+        <div class=3D"canvas-field-value">Women in leadership have learned =
+to suppress, control, please, and endure. Shadow dynamics drive leadership =
+patterns unconsciously. There is no space to feel what usually gets pushed =
+away.</div>
+      </div>
+      <div class=3D"canvas-cell">
+        <span class=3D"canvas-field-label">Value Proposition</span>
+        <span class=3D"canvas-field-label-alt">The transformation offered</=
+span>
+        <div class=3D"canvas-field-value">
+          <div class=3D"canvas-transform"><span class=3D"canvas-transform-f=
+rom">Suppressed, performing</span><span class=3D"canvas-transform-arrow">=
+=E2=86=92</span><span class=3D"canvas-transform-to">Whole, reclaimed, alive=
+</span></div>
+          <div class=3D"canvas-transform" style=3D"margin-top:8px"><span cl=
+ass=3D"canvas-transform-from">Managing emotions</span><span class=3D"canvas=
+-transform-arrow">=E2=86=92</span><span class=3D"canvas-transform-to">Emoti=
+ons as doorways to power</span></div>
+        </div>
+      </div>
+    </div>
+    <div class=3D"canvas-grid-wide">
+      <div class=3D"canvas-cell">
+        <span class=3D"canvas-field-label">Key Activities + Method</span>
+        <span class=3D"canvas-field-label-alt">How we work =E2=80=94 Four G=
+ateways</span>
+        <div class=3D"canvas-field-value"><ul><li>6-day immersive retreat =
+=C2=B7 42 Acres, Somerset UK</li><li>Four gateways: Fear =C2=B7 Anger =C2=
+=B7 Grief =C2=B7 Joy</li><li>Deep shadow work and emotional truth integrati=
+on</li><li>Somatic practices =E2=80=94 body-based, not just talking</li><li=
+>Sauna and cold water immersion for nervous system reset</li><li>Nature as =
+container: ocean, earth, forest, silence</li><li>Certified Shadow Work prac=
+titioners</li></ul></div>
+      </div>
+      <div class=3D"canvas-cell">
+        <span class=3D"canvas-field-label">Revenue + Partners</span>
+        <span class=3D"canvas-field-label-alt">Life-value exchange =C2=B7 W=
+ho we co-create with</span>
+        <div class=3D"canvas-field-value"><ul><li>Pricing TBD (similar to S=
+hadow Work for Leaders model)</li><li>Facilitators: Inessa Golubova, Nicola=
+ Kurk, Liz</li><li>Venue: 42 Acres, Somerset UK</li><li>Leads to: Individua=
+l Journey, Re/Sense the Feminine, Business Alchemy</li></ul></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- =E2=94=80=E2=94=80 ESSENSE INDIVIDUAL JOURNEY =E2=94=80=E2=94=80 -->
+  <div class=3D"canvas-card" id=3D"canvas-individual-journey">
+    <div class=3D"canvas-title-row">
+      <div class=3D"canvas-prog-title">ESSENSE Individual Journey</div>
+      <div class=3D"canvas-prog-meta">1:1 coaching =C2=B7 1 year =C2=B7 Pre=
+mium =C2=B7 Limited capacity =C2=B7 2026</div>
+    </div>
+    <div class=3D"canvas-grid">
+      <div class=3D"canvas-cell">
+        <span class=3D"canvas-field-label">Customer Segments</span>
+        <span class=3D"canvas-field-label-alt">Who is ready</span>
+        <div class=3D"canvas-field-value"><ul><li>Founders and executives n=
+eeding privacy and personalisation</li><li>C-suite leaders who won't join a=
+ cohort</li><li>Leaders integrating health and developmental coaching</li><=
+li>Those undergoing major life and organisational transitions</li></ul></di=
+v>
+      </div>
+      <div class=3D"canvas-cell">
+        <span class=3D"canvas-field-label">Problem / Pain</span>
+        <span class=3D"canvas-field-label-alt">The tension they carry</span=
+>
+        <div class=3D"canvas-field-value">Leaders undergoing deep personal =
+transformation lack sustained, high-quality developmental support integrati=
+ng psychological growth, leadership maturity, and strategic decision-making=
+. Inner evolution outpaces external adaptation.</div>
+      </div>
+      <div class=3D"canvas-cell">
+        <span class=3D"canvas-field-label">Value Proposition</span>
+        <span class=3D"canvas-field-label-alt">The transformation offered</=
+span>
+        <div class=3D"canvas-field-value">
+          <div class=3D"canvas-transform"><span class=3D"canvas-transform-f=
+rom">Inner growth without integration</span><span class=3D"canvas-transform=
+-arrow">=E2=86=92</span><span class=3D"canvas-transform-to">Leadership matu=
+rity + aligned decisions</span></div>
+          <div class=3D"canvas-transform" style=3D"margin-top:8px"><span cl=
+ass=3D"canvas-transform-from">Isolated in complexity</span><span class=3D"c=
+anvas-transform-arrow">=E2=86=92</span><span class=3D"canvas-transform-to">=
+Supported developmental arc</span></div>
+        </div>
+      </div>
+    </div>
+    <div class=3D"canvas-grid-wide">
+      <div class=3D"canvas-cell">
+        <span class=3D"canvas-field-label">Key Activities + Resources</span=
+>
+        <span class=3D"canvas-field-label-alt">How we work</span>
+        <div class=3D"canvas-field-value"><ul><li>1:1 coaching sessions (2 =
+per month)</li><li>Personalised planning and tracking</li><li>Integration s=
+upport between sessions</li><li>Assessment tools and protocols (GeneKeys, E=
+nneagram, LDP)</li><li>ESSENSE founders + 3 permanent external coach partne=
+rs</li></ul></div>
+      </div>
+      <div class=3D"canvas-cell">
+        <span class=3D"canvas-field-label">Revenue Streams</span>
+        <span class=3D"canvas-field-label-alt">Life-value exchange</span>
+        <div class=3D"canvas-field-value"><ul><li>=C2=A3500 per session =C2=
+=B7 10 sessions =3D =C2=A35,000 (6 months)</li><li>20 sessions =3D =C2=A310=
+,000 (1 year)</li><li>External coaches: 60% coach / 40% ESSENSE</li><li>10 =
+clients =C3=97 =C2=A310,000 =E2=86=92 ESSENSE net: ~=C2=A336,873/year</li><=
+li>Founders keep 100% of their own client fees</li></ul></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- =E2=94=80=E2=94=80 MINI-BOARD =E2=94=80=E2=94=80 -->
+  <div class=3D"canvas-card" id=3D"canvas-mini-board">
+    <div class=3D"canvas-title-row">
+      <div class=3D"canvas-prog-title">Mini-Board with ESSENSE</div>
+      <div class=3D"canvas-prog-meta">1:1 strategic advisory =C2=B7 Year-lo=
+ng =C2=B7 =C2=A320,000/client =C2=B7 Founders only =C2=B7 2026</div>
+    </div>
+    <div class=3D"canvas-grid">
+      <div class=3D"canvas-cell">
+        <span class=3D"canvas-field-label">Customer Segments</span>
+        <span class=3D"canvas-field-label-alt">Who is ready</span>
+        <div class=3D"canvas-field-value"><ul><li>Founders and family busin=
+ess owners</li><li>CEOs with =C2=A31=E2=80=9310m+ revenue</li><li>Leaders w=
+ho want an "external board of wisdom" not an executive coach</li><li>Those =
+navigating complex decisions under pressure</li></ul></div>
+      </div>
+      <div class=3D"canvas-cell">
+        <span class=3D"canvas-field-label">Problem / Pain</span>
+        <span class=3D"canvas-field-label-alt">The tension they carry</span=
+>
+        <div class=3D"canvas-field-value">Founders carry immense responsibi=
+lity without access to a space for clear thinking, deep reflection, and mea=
+ningful dialogue. Most advisory relationships focus on execution, leaving n=
+o room for sensemaking or the deeper questions shaping the future.</div>
+      </div>
+      <div class=3D"canvas-cell">
+        <span class=3D"canvas-field-label">Value Proposition</span>
+        <span class=3D"canvas-field-label-alt">The transformation offered</=
+span>
+        <div class=3D"canvas-field-value">
+          <div class=3D"canvas-transform"><span class=3D"canvas-transform-f=
+rom">Strategic isolation</span><span class=3D"canvas-transform-arrow">=E2=
+=86=92</span><span class=3D"canvas-transform-to">Systemic clarity + coheren=
+t action</span></div>
+          <div class=3D"canvas-transform" style=3D"margin-top:8px"><span cl=
+ass=3D"canvas-transform-from">Deciding from urgency</span><span class=3D"ca=
+nvas-transform-arrow">=E2=86=92</span><span class=3D"canvas-transform-to">L=
+eading from integrated awareness</span></div>
+        </div>
+      </div>
+    </div>
+    <div class=3D"canvas-grid-wide">
+      <div class=3D"canvas-cell">
+        <span class=3D"canvas-field-label">Key Activities + Method</span>
+        <span class=3D"canvas-field-label-alt">How we work =E2=80=94 whole-=
+system stewardship</span>
+        <div class=3D"canvas-field-value"><ul><li>Monthly full-day session =
+(in-person or hybrid)</li><li>Strategy review, shadow work, decisions, syst=
+ems design</li><li>Integration of psychotherapy, adult development, leaders=
+hip strategy</li><li>12-month container =E2=80=94 high trust, retained, lon=
+g-term</li><li>2 ESSENSE founders as mentors and strategic partners</li></u=
+l></div>
+      </div>
+      <div class=3D"canvas-cell">
+        <span class=3D"canvas-field-label">Revenue Streams</span>
+        <span class=3D"canvas-field-label-alt">Life-value exchange</span>
+        <div class=3D"canvas-field-value"><ul><li>=C2=A320,000 per client p=
+er year</li><li>Break-even: 1 client</li><li>Total ops cost: =C2=A3542/clie=
+nt</li><li>2 clients =E2=86=92 =C2=A340,000 =C2=B7 4 clients =E2=86=92 =C2=
+=A380,000</li><li>Referral / network / flagship alumni / retreats pipeline<=
+/li></ul></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- =E2=94=80=E2=94=80 BUSINESS ALCHEMY =E2=94=80=E2=94=80 -->
+  <div class=3D"canvas-card" id=3D"canvas-business-alchemy">
+    <div class=3D"canvas-title-row">
+      <div class=3D"canvas-prog-title">Business Alchemy</div>
+      <div class=3D"canvas-prog-meta">Flagship =C2=B7 13-month cohort =C2=
+=B7 =C2=A314,500 =C2=B7 Launches January 2027 =C2=B7 Applications open 2026=
+</div>
+    </div>
+    <div class=3D"canvas-grid">
+      <div class=3D"canvas-cell">
+        <span class=3D"canvas-field-label">Customer Segments</span>
+        <span class=3D"canvas-field-label-alt">Who is ready =E2=80=94 the p=
+erson at the threshold</span>
+        <div class=3D"canvas-field-value"><ul><li>Successful founders and C=
+EOs sensing fragmentation</li><li>Senior executives ready for deep identity=
+-level transformation</li><li>Purpose-driven business leaders outgrowing ex=
+tractive models</li><li>ESSENSE alumni ready for the full arc</li><li>Those=
+ who feel: "I've built success =E2=80=94 but something essential is missing=
+"</li></ul></div>
+      </div>
+      <div class=3D"canvas-cell">
+        <span class=3D"canvas-field-label">Problem / Pain</span>
+        <span class=3D"canvas-field-label-alt">The tension they carry =E2=
+=80=94 what brought them here</span>
+        <div class=3D"canvas-field-value">Successful founders reach a point=
+ where external success no longer provides clarity, meaning, or direction. =
+They experience fragmentation between their inner evolution and the busines=
+s they have built. Traditional business education addresses optimisation, n=
+ot the deeper source from which leadership and culture emerge.</div>
+      </div>
+      <div class=3D"canvas-cell">
+        <span class=3D"canvas-field-label">Value Proposition</span>
+        <span class=3D"canvas-field-label-alt">The transformation offered =
+=E2=80=94 from =E2=86=92 to</span>
+        <div class=3D"canvas-field-value">
+          <div class=3D"canvas-transform"><span class=3D"canvas-transform-f=
+rom">Success without coherence</span><span class=3D"canvas-transform-arrow"=
+>=E2=86=92</span><span class=3D"canvas-transform-to">Creator=E2=80=93Creati=
+on alignment</span></div>
+          <div class=3D"canvas-transform" style=3D"margin-top:6px"><span cl=
+ass=3D"canvas-transform-from">Extraction-based business</span><span class=
+=3D"canvas-transform-arrow">=E2=86=92</span><span class=3D"canvas-transform=
+-to">Love, stewardship, generative creation</span></div>
+          <div class=3D"canvas-transform" style=3D"margin-top:6px"><span cl=
+ass=3D"canvas-transform-from">New strategy</span><span class=3D"canvas-tran=
+sform-arrow">=E2=86=92</span><span class=3D"canvas-transform-to">Rebirth =
+=E2=80=94 enterprise as living system</span></div>
+        </div>
+      </div>
+    </div>
+    <div class=3D"canvas-grid">
+      <div class=3D"canvas-cell">
+        <span class=3D"canvas-field-label">Key Activities</span>
+        <span class=3D"canvas-field-label-alt">How we work =E2=80=94 method=
+ology and container</span>
+        <div class=3D"canvas-field-value"><ul><li>2-month pre-programme (Ge=
+neKeys, LDP, Enneagram)</li><li>7 modules over 13 months =E2=80=94 alchemic=
+al arc</li><li>5 residential retreats (21 days total, nature-based)</li><li=
+>Module themes: Foundations =E2=86=92 Nature =E2=86=92 Human Place =E2=86=
+=92 Lovemaking =E2=86=92 Time =E2=86=92 Sustaining =E2=86=92 Manifestation<=
+/li><li>Individual + group + somatic work throughout</li><li>Closing: Eiste=
+ddfod =E2=80=94 feast of Creativity and Truth</li></ul></div>
+      </div>
+      <div class=3D"canvas-cell">
+        <span class=3D"canvas-field-label">Channels</span>
+        <span class=3D"canvas-field-label-alt">How they find us =E2=80=94 r=
+esonance pathways</span>
+        <div class=3D"canvas-field-value"><ul><li>Talks =E2=86=92 Lab =E2=
+=86=92 Flagship pipeline</li><li>Podcast and Book Club audience</li><li>Ret=
+reat participants graduating to flagship</li><li>Referrals from alumni and =
+faculty</li><li>Thought leadership and application funnel</li></ul></div>
+      </div>
+      <div class=3D"canvas-cell">
+        <span class=3D"canvas-field-label">Key Partners</span>
+        <span class=3D"canvas-field-label-alt">Who we co-create with</span>
+        <div class=3D"canvas-field-value"><ul><li>Retreat venues and reside=
+ntial centres</li><li>Guest faculty and senior experts</li><li>Operations a=
+nd logistics partners</li><li>Production support</li><li>Alumni and referra=
+l network</li></ul></div>
+      </div>
+    </div>
+    <div class=3D"canvas-grid-wide">
+      <div class=3D"canvas-cell">
+        <span class=3D"canvas-field-label">Key Resources</span>
+        <span class=3D"canvas-field-label-alt">What we steward =E2=80=94 fa=
+culty, space, time</span>
+        <div class=3D"canvas-field-value"><ul><li>ESSENSE IP, curriculum, a=
+nd methodology</li><li>Founder facilitation and intellectual capital</li><l=
+i>Faculty team and retreat design capability</li><li>Community platform and=
+ programme management</li><li>Assessment tools: GeneKeys, Enneagram, Vertic=
+al Development Profile</li></ul></div>
+      </div>
+      <div class=3D"canvas-cell">
+        <span class=3D"canvas-field-label">Revenue Streams</span>
+        <span class=3D"canvas-field-label-alt">Life-value exchange =E2=80=
+=94 investment and pricing</span>
+        <div class=3D"canvas-field-value"><ul><li>=C2=A314,500 per particip=
+ant (all-inclusive option)</li><li>Break-even: 14=E2=80=9318 participants (=
+depending on model)</li><li>20 participants =E2=86=92 =C2=A390,578 profit (=
+31% margin)</li><li>24 participants =E2=86=92 =C2=A3148,578 profit (43% mar=
+gin)</li><li>2027: first cohort =C2=B7 2028: second cohort</li></ul></div>
+      </div>
+    </div>
+    <div class=3D"canvas-grid-full">
+      <div class=3D"canvas-cell" style=3D"background:var(--ink)">
+        <span class=3D"canvas-field-label-dark">Cost Structure</span>
+        <span class=3D"canvas-field-label-alt-dark">What sustains this =E2=
+=80=94 operational foundations</span>
+        <div class=3D"canvas-field-value-dark">Accommodation =C2=A351,700 =
+=C2=B7 Speaker delivery =C2=A3126,000 =C2=B7 Producer =C2=A312,207 =C2=B7 O=
+perations =C2=A39,165 =C2=B7 Tools =C2=A3350 =E2=86=92 <strong>Total ~=C2=
+=A3199,422 per cohort</strong></div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /canvas-panel -->
 
   <!-- FOOTER -->
-  <div class="page-footer">
-    <div style="display:flex;align-items:center;gap:10px">
-      <svg width="20" height="20" viewBox="0 0 40 40" fill="none"><path d="M20 20 C20 20 20 12 12 12 C4 12 4 20 4 20 C4 28 12 32 20 32 C28 32 36 24 36 16 C36 8 28 4 20 4 C10 4 2 12 2 22" stroke="#1C1C1A" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>
-      <div class="footer-school">ESSENSE<br>BUSINESS SCHOOL</div>
+  <div class=3D"page-footer">
+    <div style=3D"display:flex;align-items:center;gap:10px">
+      <svg width=3D"20" height=3D"20" viewBox=3D"0 0 40 40" fill=3D"none"><=
+path d=3D"M20 20 C20 20 20 12 12 12 C4 12 4 20 4 20 C4 28 12 32 20 32 C28 3=
+2 36 24 36 16 C36 8 28 4 20 4 C10 4 2 12 2 22" stroke=3D"#1C1C1A" stroke-wi=
+dth=3D"1.5" fill=3D"none" stroke-linecap=3D"round"></path></svg>
+      <div class=3D"footer-school">ESSENSE<br>BUSINESS SCHOOL</div>
     </div>
-    <div class="footer-tagline">Re—sense · Re—fine · Re—design · Re—source</div>
-    <div class="footer-meta">Programme Architecture · March 2026 · Website launch April 2026</div>
+    <div class=3D"footer-tagline">Re=E2=80=94sense =C2=B7 Re=E2=80=94fine =
+=C2=B7 Re=E2=80=94design =C2=B7 Re=E2=80=94source</div>
+    <div class=3D"footer-meta">Programme Architecture =C2=B7 March 2026 =C2=
+=B7 Website launch April 2026</div>
   </div>
 
 </div><!-- /main -->
 
-<script>
-let currentPillar = 'sense';
-let editMode = false;
 
-function showPillar(id, btn) {
-  document.querySelectorAll('.pillar-panel').forEach(p => p.classList.remove('active'));
-  document.querySelectorAll('.targets-panel').forEach(p => p.classList.remove('active'));
-  document.querySelectorAll('.pillar-tab').forEach(t => t.classList.remove('active'));
-  document.querySelectorAll('.nav-targets-btn').forEach(b => b.classList.remove('active'));
-  document.getElementById('panel-' + id).classList.add('active');
-  btn.classList.add('active');
-  currentPillar = id;
-}
-function showTargets(btn) {
-  document.querySelectorAll('.pillar-panel').forEach(p => p.classList.remove('active'));
-  document.querySelectorAll('.targets-panel').forEach(p => p.classList.remove('active'));
-  document.querySelectorAll('.pillar-tab').forEach(t => t.classList.remove('active'));
-  document.querySelectorAll('.nav-targets-btn').forEach(b => b.classList.remove('active'));
-  document.getElementById('panel-targets').classList.add('active');
-  btn.classList.add('active');
-}
-function toggleEntry(el) {
-  if (editMode) return; // don't collapse cards while editing
-  el.classList.toggle('expanded');
-}
-function setMode(mode, btn) {
-  document.querySelectorAll('.mode-btn').forEach(b => b.classList.remove('active'));
-  btn.classList.add('active');
-  mode === 'print' ? document.body.classList.add('print-mode') : document.body.classList.remove('print-mode');
+
+
+</body></html>
+------MultipartBoundary--JqwY4qIgVEyQkRdSd3MZy4LQeGYqZ3BQnAXyxWN4He----
+Content-Type: text/css
+Content-Transfer-Encoding: quoted-printable
+Content-Location: https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Playfair+Display+SC:wght@400&family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&display=swap
+
+@charset "utf-8";
+
+@font-face { font-family: "EB Garamond"; font-style: italic; font-weight: 4=
+00; font-display: swap; src: url("https://fonts.gstatic.com/s/ebgaramond/v3=
+2/SlGWmQSNjdsmc35JDF1K5GRweDY1ZyHKpWiGIg.woff2") format("woff2"); unicode-r=
+ange: U+460-52F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F=
+; }
+
+@font-face { font-family: "EB Garamond"; font-style: italic; font-weight: 4=
+00; font-display: swap; src: url("https://fonts.gstatic.com/s/ebgaramond/v3=
+2/SlGWmQSNjdsmc35JDF1K5GRweD81ZyHKpWiGIg.woff2") format("woff2"); unicode-r=
+ange: U+301, U+400-45F, U+490-491, U+4B0-4B1, U+2116; }
+
+@font-face { font-family: "EB Garamond"; font-style: italic; font-weight: 4=
+00; font-display: swap; src: url("https://fonts.gstatic.com/s/ebgaramond/v3=
+2/SlGWmQSNjdsmc35JDF1K5GRweDc1ZyHKpWiGIg.woff2") format("woff2"); unicode-r=
+ange: U+1F00-1FFF; }
+
+@font-face { font-family: "EB Garamond"; font-style: italic; font-weight: 4=
+00; font-display: swap; src: url("https://fonts.gstatic.com/s/ebgaramond/v3=
+2/SlGWmQSNjdsmc35JDF1K5GRweDg1ZyHKpWiGIg.woff2") format("woff2"); unicode-r=
+ange: U+370-377, U+37A-37F, U+384-38A, U+38C, U+38E-3A1, U+3A3-3FF; }
+
+@font-face { font-family: "EB Garamond"; font-style: italic; font-weight: 4=
+00; font-display: swap; src: url("https://fonts.gstatic.com/s/ebgaramond/v3=
+2/SlGWmQSNjdsmc35JDF1K5GRweDQ1ZyHKpWiGIg.woff2") format("woff2"); unicode-r=
+ange: U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+3=
+00-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB; }
+
+@font-face { font-family: "EB Garamond"; font-style: italic; font-weight: 4=
+00; font-display: swap; src: url("https://fonts.gstatic.com/s/ebgaramond/v3=
+2/SlGWmQSNjdsmc35JDF1K5GRweDU1ZyHKpWiGIg.woff2") format("woff2"); unicode-r=
+ange: U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, =
+U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-2=
+0C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+
+@font-face { font-family: "EB Garamond"; font-style: italic; font-weight: 4=
+00; font-display: swap; src: url("https://fonts.gstatic.com/s/ebgaramond/v3=
+2/SlGWmQSNjdsmc35JDF1K5GRweDs1ZyHKpWg.woff2") format("woff2"); unicode-rang=
+e: U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, =
+U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF,=
+ U+FFFD; }
+
+@font-face { font-family: "EB Garamond"; font-style: italic; font-weight: 5=
+00; font-display: swap; src: url("https://fonts.gstatic.com/s/ebgaramond/v3=
+2/SlGWmQSNjdsmc35JDF1K5GRweDY1ZyHKpWiGIg.woff2") format("woff2"); unicode-r=
+ange: U+460-52F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F=
+; }
+
+@font-face { font-family: "EB Garamond"; font-style: italic; font-weight: 5=
+00; font-display: swap; src: url("https://fonts.gstatic.com/s/ebgaramond/v3=
+2/SlGWmQSNjdsmc35JDF1K5GRweD81ZyHKpWiGIg.woff2") format("woff2"); unicode-r=
+ange: U+301, U+400-45F, U+490-491, U+4B0-4B1, U+2116; }
+
+@font-face { font-family: "EB Garamond"; font-style: italic; font-weight: 5=
+00; font-display: swap; src: url("https://fonts.gstatic.com/s/ebgaramond/v3=
+2/SlGWmQSNjdsmc35JDF1K5GRweDc1ZyHKpWiGIg.woff2") format("woff2"); unicode-r=
+ange: U+1F00-1FFF; }
+
+@font-face { font-family: "EB Garamond"; font-style: italic; font-weight: 5=
+00; font-display: swap; src: url("https://fonts.gstatic.com/s/ebgaramond/v3=
+2/SlGWmQSNjdsmc35JDF1K5GRweDg1ZyHKpWiGIg.woff2") format("woff2"); unicode-r=
+ange: U+370-377, U+37A-37F, U+384-38A, U+38C, U+38E-3A1, U+3A3-3FF; }
+
+@font-face { font-family: "EB Garamond"; font-style: italic; font-weight: 5=
+00; font-display: swap; src: url("https://fonts.gstatic.com/s/ebgaramond/v3=
+2/SlGWmQSNjdsmc35JDF1K5GRweDQ1ZyHKpWiGIg.woff2") format("woff2"); unicode-r=
+ange: U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+3=
+00-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB; }
+
+@font-face { font-family: "EB Garamond"; font-style: italic; font-weight: 5=
+00; font-display: swap; src: url("https://fonts.gstatic.com/s/ebgaramond/v3=
+2/SlGWmQSNjdsmc35JDF1K5GRweDU1ZyHKpWiGIg.woff2") format("woff2"); unicode-r=
+ange: U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, =
+U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-2=
+0C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+
+@font-face { font-family: "EB Garamond"; font-style: italic; font-weight: 5=
+00; font-display: swap; src: url("https://fonts.gstatic.com/s/ebgaramond/v3=
+2/SlGWmQSNjdsmc35JDF1K5GRweDs1ZyHKpWg.woff2") format("woff2"); unicode-rang=
+e: U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, =
+U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF,=
+ U+FFFD; }
+
+@font-face { font-family: "EB Garamond"; font-style: normal; font-weight: 4=
+00; font-display: swap; src: url("https://fonts.gstatic.com/s/ebgaramond/v3=
+2/SlGUmQSNjdsmc35JDF1K5GR4SDk_YAPIlWk.woff2") format("woff2"); unicode-rang=
+e: U+460-52F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F; }
+
+@font-face { font-family: "EB Garamond"; font-style: normal; font-weight: 4=
+00; font-display: swap; src: url("https://fonts.gstatic.com/s/ebgaramond/v3=
+2/SlGUmQSNjdsmc35JDF1K5GRxSDk_YAPIlWk.woff2") format("woff2"); unicode-rang=
+e: U+301, U+400-45F, U+490-491, U+4B0-4B1, U+2116; }
+
+@font-face { font-family: "EB Garamond"; font-style: normal; font-weight: 4=
+00; font-display: swap; src: url("https://fonts.gstatic.com/s/ebgaramond/v3=
+2/SlGUmQSNjdsmc35JDF1K5GR5SDk_YAPIlWk.woff2") format("woff2"); unicode-rang=
+e: U+1F00-1FFF; }
+
+@font-face { font-family: "EB Garamond"; font-style: normal; font-weight: 4=
+00; font-display: swap; src: url("https://fonts.gstatic.com/s/ebgaramond/v3=
+2/SlGUmQSNjdsmc35JDF1K5GR2SDk_YAPIlWk.woff2") format("woff2"); unicode-rang=
+e: U+370-377, U+37A-37F, U+384-38A, U+38C, U+38E-3A1, U+3A3-3FF; }
+
+@font-face { font-family: "EB Garamond"; font-style: normal; font-weight: 4=
+00; font-display: swap; src: url("https://fonts.gstatic.com/s/ebgaramond/v3=
+2/SlGUmQSNjdsmc35JDF1K5GR6SDk_YAPIlWk.woff2") format("woff2"); unicode-rang=
+e: U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-=
+301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB; }
+
+@font-face { font-family: "EB Garamond"; font-style: normal; font-weight: 4=
+00; font-display: swap; src: url("https://fonts.gstatic.com/s/ebgaramond/v3=
+2/SlGUmQSNjdsmc35JDF1K5GR7SDk_YAPIlWk.woff2") format("woff2"); unicode-rang=
+e: U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+3=
+29, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0=
+, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+
+@font-face { font-family: "EB Garamond"; font-style: normal; font-weight: 4=
+00; font-display: swap; src: url("https://fonts.gstatic.com/s/ebgaramond/v3=
+2/SlGUmQSNjdsmc35JDF1K5GR1SDk_YAPI.woff2") format("woff2"); unicode-range: =
+U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+3=
+29, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+=
+FFFD; }
+
+@font-face { font-family: "EB Garamond"; font-style: normal; font-weight: 5=
+00; font-display: swap; src: url("https://fonts.gstatic.com/s/ebgaramond/v3=
+2/SlGUmQSNjdsmc35JDF1K5GR4SDk_YAPIlWk.woff2") format("woff2"); unicode-rang=
+e: U+460-52F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F; }
+
+@font-face { font-family: "EB Garamond"; font-style: normal; font-weight: 5=
+00; font-display: swap; src: url("https://fonts.gstatic.com/s/ebgaramond/v3=
+2/SlGUmQSNjdsmc35JDF1K5GRxSDk_YAPIlWk.woff2") format("woff2"); unicode-rang=
+e: U+301, U+400-45F, U+490-491, U+4B0-4B1, U+2116; }
+
+@font-face { font-family: "EB Garamond"; font-style: normal; font-weight: 5=
+00; font-display: swap; src: url("https://fonts.gstatic.com/s/ebgaramond/v3=
+2/SlGUmQSNjdsmc35JDF1K5GR5SDk_YAPIlWk.woff2") format("woff2"); unicode-rang=
+e: U+1F00-1FFF; }
+
+@font-face { font-family: "EB Garamond"; font-style: normal; font-weight: 5=
+00; font-display: swap; src: url("https://fonts.gstatic.com/s/ebgaramond/v3=
+2/SlGUmQSNjdsmc35JDF1K5GR2SDk_YAPIlWk.woff2") format("woff2"); unicode-rang=
+e: U+370-377, U+37A-37F, U+384-38A, U+38C, U+38E-3A1, U+3A3-3FF; }
+
+@font-face { font-family: "EB Garamond"; font-style: normal; font-weight: 5=
+00; font-display: swap; src: url("https://fonts.gstatic.com/s/ebgaramond/v3=
+2/SlGUmQSNjdsmc35JDF1K5GR6SDk_YAPIlWk.woff2") format("woff2"); unicode-rang=
+e: U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-=
+301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB; }
+
+@font-face { font-family: "EB Garamond"; font-style: normal; font-weight: 5=
+00; font-display: swap; src: url("https://fonts.gstatic.com/s/ebgaramond/v3=
+2/SlGUmQSNjdsmc35JDF1K5GR7SDk_YAPIlWk.woff2") format("woff2"); unicode-rang=
+e: U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+3=
+29, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0=
+, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+
+@font-face { font-family: "EB Garamond"; font-style: normal; font-weight: 5=
+00; font-display: swap; src: url("https://fonts.gstatic.com/s/ebgaramond/v3=
+2/SlGUmQSNjdsmc35JDF1K5GR1SDk_YAPI.woff2") format("woff2"); unicode-range: =
+U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+3=
+29, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+=
+FFFD; }
+
+@font-face { font-family: "Playfair Display"; font-style: italic; font-weig=
+ht: 400; font-display: swap; src: url("https://fonts.gstatic.com/s/playfair=
+display/v40/nuFkD-vYSZviVYUb_rj3ij__anPXDTnohkk7yRZrPJ-M.woff2") format("wo=
+ff2"); unicode-range: U+301, U+400-45F, U+490-491, U+4B0-4B1, U+2116; }
+
+@font-face { font-family: "Playfair Display"; font-style: italic; font-weig=
+ht: 400; font-display: swap; src: url("https://fonts.gstatic.com/s/playfair=
+display/v40/nuFkD-vYSZviVYUb_rj3ij__anPXDTnojUk7yRZrPJ-M.woff2") format("wo=
+ff2"); unicode-range: U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1=
+, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+=
+20AB; }
+
+@font-face { font-family: "Playfair Display"; font-style: italic; font-weig=
+ht: 400; font-display: swap; src: url("https://fonts.gstatic.com/s/playfair=
+display/v40/nuFkD-vYSZviVYUb_rj3ij__anPXDTnojEk7yRZrPJ-M.woff2") format("wo=
+ff2"); unicode-range: U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF=
+, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A=
+0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+
+@font-face { font-family: "Playfair Display"; font-style: italic; font-weig=
+ht: 400; font-display: swap; src: url("https://fonts.gstatic.com/s/playfair=
+display/v40/nuFkD-vYSZviVYUb_rj3ij__anPXDTnogkk7yRZrPA.woff2") format("woff=
+2"); unicode-range: U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2D=
+C, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212=
+, U+2215, U+FEFF, U+FFFD; }
+
+@font-face { font-family: "Playfair Display"; font-style: italic; font-weig=
+ht: 600; font-display: swap; src: url("https://fonts.gstatic.com/s/playfair=
+display/v40/nuFkD-vYSZviVYUb_rj3ij__anPXDTnohkk7yRZrPJ-M.woff2") format("wo=
+ff2"); unicode-range: U+301, U+400-45F, U+490-491, U+4B0-4B1, U+2116; }
+
+@font-face { font-family: "Playfair Display"; font-style: italic; font-weig=
+ht: 600; font-display: swap; src: url("https://fonts.gstatic.com/s/playfair=
+display/v40/nuFkD-vYSZviVYUb_rj3ij__anPXDTnojUk7yRZrPJ-M.woff2") format("wo=
+ff2"); unicode-range: U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1=
+, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+=
+20AB; }
+
+@font-face { font-family: "Playfair Display"; font-style: italic; font-weig=
+ht: 600; font-display: swap; src: url("https://fonts.gstatic.com/s/playfair=
+display/v40/nuFkD-vYSZviVYUb_rj3ij__anPXDTnojEk7yRZrPJ-M.woff2") format("wo=
+ff2"); unicode-range: U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF=
+, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A=
+0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+
+@font-face { font-family: "Playfair Display"; font-style: italic; font-weig=
+ht: 600; font-display: swap; src: url("https://fonts.gstatic.com/s/playfair=
+display/v40/nuFkD-vYSZviVYUb_rj3ij__anPXDTnogkk7yRZrPA.woff2") format("woff=
+2"); unicode-range: U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2D=
+C, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212=
+, U+2215, U+FEFF, U+FFFD; }
+
+@font-face { font-family: "Playfair Display"; font-style: normal; font-weig=
+ht: 400; font-display: swap; src: url("https://fonts.gstatic.com/s/playfair=
+display/v40/nuFiD-vYSZviVYUb_rj3ij__anPXDTjYgEM86xRbPQ.woff2") format("woff=
+2"); unicode-range: U+301, U+400-45F, U+490-491, U+4B0-4B1, U+2116; }
+
+@font-face { font-family: "Playfair Display"; font-style: normal; font-weig=
+ht: 400; font-display: swap; src: url("https://fonts.gstatic.com/s/playfair=
+display/v40/nuFiD-vYSZviVYUb_rj3ij__anPXDTPYgEM86xRbPQ.woff2") format("woff=
+2"); unicode-range: U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, =
+U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20=
+AB; }
+
+@font-face { font-family: "Playfair Display"; font-style: normal; font-weig=
+ht: 400; font-display: swap; src: url("https://fonts.gstatic.com/s/playfair=
+display/v40/nuFiD-vYSZviVYUb_rj3ij__anPXDTLYgEM86xRbPQ.woff2") format("woff=
+2"); unicode-range: U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, =
+U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-=
+20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+
+@font-face { font-family: "Playfair Display"; font-style: normal; font-weig=
+ht: 400; font-display: swap; src: url("https://fonts.gstatic.com/s/playfair=
+display/v40/nuFiD-vYSZviVYUb_rj3ij__anPXDTzYgEM86xQ.woff2") format("woff2")=
+; unicode-range: U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, =
+U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U=
++2215, U+FEFF, U+FFFD; }
+
+@font-face { font-family: "Playfair Display"; font-style: normal; font-weig=
+ht: 600; font-display: swap; src: url("https://fonts.gstatic.com/s/playfair=
+display/v40/nuFiD-vYSZviVYUb_rj3ij__anPXDTjYgEM86xRbPQ.woff2") format("woff=
+2"); unicode-range: U+301, U+400-45F, U+490-491, U+4B0-4B1, U+2116; }
+
+@font-face { font-family: "Playfair Display"; font-style: normal; font-weig=
+ht: 600; font-display: swap; src: url("https://fonts.gstatic.com/s/playfair=
+display/v40/nuFiD-vYSZviVYUb_rj3ij__anPXDTPYgEM86xRbPQ.woff2") format("woff=
+2"); unicode-range: U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, =
+U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20=
+AB; }
+
+@font-face { font-family: "Playfair Display"; font-style: normal; font-weig=
+ht: 600; font-display: swap; src: url("https://fonts.gstatic.com/s/playfair=
+display/v40/nuFiD-vYSZviVYUb_rj3ij__anPXDTLYgEM86xRbPQ.woff2") format("woff=
+2"); unicode-range: U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, =
+U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-=
+20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+
+@font-face { font-family: "Playfair Display"; font-style: normal; font-weig=
+ht: 600; font-display: swap; src: url("https://fonts.gstatic.com/s/playfair=
+display/v40/nuFiD-vYSZviVYUb_rj3ij__anPXDTzYgEM86xQ.woff2") format("woff2")=
+; unicode-range: U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, =
+U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U=
++2215, U+FEFF, U+FFFD; }
+
+@font-face { font-family: "Playfair Display"; font-style: normal; font-weig=
+ht: 700; font-display: swap; src: url("https://fonts.gstatic.com/s/playfair=
+display/v40/nuFiD-vYSZviVYUb_rj3ij__anPXDTjYgEM86xRbPQ.woff2") format("woff=
+2"); unicode-range: U+301, U+400-45F, U+490-491, U+4B0-4B1, U+2116; }
+
+@font-face { font-family: "Playfair Display"; font-style: normal; font-weig=
+ht: 700; font-display: swap; src: url("https://fonts.gstatic.com/s/playfair=
+display/v40/nuFiD-vYSZviVYUb_rj3ij__anPXDTPYgEM86xRbPQ.woff2") format("woff=
+2"); unicode-range: U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, =
+U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20=
+AB; }
+
+@font-face { font-family: "Playfair Display"; font-style: normal; font-weig=
+ht: 700; font-display: swap; src: url("https://fonts.gstatic.com/s/playfair=
+display/v40/nuFiD-vYSZviVYUb_rj3ij__anPXDTLYgEM86xRbPQ.woff2") format("woff=
+2"); unicode-range: U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, =
+U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-=
+20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+
+@font-face { font-family: "Playfair Display"; font-style: normal; font-weig=
+ht: 700; font-display: swap; src: url("https://fonts.gstatic.com/s/playfair=
+display/v40/nuFiD-vYSZviVYUb_rj3ij__anPXDTzYgEM86xQ.woff2") format("woff2")=
+; unicode-range: U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, =
+U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U=
++2215, U+FEFF, U+FFFD; }
+
+@font-face { font-family: "Playfair Display SC"; font-style: normal; font-w=
+eight: 400; font-display: swap; src: url("https://fonts.gstatic.com/s/playf=
+airdisplaysc/v18/ke85OhoaMkR6-hSn7kbHVoFf7ZfgMPr_lb0MEOE1I4otKg.woff2") for=
+mat("woff2"); unicode-range: U+301, U+400-45F, U+490-491, U+4B0-4B1, U+2116=
+; }
+
+@font-face { font-family: "Playfair Display SC"; font-style: normal; font-w=
+eight: 400; font-display: swap; src: url("https://fonts.gstatic.com/s/playf=
+airdisplaysc/v18/ke85OhoaMkR6-hSn7kbHVoFf7ZfgMPr_lbYMEOE1I4otKg.woff2") for=
+mat("woff2"); unicode-range: U+102-103, U+110-111, U+128-129, U+168-169, U+=
+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1=
+EF9, U+20AB; }
+
+@font-face { font-family: "Playfair Display SC"; font-style: normal; font-w=
+eight: 400; font-display: swap; src: url("https://fonts.gstatic.com/s/playf=
+airdisplaysc/v18/ke85OhoaMkR6-hSn7kbHVoFf7ZfgMPr_lbcMEOE1I4otKg.woff2") for=
+mat("woff2"); unicode-range: U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+=
+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020=
+, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+
+@font-face { font-family: "Playfair Display SC"; font-style: normal; font-w=
+eight: 400; font-display: swap; src: url("https://fonts.gstatic.com/s/playf=
+airdisplaysc/v18/ke85OhoaMkR6-hSn7kbHVoFf7ZfgMPr_lbkMEOE1I4o.woff2") format=
+("woff2"); unicode-range: U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA=
+, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, =
+U+2212, U+2215, U+FEFF, U+FFFD; }
+------MultipartBoundary--JqwY4qIgVEyQkRdSd3MZy4LQeGYqZ3BQnAXyxWN4He----
+Content-Type: text/css
+Content-Transfer-Encoding: quoted-printable
+Content-Location: cid:css-7c40818e-a248-414d-92f9-fb8d49ad4379@mhtml.blink
+
+@charset "utf-8";
+
+#m-source .matrix-header, #m-source .matrix-row { grid-template-columns: 15=
+5px repeat(2, 1fr); }
+------MultipartBoundary--JqwY4qIgVEyQkRdSd3MZy4LQeGYqZ3BQnAXyxWN4He----
+Content-Type: text/css
+Content-Transfer-Encoding: quoted-printable
+Content-Location: cid:css-3abb57ec-3aa7-4f35-aab0-df5bc398a3cf@mhtml.blink
+
+@charset "utf-8";
+
+#m-design .matrix-header, #m-design .matrix-row { grid-template-columns: 15=
+5px repeat(2, 1fr); }
+------MultipartBoundary--JqwY4qIgVEyQkRdSd3MZy4LQeGYqZ3BQnAXyxWN4He----
+Content-Type: text/css
+Content-Transfer-Encoding: quoted-printable
+Content-Location: cid:css-7f1967d7-1a39-4d6d-b927-1a6c43bd0315@mhtml.blink
+
+@charset "utf-8";
+
+#m-fine .matrix-header, #m-fine .matrix-row { grid-template-columns: 155px =
+repeat(4, 1fr); }
+------MultipartBoundary--JqwY4qIgVEyQkRdSd3MZy4LQeGYqZ3BQnAXyxWN4He----
+Content-Type: text/css
+Content-Transfer-Encoding: quoted-printable
+Content-Location: cid:css-148e7938-bc67-4e19-a20b-d61ab8e848c5@mhtml.blink
+
+@charset "utf-8";
+
+#m-sense .matrix-header, #m-sense .matrix-row { grid-template-columns: 155p=
+x repeat(5, 1fr); }
+------MultipartBoundary--JqwY4qIgVEyQkRdSd3MZy4LQeGYqZ3BQnAXyxWN4He----
+Content-Type: text/css
+Content-Transfer-Encoding: quoted-printable
+Content-Location: cid:css-35404f2b-5507-4c69-81b1-973a11ed6114@mhtml.blink
+
+@charset "utf-8";
+
+:root { --parchment: #EDE8DF; --parchment-dark: #E0D9CE; --parchment-deeper=
+: #D4CBBB; --ink: #1C1C1A; --ink-mid: #3A3A36; --ink-light: #6B6860; --ink-=
+faint: #9A9590; --white: #FAF8F4; --line: rgba(28,28,26,0.10); --line-stron=
+g: rgba(28,28,26,0.22); --founder-bg: #EEE8F5; --founder-border: #9B7EC8; -=
+-founder-text: #3D1F6B; --exec-bg: #FFF5D0; --exec-border: #C9970A; --exec-=
+text: #5A3800; --consult-bg: #D8EDD8; --consult-border: #4A8C4A; --consult-=
+text: #1A4A1A; --org-bg: #D0E8F2; --org-border: #2A7A9A; --org-text: #0A3A4=
+A; }
+
+* { margin: 0px; padding: 0px; box-sizing: border-box; }
+
+body { background: var(--parchment); font-family: "EB Garamond", Georgia, s=
+erif; color: var(--ink); -webkit-font-smoothing: antialiased; }
+
+.topbar { position: sticky; top: 0px; z-index: 100; background: var(--ink);=
+ display: flex; align-items: center; justify-content: space-between; paddin=
+g: 11px 40px; gap: 16px; }
+
+.topbar-logo { display: flex; align-items: center; gap: 11px; flex-shrink: =
+0; }
+
+.topbar-name { font-family: "Playfair Display SC", serif; font-size: 9px; l=
+etter-spacing: 2px; color: var(--parchment); line-height: 1.5; }
+
+.pillar-tabs { display: flex; gap: 2px; background: rgba(255, 255, 255, 0.0=
+7); border-radius: 8px; padding: 3px; }
+
+.pillar-tab { background: none; border: none; cursor: pointer; padding: 7px=
+ 18px; border-radius: 5px; font-family: "Playfair Display SC", serif; font-=
+size: 11px; font-style: normal; letter-spacing: 1px; color: rgba(237, 232, =
+223, 0.4); transition: 0.2s; white-space: nowrap; line-height: 1.2; text-al=
+ign: center; }
+
+.pillar-tab .re { font-style: normal; font-size: 9px; display: block; font-=
+family: "EB Garamond", serif; margin-bottom: 2px; opacity: 0.55; text-trans=
+form: none; letter-spacing: 2px; }
+
+.pillar-tab.active { background: var(--parchment); color: var(--ink); }
+
+.pillar-tab.active .re { opacity: 0.45; }
+
+.topbar-right { display: flex; align-items: center; gap: 10px; flex-shrink:=
+ 0; }
+
+.mode-toggle { display: flex; gap: 2px; background: rgba(255, 255, 255, 0.0=
+7); border-radius: 6px; padding: 3px; }
+
+.mode-btn { background: none; border: none; cursor: pointer; padding: 5px 1=
+1px; border-radius: 4px; font-family: "EB Garamond", serif; font-size: 11px=
+; color: rgba(237, 232, 223, 0.4); transition: 0.2s; }
+
+.mode-btn.active { background: var(--parchment); color: var(--ink); }
+
+.main { max-width: 1360px; margin: 0px auto; padding: 44px 40px 80px; }
+
+.kpi-strip { display: grid; grid-template-columns: repeat(5, 1fr); gap: 1px=
+; background: var(--line-strong); border: 1px solid var(--line-strong); bor=
+der-radius: 4px; margin-bottom: 36px; overflow: hidden; }
+
+.kpi-cell { background: var(--parchment-dark); padding: 14px 18px; }
+
+.kpi-num { font-family: "Playfair Display", serif; font-size: 22px; font-we=
+ight: 700; color: var(--ink); line-height: 1; }
+
+.kpi-label { font-family: "EB Garamond", serif; font-size: 11px; font-style=
+: italic; color: var(--ink-light); margin-top: 4px; line-height: 1.4; }
+
+.pillar-panel { display: none; }
+
+.pillar-panel.active { display: block; }
+
+.pillar-header { display: grid; grid-template-columns: auto 1fr; gap: 48px;=
+ align-items: center; padding-bottom: 28px; margin-bottom: 36px; border-bot=
+tom: 1px solid var(--line-strong); }
+
+.pillar-re { font-family: "EB Garamond", serif; font-size: 12px; letter-spa=
+cing: 2px; text-transform: uppercase; color: var(--ink-light); margin-botto=
+m: 3px; }
+
+.pillar-title { font-family: "Playfair Display", serif; font-size: 50px; fo=
+nt-weight: 700; letter-spacing: -2px; line-height: 0.92; }
+
+.pillar-title em { font-style: italic; font-weight: 400; }
+
+.pillar-right { display: flex; flex-direction: column; gap: 12px; border-le=
+ft: 2px solid var(--line-strong); padding-left: 40px; }
+
+.pillar-question { font-family: "Playfair Display", serif; font-size: 17px;=
+ font-style: italic; font-weight: 400; color: var(--ink-mid); line-height: =
+1.5; }
+
+.pillar-layer { font-family: "EB Garamond", serif; font-size: 12px; color: =
+var(--ink-faint); display: flex; align-items: center; gap: 8px; }
+
+.layer-dot { width: 6px; height: 6px; border-radius: 50%; background: var(-=
+-ink-faint); flex-shrink: 0; }
+
+.pillar-phase { font-family: "EB Garamond", serif; font-size: 12px; font-st=
+yle: italic; color: var(--ink-light); padding: 5px 12px; border: 1px solid =
+var(--line-strong); border-radius: 2px; width: fit-content; }
+
+.matrix { display: flex; flex-direction: column; gap: 1px; background: var(=
+--line-strong); border: 1px solid var(--line-strong); border-radius: 4px; o=
+verflow: hidden; }
+
+.matrix-header { display: grid; background: var(--parchment-darker,#D8D0C2)=
+; }
+
+.matrix-row { display: grid; background: var(--parchment); border-bottom: 1=
+px solid var(--line); transition: background 0.12s; }
+
+.matrix-row:last-child { border-bottom: none; }
+
+.matrix-row:hover { background: var(--white); }
+
+.matrix-corner { padding: 12px 18px; border-right: 1px solid var(--line-str=
+ong); }
+
+.matrix-corner-label { font-family: "EB Garamond", serif; font-size: 10px; =
+font-style: italic; color: var(--ink-faint); }
+
+.format-header { padding: 11px 14px; border-right: 1px solid var(--line-str=
+ong); text-align: center; }
+
+.format-header:last-child { border-right: none; }
+
+.format-name { font-family: "Playfair Display", serif; font-size: 12px; fon=
+t-weight: 600; color: var(--ink); display: block; }
+
+.format-desc { font-family: "EB Garamond", serif; font-size: 10px; font-sty=
+le: italic; color: var(--ink-light); display: block; margin-top: 2px; }
+
+.aud-cell { padding: 16px 18px; border-right: 1px solid var(--line-strong);=
+ display: flex; flex-direction: column; justify-content: center; gap: 7px; =
 }
 
-// ── EDIT MODE ──
-function toggleEditMode(btn) {
-  editMode = !editMode;
-  const banner = document.getElementById('editBanner');
-  const body = document.body;
+.aud-badge { display: inline-block; padding: 3px 11px; border-radius: 20px;=
+ font-family: "EB Garamond", serif; font-size: 11px; font-weight: 500; widt=
+h: fit-content; }
 
-  if (editMode) {
-    body.classList.add('edit-mode');
-    banner.classList.add('visible');
-    btn.classList.add('editing');
-    btn.innerHTML = `<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg> Editing…`;
-    makeEditable();
-  } else {
-    body.classList.remove('edit-mode');
-    banner.classList.remove('visible');
-    btn.classList.remove('editing');
-    btn.innerHTML = `<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg> Edit`;
-    removeEditable();
-  }
+.aud-badge.founder { background: var(--founder-bg); color: var(--founder-te=
+xt); border: 1px solid var(--founder-border); }
+
+.aud-badge.exec { background: var(--exec-bg); color: var(--exec-text); bord=
+er: 1px solid var(--exec-border); }
+
+.aud-badge.consult { background: var(--consult-bg); color: var(--consult-te=
+xt); border: 1px solid var(--consult-border); }
+
+.aud-badge.org { background: var(--org-bg); color: var(--org-text); border:=
+ 1px solid var(--org-border); }
+
+.aud-tagline { font-family: "EB Garamond", serif; font-size: 12px; font-sty=
+le: italic; color: var(--ink-light); line-height: 1.5; }
+
+.prog-cell { padding: 12px 14px; border-right: 1px solid var(--line); verti=
+cal-align: top; }
+
+.prog-cell:last-child { border-right: none; }
+
+.prog-cell.empty { background: rgba(28, 28, 26, 0.02); }
+
+.empty-label { font-family: "EB Garamond", serif; font-size: 11px; font-sty=
+le: italic; color: var(--ink-faint); text-align: center; padding: 6px 0px; =
 }
 
-function makeEditable() {
-  const selectors = [
-    '.prog-name',
-    '.prog-detail',
-    '.aud-tagline',
-    '.pillar-question',
-    '.pillar-layer',
-    '.format-name',
-    '.format-desc',
-    '.kpi-num',
-    '.kpi-label',
-    '.target-num',
-    '.target-dim',
-    '.target-note',
-    '.phase-sub',
-    '.philosophy-quote',
-    '.footer-tagline',
-    '.footer-meta',
-    '.pillar-phase',
-    '.aud-badge'
-  ];
-  selectors.forEach(sel => {
-    document.querySelectorAll(sel).forEach(el => {
-      el.setAttribute('contenteditable', 'true');
-      el.setAttribute('spellcheck', 'false');
-    });
-  });
-  // Expand all programme cards so details are visible and editable
-  document.querySelectorAll('.prog-entry').forEach(e => e.classList.add('expanded'));
-}
+.prog-entry { background: var(--white); border: 1px solid var(--line-strong=
+); border-radius: 3px; padding: 10px 12px; margin-bottom: 7px; cursor: poin=
+ter; transition: 0.12s; }
 
-function removeEditable() {
-  document.querySelectorAll('[contenteditable]').forEach(el => {
-    el.removeAttribute('contenteditable');
-  });
-}
+.prog-entry:last-child { margin-bottom: 0px; }
 
-// ── SAVE / DOWNLOAD ──
-function saveHTML() {
-  // Temporarily remove edit UI before saving
-  removeEditable();
-  document.body.classList.remove('edit-mode');
-  document.getElementById('editBanner').classList.remove('visible');
-  document.getElementById('editBtn').classList.remove('editing');
+.prog-entry:hover { border-color: var(--ink-light); }
 
-  const html = '<!DOCTYPE html>\n' + document.documentElement.outerHTML;
-  const blob = new Blob([html], { type: 'text/html' });
-  const a = document.createElement('a');
-  a.href = URL.createObjectURL(blob);
-  a.download = 'ESSENSE_Programme_Architecture.html';
-  a.click();
-  URL.revokeObjectURL(a.href);
+.prog-entry.expanded { border-color: var(--ink); }
 
-  // Restore edit mode
-  setTimeout(() => {
-    document.body.classList.add('edit-mode');
-    document.getElementById('editBanner').classList.add('visible');
-    document.getElementById('editBtn').classList.add('editing');
-    makeEditable();
-  }, 500);
-}
-</script>
-</body>
-</html>
+.prog-name { font-family: "Playfair Display", serif; font-size: 13px; font-=
+weight: 600; color: var(--ink); line-height: 1.25; margin-bottom: 4px; }
+
+.prog-name em { font-style: italic; font-weight: 400; }
+
+.prog-meta { display: flex; gap: 5px; flex-wrap: wrap; align-items: center;=
+ }
+
+.pip-year { font-family: "EB Garamond", serif; font-size: 9px; padding: 1px=
+ 6px; border-radius: 2px; border: 1px solid var(--line-strong); color: var(=
+--ink-faint); }
+
+.pip-year.y2026 { background: var(--ink); color: var(--parchment); border-c=
+olor: var(--ink); }
+
+.pip-year.y2027 { background: var(--parchment-deeper); color: var(--ink-mid=
+); }
+
+.pip-year.y2028 { color: var(--ink-faint); }
+
+.pip-int { font-family: "EB Garamond", serif; font-size: 9px; font-style: i=
+talic; color: var(--ink-light); padding: 1px 6px; background: var(--parchme=
+nt-dark); border-radius: 2px; }
+
+.pip-launch { font-family: "EB Garamond", serif; font-size: 9px; color: var=
+(--ink-mid); padding: 1px 6px; border: 1px solid var(--line-strong); border=
+-radius: 2px; }
+
+.prog-detail { display: none; margin-top: 8px; padding-top: 8px; border-top=
+: 1px solid var(--line); font-family: "EB Garamond", serif; font-size: 12px=
+; line-height: 1.7; color: var(--ink-mid); }
+
+.prog-entry.expanded .prog-detail { display: block; }
+
+.philosophy-bar { background: var(--ink); color: var(--parchment); padding:=
+ 18px 32px; border-radius: 3px; margin-bottom: 24px; text-align: center; }
+
+.philosophy-quote { font-family: "Playfair Display", serif; font-size: 22px=
+; line-height: 1.3; font-weight: 700; }
+
+.philosophy-quote em { font-style: italic; font-weight: 400; }
+
+.targets-panel { display: none; }
+
+.targets-panel.active { display: block; }
+
+.targets-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: =
+1px; background: var(--line-strong); border: 1px solid var(--line-strong); =
+border-radius: 4px; overflow: hidden; margin-bottom: 28px; }
+
+.target-cell { background: var(--white); padding: 22px 24px; }
+
+.target-num { font-family: "Playfair Display", serif; font-size: 32px; font=
+-weight: 700; letter-spacing: -1px; line-height: 1; }
+
+.target-dim { font-family: "EB Garamond", serif; font-size: 13px; font-weig=
+ht: 500; color: var(--ink); margin-top: 6px; margin-bottom: 4px; }
+
+.target-note { font-family: "EB Garamond", serif; font-size: 13px; font-sty=
+le: italic; color: var(--ink-light); line-height: 1.5; }
+
+.phase-list { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1p=
+x; background: var(--line-strong); border: 1px solid var(--line-strong); bo=
+rder-radius: 4px; overflow: hidden; }
+
+.phase-cell { background: var(--parchment); padding: 20px 22px; }
+
+.phase-title { font-family: "Playfair Display", serif; font-size: 15px; fon=
+t-weight: 600; margin-bottom: 4px; }
+
+.phase-sub { font-family: "EB Garamond", serif; font-size: 11px; font-style=
+: italic; color: var(--ink-light); margin-bottom: 12px; }
+
+.phase-items { list-style: none; display: flex; flex-direction: column; gap=
+: 5px; }
+
+.phase-items li { font-family: "EB Garamond", serif; font-size: 12px; color=
+: var(--ink-mid); line-height: 1.5; padding-left: 12px; position: relative;=
+ }
+
+.phase-items li::before { content: "=E2=80=94"; position: absolute; left: 0=
+px; color: var(--ink-faint); font-size: 10px; }
+
+body.print-mode .topbar { display: none; }
+
+body.print-mode .main { padding: 28px; }
+
+body.print-mode .prog-detail { display: block !important; }
+
+body.print-mode .matrix-row:hover { background: var(--parchment); }
+
+.page-footer { margin-top: 48px; padding-top: 22px; border-top: 1px solid v=
+ar(--line-strong); display: flex; justify-content: space-between; align-ite=
+ms: center; }
+
+.footer-school { font-family: "Playfair Display SC", serif; font-size: 9px;=
+ letter-spacing: 2px; color: var(--ink-mid); line-height: 1.5; }
+
+.footer-tagline { font-family: "Playfair Display", serif; font-size: 13px; =
+font-style: italic; color: var(--ink-light); }
+
+.footer-meta { font-family: "EB Garamond", serif; font-size: 10px; font-sty=
+le: italic; color: var(--ink-faint); }
+
+.nav-targets-btn { background: none; border: none; cursor: pointer; font-fa=
+mily: "EB Garamond", serif; font-size: 11px; font-style: italic; color: rgb=
+a(237, 232, 223, 0.4); padding: 5px 11px; border-radius: 4px; transition: 0=
+.2s; }
+
+.nav-targets-btn.active { background: rgba(255, 255, 255, 0.12); color: rgb=
+a(237, 232, 223, 0.85); }
+
+.canvas-panel { display: none; }
+
+.canvas-panel.active { display: block; }
+
+.canvas-nav { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 32px=
+; border-bottom: 1px solid var(--line-strong); padding-bottom: 20px; }
+
+.canvas-prog-btn { background: none; border: 1px solid var(--line-strong); =
+border-radius: 3px; padding: 7px 16px; font-family: "EB Garamond", serif; f=
+ont-size: 12px; color: var(--ink-light); cursor: pointer; transition: 0.18s=
+; }
+
+.canvas-prog-btn:hover { border-color: var(--ink-light); color: var(--ink);=
+ }
+
+.canvas-prog-btn.active { background: var(--ink); color: var(--parchment); =
+border-color: var(--ink); }
+
+.canvas-card { display: none; }
+
+.canvas-card.active { display: block; }
+
+.canvas-title-row { display: flex; align-items: baseline; gap: 20px; margin=
+-bottom: 28px; }
+
+.canvas-prog-title { font-family: "Playfair Display", serif; font-size: 36p=
+x; font-weight: 700; letter-spacing: -1px; color: var(--ink); }
+
+.canvas-prog-meta { font-family: "EB Garamond", serif; font-size: 13px; fon=
+t-style: italic; color: var(--ink-light); }
+
+.canvas-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1=
+px; background: var(--line-strong); border: 1px solid var(--line-strong); b=
+order-radius: 4px; overflow: hidden; margin-bottom: 1px; }
+
+.canvas-grid-wide { display: grid; grid-template-columns: repeat(2, 1fr); g=
+ap: 1px; background: var(--line-strong); border: 1px solid var(--line-stron=
+g); border-radius: 4px; overflow: hidden; margin-bottom: 1px; }
+
+.canvas-grid-full { display: grid; grid-template-columns: 1fr; gap: 1px; ba=
+ckground: var(--line-strong); border: 1px solid var(--line-strong); border-=
+radius: 4px; overflow: hidden; margin-bottom: 1px; }
+
+.canvas-cell { background: var(--parchment); padding: 20px 22px; }
+
+.canvas-cell-dark { background: var(--ink); padding: 20px 22px; }
+
+.canvas-field-label { font-family: "Playfair Display SC", serif; font-size:=
+ 9px; letter-spacing: 1.5px; color: var(--ink-faint); margin-bottom: 3px; d=
+isplay: block; }
+
+.canvas-field-label-alt { font-family: "EB Garamond", serif; font-size: 10p=
+x; font-style: italic; color: var(--ink-light); opacity: 0.7; margin-bottom=
+: 8px; display: block; }
+
+.canvas-field-label-dark { font-family: "Playfair Display SC", serif; font-=
+size: 9px; letter-spacing: 1.5px; color: rgba(237, 232, 223, 0.4); margin-b=
+ottom: 3px; display: block; }
+
+.canvas-field-label-alt-dark { font-family: "EB Garamond", serif; font-size=
+: 10px; font-style: italic; color: rgba(237, 232, 223, 0.5); margin-bottom:=
+ 8px; display: block; }
+
+.canvas-field-value { font-family: "EB Garamond", serif; font-size: 14px; c=
+olor: var(--ink-mid); line-height: 1.65; }
+
+.canvas-field-value-dark { font-family: "EB Garamond", serif; font-size: 14=
+px; color: var(--parchment); line-height: 1.65; }
+
+.canvas-field-value ul { margin: 0px; padding-left: 16px; }
+
+.canvas-field-value ul li { margin-bottom: 3px; }
+
+.canvas-field-value-dark ul { margin: 0px; padding-left: 16px; }
+
+.canvas-field-value-dark ul li { margin-bottom: 3px; }
+
+.canvas-transform { display: flex; align-items: center; gap: 10px; font-fam=
+ily: "EB Garamond", serif; font-size: 13px; color: var(--ink-mid); flex-wra=
+p: wrap; }
+
+.canvas-transform-from { font-style: italic; color: var(--ink-light); }
+
+.canvas-transform-arrow { font-size: 16px; color: var(--ink-faint); }
+
+.canvas-transform-to { font-weight: 500; color: var(--ink); }
+
+.canvas-divider-label { font-family: "Playfair Display", serif; font-size: =
+11px; font-style: italic; color: var(--ink-faint); text-align: center; padd=
+ing: 6px; background: var(--parchment-dark); }
+
+.edit-btn { background: none; border: 1px solid rgba(237, 232, 223, 0.25); =
+cursor: pointer; padding: 5px 13px; border-radius: 4px; font-family: "EB Ga=
+ramond", serif; font-size: 11px; color: rgba(237, 232, 223, 0.5); transitio=
+n: 0.2s; display: flex; align-items: center; gap: 6px; }
+
+.edit-btn:hover { border-color: rgba(237, 232, 223, 0.6); color: rgba(237, =
+232, 223, 0.9); }
+
+.edit-btn.editing { background: rgb(74, 140, 74); border-color: rgb(74, 140=
+, 74); color: rgb(255, 255, 255); }
+
+.edit-banner { display: none; background: rgb(74, 140, 74); color: rgb(255,=
+ 255, 255); text-align: center; padding: 9px 20px; font-family: "EB Garamon=
+d", serif; font-size: 13px; position: sticky; top: 52px; z-index: 99; gap: =
+16px; align-items: center; justify-content: center; }
+
+.edit-banner.visible { display: flex; }
+
+.edit-banner strong { font-weight: 600; }
+
+.save-btn { background: rgba(255, 255, 255, 0.2); border: 1px solid rgba(25=
+5, 255, 255, 0.4); color: rgb(255, 255, 255); padding: 4px 14px; border-rad=
+ius: 3px; cursor: pointer; font-family: "EB Garamond", serif; font-size: 12=
+px; transition: 0.15s; }
+
+.save-btn:hover { background: rgba(255, 255, 255, 0.35); }
+
+body.edit-mode [contenteditable] { outline: none; border-bottom: 1px dashed=
+ rgba(74, 140, 74, 0.5); cursor: text; min-width: 20px; display: inline-blo=
+ck; }
+
+body.edit-mode [contenteditable]:hover { background: rgba(74, 140, 74, 0.06=
+); border-radius: 2px; }
+
+body.edit-mode [contenteditable]:focus { background: rgba(74, 140, 74, 0.1)=
+; border-bottom: 1px solid rgb(74, 140, 74); border-radius: 2px 2px 0px 0px=
+; }
+
+body.edit-mode .prog-entry { cursor: default; }
+
+body.edit-mode .prog-entry:hover { border-color: rgba(74, 140, 74, 0.4); }
+
+.edit-hint { display: none; font-family: "EB Garamond", serif; font-size: 1=
+1px; font-style: italic; color: rgb(74, 140, 74); margin-left: 6px; opacity=
+: 0.7; }
+
+body.edit-mode .edit-hint { display: inline; }
+------MultipartBoundary--JqwY4qIgVEyQkRdSd3MZy4LQeGYqZ3BQnAXyxWN4He------
