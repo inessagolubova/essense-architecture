@@ -234,6 +234,9 @@ body.edit-mode .edit-hint{display:inline;}
     <button class="pillar-tab canvas-tab" onclick="showCanvasPanel(this)">
       <span class="re">— —</span>PATHWAYS CANVAS
     </button>
+    <button class="pillar-tab" onclick="showPalettePanel(this)">
+      <span class="re">— —</span>COLOUR PALETTE
+    </button>
   </div>
 
   <div class="topbar-right">
@@ -1422,6 +1425,186 @@ body.edit-mode .edit-hint{display:inline;}
     <div class="footer-meta">Programme Architecture · March 2026 · Website launch April 2026</div>
   </div>
 
+<!-- ══ COLOUR PALETTE PANEL ══ -->
+<div class="palette-panel" id="palettePanel" style="display:none;padding:48px 40px 80px;">
+<style>
+.palette-panel { background:var(--parchment); }
+.pal-section-label {
+  font-family:'Playfair Display SC',serif;
+  font-size:8px; letter-spacing:3px;
+  color:rgba(28,28,26,0.3);
+  margin-bottom:2px; margin-top:40px;
+  padding-bottom:10px;
+  border-bottom:1px solid rgba(28,28,26,0.1);
+}
+.pal-section-label:first-of-type { margin-top:0; }
+.pal-row-5w { display:grid; grid-template-columns:repeat(5,1fr); gap:2px; height:280px; }
+.pal-row-5  { display:grid; grid-template-columns:repeat(5,1fr); gap:2px; height:170px; }
+.pal-row-4  { display:grid; grid-template-columns:repeat(4,1fr); gap:2px; height:155px; }
+.pal-row-3  { display:grid; grid-template-columns:repeat(3,1fr); gap:2px; height:76px; margin-top:2px; }
+.psw {
+  padding:18px 20px;
+  display:flex; flex-direction:column; justify-content:space-between;
+  overflow:hidden;
+}
+.psw-num  { font-family:'Playfair Display SC',serif; font-size:8px; letter-spacing:2px; opacity:0.4; }
+.psw-tag  {
+  font-family:'Playfair Display SC',serif; font-size:7px; letter-spacing:2px;
+  padding:2px 8px; border-radius:20px; width:fit-content; margin-bottom:4px;
+}
+.psw-name { font-family:'Playfair Display',serif; font-size:17px; font-weight:700; line-height:1.1; margin-bottom:2px; }
+.psw-idea { font-family:'EB Garamond',serif; font-size:12px; font-style:italic; opacity:0.62; }
+.psw-hex  { font-family:'Playfair Display SC',serif; font-size:7.5px; letter-spacing:1.5px; margin-top:5px; opacity:0.42; }
+.pl { color:#EDE8DF; }
+.pd { color:#1C1C1A; }
+.ptag-l { background:rgba(255,255,255,0.13); color:rgba(237,232,223,0.65); }
+.ptag-d { background:rgba(0,0,0,0.09); color:rgba(28,28,26,0.5); }
+.puc { padding:14px 20px; display:flex; flex-direction:column; justify-content:center; gap:4px; }
+.puc-label { font-family:'Playfair Display SC',serif; font-size:7.5px; letter-spacing:2px; color:rgba(237,232,223,0.28); }
+.puc-text  { font-family:'EB Garamond',serif; font-size:12px; font-style:italic; color:rgba(237,232,223,0.55); line-height:1.4; }
+.pal-header {
+  display:flex; align-items:flex-end; justify-content:space-between;
+  margin-bottom:48px;
+  border-bottom:1px solid rgba(28,28,26,0.1);
+  padding-bottom:24px;
+}
+.pal-title {
+  font-family:'Playfair Display',serif;
+  font-size:42px; font-weight:700;
+  letter-spacing:-1.5px; line-height:0.92; color:var(--ink);
+}
+.pal-title em { font-style:italic; font-weight:400; }
+.pal-subtitle {
+  font-family:'EB Garamond',serif; font-size:13px;
+  font-style:italic; color:var(--ink-light); line-height:1.9; text-align:right;
+}
+</style>
+
+<div class="pal-header">
+  <div>
+    <div style="font-family:'Playfair Display SC',serif;font-size:8px;letter-spacing:3px;color:var(--ink-faint);margin-bottom:8px;">ESSENSE BUSINESS SCHOOL</div>
+    <div class="pal-title">Visual<br><em>Identity</em><br>Palette</div>
+  </div>
+  <div class="pal-subtitle">
+    Business, in tune with life.<br>
+    Colour system · March 2026<br>
+    Drawn from nature
+  </div>
+</div>
+
+<!-- 01 FOUNDATION -->
+<div class="pal-section-label">01 — Foundation · Five elements · Primary brand palette · Drawn directly from nature</div>
+<div class="pal-row-5w">
+  <div class="psw" style="background:#566930;">
+    <span class="psw-num pl">01</span>
+    <div><div class="psw-tag ptag-l">Earth</div><div class="psw-name pl">Moss Field</div><div class="psw-idea pl">Grounding · Stability</div><div class="psw-hex pl">#566930</div></div>
+  </div>
+  <div class="psw" style="background:#1A5870;">
+    <span class="psw-num pl">02</span>
+    <div><div class="psw-tag ptag-l">Water</div><div class="psw-name pl">Open Sea</div><div class="psw-idea pl">Flow · Feeling · Depth</div><div class="psw-hex pl">#1A5870</div></div>
+  </div>
+  <div class="psw" style="background:#8898A0;">
+    <span class="psw-num pl">03</span>
+    <div><div class="psw-tag ptag-l">Air</div><div class="psw-name pl">Forest Mist</div><div class="psw-idea pl">Space · Breath · Perspective</div><div class="psw-hex pl">#8898A0</div></div>
+  </div>
+  <div class="psw" style="background:#A83010;">
+    <span class="psw-num pl">04</span>
+    <div><div class="psw-tag ptag-l">Fire</div><div class="psw-name pl">Ember</div><div class="psw-idea pl">Energy · Transformation</div><div class="psw-hex pl">#A83010</div></div>
+  </div>
+  <div class="psw" style="background:#500838;">
+    <span class="psw-num pl">05</span>
+    <div><div class="psw-tag ptag-l">Aether</div><div class="psw-name pl">Deep Cosmos</div><div class="psw-idea pl">Mystery · Spirit · Unseen</div><div class="psw-hex pl">#500838</div></div>
+  </div>
+</div>
+
+<!-- 02 NEUTRALS -->
+<div class="pal-section-label">02 — Neutrals · The constant ground — Ink through Parchment</div>
+<div class="pal-row-5">
+  <div class="psw" style="background:#1C1C1A;">
+    <span class="psw-num pl">06</span>
+    <div><div class="psw-name pl">Ink</div><div class="psw-idea pl">Stillness · Depth</div><div class="psw-hex pl">#1C1C1A</div></div>
+  </div>
+  <div class="psw" style="background:#3A3830;">
+    <span class="psw-num pl">07</span>
+    <div><div class="psw-name pl">Charcoal Earth</div><div class="psw-idea pl">Grounded depth</div><div class="psw-hex pl">#3A3830</div></div>
+  </div>
+  <div class="psw" style="background:#8A8478;">
+    <span class="psw-num pl">08</span>
+    <div><div class="psw-name pl">Warm Stone</div><div class="psw-idea pl">Middle tone</div><div class="psw-hex pl">#8A8478</div></div>
+  </div>
+  <div class="psw" style="background:#C8C0B0;">
+    <span class="psw-num pd">09</span>
+    <div><div class="psw-name pd">Pale Clay</div><div class="psw-idea pd">Soft light</div><div class="psw-hex pd">#C8C0B0</div></div>
+  </div>
+  <div class="psw" style="background:#EDE8DF; border:1px solid rgba(0,0,0,0.05);">
+    <span class="psw-num pd">10</span>
+    <div><div class="psw-name pd">Parchment</div><div class="psw-idea pd">Light · Ground · Base</div><div class="psw-hex pd">#EDE8DF</div></div>
+  </div>
+</div>
+
+<!-- 03 SECONDARY -->
+<div class="pal-section-label">03 — Secondary · Soft tints of each element — for panel backgrounds and subtle surfaces</div>
+<div class="pal-row-5">
+  <div class="psw" style="background:#8FA882;">
+    <span class="psw-num pl">11</span>
+    <div><div class="psw-tag ptag-l">Earth tint</div><div class="psw-name pl" style="font-size:15px;">Silver Sage</div><div class="psw-idea pl">Matcha · Stillness</div><div class="psw-hex pl">#8FA882</div></div>
+  </div>
+  <div class="psw" style="background:#88B8C8;">
+    <span class="psw-num pd">12</span>
+    <div><div class="psw-tag ptag-d">Water tint</div><div class="psw-name pd" style="font-size:15px;">Sea Glass</div><div class="psw-idea pd">Calm · Clear</div><div class="psw-hex pd">#88B8C8</div></div>
+  </div>
+  <div class="psw" style="background:#C8D4D8; border:1px solid rgba(0,0,0,0.04);">
+    <span class="psw-num pd">13</span>
+    <div><div class="psw-tag ptag-d">Air tint</div><div class="psw-name pd" style="font-size:15px;">Morning Haze</div><div class="psw-idea pd">Open · Airy</div><div class="psw-hex pd">#C8D4D8</div></div>
+  </div>
+  <div class="psw" style="background:#C8A040;">
+    <span class="psw-num pl">14</span>
+    <div><div class="psw-tag ptag-l">Fire tint</div><div class="psw-name pl" style="font-size:15px;">Golden Ochre</div><div class="psw-idea pl">Warm · Vital · Gold</div><div class="psw-hex pl">#C8A040</div></div>
+  </div>
+  <div class="psw" style="background:#A07898;">
+    <span class="psw-num pl">15</span>
+    <div><div class="psw-tag ptag-l">Aether tint</div><div class="psw-name pl" style="font-size:15px;">Dusk Rose</div><div class="psw-idea pl">Quiet · Intuitive</div><div class="psw-hex pl">#A07898</div></div>
+  </div>
+</div>
+
+<!-- 04 AUDIENCE -->
+<div class="pal-section-label">04 — Audience · Each audience rooted in an element — navigation + badge accents</div>
+<div class="pal-row-4">
+  <div class="psw" style="background:#500838;">
+    <span class="psw-num pl">16</span>
+    <div><div class="psw-tag ptag-l">Aether → Founders</div><div class="psw-name pl" style="font-size:15px;">Founders</div><div class="psw-idea pl">Vision · Leadership</div><div class="psw-hex pl">#500838</div></div>
+  </div>
+  <div class="psw" style="background:#A83010;">
+    <span class="psw-num pl">17</span>
+    <div><div class="psw-tag ptag-l">Fire → Executives</div><div class="psw-name pl" style="font-size:15px;">Executives</div><div class="psw-idea pl">Clarity · Drive</div><div class="psw-hex pl">#A83010</div></div>
+  </div>
+  <div class="psw" style="background:#3A6838;">
+    <span class="psw-num pl">18</span>
+    <div><div class="psw-tag ptag-l">Earth → Consultants</div><div class="psw-name pl" style="font-size:15px;">Consultants</div><div class="psw-idea pl">Growth · Systems</div><div class="psw-hex pl">#3A6838</div></div>
+  </div>
+  <div class="psw" style="background:#186878;">
+    <span class="psw-num pl">19</span>
+    <div><div class="psw-tag ptag-l">Water → Organisations</div><div class="psw-name pl" style="font-size:15px;">Organisations</div><div class="psw-idea pl">Flow · Structure</div><div class="psw-hex pl">#186878</div></div>
+  </div>
+</div>
+
+<div class="pal-row-3">
+  <div class="puc" style="background:#566930;">
+    <div class="puc-label">Foundation Use</div>
+    <div class="puc-text">Five element colours as primary surfaces and immersive programme panels</div>
+  </div>
+  <div class="puc" style="background:#1A5870;">
+    <div class="puc-label">Neutral Use</div>
+    <div class="puc-text">Ink + Parchment for all body text, headers, and UI ground surfaces</div>
+  </div>
+  <div class="puc" style="background:#500838;">
+    <div class="puc-label">Audience Use</div>
+    <div class="puc-text">Audience accents for badges and navigation · tints at 15% for backgrounds</div>
+  </div>
+</div>
+
+</div><!-- /palette-panel -->
+
 </div><!-- /main -->
 </div><!-- /appShell -->
 
@@ -1429,7 +1612,17 @@ body.edit-mode .edit-hint{display:inline;}
 let currentPillar = 'sense';
 let editMode = false;
 
+function showPalettePanel(btn) {
+  document.querySelectorAll('.pillar-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.targets-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.canvas-panel').forEach(p => p.classList.remove('active'));
+  document.getElementById('palettePanel').style.display = 'block';
+  document.querySelectorAll('.pillar-tab').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+}
+
 function showPillar(id, btn) {
+  document.getElementById('palettePanel').style.display = 'none';
   document.querySelectorAll('.pillar-panel').forEach(p => p.classList.remove('active'));
   document.querySelectorAll('.targets-panel').forEach(p => p.classList.remove('active'));
   document.querySelectorAll('.canvas-panel').forEach(p => p.classList.remove('active'));
@@ -1443,6 +1636,7 @@ function showTargets(btn) {
   document.querySelectorAll('.pillar-panel').forEach(p => p.classList.remove('active'));
   document.querySelectorAll('.targets-panel').forEach(p => p.classList.remove('active'));
   document.querySelectorAll('.canvas-panel').forEach(p => p.classList.remove('active'));
+  document.getElementById('palettePanel').style.display = 'none';
   document.querySelectorAll('.pillar-tab').forEach(t => t.classList.remove('active'));
   document.querySelectorAll('.nav-targets-btn').forEach(b => b.classList.remove('active'));
   document.getElementById('panel-targets').classList.add('active');
@@ -1452,6 +1646,7 @@ function showCanvasPanel(btn) {
   document.querySelectorAll('.pillar-panel').forEach(p => p.classList.remove('active'));
   document.querySelectorAll('.targets-panel').forEach(p => p.classList.remove('active'));
   document.querySelectorAll('.canvas-panel').forEach(p => p.classList.remove('active'));
+  document.getElementById('palettePanel').style.display = 'none';
   document.querySelectorAll('.pillar-tab').forEach(t => t.classList.remove('active'));
   document.querySelectorAll('.nav-targets-btn').forEach(b => b.classList.remove('active'));
   document.getElementById('panel-canvas').classList.add('active');
@@ -1612,10 +1807,11 @@ function checkPinAndStore() {
 // ══════════════════════════════════════════
 function toggleSidebar() {
   const sb = document.getElementById('editorSidebar');
-  sb.classList.toggle('open');
+  const isOpen = sb.style.right === '0px';
+  sb.style.right = isOpen ? '-340px' : '0px';
 }
 function hideSidebar() {
-  document.getElementById('editorSidebar').classList.remove('open');
+  document.getElementById('editorSidebar').style.right = '-340px';
 }
 
 function applyColor(varName, value) {
@@ -1627,32 +1823,58 @@ function applyFontSize(selector, size) {
 }
 
 function addProgrammeRow() {
-  const matrices = document.querySelectorAll('.matrix');
-  if (!matrices.length) { alert('Navigate to a programme pillar first.'); return; }
-  const matrix = matrices[0];
+  // Find the currently visible matrix
+  const activePanel = document.querySelector('.pillar-panel.active, .targets-panel.active');
+  if (!activePanel) { 
+    alert('Please navigate to a programme pillar tab first (e.g. Re—Sense, Re—Fine etc.)'); 
+    return; 
+  }
+  const matrix = activePanel.querySelector('.matrix');
+  if (!matrix) { 
+    alert('No programme matrix found on this panel. Navigate to a pillar tab first.'); 
+    return; 
+  }
   const rows = matrix.querySelectorAll('.matrix-row');
   if (!rows.length) return;
-  const clone = rows[0].cloneNode(true);
-  clone.querySelectorAll('[contenteditable]').forEach(el => el.textContent = 'Edit me');
+  // Clone last data row
+  const clone = rows[rows.length - 1].cloneNode(true);
+  // Clear all text content in editable areas
+  clone.querySelectorAll('.prog-name').forEach(el => el.textContent = 'New Programme');
+  clone.querySelectorAll('.prog-detail').forEach(el => el.textContent = 'Add description here.');
+  clone.querySelectorAll('.aud-tagline').forEach(el => el.textContent = 'Audience description.');
   clone.querySelectorAll('.prog-entry').forEach(e => e.classList.remove('expanded'));
+  clone.querySelectorAll('.pip-year').forEach(e => e.textContent = '2026');
   matrix.appendChild(clone);
+  clone.scrollIntoView({ behavior: 'smooth', block: 'center' });
   if (editMode) makeEditable();
+  // Flash confirmation
+  const btn = document.querySelector('[onclick="addProgrammeRow()"]');
+  if (btn) { btn.textContent = '✓ Row added!'; setTimeout(() => btn.textContent = '+ Add programme row (current pillar)', 2000); }
 }
 
 function addCanvasColumn() {
-  const grids = document.querySelectorAll('.canvas-card.active .canvas-grid, .canvas-card.active .canvas-grid-wide');
-  if (!grids.length) { alert('Open a Canvas programme first.'); return; }
-  const grid = grids[grids.length - 1];
-  const cell = document.createElement('div');
-  cell.className = 'canvas-cell';
-  cell.innerHTML = `
-    <span class="canvas-field-label">NEW FIELD</span>
-    <span class="canvas-field-label-alt">Your reframe</span>
-    <div class="canvas-field-value">Click Edit to add content here.</div>`;
-  grid.appendChild(cell);
-  const cols = grid.children.length;
-  grid.style.gridTemplateColumns = `repeat(${cols}, 1fr)`;
+  // Find the currently active canvas card
+  const activeCard = document.querySelector('.canvas-card.active');
+  if (!activeCard) { 
+    alert('Please open the Pathways Canvas tab and select a programme first.'); 
+    return; 
+  }
+  // Add a new full-width grid row at the bottom
+  const newGrid = document.createElement('div');
+  newGrid.className = 'canvas-grid-wide';
+  newGrid.style.marginTop = '1px';
+  newGrid.innerHTML = `
+    <div class="canvas-cell" style="grid-column:1/-1">
+      <span class="canvas-field-label">NEW FIELD</span>
+      <span class="canvas-field-label-alt">Your ESSENSE reframe</span>
+      <div class="canvas-field-value">Click anywhere in this box to edit. Add your content here.</div>
+    </div>`;
+  activeCard.appendChild(newGrid);
+  newGrid.scrollIntoView({ behavior: 'smooth', block: 'center' });
   if (editMode) makeEditable();
+  // Flash confirmation
+  const btn = document.querySelector('[onclick="addCanvasColumn()"]');
+  if (btn) { btn.textContent = '✓ Field added!'; setTimeout(() => btn.textContent = '+ Add canvas field (current canvas)', 2000); }
 }
 
 // ══════════════════════════════════════════
@@ -1828,7 +2050,7 @@ async function publishToGitHub() {
 </div>
 
 <!-- Sidebar toggle button (visible in edit mode) -->
-<button id="sidebarToggle" onclick="toggleSidebar()" style="display:none;position:fixed;bottom:28px;right:28px;z-index:199;background:#1C1C1A;color:#EDE8DF;border:1px solid rgba(237,232,223,0.2);border-radius:50px;padding:10px 18px;font-family:'Playfair Display SC',serif;font-size:10px;letter-spacing:1.5px;cursor:pointer;box-shadow:0 4px 20px rgba(0,0,0,0.3);">⚙ DESIGN</button>
+<button id="sidebarToggle" onclick="toggleSidebar()" style="display:none;position:fixed;bottom:28px;right:28px;z-index:300;background:#1C1C1A;color:#EDE8DF;border:1px solid rgba(237,232,223,0.2);border-radius:50px;padding:10px 18px;font-family:'Playfair Display SC',serif;font-size:10px;letter-spacing:1.5px;cursor:pointer;box-shadow:0 4px 20px rgba(0,0,0,0.3);">⚙ DESIGN</button>
 
 </body>
 </html>
