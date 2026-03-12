@@ -206,6 +206,95 @@ body.edit-mode .canvas-prog-meta:focus{background:rgba(74,140,74,0.06);outline:n
 
 .edit-hint{display:none;font-family:'EB Garamond',serif;font-size:11px;font-style:italic;color:#4A8C4A;margin-left:6px;opacity:0.7;}
 body.edit-mode .edit-hint{display:inline;}
+
+/* ── STRATEGY PANEL ── */
+.strategy-panel{display:none;}
+.strategy-panel.active{display:block;}
+
+.strategy-section-title{font-family:'Playfair Display SC',serif;font-size:9px;letter-spacing:2px;color:var(--ink-faint);margin-bottom:16px;display:block;}
+
+/* Engines */
+.engines-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line-strong);border:1px solid var(--line-strong);border-radius:4px;overflow:hidden;margin-bottom:36px;}
+.engine-cell{background:var(--parchment);padding:28px 26px;}
+.engine-num{font-family:'Playfair Display',serif;font-size:42px;font-weight:700;letter-spacing:-2px;color:var(--ink);line-height:1;margin-bottom:8px;}
+.engine-name{font-family:'Playfair Display',serif;font-size:18px;font-weight:600;color:var(--ink);margin-bottom:6px;}
+.engine-purpose{font-family:'EB Garamond',serif;font-size:13px;font-style:italic;color:var(--ink-light);margin-bottom:16px;line-height:1.5;}
+.engine-products{list-style:none;display:flex;flex-direction:column;gap:5px;}
+.engine-products li{font-family:'EB Garamond',serif;font-size:13px;color:var(--ink-mid);line-height:1.5;padding-left:14px;position:relative;}
+.engine-products li::before{content:'·';position:absolute;left:3px;color:var(--ink-faint);font-size:14px;line-height:1.4;}
+.engine-cell.dark{background:var(--ink);}
+.engine-cell.dark .engine-num{color:var(--parchment);}
+.engine-cell.dark .engine-name{color:var(--parchment);}
+.engine-cell.dark .engine-purpose{color:rgba(237,232,223,0.55);}
+.engine-cell.dark .engine-products li{color:rgba(237,232,223,0.75);}
+.engine-cell.dark .engine-products li::before{color:rgba(237,232,223,0.3);}
+
+/* Revenue Architecture */
+.rev-arch-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line-strong);border:1px solid var(--line-strong);border-radius:4px;overflow:hidden;margin-bottom:36px;}
+.rev-tier{background:var(--parchment);padding:22px 24px;}
+.rev-tier-label{font-family:'Playfair Display SC',serif;font-size:9px;letter-spacing:1.5px;color:var(--ink-faint);margin-bottom:14px;display:block;}
+.rev-tier-name{font-family:'Playfair Display',serif;font-size:20px;font-weight:700;color:var(--ink);margin-bottom:4px;line-height:1.1;}
+.rev-tier-desc{font-family:'EB Garamond',serif;font-size:12px;font-style:italic;color:var(--ink-light);margin-bottom:16px;line-height:1.4;}
+.rev-products-table{width:100%;border-collapse:collapse;}
+.rev-products-table tr{border-bottom:1px solid var(--line);}
+.rev-products-table tr:last-child{border-bottom:none;}
+.rev-products-table td{font-family:'EB Garamond',serif;font-size:13px;color:var(--ink-mid);padding:7px 0;line-height:1.4;}
+.rev-products-table td.price{text-align:right;font-weight:500;color:var(--ink);white-space:nowrap;padding-left:12px;}
+.rev-tier.premium{background:var(--ink);}
+.rev-tier.premium .rev-tier-label{color:rgba(237,232,223,0.35);}
+.rev-tier.premium .rev-tier-name{color:var(--parchment);}
+.rev-tier.premium .rev-tier-desc{color:rgba(237,232,223,0.5);}
+.rev-tier.premium .rev-products-table tr{border-bottom-color:rgba(237,232,223,0.1);}
+.rev-tier.premium .rev-products-table td{color:rgba(237,232,223,0.7);}
+.rev-tier.premium .rev-products-table td.price{color:var(--parchment);}
+
+/* Journey Spiral */
+.journey-outer{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line-strong);border:1px solid var(--line-strong);border-radius:4px;overflow:hidden;margin-bottom:36px;}
+.journey-steps{background:var(--parchment);padding:28px 26px;}
+.journey-step{display:flex;align-items:flex-start;gap:16px;margin-bottom:0;}
+.journey-step-inner{display:flex;flex-direction:column;flex:1;}
+.journey-connector{display:flex;flex-direction:column;align-items:center;flex-shrink:0;width:24px;}
+.journey-dot{width:10px;height:10px;border-radius:50%;background:var(--ink);flex-shrink:0;margin-top:4px;}
+.journey-dot.faint{background:var(--parchment-deeper);border:1px solid var(--ink-light);}
+.journey-line{width:1px;background:var(--line-strong);flex:1;min-height:20px;}
+.journey-step-name{font-family:'Playfair Display',serif;font-size:14px;font-weight:600;color:var(--ink);line-height:1.3;}
+.journey-step-desc{font-family:'EB Garamond',serif;font-size:12px;font-style:italic;color:var(--ink-light);line-height:1.5;margin-bottom:18px;}
+.journey-label{font-family:'EB Garamond',serif;font-size:11px;color:var(--ink-faint);padding:2px 8px;background:var(--parchment-dark);border-radius:2px;width:fit-content;margin-bottom:6px;}
+
+.journey-principles{background:var(--ink);padding:28px 26px;display:flex;flex-direction:column;gap:20px;}
+.journey-principle{border-bottom:1px solid rgba(237,232,223,0.1);padding-bottom:20px;}
+.journey-principle:last-child{border-bottom:none;padding-bottom:0;}
+.journey-principle-title{font-family:'Playfair Display',serif;font-size:15px;font-weight:600;color:var(--parchment);margin-bottom:6px;}
+.journey-principle-body{font-family:'EB Garamond',serif;font-size:13px;font-style:italic;color:rgba(237,232,223,0.6);line-height:1.65;}
+
+/* Roadmap */
+.roadmap-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line-strong);border:1px solid var(--line-strong);border-radius:4px;overflow:hidden;margin-bottom:36px;}
+.roadmap-year{background:var(--parchment);padding:24px 22px;}
+.roadmap-year-tag{font-family:'Playfair Display SC',serif;font-size:9px;letter-spacing:2px;color:var(--ink-faint);margin-bottom:8px;display:block;}
+.roadmap-year-num{font-family:'Playfair Display',serif;font-size:36px;font-weight:700;letter-spacing:-2px;color:var(--ink);line-height:1;margin-bottom:4px;}
+.roadmap-year-goal{font-family:'Playfair Display',serif;font-size:13px;font-style:italic;color:var(--ink-mid);margin-bottom:16px;line-height:1.4;}
+.roadmap-focus{font-family:'EB Garamond',serif;font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--ink-faint);margin-bottom:8px;margin-top:16px;display:block;}
+.roadmap-programmes{list-style:none;display:flex;flex-direction:column;gap:4px;margin-bottom:0;}
+.roadmap-programmes li{font-family:'EB Garamond',serif;font-size:13px;color:var(--ink-mid);line-height:1.5;padding-left:14px;position:relative;}
+.roadmap-programmes li::before{content:'—';position:absolute;left:0;color:var(--ink-faint);font-size:10px;top:1px;}
+.roadmap-year.highlighted{background:var(--ink);}
+.roadmap-year.highlighted .roadmap-year-tag{color:rgba(237,232,223,0.35);}
+.roadmap-year.highlighted .roadmap-year-num{color:var(--parchment);}
+.roadmap-year.highlighted .roadmap-year-goal{color:rgba(237,232,223,0.7);}
+.roadmap-year.highlighted .roadmap-focus{color:rgba(237,232,223,0.35);}
+.roadmap-year.highlighted .roadmap-programmes li{color:rgba(237,232,223,0.75);}
+.roadmap-year.highlighted .roadmap-programmes li::before{color:rgba(237,232,223,0.25);}
+
+/* Pathways */
+.pathways-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line-strong);border:1px solid var(--line-strong);border-radius:4px;overflow:hidden;margin-bottom:36px;}
+.pathway-cell{background:var(--parchment);padding:22px 20px;}
+.pathway-re{font-family:'EB Garamond',serif;font-size:11px;letter-spacing:2px;color:var(--ink-faint);margin-bottom:4px;display:block;}
+.pathway-name{font-family:'Playfair Display',serif;font-size:20px;font-weight:700;letter-spacing:-0.5px;color:var(--ink);line-height:1.1;margin-bottom:12px;}
+.pathway-name em{font-style:italic;font-weight:400;}
+.pathway-question{font-family:'EB Garamond',serif;font-size:13px;font-style:italic;color:var(--ink-light);line-height:1.5;margin-bottom:14px;}
+.pathway-formats{display:flex;flex-wrap:wrap;gap:4px;}
+.pathway-format-tag{font-family:'EB Garamond',serif;font-size:10px;padding:2px 8px;border:1px solid var(--line-strong);border-radius:2px;color:var(--ink-light);background:var(--white);}
+
 </style>
 </head>
 <body>
@@ -233,6 +322,9 @@ body.edit-mode .edit-hint{display:inline;}
     </button>
     <button class="pillar-tab" onclick="showPillar('source',this)">
       <span class="re">RE —</span>SOURCE THE MASTERY
+    </button>
+    <button class="pillar-tab" onclick="showStrategyPanel(this)">
+      <span class="re">— —</span>PRODUCT STRATEGY
     </button>
     <button class="pillar-tab canvas-tab" onclick="showCanvasPanel(this)">
       <span class="re">— —</span>PATHWAYS CANVAS
@@ -2150,6 +2242,297 @@ body.edit-mode .edit-hint{display:inline;}
 
 </div><!-- /palette-panel -->
 
+<!-- ══════════════════════════════════
+     PRODUCT STRATEGY PANEL
+══════════════════════════════════ -->
+<div class="strategy-panel" id="strategyPanel">
+
+  <!-- Header -->
+  <div class="pillar-header">
+    <div>
+      <div class="pillar-re">Strategic Framework · 2026–2029</div>
+      <div class="pillar-title">Product<br><em>Strategy</em></div>
+    </div>
+    <div class="pillar-right">
+      <div class="pillar-question">"ESSENSE is a living learning ecosystem — not a funnel, but a spiral of engagement."</div>
+      <div class="pillar-layer"><span class="layer-dot"></span>Three target groups: Leaders · Consultants · Teachers & Speakers</div>
+      <div class="pillar-phase">Foundation Year 2026 · Expansion 2027 · Maturity 2028</div>
+    </div>
+  </div>
+
+  <!-- Four Developmental Pathways -->
+  <span class="strategy-section-title">FOUR DEVELOPMENTAL PATHWAYS</span>
+  <div class="pathways-grid" style="margin-bottom:36px;">
+    <div class="pathway-cell">
+      <span class="pathway-re">RE —</span>
+      <div class="pathway-name">Sense<br><em>the World</em></div>
+      <div class="pathway-question">"What is happening in the world — and where is my place in it?"</div>
+      <div class="pathway-formats">
+        <span class="pathway-format-tag">Talks</span>
+        <span class="pathway-format-tag">Community</span>
+        <span class="pathway-format-tag">Online courses</span>
+      </div>
+    </div>
+    <div class="pathway-cell" style="background:var(--parchment-dark);">
+      <span class="pathway-re">RE —</span>
+      <div class="pathway-name">Fine<br><em>the Leader</em></div>
+      <div class="pathway-question">"How do I become the leader this moment calls for?"</div>
+      <div class="pathway-formats">
+        <span class="pathway-format-tag">Retreats</span>
+        <span class="pathway-format-tag">Cohort programs</span>
+        <span class="pathway-format-tag">Individual journeys</span>
+      </div>
+    </div>
+    <div class="pathway-cell">
+      <span class="pathway-re">RE —</span>
+      <div class="pathway-name">Design<br><em>the Business</em></div>
+      <div class="pathway-question">"How do I redesign my organisation to be regenerative?"</div>
+      <div class="pathway-formats">
+        <span class="pathway-format-tag">Business labs</span>
+        <span class="pathway-format-tag">Organisational work</span>
+      </div>
+    </div>
+    <div class="pathway-cell" style="background:var(--ink);">
+      <span class="pathway-re" style="color:rgba(237,232,223,0.35);">RE —</span>
+      <div class="pathway-name" style="color:var(--parchment);">Source<br><em style="color:rgba(237,232,223,0.7);">the Mastery</em></div>
+      <div class="pathway-question" style="color:rgba(237,232,223,0.55);">"How do I become a steward of the field itself?"</div>
+      <div class="pathway-formats">
+        <span class="pathway-format-tag" style="border-color:rgba(237,232,223,0.15);color:rgba(237,232,223,0.5);background:rgba(237,232,223,0.06);">Mastery programs</span>
+        <span class="pathway-format-tag" style="border-color:rgba(237,232,223,0.15);color:rgba(237,232,223,0.5);background:rgba(237,232,223,0.06);">Mini Board</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Three Growth Engines -->
+  <span class="strategy-section-title">THREE GROWTH ENGINES</span>
+  <div class="engines-grid">
+    <div class="engine-cell">
+      <div class="engine-num">01</div>
+      <div class="engine-name">Community Engine</div>
+      <div class="engine-purpose">Build a large, aligned learning community. Warm the field. Create resonance at scale.</div>
+      <ul class="engine-products">
+        <li>Talks "Make Sense?"</li>
+        <li>Online courses</li>
+        <li>Essense Day</li>
+        <li>Book Club & Podcast</li>
+        <li>ESSENSE Dialogues</li>
+      </ul>
+    </div>
+    <div class="engine-cell" style="background:var(--parchment-dark);">
+      <div class="engine-num">02</div>
+      <div class="engine-name">Transformation Engine</div>
+      <div class="engine-purpose">Deep transformation work. Cohort learning, retreats, and individual leadership journeys.</div>
+      <ul class="engine-products">
+        <li>Leadership Retreat</li>
+        <li>Shadow Retreat</li>
+        <li>Business Redesign Lab</li>
+        <li>FP Business Alchemy</li>
+        <li>Individual Journeys</li>
+      </ul>
+    </div>
+    <div class="engine-cell dark">
+      <div class="engine-num">03</div>
+      <div class="engine-name">Organisational Impact</div>
+      <div class="engine-purpose">Bring ESSENSE philosophy into real organisations. Systemic change through institutional partners.</div>
+      <ul class="engine-products">
+        <li>Business Redesign Labs</li>
+        <li>Organisational Immersions</li>
+        <li>Advisory work</li>
+        <li>Mini Board</li>
+        <li>Institutional collaborations</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Revenue Architecture -->
+  <span class="strategy-section-title">REVENUE ARCHITECTURE</span>
+  <div class="rev-arch-grid">
+    <div class="rev-tier">
+      <span class="rev-tier-label">COMMUNITY ENGINE · ENTRY</span>
+      <div class="rev-tier-name">Audience Building</div>
+      <div class="rev-tier-desc">Low barrier, high volume. Warm participants into the ecosystem.</div>
+      <table class="rev-products-table">
+        <tr><td>Talks "Make Sense?"</td><td class="price">~£700</td></tr>
+        <tr><td>Online Courses</td><td class="price">~£350</td></tr>
+        <tr><td>Essense Day</td><td class="price">£400</td></tr>
+      </table>
+    </div>
+    <div class="rev-tier" style="background:var(--parchment-dark);">
+      <span class="rev-tier-label">CASHFLOW ENGINE · MID</span>
+      <div class="rev-tier-name">Cohort &amp; Retreats</div>
+      <div class="rev-tier-desc">Cohort scale, manageable capacity, strong margin.</div>
+      <table class="rev-products-table">
+        <tr><td>Business Redesign Lab</td><td class="price">£700</td></tr>
+        <tr><td>Leadership Retreat</td><td class="price">£3,750–4,125</td></tr>
+        <tr><td>Shadow Retreat</td><td class="price">£3,750–4,125</td></tr>
+      </table>
+    </div>
+    <div class="rev-tier premium">
+      <span class="rev-tier-label">CORE SENSE · PREMIUM</span>
+      <div class="rev-tier-name">High-Touch Work</div>
+      <div class="rev-tier-desc">High impact, low volume. The deepest work in the ecosystem.</div>
+      <table class="rev-products-table">
+        <tr><td>FP Business Alchemy</td><td class="price">£17k</td></tr>
+        <tr><td>Transformative Presence</td><td class="price">£6k</td></tr>
+        <tr><td>Mini Board</td><td class="price">£20k</td></tr>
+        <tr><td>Individual Journeys</td><td class="price">£10k</td></tr>
+        <tr><td>Organisational Immersions</td><td class="price">£90k</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- Participant Journey & Principles -->
+  <span class="strategy-section-title">PARTICIPANT JOURNEY &amp; ECOSYSTEM PRINCIPLES</span>
+  <div class="journey-outer">
+    <div class="journey-steps">
+      <div style="font-family:'Playfair Display',serif;font-size:16px;font-weight:600;color:var(--ink);margin-bottom:20px;">The Developmental Spiral</div>
+      <!-- Steps -->
+      <div class="journey-step">
+        <div class="journey-connector"><div class="journey-dot"></div><div class="journey-line"></div></div>
+        <div class="journey-step-inner">
+          <span class="journey-label">curiosity</span>
+          <div class="journey-step-name">Talks "Make Sense?"</div>
+          <div class="journey-step-desc">First contact with the ESSENSE worldview. Public, accessible, resonant.</div>
+        </div>
+      </div>
+      <div class="journey-step">
+        <div class="journey-connector"><div class="journey-dot"></div><div class="journey-line"></div></div>
+        <div class="journey-step-inner">
+          <span class="journey-label">entry</span>
+          <div class="journey-step-name">Essense Day · Online Course</div>
+          <div class="journey-step-desc">Immersive introduction. The worldview deepens. Community forms.</div>
+        </div>
+      </div>
+      <div class="journey-step">
+        <div class="journey-connector"><div class="journey-dot"></div><div class="journey-line"></div></div>
+        <div class="journey-step-inner">
+          <span class="journey-label">embodied practice</span>
+          <div class="journey-step-name">Leadership &amp; Shadow Retreat</div>
+          <div class="journey-step-desc">Body-based, relational, transformative. The real work begins.</div>
+        </div>
+      </div>
+      <div class="journey-step">
+        <div class="journey-connector"><div class="journey-dot"></div><div class="journey-line"></div></div>
+        <div class="journey-step-inner">
+          <span class="journey-label">systemic redesign</span>
+          <div class="journey-step-name">Business Redesign Lab</div>
+          <div class="journey-step-desc">Apply the learning to a real business context. Cohort accountability.</div>
+        </div>
+      </div>
+      <div class="journey-step">
+        <div class="journey-connector"><div class="journey-dot"></div><div class="journey-line"></div></div>
+        <div class="journey-step-inner">
+          <span class="journey-label">alchemy</span>
+          <div class="journey-step-name">FP Business Alchemy</div>
+          <div class="journey-step-desc">Flagship programme. Deep transformation of self and organisation.</div>
+        </div>
+      </div>
+      <div class="journey-step">
+        <div class="journey-connector"><div class="journey-dot faint"></div><div class="journey-line"></div></div>
+        <div class="journey-step-inner">
+          <span class="journey-label">stewardship</span>
+          <div class="journey-step-name">Mini Board · Organisational Stewardship</div>
+          <div class="journey-step-desc">Mastery and institutional leadership. Holding the field for others.</div>
+        </div>
+      </div>
+      <div class="journey-step">
+        <div class="journey-connector"><div class="journey-dot faint" style="background:transparent;border-style:dashed;"></div></div>
+        <div class="journey-step-inner">
+          <span class="journey-label" style="opacity:0.5;">ongoing</span>
+          <div class="journey-step-name" style="color:var(--ink-light);font-style:italic;">Alumni Ecosystem</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="journey-principles">
+      <div style="font-family:'Playfair Display',serif;font-size:16px;font-weight:600;color:var(--parchment);margin-bottom:4px;">Ecosystem Principles</div>
+      <div style="font-family:'EB Garamond',serif;font-size:12px;font-style:italic;color:rgba(237,232,223,0.4);margin-bottom:20px;">What makes ESSENSE different from a traditional school</div>
+      <div class="journey-principle">
+        <div class="journey-principle-title">Multiple Entry Points</div>
+        <div class="journey-principle-body">Participants may enter through talks, courses, retreats, business labs, or organisational work. There is no single gate. The ecosystem meets each person where they are.</div>
+      </div>
+      <div class="journey-principle">
+        <div class="journey-principle-title">A Spiral, Not a Funnel</div>
+        <div class="journey-principle-body">Participants are not pushed through a conversion sequence. They are invited into a deepening relationship with the work — returning, going deeper, bringing others.</div>
+      </div>
+      <div class="journey-principle">
+        <div class="journey-principle-title">Ecosystem Coherence</div>
+        <div class="journey-principle-body">Each programme feeds the others: Talks → Courses → Retreats → Cohorts → Mastery. The system grows organically, not through aggressive marketing.</div>
+      </div>
+      <div class="journey-principle">
+        <div class="journey-principle-title">Regenerative by Design</div>
+        <div class="journey-principle-body">Alumni become faculty. Participants become co-creators. The school is sustained by the very transformation it catalyses — a living institution.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Launch Roadmap -->
+  <span class="strategy-section-title">LAUNCH ROADMAP · 2026–2028</span>
+  <div class="roadmap-grid">
+    <div class="roadmap-year highlighted">
+      <span class="roadmap-year-tag">FOUNDATION YEAR · NOW</span>
+      <div class="roadmap-year-num">2026</div>
+      <div class="roadmap-year-goal">Establish the ESSENSE worldview and community</div>
+      <span class="roadmap-focus">Main launches</span>
+      <ul class="roadmap-programmes">
+        <li>Talks "Make Sense?"</li>
+        <li>Essense Day</li>
+        <li>Business Redesign Lab</li>
+        <li>Online Feminine Course</li>
+        <li>Shadow Retreats</li>
+        <li>Leadership Retreat</li>
+        <li>Individual Journeys</li>
+      </ul>
+      <span class="roadmap-focus" style="margin-top:16px;">Focus</span>
+      <ul class="roadmap-programmes">
+        <li>Build community</li>
+        <li>Test formats</li>
+        <li>Develop faculty</li>
+        <li>Refine methodology</li>
+      </ul>
+    </div>
+    <div class="roadmap-year">
+      <span class="roadmap-year-tag">ECOSYSTEM EXPANSION</span>
+      <div class="roadmap-year-num">2027</div>
+      <div class="roadmap-year-goal">Expand cohort learning and deepen leadership transformation</div>
+      <span class="roadmap-focus">New developments</span>
+      <ul class="roadmap-programmes">
+        <li>Additional online courses</li>
+        <li>Expanded retreats</li>
+        <li>Stronger cohort pathways</li>
+        <li>FP Business Alchemy beta cohort</li>
+        <li>Faculty &amp; advisor onboarding</li>
+      </ul>
+      <span class="roadmap-focus" style="margin-top:16px;">Focus</span>
+      <ul class="roadmap-programmes">
+        <li>Scale community</li>
+        <li>Strengthen cohort learning</li>
+        <li>Increase repeat participation</li>
+      </ul>
+    </div>
+    <div class="roadmap-year" style="background:var(--parchment-dark);">
+      <span class="roadmap-year-tag">MATURITY PHASE</span>
+      <div class="roadmap-year-num">2028</div>
+      <div class="roadmap-year-goal">Position ESSENSE as a global regenerative leadership school</div>
+      <span class="roadmap-focus">Key programmes established</span>
+      <ul class="roadmap-programmes">
+        <li>FP Business Alchemy (full)</li>
+        <li>Transformative Presence</li>
+        <li>Organisational Immersions</li>
+        <li>Mini Board programme</li>
+        <li>Publishing &amp; intellectual platform</li>
+      </ul>
+      <span class="roadmap-focus" style="margin-top:16px;">Focus</span>
+      <ul class="roadmap-programmes">
+        <li>Flagship programmes</li>
+        <li>Organisational partnerships</li>
+        <li>Deeper alumni ecosystem</li>
+      </ul>
+    </div>
+  </div>
+
+</div><!-- /strategyPanel -->
+
 </div><!-- /main -->
 </div><!-- /appShell -->
 
@@ -2163,6 +2546,7 @@ function showEssencePanel(btn) {
   document.querySelectorAll('.canvas-panel').forEach(p => p.classList.remove('active'));
   document.getElementById('palettePanel').style.display = 'none';
   document.getElementById('essencePanel').style.display = 'none';
+  document.getElementById('strategyPanel').classList.remove('active');
   document.getElementById('essencePanel').style.display = 'block';
   document.querySelectorAll('.pillar-tab').forEach(b => b.classList.remove('active'));
   btn.classList.add('active');
@@ -2172,6 +2556,7 @@ function showPalettePanel(btn) {
   document.querySelectorAll('.pillar-panel').forEach(p => p.classList.remove('active'));
   document.querySelectorAll('.targets-panel').forEach(p => p.classList.remove('active'));
   document.querySelectorAll('.canvas-panel').forEach(p => p.classList.remove('active'));
+  document.getElementById('strategyPanel').classList.remove('active');
   document.getElementById('palettePanel').style.display = 'block';
   document.querySelectorAll('.pillar-tab').forEach(b => b.classList.remove('active'));
   btn.classList.add('active');
@@ -2180,6 +2565,7 @@ function showPalettePanel(btn) {
 function showPillar(id, btn) {
   document.getElementById('palettePanel').style.display = 'none';
   document.getElementById('essencePanel').style.display = 'none';
+  document.getElementById('strategyPanel').classList.remove('active');
   document.querySelectorAll('.pillar-panel').forEach(p => p.classList.remove('active'));
   document.querySelectorAll('.targets-panel').forEach(p => p.classList.remove('active'));
   document.querySelectorAll('.canvas-panel').forEach(p => p.classList.remove('active'));
@@ -2195,6 +2581,7 @@ function showTargets(btn) {
   document.querySelectorAll('.canvas-panel').forEach(p => p.classList.remove('active'));
   document.getElementById('palettePanel').style.display = 'none';
   document.getElementById('essencePanel').style.display = 'none';
+  document.getElementById('strategyPanel').classList.remove('active');
   document.querySelectorAll('.pillar-tab').forEach(t => t.classList.remove('active'));
   document.querySelectorAll('.nav-targets-btn').forEach(b => b.classList.remove('active'));
   document.getElementById('panel-targets').classList.add('active');
@@ -2206,9 +2593,21 @@ function showCanvasPanel(btn) {
   document.querySelectorAll('.canvas-panel').forEach(p => p.classList.remove('active'));
   document.getElementById('palettePanel').style.display = 'none';
   document.getElementById('essencePanel').style.display = 'none';
+  document.getElementById('strategyPanel').classList.remove('active');
   document.querySelectorAll('.pillar-tab').forEach(t => t.classList.remove('active'));
   document.querySelectorAll('.nav-targets-btn').forEach(b => b.classList.remove('active'));
   document.getElementById('panel-canvas').classList.add('active');
+  btn.classList.add('active');
+}
+function showStrategyPanel(btn) {
+  document.querySelectorAll('.pillar-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.targets-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.canvas-panel').forEach(p => p.classList.remove('active'));
+  document.getElementById('palettePanel').style.display = 'none';
+  document.getElementById('essencePanel').style.display = 'none';
+  document.getElementById('strategyPanel').classList.add('active');
+  document.querySelectorAll('.pillar-tab').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.nav-targets-btn').forEach(b => b.classList.remove('active'));
   btn.classList.add('active');
 }
 function showCanvas(id, btn) {
