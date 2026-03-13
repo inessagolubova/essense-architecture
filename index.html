@@ -203,6 +203,8 @@ body.edit-mode .canvas-prog-title{outline:none;border-bottom:1px dashed rgba(74,
 body.edit-mode .canvas-prog-title:focus{background:rgba(74,140,74,0.06);outline:none;}
 body.edit-mode .canvas-prog-meta{outline:none;border-bottom:1px dashed rgba(74,140,74,0.3);cursor:text;}
 body.edit-mode .canvas-prog-meta:focus{background:rgba(74,140,74,0.06);outline:none;}
+/* Universal selected block */
+.edit-selected{outline:2px solid #4A8C4A !important;outline-offset:2px;position:relative;}
 
 .edit-hint{display:none;font-family:'EB Garamond',serif;font-size:11px;font-style:italic;color:#4A8C4A;margin-left:6px;opacity:0.7;}
 body.edit-mode .edit-hint{display:inline;}
@@ -349,9 +351,9 @@ body.edit-mode .edit-hint{display:inline;}
 
 <!-- ══ EDIT BANNER ══ -->
 <div class="edit-banner" id="editBanner">
-  <strong>Edit mode on</strong> — click any text to edit it directly
-  <button class="save-btn" onclick="saveHTML()">⬇ Download updated file</button>
-  <button class="save-btn" onclick="toggleEditMode(document.getElementById('editBtn'))">Done editing</button>
+  <strong>Режим редактирования</strong> — кликни на текст чтобы редактировать · <span style="opacity:0.75;">Shift+клик на блок → изменить фон, шрифт, рамку, картинку</span>
+  <button class="save-btn" onclick="saveHTML()">⬇ Скачать</button>
+  <button class="save-btn" onclick="toggleEditMode(document.getElementById('editBtn'))">Готово</button>
 </div>
 
 <div class="main">
@@ -1017,6 +1019,7 @@ body.edit-mode .edit-hint{display:inline;}
     <button class="canvas-prog-btn" onclick="showCanvas('individual-journey',this)">ESSENSE Individual Journey</button>
     <button class="canvas-prog-btn" onclick="showCanvas('mini-board',this)">Mini-Board with ESSENSE</button>
     <button class="canvas-prog-btn" onclick="showCanvas('business-alchemy',this)">Business Alchemy</button>
+    <button class="canvas-prog-btn" onclick="showCanvas('transformative-presence',this)">Transformative Presence</button>
   </div>
 
   <!-- ── MAKES SENSE? TALKS ── -->
@@ -1504,6 +1507,75 @@ body.edit-mode .edit-hint{display:inline;}
         <span class="canvas-field-label-dark">Cost Structure</span>
         <span class="canvas-field-label-alt-dark">What sustains this — operational foundations</span>
         <div class="canvas-field-value-dark">Accommodation £51,700 · Speaker delivery £126,000 · Producer £12,207 · Operations £9,165 · Tools £350 → <strong>Total ~£199,422 per cohort</strong></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── TRANSFORMATIVE PRESENCE ── -->
+  <div class="canvas-card" id="canvas-transformative-presence">
+    <div class="canvas-title-row">
+      <div class="canvas-prog-title">Transformative Presence</div>
+      <div class="canvas-prog-meta">For Consultants · In-person · 4 modules × 5 days · 12-person cohort · Jesse · Start April 2027</div>
+    </div>
+    <div class="canvas-grid">
+      <div class="canvas-cell">
+        <span class="canvas-field-label">Customer Segments</span>
+        <span class="canvas-field-label-alt">Who is ready — the person at the threshold</span>
+        <div class="canvas-field-value"><ul><li>Consultants, coaches, and facilitators working with complex organisations</li><li>Practitioners seeking to navigate social and generative complexity</li><li>Leaders wanting to become stewards of cultural self-regeneration</li><li>12-person cohort · highly selective</li></ul></div>
+      </div>
+      <div class="canvas-cell">
+        <span class="canvas-field-label">Problem / Pain</span>
+        <span class="canvas-field-label-alt">The tension they carry</span>
+        <div class="canvas-field-value">Consultants encounter social complexity (everyone is different) and generative complexity (futures not built on the past) without the embodied capacities to navigate them. Most professional development is cognitive only — leaving practitioners underprepared for what they actually face in the room.</div>
+      </div>
+      <div class="canvas-cell">
+        <span class="canvas-field-label">Value Proposition</span>
+        <span class="canvas-field-label-alt">The transformation offered</span>
+        <div class="canvas-field-value">
+          <div class="canvas-transform"><span class="canvas-transform-from">Technically skilled but reactive</span><span class="canvas-transform-arrow">→</span><span class="canvas-transform-to">Transformatively present — mental, somatic, emotional</span></div>
+          <div class="canvas-transform" style="margin-top:8px"><span class="canvas-transform-from">Managing complexity from outside</span><span class="canvas-transform-arrow">→</span><span class="canvas-transform-to">Participating &amp; enacting — helping culture become self-regenerating</span></div>
+          <div style="margin-top:12px;font-family:'EB Garamond',serif;font-size:12px;font-style:italic;color:var(--ink-light)">Urban-in-nature container · 1-year programme with supervision + community of practice</div>
+        </div>
+      </div>
+    </div>
+    <div class="canvas-grid">
+      <div class="canvas-cell">
+        <span class="canvas-field-label">Key Activities + Method</span>
+        <span class="canvas-field-label-alt">How we work — four modules, five days each</span>
+        <div class="canvas-field-value"><ul><li><strong>M1</strong> Apr 21–25, 2027 · <strong>M2</strong> Jun 16–20 · <strong>M3</strong> Sep 15–19 · <strong>M4</strong> Nov 17–21 · Q2 2028 closing</li><li>5-day in-person immersion per module · 12-person cohort</li><li>Supervision + community of practice throughout</li><li>Capacity development: mental, somatic, emotional</li><li>Assessment of practitioner capacities</li><li>Emotional aikido — helping others change state</li></ul></div>
+      </div>
+      <div class="canvas-cell">
+        <span class="canvas-field-label">Capacities Developed</span>
+        <span class="canvas-field-label-alt">What we build — the three dimensions</span>
+        <div class="canvas-field-value">
+          <div style="margin-bottom:8px"><strong>Mental</strong> — ability to witness thought (not identified with it), construct-awareness</div>
+          <div style="margin-bottom:8px"><strong>Emotional</strong> — willingness to feel unwanted emotions · transforming emotional energy</div>
+          <div><strong>Somatic</strong> — distress tolerance · containment (holding energy, higher frequencies) · building vagal tone · nervous system regulation</div>
+        </div>
+      </div>
+      <div class="canvas-cell">
+        <span class="canvas-field-label">Key Partners</span>
+        <span class="canvas-field-label-alt">Who we co-create with</span>
+        <div class="canvas-field-value"><ul><li>Jesse (lead faculty)</li><li>Accreditation bodies (optional)</li><li>ESSENSE practitioner network</li><li>Supervision practitioners</li></ul></div>
+      </div>
+    </div>
+    <div class="canvas-grid-wide">
+      <div class="canvas-cell">
+        <span class="canvas-field-label">Practitioner Capacities — System Level</span>
+        <span class="canvas-field-label-alt">What enables transformative presence in the field</span>
+        <div class="canvas-field-value"><ul><li>Own ego-witnessing (without dissociation)</li><li>Passionate detachment — witnessing thought without being consumed by it</li><li>Distress tolerance — capacity to stay present with somatic discomfort and intensity</li><li>Capacity to create and enact oneself moment-to-moment</li><li>System-witnessing — emotional aikido (helping others change state, often unknowingly)</li></ul></div>
+      </div>
+      <div class="canvas-cell">
+        <span class="canvas-field-label">Revenue + Pathway</span>
+        <span class="canvas-field-label-alt">Life-value exchange · Financial model</span>
+        <div class="canvas-field-value"><ul><li>£6,550 per participant · 20 participants per cohort</li><li>Annual revenue: £131,000 · Annual cost: £61,400</li><li>Annual profit: £69,600 · Margin: 53.1%</li><li>Facilitator: £870/h · 20 days facilitation</li><li>Break-even: 10 participants</li><li>Launch: 1 cohort 2027 · Expansion 2028+</li><li>Leads to: Practitioner Community, Mini Board, Re/Source the Mastery</li></ul></div>
+      </div>
+    </div>
+    <div class="canvas-grid-full">
+      <div class="canvas-cell" style="background:var(--ink)">
+        <span class="canvas-field-label-dark">Cost Structure</span>
+        <span class="canvas-field-label-alt-dark">What sustains this — operational foundations</span>
+        <div class="canvas-field-value-dark">Facilitator time cost £17,400 · Variable costs (catering, royalty, per-head) £24,000 · Fixed costs per cohort (venue) £20,000 → <strong>Total cost per cohort: £61,400</strong></div>
       </div>
     </div>
   </div>
@@ -2299,6 +2371,7 @@ body.edit-mode .edit-hint{display:inline;}
       <div class="pathway-formats">
         <span class="pathway-format-tag" style="border-color:rgba(237,232,223,0.15);color:rgba(237,232,223,0.5);background:rgba(237,232,223,0.06);">Mastery programs</span>
         <span class="pathway-format-tag" style="border-color:rgba(237,232,223,0.15);color:rgba(237,232,223,0.5);background:rgba(237,232,223,0.06);">Mini Board</span>
+        <span class="pathway-format-tag" style="border-color:rgba(237,232,223,0.15);color:rgba(237,232,223,0.5);background:rgba(237,232,223,0.06);">Transformative Presence</span>
       </div>
     </div>
   </div>
@@ -2502,6 +2575,7 @@ body.edit-mode .edit-hint{display:inline;}
         <li>Stronger cohort pathways</li>
         <li>FP Business Alchemy beta cohort</li>
         <li>Faculty &amp; advisor onboarding</li>
+        <li>Transformative Presence (Jesse, April 2027)</li>
       </ul>
       <span class="roadmap-focus" style="margin-top:16px;">Focus</span>
       <ul class="roadmap-programmes">
@@ -2517,7 +2591,7 @@ body.edit-mode .edit-hint{display:inline;}
       <span class="roadmap-focus">Key programmes established</span>
       <ul class="roadmap-programmes">
         <li>FP Business Alchemy (full)</li>
-        <li>Transformative Presence</li>
+        <li>Transformative Presence (cohort 2)</li>
         <li>Organisational Immersions</li>
         <li>Mini Board programme</li>
         <li>Publishing &amp; intellectual platform</li>
@@ -2653,48 +2727,307 @@ function toggleEditMode(btn) {
   }
 }
 
+// ══════════════════════════════════════════
+// UNIVERSAL EDITOR
+// ══════════════════════════════════════════
+let selectedEl = null;
+let contextMenu = null;
+
 function makeEditable() {
-  const selectors = [
-    '.prog-name',
-    '.prog-detail',
-    '.aud-tagline',
-    '.pillar-question',
-    '.pillar-layer',
-    '.format-name',
-    '.format-desc',
-    '.kpi-num',
-    '.kpi-label',
-    '.target-num',
-    '.target-dim',
-    '.target-note',
-    '.phase-sub',
-    '.philosophy-quote',
-    '.footer-tagline',
-    '.footer-meta',
-    '.pillar-phase',
-    '.aud-badge',
-    '.canvas-field-value',
-    '.canvas-field-value-dark',
-    '.canvas-prog-title',
-    '.canvas-prog-meta',
-    '.canvas-transform-from',
-    '.canvas-transform-to'
-  ];
-  selectors.forEach(sel => {
-    document.querySelectorAll(sel).forEach(el => {
-      el.setAttribute('contenteditable', 'true');
-      el.setAttribute('spellcheck', 'false');
-    });
-  });
-  // Expand all programme cards so details are visible and editable
+  // Make ALL text-bearing elements editable
+  const skip = ['SCRIPT','STYLE','INPUT','BUTTON','SELECT','TEXTAREA','svg','path','circle','line','polyline','polygon','rect'];
+  function walkAndMakeEditable(node) {
+    if (skip.includes(node.tagName)) return;
+    // If element has direct text content (not just child elements)
+    const hasText = Array.from(node.childNodes).some(n => n.nodeType === 3 && n.textContent.trim());
+    if (hasText || node.classList.contains('canvas-field-value') || node.classList.contains('canvas-field-value-dark')) {
+      node.setAttribute('contenteditable','true');
+      node.setAttribute('spellcheck','false');
+    }
+    // Recurse
+    Array.from(node.children).forEach(walkAndMakeEditable);
+  }
+  document.querySelectorAll('.main').forEach(walkAndMakeEditable);
+  // Expand all programme cards
   document.querySelectorAll('.prog-entry').forEach(e => e.classList.add('expanded'));
+  // Attach click-to-select for block editing
+  attachBlockSelectListeners();
 }
 
 function removeEditable() {
   document.querySelectorAll('[contenteditable]').forEach(el => {
     el.removeAttribute('contenteditable');
   });
+  hideContextToolbar();
+  document.querySelectorAll('.edit-selected').forEach(e => e.classList.remove('edit-selected'));
 }
+
+// ── BLOCK SELECT ──
+function attachBlockSelectListeners() {
+  const blockSelectors = [
+    '.kpi-cell','.matrix-row','.aud-cell','.prog-cell','.prog-entry',
+    '.target-cell','.phase-cell','.canvas-cell','.canvas-cell-dark',
+    '.engine-cell','.rev-tier','.pathway-cell','.roadmap-year',
+    '.journey-steps','.journey-principles','.pillar-header',
+    '.philosophy-bar','.format-header','.pillar-right',
+    '.journey-principle','.journey-step-inner'
+  ];
+  blockSelectors.forEach(sel => {
+    document.querySelectorAll(sel).forEach(el => {
+      if (!el.dataset.blockListener) {
+        el.dataset.blockListener = '1';
+        el.addEventListener('click', function(e) {
+          if (!editMode) return;
+          // Don't trigger when clicking on contenteditable text directly (unless shift held)
+          if (e.target.getAttribute('contenteditable') && !e.shiftKey) return;
+          e.stopPropagation();
+          selectBlock(this, e);
+        });
+      }
+    });
+  });
+}
+
+function selectBlock(el, e) {
+  document.querySelectorAll('.edit-selected').forEach(x => x.classList.remove('edit-selected'));
+  selectedEl = el;
+  el.classList.add('edit-selected');
+  showContextToolbar(el, e);
+}
+
+// ── CONTEXT TOOLBAR ──
+function showContextToolbar(el, e) {
+  hideContextToolbar();
+  const tb = document.createElement('div');
+  tb.id = 'ctxToolbar';
+  tb.style.cssText = `
+    position:fixed; z-index:9000;
+    background:#1C1C1A; border:1px solid rgba(237,232,223,0.15);
+    border-radius:6px; padding:8px 10px;
+    display:flex; gap:6px; flex-wrap:wrap; align-items:center;
+    box-shadow:0 4px 24px rgba(0,0,0,0.4);
+    font-family:'EB Garamond',serif; font-size:12px; color:#EDE8DF;
+    max-width:520px;
+  `;
+
+  const cs = window.getComputedStyle(el);
+  const currentBg = rgbToHex(cs.backgroundColor) || '#EDE8DF';
+  const currentBorder = rgbToHex(cs.borderColor) || '#1C1C1A';
+
+  tb.innerHTML = `
+    <span style="font-family:'Playfair Display SC',serif;font-size:9px;letter-spacing:1.5px;color:rgba(237,232,223,0.4);margin-right:4px;">BLOCK</span>
+
+    <!-- Background colour -->
+    <label title="Background colour" style="display:flex;align-items:center;gap:4px;cursor:pointer;">
+      <span style="opacity:0.6;font-size:11px;">BG</span>
+      <input type="color" value="${currentBg}" oninput="applyBlockStyle(selectedEl,'backgroundColor',this.value)"
+        style="width:28px;height:24px;border:none;border-radius:3px;cursor:pointer;padding:0;background:none;">
+    </label>
+
+    <!-- Border colour -->
+    <label title="Border colour" style="display:flex;align-items:center;gap:4px;cursor:pointer;">
+      <span style="opacity:0.6;font-size:11px;">Border</span>
+      <input type="color" value="${currentBorder}" oninput="applyBlockBorder(selectedEl,this.value)"
+        style="width:28px;height:24px;border:none;border-radius:3px;cursor:pointer;padding:0;background:none;">
+    </label>
+
+    <!-- Border width -->
+    <label title="Border width" style="display:flex;align-items:center;gap:4px;">
+      <span style="opacity:0.6;font-size:11px;">px</span>
+      <input type="number" min="0" max="12" value="1" style="width:40px;padding:3px 5px;background:rgba(255,255,255,0.08);border:1px solid rgba(237,232,223,0.15);border-radius:3px;color:#EDE8DF;font-size:11px;outline:none;"
+        oninput="applyBlockBorderWidth(selectedEl,this.value)">
+    </label>
+
+    <!-- Border radius -->
+    <label title="Corner radius" style="display:flex;align-items:center;gap:4px;">
+      <span style="opacity:0.6;font-size:11px;">◌</span>
+      <input type="number" min="0" max="40" value="${parseInt(cs.borderRadius)||0}" style="width:40px;padding:3px 5px;background:rgba(255,255,255,0.08);border:1px solid rgba(237,232,223,0.15);border-radius:3px;color:#EDE8DF;font-size:11px;outline:none;"
+        oninput="selectedEl.style.borderRadius=this.value+'px'">
+    </label>
+
+    <!-- Padding -->
+    <label title="Padding" style="display:flex;align-items:center;gap:4px;">
+      <span style="opacity:0.6;font-size:11px;">pad</span>
+      <input type="number" min="0" max="80" value="${parseInt(cs.paddingTop)||20}" style="width:40px;padding:3px 5px;background:rgba(255,255,255,0.08);border:1px solid rgba(237,232,223,0.15);border-radius:3px;color:#EDE8DF;font-size:11px;outline:none;"
+        oninput="selectedEl.style.padding=this.value+'px'">
+    </label>
+
+    <div style="width:1px;height:20px;background:rgba(237,232,223,0.12);margin:0 2px;"></div>
+
+    <!-- Font family picker -->
+    <select onchange="applyBlockFont(selectedEl,this.value)" title="Font family"
+      style="padding:3px 6px;background:rgba(255,255,255,0.08);border:1px solid rgba(237,232,223,0.15);border-radius:3px;color:#EDE8DF;font-size:11px;outline:none;cursor:pointer;">
+      <option value="">Font…</option>
+      <option value="'Playfair Display',serif">Playfair Display</option>
+      <option value="'Playfair Display SC',serif">Playfair SC (caps)</option>
+      <option value="'EB Garamond',serif">EB Garamond</option>
+      <option value="Georgia,serif">Georgia</option>
+      <option value="'Times New Roman',serif">Times New Roman</option>
+      <option value="Arial,sans-serif">Arial</option>
+      <option value="'Helvetica Neue',sans-serif">Helvetica Neue</option>
+      <option value="'Courier New',monospace">Courier New</option>
+    </select>
+
+    <!-- Font size -->
+    <label title="Text size" style="display:flex;align-items:center;gap:4px;">
+      <span style="opacity:0.6;font-size:11px;">T</span>
+      <input type="number" min="8" max="96" value="${parseInt(cs.fontSize)||14}" style="width:44px;padding:3px 5px;background:rgba(255,255,255,0.08);border:1px solid rgba(237,232,223,0.15);border-radius:3px;color:#EDE8DF;font-size:11px;outline:none;"
+        oninput="applyBlockStyle(selectedEl,'fontSize',this.value+'px')">
+    </label>
+
+    <!-- Text colour -->
+    <label title="Text colour" style="display:flex;align-items:center;gap:4px;cursor:pointer;">
+      <span style="opacity:0.6;font-size:11px;">A</span>
+      <input type="color" value="${rgbToHex(cs.color)||'#1C1C1A'}" oninput="applyBlockStyle(selectedEl,'color',this.value)"
+        style="width:28px;height:24px;border:none;border-radius:3px;cursor:pointer;padding:0;background:none;">
+    </label>
+
+    <!-- Bold / Italic -->
+    <button onclick="applyBlockStyle(selectedEl,'fontWeight',selectedEl.style.fontWeight==='bold'?'normal':'bold')"
+      title="Bold" style="padding:3px 8px;background:rgba(255,255,255,0.08);border:1px solid rgba(237,232,223,0.15);border-radius:3px;color:#EDE8DF;cursor:pointer;font-weight:bold;font-size:12px;">B</button>
+    <button onclick="applyBlockStyle(selectedEl,'fontStyle',selectedEl.style.fontStyle==='italic'?'normal':'italic')"
+      title="Italic" style="padding:3px 8px;background:rgba(255,255,255,0.08);border:1px solid rgba(237,232,223,0.15);border-radius:3px;color:#EDE8DF;cursor:pointer;font-style:italic;font-size:12px;">I</button>
+
+    <div style="width:1px;height:20px;background:rgba(237,232,223,0.12);margin:0 2px;"></div>
+
+    <!-- Image insert -->
+    <button onclick="triggerImageInsert()" title="Insert / replace image"
+      style="padding:4px 10px;background:rgba(255,255,255,0.08);border:1px solid rgba(237,232,223,0.15);border-radius:3px;color:#EDE8DF;cursor:pointer;font-size:11px;white-space:nowrap;">🖼 Image</button>
+    <input type="file" id="imgFileInput" accept="image/*" style="display:none;" onchange="insertImageIntoBlock(this)">
+
+    <!-- Image URL -->
+    <button onclick="promptImageUrl()" title="Image from URL"
+      style="padding:4px 10px;background:rgba(255,255,255,0.08);border:1px solid rgba(237,232,223,0.15);border-radius:3px;color:#EDE8DF;cursor:pointer;font-size:11px;white-space:nowrap;">🔗 URL</button>
+
+    <div style="width:1px;height:20px;background:rgba(237,232,223,0.12);margin:0 2px;"></div>
+
+    <!-- Duplicate -->
+    <button onclick="duplicateBlock(selectedEl)" title="Duplicate block"
+      style="padding:4px 10px;background:rgba(255,255,255,0.08);border:1px solid rgba(237,232,223,0.15);border-radius:3px;color:#EDE8DF;cursor:pointer;font-size:11px;">⧉ Dup</button>
+
+    <!-- Delete block -->
+    <button onclick="deleteBlock(selectedEl)" title="Delete block"
+      style="padding:4px 10px;background:rgba(180,30,30,0.25);border:1px solid rgba(200,50,50,0.3);border-radius:3px;color:#f87;cursor:pointer;font-size:11px;">✕ Del</button>
+
+    <!-- Close -->
+    <button onclick="hideContextToolbar()" style="padding:3px 8px;background:none;border:none;color:rgba(237,232,223,0.4);cursor:pointer;font-size:14px;margin-left:2px;">×</button>
+  `;
+
+  document.body.appendChild(tb);
+  contextMenu = tb;
+  positionToolbar(tb, e);
+}
+
+function positionToolbar(tb, e) {
+  const margin = 12;
+  const tw = tb.offsetWidth || 520;
+  const th = tb.offsetHeight || 60;
+  let x = e ? Math.min(e.clientX, window.innerWidth - tw - margin) : margin;
+  let y = e ? e.clientY - th - 12 : 80;
+  if (y < 60) y = (e ? e.clientY + 16 : 80);
+  x = Math.max(margin, x);
+  tb.style.left = x + 'px';
+  tb.style.top = y + 'px';
+}
+
+function hideContextToolbar() {
+  const tb = document.getElementById('ctxToolbar');
+  if (tb) tb.remove();
+  contextMenu = null;
+}
+
+// ── BLOCK STYLE HELPERS ──
+function applyBlockStyle(el, prop, val) {
+  if (!el) return;
+  el.style[prop] = val;
+}
+function applyBlockBorder(el, color) {
+  if (!el) return;
+  const w = el.style.borderWidth || '1px';
+  el.style.border = w + ' solid ' + color;
+}
+function applyBlockBorderWidth(el, w) {
+  if (!el) return;
+  const cs = window.getComputedStyle(el);
+  const col = rgbToHex(cs.borderColor) || '#1C1C1A';
+  el.style.border = w + 'px solid ' + col;
+}
+function applyBlockFont(el, font) {
+  if (!el || !font) return;
+  // Apply to all child text elements too
+  el.style.fontFamily = font;
+  el.querySelectorAll('*').forEach(child => { child.style.fontFamily = font; });
+}
+
+function rgbToHex(rgb) {
+  if (!rgb || rgb === 'transparent' || rgb === 'rgba(0, 0, 0, 0)') return '#ffffff';
+  const m = rgb.match(/^rgba?\((\d+),\s*(\d+),\s*(\d+)/);
+  if (!m) return '#ffffff';
+  return '#' + [m[1],m[2],m[3]].map(x => parseInt(x).toString(16).padStart(2,'0')).join('');
+}
+
+// ── IMAGE INSERT ──
+function triggerImageInsert() {
+  document.getElementById('imgFileInput').click();
+}
+function insertImageIntoBlock(input) {
+  if (!selectedEl || !input.files[0]) return;
+  const reader = new FileReader();
+  reader.onload = function(e) {
+    placeImage(e.target.result);
+  };
+  reader.readAsDataURL(input.files[0]);
+  input.value = '';
+}
+function promptImageUrl() {
+  const url = prompt('Paste image URL:');
+  if (url) placeImage(url);
+}
+function placeImage(src) {
+  if (!selectedEl) return;
+  // Check if there's already an img inside
+  let img = selectedEl.querySelector('img.block-img');
+  if (!img) {
+    img = document.createElement('img');
+    img.className = 'block-img';
+    img.style.cssText = 'width:100%;display:block;border-radius:3px;margin-top:8px;object-fit:cover;max-height:240px;cursor:pointer;';
+    img.title = 'Click to replace image';
+    img.onclick = function() { triggerImageInsert(); };
+    selectedEl.appendChild(img);
+  }
+  img.src = src;
+}
+
+// ── DUPLICATE / DELETE ──
+function duplicateBlock(el) {
+  if (!el) return;
+  const clone = el.cloneNode(true);
+  clone.classList.remove('edit-selected');
+  delete clone.dataset.blockListener;
+  el.parentNode.insertBefore(clone, el.nextSibling);
+  makeEditable(); // re-attach listeners
+}
+function deleteBlock(el) {
+  if (!el) return;
+  if (!confirm('Delete this block?')) return;
+  el.remove();
+  selectedEl = null;
+  hideContextToolbar();
+}
+
+function applyFontFamily(sel, font) {
+  if (!font) return;
+  document.querySelectorAll(sel).forEach(el => { el.style.fontFamily = font; });
+}
+// Close toolbar when clicking elsewhere
+document.addEventListener('click', function(e) {
+  if (!editMode) return;
+  if (contextMenu && !contextMenu.contains(e.target) && !e.target.closest('.edit-selected')) {
+    hideContextToolbar();
+    document.querySelectorAll('.edit-selected').forEach(x => x.classList.remove('edit-selected'));
+    selectedEl = null;
+  }
+}, true);
 
 // ── SAVE / DOWNLOAD ──
 function saveHTML() {
@@ -2933,68 +3266,99 @@ async function publishToGitHub() {
 </div>
 
 <!-- ══ EDITOR SIDEBAR ══ -->
-<div id="editorSidebar" style="position:fixed;top:0;right:-340px;width:320px;height:100vh;background:#1C1C1A;z-index:200;transition:right 0.3s ease;overflow-y:auto;padding:24px 20px;box-shadow:-4px 0 24px rgba(0,0,0,0.3);">
-  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:24px;">
+<div id="editorSidebar" style="position:fixed;top:0;right:-360px;width:340px;height:100vh;background:#1C1C1A;z-index:200;transition:right 0.3s ease;overflow-y:auto;padding:24px 20px;box-shadow:-4px 0 24px rgba(0,0,0,0.3);">
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;">
     <div style="font-family:'Playfair Display SC',serif;font-size:10px;letter-spacing:2px;color:#EDE8DF;">DESIGN CONTROLS</div>
     <button onclick="hideSidebar()" style="background:none;border:none;color:rgba(237,232,223,0.5);cursor:pointer;font-size:18px;line-height:1;">×</button>
   </div>
 
-  <!-- Colours -->
-  <div style="margin-bottom:20px;">
-    <div style="font-family:'EB Garamond',serif;font-size:11px;font-style:italic;color:rgba(237,232,223,0.4);margin-bottom:12px;border-bottom:1px solid rgba(237,232,223,0.1);padding-bottom:8px;">Colours</div>
+  <!-- HOW TO EDIT hint -->
+  <div style="background:rgba(74,140,74,0.15);border:1px solid rgba(74,140,74,0.3);border-radius:4px;padding:10px 12px;margin-bottom:18px;font-family:'EB Garamond',serif;font-size:12px;color:rgba(237,232,223,0.7);line-height:1.6;">
+    <strong style="color:#8EC98E;">Как редактировать:</strong><br>
+    • <b>Текст</b> — кликни прямо на любой текст<br>
+    • <b>Блок</b> — Shift+клик на блок → появится панель<br>
+    • <b>Картинка</b> — Shift+клик на блок → 🖼 Image
+  </div>
+
+  <!-- Global Colours -->
+  <div style="margin-bottom:18px;">
+    <div style="font-family:'EB Garamond',serif;font-size:11px;font-style:italic;color:rgba(237,232,223,0.4);margin-bottom:10px;border-bottom:1px solid rgba(237,232,223,0.1);padding-bottom:6px;">Глобальные цвета</div>
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
       <label style="font-family:'EB Garamond',serif;font-size:12px;color:rgba(237,232,223,0.7);display:flex;flex-direction:column;gap:4px;">Background
-        <input type="color" value="#EDE8DF" oninput="applyColor('--parchment',this.value)" style="width:100%;height:32px;border:none;border-radius:3px;cursor:pointer;background:none;">
+        <input type="color" value="#EDE8DF" oninput="applyColor('--parchment',this.value)" style="width:100%;height:30px;border:none;border-radius:3px;cursor:pointer;background:none;">
       </label>
       <label style="font-family:'EB Garamond',serif;font-size:12px;color:rgba(237,232,223,0.7);display:flex;flex-direction:column;gap:4px;">Ink / Text
-        <input type="color" value="#1C1C1A" oninput="applyColor('--ink',this.value)" style="width:100%;height:32px;border:none;border-radius:3px;cursor:pointer;background:none;">
+        <input type="color" value="#1C1C1A" oninput="applyColor('--ink',this.value)" style="width:100%;height:30px;border:none;border-radius:3px;cursor:pointer;background:none;">
       </label>
       <label style="font-family:'EB Garamond',serif;font-size:12px;color:rgba(237,232,223,0.7);display:flex;flex-direction:column;gap:4px;">Founders
-        <input type="color" value="#9B7EC8" oninput="applyColor('--founder-border',this.value)" style="width:100%;height:32px;border:none;border-radius:3px;cursor:pointer;background:none;">
+        <input type="color" value="#9B7EC8" oninput="applyColor('--founder-border',this.value)" style="width:100%;height:30px;border:none;border-radius:3px;cursor:pointer;background:none;">
       </label>
       <label style="font-family:'EB Garamond',serif;font-size:12px;color:rgba(237,232,223,0.7);display:flex;flex-direction:column;gap:4px;">Executives
-        <input type="color" value="#C9970A" oninput="applyColor('--exec-border',this.value)" style="width:100%;height:32px;border:none;border-radius:3px;cursor:pointer;background:none;">
+        <input type="color" value="#C9970A" oninput="applyColor('--exec-border',this.value)" style="width:100%;height:30px;border:none;border-radius:3px;cursor:pointer;background:none;">
       </label>
       <label style="font-family:'EB Garamond',serif;font-size:12px;color:rgba(237,232,223,0.7);display:flex;flex-direction:column;gap:4px;">Consultants
-        <input type="color" value="#4A8C4A" oninput="applyColor('--consult-border',this.value)" style="width:100%;height:32px;border:none;border-radius:3px;cursor:pointer;background:none;">
+        <input type="color" value="#4A8C4A" oninput="applyColor('--consult-border',this.value)" style="width:100%;height:30px;border:none;border-radius:3px;cursor:pointer;background:none;">
       </label>
       <label style="font-family:'EB Garamond',serif;font-size:12px;color:rgba(237,232,223,0.7);display:flex;flex-direction:column;gap:4px;">Organisations
-        <input type="color" value="#2A7A9A" oninput="applyColor('--org-border',this.value)" style="width:100%;height:32px;border:none;border-radius:3px;cursor:pointer;background:none;">
+        <input type="color" value="#2A7A9A" oninput="applyColor('--org-border',this.value)" style="width:100%;height:30px;border:none;border-radius:3px;cursor:pointer;background:none;">
       </label>
     </div>
   </div>
 
-  <!-- Typography -->
-  <div style="margin-bottom:20px;">
-    <div style="font-family:'EB Garamond',serif;font-size:11px;font-style:italic;color:rgba(237,232,223,0.4);margin-bottom:12px;border-bottom:1px solid rgba(237,232,223,0.1);padding-bottom:8px;">Typography</div>
+  <!-- Global Typography -->
+  <div style="margin-bottom:18px;">
+    <div style="font-family:'EB Garamond',serif;font-size:11px;font-style:italic;color:rgba(237,232,223,0.4);margin-bottom:10px;border-bottom:1px solid rgba(237,232,223,0.1);padding-bottom:6px;">Глобальные шрифты</div>
     <div style="display:flex;flex-direction:column;gap:10px;">
-      <label style="font-family:'EB Garamond',serif;font-size:12px;color:rgba(237,232,223,0.7);display:flex;justify-content:space-between;align-items:center;">Programme title size
-        <input type="range" min="10" max="20" value="14" oninput="applyFontSize('.prog-name',this.value);this.nextElementSibling.textContent=this.value+'px'" style="width:100px;">
+      <label style="font-family:'EB Garamond',serif;font-size:12px;color:rgba(237,232,223,0.7);display:flex;justify-content:space-between;align-items:center;">
+        Заголовки пилларов
+        <select onchange="applyFontFamily('.pillar-title',this.value)" style="padding:3px 6px;background:rgba(255,255,255,0.08);border:1px solid rgba(237,232,223,0.15);border-radius:3px;color:#EDE8DF;font-size:11px;outline:none;">
+          <option value="'Playfair Display',serif">Playfair Display</option>
+          <option value="'EB Garamond',serif">EB Garamond</option>
+          <option value="Georgia,serif">Georgia</option>
+        </select>
+      </label>
+      <label style="font-family:'EB Garamond',serif;font-size:12px;color:rgba(237,232,223,0.7);display:flex;justify-content:space-between;align-items:center;">Размер заголовков пилларов
+        <input type="range" min="28" max="72" value="50" oninput="applyFontSize('.pillar-title',this.value);this.nextElementSibling.textContent=this.value+'px'" style="width:90px;">
+        <span style="font-size:11px;color:rgba(237,232,223,0.4);width:32px;text-align:right;">50px</span>
+      </label>
+      <label style="font-family:'EB Garamond',serif;font-size:12px;color:rgba(237,232,223,0.7);display:flex;justify-content:space-between;align-items:center;">Размер программ
+        <input type="range" min="10" max="22" value="13" oninput="applyFontSize('.prog-name',this.value);this.nextElementSibling.textContent=this.value+'px'" style="width:90px;">
+        <span style="font-size:11px;color:rgba(237,232,223,0.4);width:32px;text-align:right;">13px</span>
+      </label>
+      <label style="font-family:'EB Garamond',serif;font-size:12px;color:rgba(237,232,223,0.7);display:flex;justify-content:space-between;align-items:center;">Canvas: тело текста
+        <input type="range" min="11" max="22" value="14" oninput="applyFontSize('.canvas-field-value',this.value);this.nextElementSibling.textContent=this.value+'px'" style="width:90px;">
         <span style="font-size:11px;color:rgba(237,232,223,0.4);width:32px;text-align:right;">14px</span>
       </label>
-      <label style="font-family:'EB Garamond',serif;font-size:12px;color:rgba(237,232,223,0.7);display:flex;justify-content:space-between;align-items:center;">Canvas body text
-        <input type="range" min="11" max="20" value="14" oninput="applyFontSize('.canvas-field-value',this.value);this.nextElementSibling.textContent=this.value+'px'" style="width:100px;">
-        <span style="font-size:11px;color:rgba(237,232,223,0.4);width:32px;text-align:right;">14px</span>
-      </label>
-      <label style="font-family:'EB Garamond',serif;font-size:12px;color:rgba(237,232,223,0.7);display:flex;justify-content:space-between;align-items:center;">Canvas title size
-        <input type="range" min="20" max="52" value="36" oninput="applyFontSize('.canvas-prog-title',this.value);this.nextElementSibling.textContent=this.value+'px'" style="width:100px;">
+      <label style="font-family:'EB Garamond',serif;font-size:12px;color:rgba(237,232,223,0.7);display:flex;justify-content:space-between;align-items:center;">Canvas: заголовки
+        <input type="range" min="20" max="56" value="36" oninput="applyFontSize('.canvas-prog-title',this.value);this.nextElementSibling.textContent=this.value+'px'" style="width:90px;">
         <span style="font-size:11px;color:rgba(237,232,223,0.4);width:32px;text-align:right;">36px</span>
+      </label>
+      <label style="font-family:'EB Garamond',serif;font-size:12px;color:rgba(237,232,223,0.7);display:flex;justify-content:space-between;align-items:center;">KPI числа
+        <input type="range" min="14" max="40" value="22" oninput="applyFontSize('.kpi-num',this.value);this.nextElementSibling.textContent=this.value+'px'" style="width:90px;">
+        <span style="font-size:11px;color:rgba(237,232,223,0.4);width:32px;text-align:right;">22px</span>
       </label>
     </div>
   </div>
 
   <!-- Layout -->
-  <div style="margin-bottom:20px;">
-    <div style="font-family:'EB Garamond',serif;font-size:11px;font-style:italic;color:rgba(237,232,223,0.4);margin-bottom:12px;border-bottom:1px solid rgba(237,232,223,0.1);padding-bottom:8px;">Layout</div>
+  <div style="margin-bottom:18px;">
+    <div style="font-family:'EB Garamond',serif;font-size:11px;font-style:italic;color:rgba(237,232,223,0.4);margin-bottom:10px;border-bottom:1px solid rgba(237,232,223,0.1);padding-bottom:6px;">Структура</div>
     <div style="display:flex;flex-direction:column;gap:8px;">
-      <button onclick="addProgrammeRow()" style="padding:9px 12px;background:rgba(255,255,255,0.07);border:1px solid rgba(237,232,223,0.15);border-radius:3px;color:rgba(237,232,223,0.8);font-family:'EB Garamond',serif;font-size:12px;cursor:pointer;text-align:left;">+ Add programme row (current pillar)</button>
-      <button onclick="addCanvasColumn()" style="padding:9px 12px;background:rgba(255,255,255,0.07);border:1px solid rgba(237,232,223,0.15);border-radius:3px;color:rgba(237,232,223,0.8);font-family:'EB Garamond',serif;font-size:12px;cursor:pointer;text-align:left;">+ Add canvas field (current canvas)</button>
+      <button onclick="addProgrammeRow()" style="padding:9px 12px;background:rgba(255,255,255,0.07);border:1px solid rgba(237,232,223,0.15);border-radius:3px;color:rgba(237,232,223,0.8);font-family:'EB Garamond',serif;font-size:12px;cursor:pointer;text-align:left;">+ Добавить строку программы</button>
+      <button onclick="addCanvasColumn()" style="padding:9px 12px;background:rgba(255,255,255,0.07);border:1px solid rgba(237,232,223,0.15);border-radius:3px;color:rgba(237,232,223,0.8);font-family:'EB Garamond',serif;font-size:12px;cursor:pointer;text-align:left;">+ Добавить поле Canvas</button>
     </div>
   </div>
 
+  <!-- Global image upload -->
+  <div style="margin-bottom:18px;">
+    <div style="font-family:'EB Garamond',serif;font-size:11px;font-style:italic;color:rgba(237,232,223,0.4);margin-bottom:10px;border-bottom:1px solid rgba(237,232,223,0.1);padding-bottom:6px;">Вставка изображения</div>
+    <div style="font-family:'EB Garamond',serif;font-size:12px;color:rgba(237,232,223,0.5);margin-bottom:8px;line-height:1.5;">Shift+клик на блок → кнопка 🖼 Image в появившейся панели</div>
+    <div style="font-family:'EB Garamond',serif;font-size:12px;color:rgba(237,232,223,0.5);line-height:1.5;">Или: Shift+клик на блок → 🔗 URL для вставки по ссылке</div>
+  </div>
+
   <!-- Publish to GitHub -->
-  <div style="margin-bottom:20px;">
-    <div style="font-family:'EB Garamond',serif;font-size:11px;font-style:italic;color:rgba(237,232,223,0.4);margin-bottom:12px;border-bottom:1px solid rgba(237,232,223,0.1);padding-bottom:8px;">Publish to GitHub</div>
+  <div style="margin-bottom:18px;">
+    <div style="font-family:'EB Garamond',serif;font-size:11px;font-style:italic;color:rgba(237,232,223,0.4);margin-bottom:10px;border-bottom:1px solid rgba(237,232,223,0.1);padding-bottom:6px;">Публикация на GitHub</div>
     <div style="display:flex;flex-direction:column;gap:8px;">
       <input id="ghRepo" type="text" placeholder="username/repo-name" value="inessagolubova/essense-architecture" style="padding:9px 12px;background:rgba(255,255,255,0.07);border:1px solid rgba(237,232,223,0.15);border-radius:3px;color:#EDE8DF;font-family:'EB Garamond',serif;font-size:12px;outline:none;">
       <input id="ghToken" type="password" placeholder="GitHub token (ghp_...)" style="padding:9px 12px;background:rgba(255,255,255,0.07);border:1px solid rgba(237,232,223,0.15);border-radius:3px;color:#EDE8DF;font-family:'EB Garamond',serif;font-size:12px;outline:none;">
@@ -3003,8 +3367,8 @@ async function publishToGitHub() {
     </div>
   </div>
 
-  <!-- Download backup -->
-  <button onclick="saveHTML()" style="width:100%;padding:10px;background:rgba(255,255,255,0.07);border:1px solid rgba(237,232,223,0.15);border-radius:3px;color:rgba(237,232,223,0.6);font-family:'EB Garamond',serif;font-size:12px;cursor:pointer;">↓ Download as index.html</button>
+  <!-- Download -->
+  <button onclick="saveHTML()" style="width:100%;padding:10px;background:rgba(255,255,255,0.07);border:1px solid rgba(237,232,223,0.15);border-radius:3px;color:rgba(237,232,223,0.6);font-family:'EB Garamond',serif;font-size:12px;cursor:pointer;">↓ Скачать index.html</button>
 </div>
 
 <!-- Sidebar toggle button (visible in edit mode) -->
