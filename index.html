@@ -27,8 +27,8 @@ body{background:var(--parchment);font-family:'EB Garamond',Georgia,serif;color:v
 
 /* ── TOPBAR ── */
 .topbar{position:sticky;top:0;z-index:100;background:var(--ink);display:flex;align-items:center;justify-content:space-between;padding:11px 40px;gap:16px;}
-.topbar-logo{display:flex;align-items:center;gap:11px;flex-shrink:0;}
-.topbar-name{font-family:'Playfair Display SC',serif;font-size:9px;letter-spacing:2px;color:#FFFFFF;line-height:1.5;}
+.topbar-logo{display:flex;align-items:center;gap:13px;flex-shrink:0;}
+.topbar-name{font-family:'Playfair Display SC',serif;font-size:8.5px;letter-spacing:2.5px;color:#FFFFFF;line-height:1.7;}
 .pillar-tabs{display:flex;gap:2px;background:rgba(255,255,255,0.07);border-radius:8px;padding:3px;}
 .pillar-tab{background:none;border:none;cursor:pointer;padding:7px 18px;border-radius:5px;font-family:'Playfair Display SC',serif;font-size:11px;font-style:normal;letter-spacing:1px;color:rgba(255,255,255,0.55);transition:all 0.2s;white-space:nowrap;line-height:1.2;text-align:center;}
 .pillar-tab .re{font-style:normal;font-size:9px;letter-spacing:1.5px;display:block;font-family:'EB Garamond',serif;margin-bottom:2px;opacity:0.55;text-transform:none;letter-spacing:2px;}
@@ -305,7 +305,13 @@ body.edit-mode .edit-hint{display:inline;}
 <!-- ══ TOPBAR ══ -->
 <div class="topbar">
   <div class="topbar-logo">
-    <svg width="22" height="22" viewBox="0 0 40 40" fill="none"><path d="M20 20 C20 20 20 12 12 12 C4 12 4 20 4 20 C4 28 12 32 20 32 C28 32 36 24 36 16 C36 8 28 4 20 4 C10 4 2 12 2 22" stroke="#EDE8DF" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>
+    <svg width="32" height="32" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="30" cy="30" r="26" stroke="#EDE8DF" stroke-width="1.2" fill="none"/>
+      <circle cx="30" cy="30" r="20" stroke="#EDE8DF" stroke-width="1.2" fill="none"/>
+      <circle cx="30" cy="30" r="14" stroke="#EDE8DF" stroke-width="1.2" fill="none"/>
+      <circle cx="30" cy="30" r="8" stroke="#EDE8DF" stroke-width="1.2" fill="none"/>
+      <circle cx="30" cy="30" r="3" stroke="#EDE8DF" stroke-width="1.2" fill="none"/>
+    </svg>
     <div class="topbar-name">ESSENSE<br>BUSINESS SCHOOL</div>
   </div>
 
@@ -331,9 +337,6 @@ body.edit-mode .edit-hint{display:inline;}
     <button class="pillar-tab canvas-tab" onclick="showCanvasPanel(this)">
       <span class="re">— —</span>PATHWAYS CANVAS
     </button>
-    <button class="pillar-tab" onclick="showPalettePanel(this)">
-      <span class="re">— —</span>COLOUR PALETTE
-    </button>
   </div>
 
   <div class="topbar-right">
@@ -351,21 +354,14 @@ body.edit-mode .edit-hint{display:inline;}
 
 <!-- ══ EDIT BANNER ══ -->
 <div class="edit-banner" id="editBanner">
-  <strong>Режим редактирования</strong> — кликни на текст чтобы редактировать · <span style="opacity:0.75;">Shift+клик на блок → изменить фон, шрифт, рамку, картинку</span>
+  <strong>Edit mode</strong> — click any text to edit · <span style="opacity:0.75;">Shift+click on a block → change background, font, border, image</span>
   <button class="save-btn" onclick="saveHTML()">⬇ Скачать</button>
   <button class="save-btn" onclick="toggleEditMode(document.getElementById('editBtn'))">Готово</button>
 </div>
 
 <div class="main">
 
-<!-- ══ KPI STRIP ══ -->
-<div class="kpi-strip">
-  <div class="kpi-cell"><div class="kpi-num">£150–200k</div><div class="kpi-label">Revenue target · sustain team + infrastructure</div></div>
-  <div class="kpi-cell"><div class="kpi-num">5,000</div><div class="kpi-label">Email community · owned relational ecosystem</div></div>
-  <div class="kpi-cell"><div class="kpi-num">10–20k</div><div class="kpi-label">Aligned listeners · depth over mass</div></div>
-  <div class="kpi-cell"><div class="kpi-num">450+</div><div class="kpi-label">Qualified inquiries · quality over quantity</div></div>
-  <div class="kpi-cell"><div class="kpi-num">April 2026</div><div class="kpi-label">Website + socials launch · hard deadline</div></div>
-</div>
+
 
 <!-- ══ PHILOSOPHY BAR ══ -->
 <div class="philosophy-bar">
@@ -517,11 +513,6 @@ body.edit-mode .edit-hint{display:inline;}
           <div class="prog-meta"><span class="pip-year y2026">2026</span><span class="pip-year y2027">2027</span><span class="pip-year y2028">2028</span><span class="pip-int">12 talks/year</span><span class="pip-launch">Yearly subscription</span></div>
           <div class="prog-detail">Yearly online subscription (12 talks). Light-entry product and community builder. Ongoing inquiry container. Speaker curation, theme design, moderation. September–December 2026 pilot, then full subscription model from 2027 onwards.</div>
         </div>
-        <div class="prog-entry" onclick="toggleEntry(this)">
-          <div class="prog-name">Your ESSENSE Day</div>
-          <div class="prog-meta"><span class="pip-year y2026">2026</span><span class="pip-year y2027">2027</span><span class="pip-year y2028">2028</span><span class="pip-int">1 day</span><span class="pip-launch">Paid · In-person</span></div>
-          <div class="prog-detail">1-day immersion format. London and other locations. First physical proof of the ESSENSE ecosystem in 2026. Scales to multiple events per year from 2027.</div>
-        </div>
       </div>
       <div class="prog-cell">
         <div class="prog-entry" onclick="toggleEntry(this)">
@@ -537,7 +528,7 @@ body.edit-mode .edit-hint{display:inline;}
           <div class="prog-detail">Shadow integration, strategic clarity, regenerative leadership. Bridges worldview shift with early inner work.</div>
         </div>
         <div class="prog-entry" onclick="toggleEntry(this)">
-          <div class="prog-name">ESSENSE Online Courses</div>
+          <div class="prog-name">ESSENSE Other Online Courses</div>
           <div class="prog-meta"><span class="pip-year y2027">2027</span><span class="pip-year y2028">2028</span><span class="pip-int">Self-paced</span></div>
           <div class="prog-detail">Further online courses developed from 2027. Structured entry points into ESSENSE methodology for different audiences. Scalable, evergreen revenue alongside the deeper programmes.</div>
         </div>
@@ -584,7 +575,7 @@ body.edit-mode .edit-hint{display:inline;}
           <div class="prog-detail">Executives test the ESSENSE framework through this online programme. Works well for time-constrained senior leaders before committing to a cohort.</div>
         </div>
         <div class="prog-entry" onclick="toggleEntry(this)">
-          <div class="prog-name">ESSENSE Online Courses</div>
+          <div class="prog-name">ESSENSE Other Online Courses</div>
           <div class="prog-meta"><span class="pip-year y2027">2027</span><span class="pip-year y2028">2028</span><span class="pip-int">Self-paced</span></div>
           <div class="prog-detail">Further online courses from 2027. Structured entry into ESSENSE methodology for executives who prefer self-paced exploration before cohort commitment.</div>
         </div>
@@ -632,7 +623,7 @@ body.edit-mode .edit-hint{display:inline;}
           <div class="prog-detail">Foundational ESSENSE methodology for consultants. Prerequisite before advancing to certification programmes in 2028. Evergreen entry point.</div>
         </div>
         <div class="prog-entry" onclick="toggleEntry(this)">
-          <div class="prog-name">ESSENSE Online Courses</div>
+          <div class="prog-name">ESSENSE Other Online Courses</div>
           <div class="prog-meta"><span class="pip-year y2027">2027</span><span class="pip-year y2028">2028</span><span class="pip-int">Self-paced</span></div>
           <div class="prog-detail">Further online courses from 2027. Consultants use these to deepen methodology and prepare for practitioner certification track.</div>
         </div>
@@ -673,13 +664,12 @@ body.edit-mode .edit-hint{display:inline;}
   </div>
 
   <div class="matrix" id="m-fine">
-    <style>#m-fine .matrix-header,#m-fine .matrix-row{grid-template-columns:155px repeat(4,1fr);}</style>
+    <style>#m-fine .matrix-header,#m-fine .matrix-row{grid-template-columns:155px repeat(3,1fr);}</style>
     <div class="matrix-header">
       <div class="matrix-corner"><span class="matrix-corner-label">Audience × Format</span></div>
-      <div class="format-header"><span class="format-name">Retreats</span><span class="format-desc">Shadow Work · Immersions</span></div>
+      <div class="format-header"><span class="format-name">Retreats & Cohort Journey</span><span class="format-desc">Shadow Work · Immersions · Business Redesign Lab</span></div>
       <div class="format-header"><span class="format-name">Individual Journey</span><span class="format-desc">1:1 Advisory</span></div>
-      <div class="format-header"><span class="format-name">Cohort Journey</span><span class="format-desc">Group programme</span></div>
-      <div class="format-header"><span class="format-name">Flagship</span><span class="format-desc">Business Alchemy</span></div>
+      <div class="format-header"><span class="format-name">Flagship Cohort Programme</span><span class="format-desc">Business Alchemy</span></div>
     </div>
 
     <div class="matrix-row">
@@ -703,6 +693,11 @@ body.edit-mode .edit-hint{display:inline;}
           <div class="prog-meta"><span class="pip-year y2026">2026</span><span class="pip-int">6 days</span><span class="pip-launch">UK</span></div>
           <div class="prog-detail">Shadow integration for leaders working with the feminine dimension of leadership. Relational intelligence and systemic sensing capacity. 6 days, UK.</div>
         </div>
+        <div class="prog-entry" onclick="toggleEntry(this)">
+          <div class="prog-name">Business Redesign Lab</div>
+          <div class="prog-meta"><span class="pip-year y2026">2026</span><span class="pip-int">6 months</span><span class="pip-launch">Cohort · June–Nov</span></div>
+          <div class="prog-detail">June–November 2026. Cohort of founders and executives redesigning businesses as living systems. Programme architecture, speaker coordination, delivery stewardship. Core 2026 revenue programme.</div>
+        </div>
       </div>
       <div class="prog-cell">
         <div class="prog-entry" onclick="toggleEntry(this)">
@@ -714,13 +709,6 @@ body.edit-mode .edit-hint{display:inline;}
           <div class="prog-name">Mini-Board with ESSENSE</div>
           <div class="prog-meta"><span class="pip-year y2026">2026</span><span class="pip-int">1:1 strategic</span><span class="pip-launch">Invitation</span></div>
           <div class="prog-detail">1:1 strategic and inner mentoring with ESSENSE founders. Peer-level advisory for founders navigating complex decisions. Intimate, high-trust container.</div>
-        </div>
-      </div>
-      <div class="prog-cell">
-        <div class="prog-entry" onclick="toggleEntry(this)">
-          <div class="prog-name">Business Redesign Lab</div>
-          <div class="prog-meta"><span class="pip-year y2026">2026</span><span class="pip-int">6 months</span><span class="pip-launch">Cohort · June–Nov</span></div>
-          <div class="prog-detail">June–November 2026. Cohort of founders and executives redesigning businesses as living systems. Programme architecture, speaker coordination, delivery stewardship. Core 2026 revenue programme.</div>
         </div>
       </div>
       <div class="prog-cell">
@@ -748,19 +736,17 @@ body.edit-mode .edit-hint{display:inline;}
           <div class="prog-meta"><span class="pip-year y2026">2026</span><span class="pip-int">6 days</span><span class="pip-launch">UK</span></div>
           <div class="prog-detail">Shadow integration for leaders working with the feminine dimension of leadership. Relational intelligence and systemic sensing capacity. 6 days, UK.</div>
         </div>
+        <div class="prog-entry" onclick="toggleEntry(this)">
+          <div class="prog-name">Business Redesign Lab</div>
+          <div class="prog-meta"><span class="pip-year y2026">2026</span><span class="pip-int">6 months</span></div>
+          <div class="prog-detail">Executives join the same cohort as founders. Cross-pollination of experience is intentional — different vantage points, shared transformation arc.</div>
+        </div>
       </div>
       <div class="prog-cell">
         <div class="prog-entry" onclick="toggleEntry(this)">
           <div class="prog-name">ESSENSE Individual Journey</div>
           <div class="prog-meta"><span class="pip-year y2026">2026</span><span class="pip-int">1 year · 1:1</span><span class="pip-launch">Premium</span></div>
           <div class="prog-detail">1:1 advisory for senior executives who won't join a cohort. Discreet, high-trust, deeply personalised. Often the preferred format for C-suite leaders who need privacy.</div>
-        </div>
-      </div>
-      <div class="prog-cell">
-        <div class="prog-entry" onclick="toggleEntry(this)">
-          <div class="prog-name">Business Redesign Lab</div>
-          <div class="prog-meta"><span class="pip-year y2026">2026</span><span class="pip-int">6 months</span></div>
-          <div class="prog-detail">Executives join the same cohort as founders. Cross-pollination of experience is intentional — different vantage points, shared transformation arc.</div>
         </div>
       </div>
       <div class="prog-cell">
@@ -792,7 +778,6 @@ body.edit-mode .edit-hint{display:inline;}
         </div>
       </div>
       <div class="prog-cell"><div class="empty-label">—</div></div>
-      <div class="prog-cell"><div class="empty-label">—</div></div>
     </div>
 
     <div class="matrix-row">
@@ -800,7 +785,6 @@ body.edit-mode .edit-hint{display:inline;}
         <span class="aud-badge org">Organisations</span>
         <span class="aud-tagline">Leadership teams and boards becoming conscious stewards — sensing, guiding, and evolving the system as a living whole.</span>
       </div>
-      <div class="prog-cell"><div class="empty-label">—</div></div>
       <div class="prog-cell"><div class="empty-label">—</div></div>
       <div class="prog-cell"><div class="empty-label">—</div></div>
       <div class="prog-cell"><div class="empty-label">—</div></div>
@@ -919,10 +903,9 @@ body.edit-mode .edit-hint{display:inline;}
   </div>
 
   <div class="matrix" id="m-source">
-    <style>#m-source .matrix-header,#m-source .matrix-row{grid-template-columns:155px repeat(2,1fr);}</style>
+    <style>#m-source .matrix-header,#m-source .matrix-row{grid-template-columns:155px 1fr;}</style>
     <div class="matrix-header">
       <div class="matrix-corner"><span class="matrix-corner-label">Audience × Format</span></div>
-      <div class="format-header"><span class="format-name">Community Ecosystem</span><span class="format-desc">Future Ancestors field</span></div>
       <div class="format-header"><span class="format-name">Transformative Presence</span><span class="format-desc">In-person · 3 months</span></div>
     </div>
 
@@ -930,13 +913,6 @@ body.edit-mode .edit-hint{display:inline;}
       <div class="aud-cell">
         <span class="aud-badge founder">Founders</span>
         <span class="aud-tagline">Alumni staying in the field as Future Ancestors — long-term stewards and referral base.</span>
-      </div>
-      <div class="prog-cell">
-        <div class="prog-entry" onclick="toggleEntry(this)">
-          <div class="prog-name">Community Ecosystem</div>
-          <div class="prog-meta"><span class="pip-year y2027">2027</span><span class="pip-int">Continuous</span></div>
-          <div class="prog-detail">The living field — alumni, participants, faculty, partners. A community of Future Ancestors in ongoing relationship. Experience rhythm support from 2027. Long-term retention and referral engine. Seed a core field of early Leader-Stewards / Future Ancestors.</div>
-        </div>
       </div>
       <div class="prog-cell"><div class="empty-label">—</div></div>
     </div>
@@ -946,13 +922,6 @@ body.edit-mode .edit-hint{display:inline;}
         <span class="aud-badge exec">Executives</span>
         <span class="aud-tagline">Alumni peer network for ongoing accountability, collective intelligence, and stewardship of the ecosystem.</span>
       </div>
-      <div class="prog-cell">
-        <div class="prog-entry" onclick="toggleEntry(this)">
-          <div class="prog-name">Community Ecosystem</div>
-          <div class="prog-meta"><span class="pip-year y2027">2027</span><span class="pip-int">Continuous</span></div>
-          <div class="prog-detail">Alumni community with regular gatherings, peer circles, and access to ongoing ESSENSE thinking and events. The network that makes stewardship durable beyond programme completion.</div>
-        </div>
-      </div>
       <div class="prog-cell"><div class="empty-label">—</div></div>
     </div>
 
@@ -960,13 +929,6 @@ body.edit-mode .edit-hint{display:inline;}
       <div class="aud-cell">
         <span class="aud-badge consult">Consultants</span>
         <span class="aud-tagline">Credentialled ecosystem architects within the ESSENSE practitioner network. Certification interest waitlist open 2026.</span>
-      </div>
-      <div class="prog-cell">
-        <div class="prog-entry" onclick="toggleEntry(this)">
-          <div class="prog-name">Practitioner Community</div>
-          <div class="prog-meta"><span class="pip-year y2027">2027</span><span class="pip-int">Continuous</span></div>
-          <div class="prog-detail">Dedicated practitioner community — peer supervision, methodology development, shared client opportunities. Relationships with regenerative practitioners, systems thinkers and artists who become early speakers and partners.</div>
-        </div>
       </div>
       <div class="prog-cell">
         <div class="prog-entry" onclick="toggleEntry(this)">
@@ -982,7 +944,6 @@ body.edit-mode .edit-hint{display:inline;}
         <span class="aud-badge org">Organisations</span>
         <span class="aud-tagline">Long-term partnership for leadership development and systemic evolution.</span>
       </div>
-      <div class="prog-cell"><div class="empty-label">—</div></div>
       <div class="prog-cell"><div class="empty-label">—</div></div>
     </div>
   </div>
@@ -1026,43 +987,43 @@ body.edit-mode .edit-hint{display:inline;}
   <div class="canvas-card active" id="canvas-makes-sense">
     <div class="canvas-title-row">
       <div class="canvas-prog-title">"Makes Sense?" Talks</div>
-      <div class="canvas-prog-meta">Online · Yearly subscription · 12 talks/year · 2026–2028</div>
+      <div class="canvas-prog-meta">Online · Annual subscription · ~12 live conversations/year · Recording + meeting summary</div>
     </div>
     <div class="canvas-grid">
       <div class="canvas-cell">
         <span class="canvas-field-label">Customer Segments</span>
         <span class="canvas-field-label-alt">Who is ready — the person at the threshold</span>
-        <div class="canvas-field-value"><ul><li>Founders &amp; scaling CEOs sensing the Grand Shift</li><li>Executives tired of "run faster" culture</li><li>Consultants building new frameworks</li><li>ESSENSE alumni seeking ongoing inquiry</li></ul></div>
+        <div class="canvas-field-value"><ul><li>Leaders who feel old maps no longer work — and new ones haven't been drawn yet</li><li>Founders &amp; executives sensing the dissolution of dominant business models</li><li>Consultants building new frameworks for a changing world</li><li>ESSENSE alumni seeking ongoing collective inquiry</li></ul></div>
       </div>
       <div class="canvas-cell">
-        <span class="canvas-field-label">Problem / Pain</span>
-        <span class="canvas-field-label-alt">The tension they carry — what brought them here</span>
-        <div class="canvas-field-value">Leaders sense their current model of success is incomplete but lack language, framework, or community to explore alternative ways of thinking. They feel alone in their questions.</div>
+        <span class="canvas-field-label">Core Tension</span>
+        <span class="canvas-field-label-alt">What brought them here</span>
+        <div class="canvas-field-value">The dominant models of business, leadership, and success are breaking down. Leaders feel it — in the exhaustion beneath their results, in questions they carry but can't place. Very few spaces say: let's sit with the dissolution together, and see what wants to emerge. Leaders are left feeling alone in their questioning.</div>
       </div>
       <div class="canvas-cell">
-        <span class="canvas-field-label">Value Proposition</span>
-        <span class="canvas-field-label-alt">The transformation offered — from → to</span>
+        <span class="canvas-field-label">What ESSENSE Offers</span>
+        <span class="canvas-field-label-alt">The transformation — from → to</span>
         <div class="canvas-field-value">
-          <div class="canvas-transform"><span class="canvas-transform-from">Isolated in questioning</span><span class="canvas-transform-arrow">→</span><span class="canvas-transform-to">Shared worldview + collective sensemaking</span></div>
-          <div class="canvas-transform" style="margin-top:8px"><span class="canvas-transform-from">Information without depth</span><span class="canvas-transform-arrow">→</span><span class="canvas-transform-to">Ideas metabolised collectively</span></div>
+          <div class="canvas-transform"><span class="canvas-transform-from">Isolated in questioning</span><span class="canvas-transform-arrow">→</span><span class="canvas-transform-to">Shared language + collective sensemaking</span></div>
+          <div class="canvas-transform" style="margin-top:8px"><span class="canvas-transform-from">Waiting for someone else to redesign the future</span><span class="canvas-transform-arrow">→</span><span class="canvas-transform-to">Becoming its co-creator</span></div>
         </div>
       </div>
     </div>
     <div class="canvas-grid">
       <div class="canvas-cell">
+        <span class="canvas-field-label">Talk Topics — Season 1</span>
+        <span class="canvas-field-label-alt">One word. One question. Each talk holds it open.</span>
+        <div class="canvas-field-value"><ul><li><strong>Success</strong> — What if the thing we optimised for is the very thing depleting us?</li><li><strong>Money</strong> — When does financial logic become a cage?</li><li><strong>Speed</strong> — What are we running from?</li><li><strong>Growth</strong> — What do we worship instead?</li><li><strong>Strategy</strong> — Is it really made in the boardroom?</li><li><strong>Shadow</strong> — What is running the organisation without our permission?</li><li><strong>Nature / Future Ancestors / Togetherness / In Tune With Life</strong></li></ul></div>
+      </div>
+      <div class="canvas-cell">
         <span class="canvas-field-label">Key Activities</span>
         <span class="canvas-field-label-alt">How we work — methodology and container</span>
-        <div class="canvas-field-value"><ul><li>Monthly live inquiry talk (90–120 min)</li><li>One core question/theme framed per session</li><li>Facilitated live dialogue + structured reflection</li><li>Light pre-reads or prompts</li><li>Post-session summary and key insights</li></ul></div>
+        <div class="canvas-field-value"><ul><li>Live online conversation built around one sharp, unresolved question</li><li>Host voice meets silence and questions of participants — something emerges</li><li>Recording + meeting summary included</li><li>Light pre-reads or prompts where relevant</li><li>~12 sessions per year</li></ul></div>
       </div>
       <div class="canvas-cell">
-        <span class="canvas-field-label">Channels</span>
-        <span class="canvas-field-label-alt">How they find us — resonance pathways</span>
-        <div class="canvas-field-value"><ul><li>Podcast + Book Club audience</li><li>LinkedIn thought leadership</li><li>Referrals &amp; alumni network</li><li>Retreat and programme ecosystem</li></ul></div>
-      </div>
-      <div class="canvas-cell">
-        <span class="canvas-field-label">Key Partners</span>
-        <span class="canvas-field-label-alt">Who we co-create with</span>
-        <div class="canvas-field-value"><ul><li>Guest experts and thinkers</li><li>Alumni network and referrals</li><li>Tech providers (Zoom + community platform)</li><li>Speaker / programme producer</li></ul></div>
+        <span class="canvas-field-label">Role in the ESSENSE Ecosystem</span>
+        <span class="canvas-field-label-alt">Gateway + pathway</span>
+        <div class="canvas-field-value">Annual subscription is the first "yes" into ESSENSE belonging — the primary relational entry gateway identifying most aligned future participants for deeper work.<br><br>→ Retreats &amp; Immersions<br>→ Individual Journey<br>→ Business Redesign Lab<br>→ Business Alchemy (Flagship)</div>
       </div>
     </div>
     <div class="canvas-grid-wide">
@@ -1170,38 +1131,55 @@ body.edit-mode .edit-hint{display:inline;}
   <div class="canvas-card" id="canvas-resense-feminine">
     <div class="canvas-title-row">
       <div class="canvas-prog-title">Re/Sense the Feminine</div>
-      <div class="canvas-prog-meta">Online · Self-paced + live circles · £349 · 2026–2028</div>
+      <div class="canvas-prog-meta">Online Course · 3 modules · Open to all genders · Live sessions + self-paced practice</div>
     </div>
     <div class="canvas-grid">
       <div class="canvas-cell">
-        <span class="canvas-field-label">Customer Segments</span>
-        <span class="canvas-field-label-alt">Who is ready</span>
-        <div class="canvas-field-value"><ul><li>Women and men exploring feminine leadership dimensions</li><li>Leaders disconnected from embodied and relational intelligence</li><li>New audience entry-level participants</li><li>Consultants preparing for practitioner pathway</li></ul></div>
+        <span class="canvas-field-label">Who This Is For</span>
+        <span class="canvas-field-label-alt">Explicitly open to all genders — this is fundamental to its design</span>
+        <div class="canvas-field-value">The archetypal feminine — receptivity, embodied knowing, relational intelligence, cyclical thinking, the wisdom of the unknown — is a human inheritance, not a gendered one.<br><br><ul><li>Women and men exploring feminine leadership dimensions</li><li>Leaders disconnected from embodied and relational intelligence</li><li>New audience entry-level participants</li><li>Consultants preparing for the practitioner pathway</li></ul></div>
       </div>
       <div class="canvas-cell">
-        <span class="canvas-field-label">Problem / Pain</span>
-        <span class="canvas-field-label-alt">The tension they carry</span>
-        <div class="canvas-field-value">Modern leadership culture over-emphasises linear, control-based modes while intuitive, relational, regenerative capacities remain underdeveloped. The feminine has been archetypally fragmented — associated with vulnerability without power.</div>
+        <span class="canvas-field-label">Core Tension</span>
+        <span class="canvas-field-label-alt">What brought them here</span>
+        <div class="canvas-field-value">The feminine has been culturally assigned to women and simultaneously devalued, leaving both women and men impoverished: women carrying these capacities without authority, men cut off from them entirely. Most leadership development — and most frameworks for understanding ourselves — has left these dimensions largely absent from the map.</div>
       </div>
       <div class="canvas-cell">
-        <span class="canvas-field-label">Value Proposition</span>
-        <span class="canvas-field-label-alt">The transformation offered</span>
+        <span class="canvas-field-label">What ESSENSE Offers</span>
+        <span class="canvas-field-label-alt">The transformation — from → to</span>
         <div class="canvas-field-value">
           <div class="canvas-transform"><span class="canvas-transform-from">Fragmented relational intelligence</span><span class="canvas-transform-arrow">→</span><span class="canvas-transform-to">Whole, adaptive leadership</span></div>
           <div class="canvas-transform" style="margin-top:8px"><span class="canvas-transform-from">Control-based operating</span><span class="canvas-transform-arrow">→</span><span class="canvas-transform-to">Regenerative, life-responsive presence</span></div>
         </div>
       </div>
     </div>
-    <div class="canvas-grid-wide">
+    <div class="canvas-grid">
       <div class="canvas-cell">
-        <span class="canvas-field-label">Key Activities + Method</span>
-        <span class="canvas-field-label-alt">How we work</span>
-        <div class="canvas-field-value"><ul><li>Recorded content + workbooks (self-paced)</li><li>Fortnightly live integration circles (2h)</li><li>Shadow integration, strategic clarity, regenerative leadership</li><li>Jungian psychology, integral theory, somatic practice</li><li>2 launches per year</li></ul></div>
+        <span class="canvas-field-label">Three Modules — The Arc</span>
+        <span class="canvas-field-label-alt">The same questions Campbell asked of the hero — asked of the full human being</span>
+        <div class="canvas-field-value"><ul><li><strong>Module 1 — Who Am I?</strong> Identity across conscious and unconscious layers — persona, nature, soul. Life line mapping, storytelling. Element of Earth.</li><li><strong>Module 2 — Who Am I as Feminine?</strong> Jungian archetypes. Shadow work with the inner guardian. The Hero's Journey and the Heroine's Journey. Sacred Marriage — integrating masculine and feminine within. Elements of Earth, Water, Fire.</li><li><strong>Module 3 — What Do I Really Want?</strong> Psychosynthesis, signals from the future. Inner child. Reclaiming authentic desire. Purpose, calling, the life one truly wishes to create. All four elements.</li></ul></div>
       </div>
+      <div class="canvas-cell">
+        <span class="canvas-field-label">The Methodology</span>
+        <span class="canvas-field-label-alt">Experiential throughout</span>
+        <div class="canvas-field-value"><ul><li>Jungian psychology and archetypal work</li><li>Integral theory — four-quadrant model (I · We · It · Its)</li><li>Psychosynthesis and inner parts work</li><li>Somatic and embodied practices</li><li>Shadow work with inner guardian and inner child</li><li>Life line mapping and narrative inquiry</li><li>Creative practices: writing, drawing, storytelling</li><li>The Manifest — participant's companion document throughout</li><li>Naming ceremony: participants receive a new name from the group at the close</li></ul></div>
+      </div>
+      <div class="canvas-cell">
+        <span class="canvas-field-label">Four Elements as Guides</span>
+        <span class="canvas-field-label-alt">Archetypal energies of consciousness — not decoration</span>
+        <div class="canvas-field-value"><ul><li><strong>Earth</strong> — grounds inquiry in the body and what is real</li><li><strong>Water</strong> — opens emotional intelligence and the inner child</li><li><strong>Fire</strong> — burns what no longer belongs, ignites authentic desire</li><li><strong>Air</strong> — brings perspective, paradox, ability to hold complexity</li></ul><div style="margin-top:8px;font-style:italic;font-size:13px">The elements are a language for what the body already knows. The course teaches participants to read that language.</div></div>
+      </div>
+    </div>
+    <div class="canvas-grid-wide">
       <div class="canvas-cell">
         <span class="canvas-field-label">Revenue Streams</span>
         <span class="canvas-field-label-alt">Life-value exchange</span>
         <div class="canvas-field-value"><ul><li>£349 per participant</li><li>Break-even: 53 participants/year</li><li>80 participants → £9,050 profit</li><li>150 participants → £32,080 profit</li><li>2026: 1 cohort · 2027–2028: 2 cohorts</li></ul></div>
+      </div>
+      <div class="canvas-cell">
+        <span class="canvas-field-label">Role in the ESSENSE Ecosystem</span>
+        <span class="canvas-field-label-alt">Most accessible entry point · Intellectual companion to the Feminine Journey</span>
+        <div class="canvas-field-value">The intellectual and experiential companion to the Feminine Journey Shadow Work Retreat — where this course offers conceptual depth and ongoing practice, the retreat offers embodied immersion. Available to people who cannot yet commit to in-person, and to men exploring this territory for the first time.<br><br>→ Feminine Journey — Shadow Work Retreat (Wales)<br>→ Individual Journey — 1-Year Developmental Track<br>→ Business Alchemy — Flagship Programme<br>→ Shadow Work for Leaders Retreat</div>
       </div>
     </div>
   </div>
@@ -1210,38 +1188,39 @@ body.edit-mode .edit-hint{display:inline;}
   <div class="canvas-card" id="canvas-redesign-lab">
     <div class="canvas-title-row">
       <div class="canvas-prog-title">Business Redesign Lab</div>
-      <div class="canvas-prog-meta">Online cohort · 6 months · £660/participant · June–Nov 2026</div>
+      <div class="canvas-prog-meta">6-month cohort · Founders &amp; leadership teams · Online · June–November 2026</div>
     </div>
     <div class="canvas-grid">
       <div class="canvas-cell">
         <span class="canvas-field-label">Customer Segments</span>
         <span class="canvas-field-label-alt">Who is ready</span>
-        <div class="canvas-field-value"><ul><li>Founders and small leadership teams</li><li>Purpose-driven SMEs</li><li>Executives ready to redesign how their organisation operates</li><li>ESSENSE alumni and consultants</li></ul></div>
+        <div class="canvas-field-value"><ul><li>Founders and small leadership teams who sense their current business was built for a world that is changing faster than the organisation can keep up</li><li>Purpose-driven SMEs</li><li>Executives ready to redesign how their organisation operates as a living system</li><li>ESSENSE alumni and consultants</li></ul></div>
       </div>
       <div class="canvas-cell">
-        <span class="canvas-field-label">Problem / Pain</span>
-        <span class="canvas-field-label-alt">The tension they carry</span>
-        <div class="canvas-field-value">Founders recognise their business models and structures are no longer aligned with emerging realities — internally, culturally, ecologically — but lack frameworks to redesign them with systemic intelligence.</div>
+        <span class="canvas-field-label">Core Tension</span>
+        <span class="canvas-field-label-alt">What brought them here</span>
+        <div class="canvas-field-value">Founders recognise their business models are running on logic that quietly stopped fitting. The tools they reach for — consultants, frameworks, restructuring plans — optimise the existing architecture rather than questioning whether it should exist in its current form at all. The deeper challenge: organisational redesign is inseparable from the inner development of the people leading it.</div>
       </div>
       <div class="canvas-cell">
-        <span class="canvas-field-label">Value Proposition</span>
-        <span class="canvas-field-label-alt">The transformation offered</span>
+        <span class="canvas-field-label">What ESSENSE Offers</span>
+        <span class="canvas-field-label-alt">The transformation — from → to</span>
         <div class="canvas-field-value">
           <div class="canvas-transform"><span class="canvas-transform-from">Extractive architecture</span><span class="canvas-transform-arrow">→</span><span class="canvas-transform-to">Living system redesign</span></div>
           <div class="canvas-transform" style="margin-top:8px"><span class="canvas-transform-from">Isolated problem-solving</span><span class="canvas-transform-arrow">→</span><span class="canvas-transform-to">Collective intelligence + accountability</span></div>
+          <div style="margin-top:10px;font-family:'EB Garamond',serif;font-size:13px;font-style:italic;color:var(--ink-light)">"The business I built reflects who I was. The one I am redesigning reflects who I am becoming."</div>
         </div>
       </div>
     </div>
     <div class="canvas-grid-wide">
       <div class="canvas-cell">
         <span class="canvas-field-label">Key Activities + Resources</span>
-        <span class="canvas-field-label-alt">How we work</span>
-        <div class="canvas-field-value"><ul><li>Monthly cohort sessions (2.5h) over 6 months</li><li>Case clinics and real business challenges</li><li>ESSENSE frameworks, templates, diagnostics</li><li>Peer accountability and community moderation</li><li>Miro boards and worksheets</li></ul></div>
+        <span class="canvas-field-label-alt">How we work — founder's inner OS and organisation's outer architecture developed together</span>
+        <div class="canvas-field-value"><ul><li>Monthly cohort sessions (2.5h) over 6 months — six interconnected phases</li><li>Case clinics and real business challenges</li><li>ESSENSE frameworks, templates, diagnostics</li><li>Peer accountability and community moderation</li><li>Miro boards and worksheets</li><li>Cohort of founders navigating the same threshold — the peer field as one of the most powerful elements</li></ul></div>
       </div>
       <div class="canvas-cell">
-        <span class="canvas-field-label">Revenue Streams</span>
-        <span class="canvas-field-label-alt">Life-value exchange</span>
-        <div class="canvas-field-value"><ul><li>£660 per participant (£110 × 6 sessions)</li><li>Break-even: 11 participants</li><li>25 participants → £9,666 profit (target 2026)</li><li>30 participants → £12,966 profit (target 2027)</li><li>2026: 1 cohort · 2027–2028: 2 cohorts</li></ul></div>
+        <span class="canvas-field-label">Revenue Streams + Ecosystem Role</span>
+        <span class="canvas-field-label-alt">Life-value exchange · Pathway</span>
+        <div class="canvas-field-value"><ul><li>£660 per participant (£110 × 6 sessions)</li><li>Break-even: 11 participants</li><li>25 participants → £9,666 profit (target 2026)</li><li>30 participants → £12,966 profit (target 2027)</li><li>2026: 1 cohort · 2027–2028: 2 cohorts</li><li>→ Business Alchemy — Flagship<br>→ Mini Board — 1:1 Strategic Mentoring<br>→ ESSENSE Consulting Partnership (future)</li></ul></div>
       </div>
     </div>
   </div>
@@ -1250,38 +1229,55 @@ body.edit-mode .edit-hint{display:inline;}
   <div class="canvas-card" id="canvas-shadow-work">
     <div class="canvas-title-row">
       <div class="canvas-prog-title">Shadow Work for Leaders</div>
-      <div class="canvas-prog-meta">In-person retreat · 7 days · £3,750/participant · UK · 2026</div>
+      <div class="canvas-prog-meta">Retreat &amp; Immersion · 6 days · Closed group of 10–12 · Villa Terra Quinta, Portugal · August 2026</div>
     </div>
     <div class="canvas-grid">
       <div class="canvas-cell">
         <span class="canvas-field-label">Customer Segments</span>
         <span class="canvas-field-label-alt">Who is ready</span>
-        <div class="canvas-field-value"><ul><li>Founders and executives seeking embodied transformation</li><li>Leaders needing reset and breakthrough</li><li>Those who have done cognitive work but not somatic integration</li></ul></div>
+        <div class="canvas-field-value"><ul><li>Founders and executives seeking embodied transformation</li><li>Leaders with patterns they recognise but cannot shift — a reaction that surprises them, a way of leading that gets results and costs too much</li><li>Those who have done cognitive work but not somatic integration</li><li>Anyone whose organisation is unconsciously recreating their inner world</li></ul></div>
       </div>
       <div class="canvas-cell">
-        <span class="canvas-field-label">Problem / Pain</span>
-        <span class="canvas-field-label-alt">The tension they carry</span>
-        <div class="canvas-field-value">Many leadership patterns and organisational dysfunctions originate in unconscious psychological structures. Without confronting these, leaders unconsciously recreate fragmentation, control patterns, and burnout.</div>
+        <span class="canvas-field-label">Core Tension</span>
+        <span class="canvas-field-label-alt">What brought them here</span>
+        <div class="canvas-field-value">Many leadership patterns and organisational dysfunctions originate in unconscious psychological structures. Leaders learn to manage their triggers, perform composure, project authority — while deeper dynamics continue operating beneath the surface. Control cultures, burnout cultures, conflict avoidance: structural problems with psychological roots. Cognitive work alone cannot reach them.</div>
       </div>
       <div class="canvas-cell">
-        <span class="canvas-field-label">Value Proposition</span>
-        <span class="canvas-field-label-alt">The transformation offered</span>
+        <span class="canvas-field-label">What ESSENSE Offers</span>
+        <span class="canvas-field-label-alt">The transformation — from → to</span>
         <div class="canvas-field-value">
           <div class="canvas-transform"><span class="canvas-transform-from">Unintegrated shadow driving decisions</span><span class="canvas-transform-arrow">→</span><span class="canvas-transform-to">Embodied maturity + clear leadership</span></div>
           <div class="canvas-transform" style="margin-top:8px"><span class="canvas-transform-from">Reactive, pattern-driven</span><span class="canvas-transform-arrow">→</span><span class="canvas-transform-to">Choosing from wholeness</span></div>
         </div>
       </div>
     </div>
-    <div class="canvas-grid-wide">
+    <div class="canvas-grid">
       <div class="canvas-cell">
-        <span class="canvas-field-label">Key Activities + Method</span>
-        <span class="canvas-field-label-alt">How we work</span>
-        <div class="canvas-field-value"><ul><li>Nature-based 7-day immersion, UK</li><li>Shadow integration and inner operating system work</li><li>Somatic practices, breathwork, group process</li><li>Certified Shadow Work practitioners + psychological safety</li><li>Pre-work + post-retreat integration support</li><li>Small group: 10–16 participants</li></ul></div>
+        <span class="canvas-field-label">The Methodology — Shadow Work</span>
+        <span class="canvas-field-label-alt">Rooted in Jung · 40+ years of practice with Nikola &amp; John Kurk</span>
+        <div class="canvas-field-value"><ul><li>Four archetypal energies: Loving · Warrior · King · Magician</li><li>Four elements as containers: Earth · Fire · Water · Air</li><li>Both individual and collective group processes</li><li>Jungian psychology, somatic awareness, archetypal intelligence</li><li>Nikola and John Kurk — co-founders of Shadow Work Europe, 40+ years experience each</li><li>Inessa Golubova — Day 1–2 opening facilitation</li></ul></div>
       </div>
+      <div class="canvas-cell">
+        <span class="canvas-field-label">Programme Arc — 6 Days</span>
+        <span class="canvas-field-label-alt">Villa Terra Quinta · 40 km from Lisbon</span>
+        <div class="canvas-field-value"><ul><li><strong>Day 1</strong> Arrival &amp; Attunement — Earth and Fire. Grounding and ignition. Led by Inessa</li><li><strong>Day 2</strong> Deepening the Request — Water and Air. Clarifying what each participant is here to meet</li><li><strong>Days 3–5</strong> Shadow Work — Three full days of immersive work led by Nikola and John Kurk. Four archetypal energies</li><li><strong>Day 6</strong> Integration &amp; Return — Rest, reflection, group closing. Integration practices for life and leadership</li><li>Accommodation, chef's meals, morning practices, sound healing, surfing class all included</li></ul></div>
+      </div>
+      <div class="canvas-cell">
+        <span class="canvas-field-label">What Participants Leave With</span>
+        <span class="canvas-field-label-alt">The after</span>
+        <div class="canvas-field-value"><ul><li>Hidden strength, creative energy, and resourcefulness — previously locked in shadow — now available as genuine leadership capacity</li><li>Measurably different relationship with own patterns: seeing them as they arise, working with them consciously</li><li>Greater psychological maturity — capacity to hold complexity, welcome discomfort, lead from wholeness</li><li>A small extraordinary group who have shared something real</li><li>A new quality of presence their teams will feel before they can name it</li></ul></div>
+      </div>
+    </div>
+    <div class="canvas-grid-wide">
       <div class="canvas-cell">
         <span class="canvas-field-label">Revenue Streams</span>
         <span class="canvas-field-label-alt">Life-value exchange</span>
         <div class="canvas-field-value"><ul><li>£3,750 per participant (all-inclusive)</li><li>Break-even: 9 participants</li><li>12 participants → £11,980 profit (27% margin)</li><li>14 participants → £19,480 profit (37% margin)</li><li>2026–2028: 2 retreats/year</li></ul></div>
+      </div>
+      <div class="canvas-cell">
+        <span class="canvas-field-label">Role in the ESSENSE Ecosystem</span>
+        <span class="canvas-field-label-alt">The deepest accelerant in the Personal Development Field</span>
+        <div class="canvas-field-value">The Shadow Work Retreat is transformation at the level of being — the experience that makes everything else in ESSENSE land differently, because the inner architecture has genuinely changed.<br><br>→ Individual Journey — 1-Year Developmental Track<br>→ Business Redesign Lab<br>→ Mini Board — 1:1 Strategic Mentoring<br>→ Business Alchemy — Flagship Programme</div>
       </div>
     </div>
   </div>
@@ -1290,38 +1286,55 @@ body.edit-mode .edit-hint{display:inline;}
   <div class="canvas-card" id="canvas-leadership-retreat">
     <div class="canvas-title-row">
       <div class="canvas-prog-title">Leadership Essence Retreat</div>
-      <div class="canvas-prog-meta">In-person · 5 days · UK · 2026</div>
+      <div class="canvas-prog-meta">5 days · Urban-in-nature · London · Closed group · November 2026</div>
     </div>
     <div class="canvas-grid">
       <div class="canvas-cell">
-        <span class="canvas-field-label">Customer Segments</span>
+        <span class="canvas-field-label">An Invitation</span>
         <span class="canvas-field-label-alt">Who is ready</span>
-        <div class="canvas-field-value"><ul><li>Founders and senior executives at a leadership threshold</li><li>Leaders seeking deeper coherence between inner and outer</li><li>Those ready for multi-day developmental immersion</li></ul></div>
+        <div class="canvas-field-value">You move from meeting to decision to relationship to strategy, carrying more than you show. Somewhere in the rhythm of your leadership, the question of who you actually are — beneath the role, beneath the performance — has been waiting for a room with enough silence to be heard.<br><br><ul><li>Founders and senior leaders at a leadership threshold</li><li>Leaders seeking deeper coherence between inner and outer</li><li>Those ready for multi-day developmental immersion</li><li>Closed group of 12</li></ul></div>
       </div>
       <div class="canvas-cell">
-        <span class="canvas-field-label">Problem / Pain</span>
-        <span class="canvas-field-label-alt">The tension they carry</span>
-        <div class="canvas-field-value">Leaders have built external success but feel disconnected from their deeper identity and purpose. Daily professional life offers no space for the depth of reflection that leadership transformation requires.</div>
+        <span class="canvas-field-label">Core Tension</span>
+        <span class="canvas-field-label-alt">What brought them here</span>
+        <div class="canvas-field-value">Most leadership development addresses the outside of leadership. Leaders carry enormous complexity in isolation — with a nervous system not designed for this level of sustained pressure, and very limited training in how to work with the inner dynamics shaping every outer outcome. Functionally excellent and quietly depleted. Making good decisions and feeling the wrongness of them only afterwards.</div>
       </div>
       <div class="canvas-cell">
-        <span class="canvas-field-label">Value Proposition</span>
-        <span class="canvas-field-label-alt">The transformation offered</span>
+        <span class="canvas-field-label">What ESSENSE Offers</span>
+        <span class="canvas-field-label-alt">The transformation — from → to</span>
         <div class="canvas-field-value">
           <div class="canvas-transform"><span class="canvas-transform-from">Success without coherence</span><span class="canvas-transform-arrow">→</span><span class="canvas-transform-to">Inner maturity + regenerative leadership</span></div>
           <div class="canvas-transform" style="margin-top:8px"><span class="canvas-transform-from">Performing leadership</span><span class="canvas-transform-arrow">→</span><span class="canvas-transform-to">Leading from essence</span></div>
         </div>
       </div>
     </div>
-    <div class="canvas-grid-wide">
+    <div class="canvas-grid">
       <div class="canvas-cell">
-        <span class="canvas-field-label">Key Activities + Method</span>
-        <span class="canvas-field-label-alt">How we work</span>
-        <div class="canvas-field-value"><ul><li>5-day nature-based retreat, UK</li><li>Inner maturity and regenerative leadership development</li><li>Guest contributors and experiential facilitation</li><li>Individual and group process work</li><li>Pre-work + post-retreat integration</li></ul></div>
+        <span class="canvas-field-label">The Methodology</span>
+        <span class="canvas-field-label-alt">Three bodies · Five days · One arc</span>
+        <div class="canvas-field-value">The retreat works with the three foundational dimensions of a leader's presence: the mental body, the emotional body, and the somatic body. Each day goes deeper. Together they form a complete arc — from witnessing thought, through reclaiming emotional intelligence, to building a nervous system genuinely capable of holding complexity.<br><br>Jesse MacKey's work draws on: somatic intelligence, Jungian depth psychology, nervous system science, adult development theory, and the ancient wisdom of tantra as a technology of holding energy.</div>
       </div>
+      <div class="canvas-cell">
+        <span class="canvas-field-label">London — Urban-in-Nature</span>
+        <span class="canvas-field-label-alt">Why here</span>
+        <div class="canvas-field-value">Held in London — in a carefully chosen space that holds both the aliveness of the city and genuine access to nature. Gardens, parks, quiet grounds. Close enough to the world that participants do not need to leave their lives entirely; far enough inside a container that the world cannot follow them in.<br><br>The retreat does not ask leaders to escape their context — it asks them to develop the inner resources to inhabit it differently.</div>
+      </div>
+      <div class="canvas-cell">
+        <span class="canvas-field-label">Lead Facilitator</span>
+        <span class="canvas-field-label-alt">Jesse MacKey</span>
+        <div class="canvas-field-value">Developmental practitioner and intellectual co-architect of ESSENSE's practitioner development pathway. Led transformative retreats for leaders across US, Australia, Europe for over two decades. Integrates somatic intelligence, nervous system science, Jungian depth, and adult development theory into practice that is rigorous, warm, and genuinely rare in its depth.</div>
+      </div>
+    </div>
+    <div class="canvas-grid-wide">
       <div class="canvas-cell">
         <span class="canvas-field-label">Revenue + Pathway</span>
         <span class="canvas-field-label-alt">Life-value exchange · What comes next</span>
-        <div class="canvas-field-value"><ul><li>Pricing TBD</li><li>Leads to: Individual Journey, Business Redesign Lab, Business Alchemy</li><li>2026: 1 retreat · 2027: 1 retreat · 2028: 2 retreats</li></ul></div>
+        <div class="canvas-field-value"><ul><li>Pricing TBD</li><li>2026: 1 retreat · 2027: 1 retreat · 2028: 2 retreats</li></ul></div>
+      </div>
+      <div class="canvas-cell">
+        <span class="canvas-field-label">Role in the ESSENSE Ecosystem</span>
+        <span class="canvas-field-label-alt">Most accessible embodied entry point</span>
+        <div class="canvas-field-value">The most accessible and immediate embodied entry point into the ESSENSE ecosystem. Requires no prior developmental work — only readiness to be genuinely present for five days. For many leaders, this is the experience that makes everything else in ESSENSE feel necessary.<br><br>→ Transformative Presence — Year-Long Practitioner Programme<br>→ Individual Journey — 1-Year Developmental Track<br>→ Shadow Work for Leaders Retreat<br>→ Business Alchemy — Flagship Programme<br>→ Mini Board — 1:1 Strategic Mentoring</div>
       </div>
     </div>
   </div>
@@ -1329,39 +1342,56 @@ body.edit-mode .edit-hint{display:inline;}
   <!-- ── FEMININE SHADOW JOURNEY ── -->
   <div class="canvas-card" id="canvas-feminine-shadow">
     <div class="canvas-title-row">
-      <div class="canvas-prog-title">Feminine Shadow Journey</div>
-      <div class="canvas-prog-meta">In-person retreat · 6 days · 42 Acres Somerset UK · 18–24 May 2026</div>
+      <div class="canvas-prog-title">Shadow Work Feminine Journey</div>
+      <div class="canvas-prog-meta">Shadow Work Retreat for Women · 7 days · Closed circle of 12 · Wales, UK · 29 August – 4 September 2026</div>
     </div>
     <div class="canvas-grid">
       <div class="canvas-cell">
-        <span class="canvas-field-label">Customer Segments</span>
+        <span class="canvas-field-label">An Invitation</span>
         <span class="canvas-field-label-alt">Who is ready</span>
-        <div class="canvas-field-value"><ul><li>Women founders and executives feeling muted, flat, disconnected</li><li>Women leaders holding everything together but feeling tired inside</li><li>Women seeking to reclaim their emotional truth and inner power</li><li>Small intimate group: 8–12 women</li></ul></div>
+        <div class="canvas-field-value">You hold it together. Inside, you are tired. You are strong, capable, independent — and something feels muted, flat, quietly disconnected. You sense there is more. More depth. More fire. More joy. More of yourself.<br><br><ul><li>Women founders and executives feeling muted, flat, disconnected</li><li>Women leaders holding everything together but feeling tired inside</li><li>Women seeking to reclaim emotional truth and inner power</li><li>Closed circle: 12 women</li></ul></div>
       </div>
       <div class="canvas-cell">
-        <span class="canvas-field-label">Problem / Pain</span>
-        <span class="canvas-field-label-alt">The tension they carry</span>
-        <div class="canvas-field-value">Women in leadership have learned to suppress, control, please, and endure. Shadow dynamics drive leadership patterns unconsciously. There is no space to feel what usually gets pushed away.</div>
+        <span class="canvas-field-label">Core Tension</span>
+        <span class="canvas-field-label-alt">What brought them here</span>
+        <div class="canvas-field-value">Modern leadership culture has suppressed the capacities regenerative leadership depends on: anger, grief, softness, authority, the desire to be seen and not just useful. Women navigating this culture have placed these parts of themselves in shadow. A business built from a woman's full self — including what she has long kept hidden — is a different kind of creation entirely.</div>
       </div>
       <div class="canvas-cell">
-        <span class="canvas-field-label">Value Proposition</span>
-        <span class="canvas-field-label-alt">The transformation offered</span>
+        <span class="canvas-field-label">What ESSENSE Offers</span>
+        <span class="canvas-field-label-alt">The transformation — from → to</span>
         <div class="canvas-field-value">
           <div class="canvas-transform"><span class="canvas-transform-from">Suppressed, performing</span><span class="canvas-transform-arrow">→</span><span class="canvas-transform-to">Whole, reclaimed, alive</span></div>
           <div class="canvas-transform" style="margin-top:8px"><span class="canvas-transform-from">Managing emotions</span><span class="canvas-transform-arrow">→</span><span class="canvas-transform-to">Emotions as doorways to power</span></div>
         </div>
       </div>
     </div>
-    <div class="canvas-grid-wide">
+    <div class="canvas-grid">
       <div class="canvas-cell">
-        <span class="canvas-field-label">Key Activities + Method</span>
-        <span class="canvas-field-label-alt">How we work — Four Gateways</span>
-        <div class="canvas-field-value"><ul><li>6-day immersive retreat · 42 Acres, Somerset UK</li><li>Four gateways: Fear · Anger · Grief · Joy</li><li>Deep shadow work and emotional truth integration</li><li>Somatic practices — body-based, not just talking</li><li>Sauna and cold water immersion for nervous system reset</li><li>Nature as container: ocean, earth, forest, silence</li><li>Certified Shadow Work practitioners</li></ul></div>
+        <span class="canvas-field-label">The Four Gateways to Inner Power</span>
+        <span class="canvas-field-label-alt">Not problems to be resolved — doorways back to wholeness</span>
+        <div class="canvas-field-value"><ul><li><strong>Fear</strong> — when integrated, becomes discernment</li><li><strong>Anger</strong> — when reclaimed, becomes agency and clarity of boundary</li><li><strong>Grief</strong> — when allowed, becomes capacity for genuine presence and love</li><li><strong>Joy</strong> — when restored, becomes the renewable energy of a life lived from the inside out</li></ul><div style="margin-top:8px;font-style:italic;font-size:13px">Deep Shadow Work · somatic and embodied practices · partner work · group processes · nature as container</div></div>
       </div>
+      <div class="canvas-cell">
+        <span class="canvas-field-label">The Facilitators</span>
+        <span class="canvas-field-label-alt">Who holds the field</span>
+        <div class="canvas-field-value"><ul><li><strong>Nicola Kurk</strong> — 30+ years Shadow Work, co-founder of Women in Power</li><li><strong>Liz Remande-Guyard</strong> — 20+ years supporting women through complex life transitions</li><li><strong>Inessa Golubova</strong> — Shadow Work facilitator, leadership mentor, founder of ESSENSE. Jungian psychology, Integral Theory, somatic practices and ritual</li></ul></div>
+      </div>
+      <div class="canvas-cell">
+        <span class="canvas-field-label">The Place</span>
+        <span class="canvas-field-label-alt">Nevern Valley, Pembrokeshire, Wales</span>
+        <div class="canvas-field-value">Wild landscape of ocean, forest, wind, silence, open sky. The land becomes part of the healing. Sauna, cold water, therapeutic dance, morning practices — the nervous system reset is part of the design.<br><br>Professional photoshoot at the end — capturing each woman's new state with care and sensitivity. A document of the transformation.</div>
+      </div>
+    </div>
+    <div class="canvas-grid-wide">
       <div class="canvas-cell">
         <span class="canvas-field-label">Revenue + Partners</span>
         <span class="canvas-field-label-alt">Life-value exchange · Who we co-create with</span>
-        <div class="canvas-field-value"><ul><li>Pricing TBD (similar to Shadow Work for Leaders model)</li><li>Facilitators: Inessa Golubova, Nicola Kurk, Liz</li><li>Venue: 42 Acres, Somerset UK</li><li>Leads to: Individual Journey, Re/Sense the Feminine, Business Alchemy</li></ul></div>
+        <div class="canvas-field-value"><ul><li>Pricing TBD (similar to Shadow Work for Leaders model)</li><li>Facilitators: Inessa Golubova, Nicola Kurk, Liz Remande-Guyard</li><li>Venue: Nevern Valley, Wales</li></ul></div>
+      </div>
+      <div class="canvas-cell">
+        <span class="canvas-field-label">Role in the ESSENSE Ecosystem</span>
+        <span class="canvas-field-label-alt">Where the intellectual reframing becomes lived experience</span>
+        <div class="canvas-field-value">Sits at the intersection of Shadow Work and the Re/Sense the Feminine thread — the embodied, immersive complement to the Re/Sense the Feminine online course. For women in the ESSENSE ecosystem, this is often the experience that makes their leadership feel genuinely their own for the first time.<br><br>→ Re/Sense the Feminine — Online Course<br>→ Individual Journey — 1-Year Developmental Track<br>→ Shadow Work for Leaders Retreat<br>→ Business Alchemy — Flagship Programme</div>
       </div>
     </div>
   </div>
@@ -1450,22 +1480,22 @@ body.edit-mode .edit-hint{display:inline;}
   <div class="canvas-card" id="canvas-business-alchemy">
     <div class="canvas-title-row">
       <div class="canvas-prog-title">Business Alchemy</div>
-      <div class="canvas-prog-meta">Flagship · 13-month cohort · £14,500 · Launches January 2027 · Applications open 2026</div>
+      <div class="canvas-prog-meta">Flagship · 9 months + 2-month pre-programme · Year-long cohort · Application &amp; waitlist · Launches January 2027</div>
     </div>
     <div class="canvas-grid">
       <div class="canvas-cell">
         <span class="canvas-field-label">Customer Segments</span>
         <span class="canvas-field-label-alt">Who is ready — the person at the threshold</span>
-        <div class="canvas-field-value"><ul><li>Successful founders and CEOs sensing fragmentation</li><li>Senior executives ready for deep identity-level transformation</li><li>Purpose-driven business leaders outgrowing extractive models</li><li>ESSENSE alumni ready for the full arc</li><li>Those who feel: "I've built success — but something essential is missing"</li></ul></div>
+        <div class="canvas-field-value"><ul><li>Founders, senior executives and organisational leaders who have achieved significant external results</li><li>Leaders whose inner evolution has outpaced the architecture of what they created</li><li>Those ready to question the assumptions beneath their success</li><li>ESSENSE alumni ready for the full alchemical arc</li><li>"I've built success — but something essential is missing"</li></ul></div>
       </div>
       <div class="canvas-cell">
-        <span class="canvas-field-label">Problem / Pain</span>
-        <span class="canvas-field-label-alt">The tension they carry — what brought them here</span>
-        <div class="canvas-field-value">Successful founders reach a point where external success no longer provides clarity, meaning, or direction. They experience fragmentation between their inner evolution and the business they have built. Traditional business education addresses optimisation, not the deeper source from which leadership and culture emerge.</div>
+        <span class="canvas-field-label">Core Tension</span>
+        <span class="canvas-field-label-alt">What brought them here</span>
+        <div class="canvas-field-value">Successful founders reach a point where external achievement no longer provides clarity and meaning. Traditional business education addresses this with more frameworks and optimisation — operating at the surface, never at the source: the relationship between the consciousness of the creator and the living system they are responsible for.</div>
       </div>
       <div class="canvas-cell">
-        <span class="canvas-field-label">Value Proposition</span>
-        <span class="canvas-field-label-alt">The transformation offered — from → to</span>
+        <span class="canvas-field-label">What ESSENSE Offers</span>
+        <span class="canvas-field-label-alt">The transformation — from → to</span>
         <div class="canvas-field-value">
           <div class="canvas-transform"><span class="canvas-transform-from">Success without coherence</span><span class="canvas-transform-arrow">→</span><span class="canvas-transform-to">Creator–Creation alignment</span></div>
           <div class="canvas-transform" style="margin-top:6px"><span class="canvas-transform-from">Extraction-based business</span><span class="canvas-transform-arrow">→</span><span class="canvas-transform-to">Love, stewardship, generative creation</span></div>
@@ -1475,9 +1505,12 @@ body.edit-mode .edit-hint{display:inline;}
     </div>
     <div class="canvas-grid">
       <div class="canvas-cell">
-        <span class="canvas-field-label">Key Activities</span>
-        <span class="canvas-field-label-alt">How we work — methodology and container</span>
-        <div class="canvas-field-value"><ul><li>2-month pre-programme (GeneKeys, LDP, Enneagram)</li><li>7 modules over 13 months — alchemical arc</li><li>5 residential retreats (21 days total, nature-based)</li><li>Module themes: Foundations → Nature → Human Place → Lovemaking → Time → Sustaining → Manifestation</li><li>Individual + group + somatic work throughout</li><li>Closing: Eisteddfod — feast of Creativity and Truth</li></ul></div>
+        <span class="canvas-field-label">The Alchemical Framework</span>
+        <span class="canvas-field-label-alt">Programme arc — classical stages of transformation</span>
+        <div class="canvas-field-value">
+          <div style="margin-bottom:6px;font-style:italic;font-size:13px">Calcination · Dissolution · Separation · Conjunction · Fermentation · Distillation</div>
+          <ul><li><strong>Pre-Programme (2 months)</strong> — GeneKeys, LDP &amp; Enneagram. Mapping current state across ME · WE · WORLD</li><li><strong>M1 Foundations of Creation</strong> — Self and Source. Cosmology, Hermetic principles. Calcination</li><li><strong>M2 Nature as Creator &amp; Teacher</strong> — Geology, ecology, indigenous wisdom, elemental rituals. Calcination → Dissolution</li><li><strong>M3 The Human Place</strong> — Karma Audit of the business. Separation</li><li><strong>M4 Lovemaking</strong> — Shadow work. Masculine &amp; feminine integration. Conjunction</li><li><strong>M5 Time and Timeless</strong> — Chronos, Kairos, quantum time. Shiva and Shakti. Fermentation</li><li><strong>M6 Sustaining &amp; Emerging</strong> — Living systems. Rite of Passage. Fermentation</li><li><strong>M7 Value Creation &amp; Manifestation</strong> — Re-essenced business identity. Eisteddfod celebration. Distillation</li></ul>
+        </div>
       </div>
       <div class="canvas-cell">
         <span class="canvas-field-label">Channels</span>
@@ -1492,14 +1525,14 @@ body.edit-mode .edit-hint{display:inline;}
     </div>
     <div class="canvas-grid-wide">
       <div class="canvas-cell">
-        <span class="canvas-field-label">Key Resources</span>
-        <span class="canvas-field-label-alt">What we steward — faculty, space, time</span>
-        <div class="canvas-field-value"><ul><li>ESSENSE IP, curriculum, and methodology</li><li>Founder facilitation and intellectual capital</li><li>Faculty team and retreat design capability</li><li>Community platform and programme management</li><li>Assessment tools: GeneKeys, Enneagram, Vertical Development Profile</li></ul></div>
+        <span class="canvas-field-label">Key Resources + What Participants Leave With</span>
+        <span class="canvas-field-label-alt">What we steward — and what is transformed</span>
+        <div class="canvas-field-value"><ul><li>ESSENSE IP, curriculum, and alchemical methodology</li><li>Founder facilitation and intellectual capital</li><li>Assessment tools: GeneKeys, Enneagram, Vertical Development Profile</li><li>A re-essenced business identity — strategy, culture, operating rhythm aligned with life-value principles</li><li>The capacity to lead from embodied coherence: self, organisation, and planetary systems as one integrated field</li><li>Transformed personal and corporate patterns — extractive logics dissolved and replaced by something genuinely regenerative</li><li>A cohort of soulmates — a living relational field long after the programme ends</li><li>A business they do not need to escape</li></ul></div>
       </div>
       <div class="canvas-cell">
         <span class="canvas-field-label">Revenue Streams</span>
         <span class="canvas-field-label-alt">Life-value exchange — investment and pricing</span>
-        <div class="canvas-field-value"><ul><li>£14,500 per participant (all-inclusive option)</li><li>Break-even: 14–18 participants (depending on model)</li><li>20 participants → £90,578 profit (31% margin)</li><li>24 participants → £148,578 profit (43% margin)</li><li>2027: first cohort · 2028: second cohort</li></ul></div>
+        <div class="canvas-field-value"><ul><li>£14,500 per participant (all-inclusive option)</li><li>Break-even: 14–18 participants (depending on model)</li><li>20 participants → £90,578 profit (31% margin)</li><li>24 participants → £148,578 profit (43% margin)</li><li>2027: first cohort · 2028: second cohort</li><li>→ ESSENSE Faculty Pathway<br>→ ESSENSE Consulting Method &amp; Development Partnership (future)</li></ul></div>
       </div>
     </div>
     <div class="canvas-grid-full">
@@ -1515,22 +1548,22 @@ body.edit-mode .edit-hint{display:inline;}
   <div class="canvas-card" id="canvas-transformative-presence">
     <div class="canvas-title-row">
       <div class="canvas-prog-title">Transformative Presence</div>
-      <div class="canvas-prog-meta">For Consultants · In-person · 4 modules × 5 days · 12-person cohort · Jesse · Start April 2027</div>
+      <div class="canvas-prog-meta">For Consultants, Coaches &amp; Developmental Practitioners · 4 modules · 5 days each · In-person · Cohort of 12 · 1 year · Launch April 2027</div>
     </div>
     <div class="canvas-grid">
       <div class="canvas-cell">
         <span class="canvas-field-label">Customer Segments</span>
         <span class="canvas-field-label-alt">Who is ready — the person at the threshold</span>
-        <div class="canvas-field-value"><ul><li>Consultants, coaches, and facilitators working with complex organisations</li><li>Practitioners seeking to navigate social and generative complexity</li><li>Leaders wanting to become stewards of cultural self-regeneration</li><li>12-person cohort · highly selective</li></ul></div>
+        <div class="canvas-field-value"><ul><li>Consultants, coaches, facilitators, and developmental practitioners who want to work more powerfully with the complexity they encounter in the field</li><li>Practitioners who recognise the ceiling: moments where their own reactivity limits what becomes possible</li><li>Leaders wanting to become stewards of cultural self-regeneration</li><li>12-person cohort · highly selective</li></ul></div>
       </div>
       <div class="canvas-cell">
-        <span class="canvas-field-label">Problem / Pain</span>
-        <span class="canvas-field-label-alt">The tension they carry</span>
-        <div class="canvas-field-value">Consultants encounter social complexity (everyone is different) and generative complexity (futures not built on the past) without the embodied capacities to navigate them. Most professional development is cognitive only — leaving practitioners underprepared for what they actually face in the room.</div>
+        <span class="canvas-field-label">Core Tension</span>
+        <span class="canvas-field-label-alt">What brought them here</span>
+        <div class="canvas-field-value">The world consultants operate in has changed. Two forms of complexity now define it: social complexity (every person in a room constructs reality differently) and generative complexity (futures organisations face can no longer be predicted from the past). Most practitioner training develops knowledge and frameworks — not the inner capacities that allow someone to stay genuinely present under pressure, to hold a field with real authority.</div>
       </div>
       <div class="canvas-cell">
-        <span class="canvas-field-label">Value Proposition</span>
-        <span class="canvas-field-label-alt">The transformation offered</span>
+        <span class="canvas-field-label">What ESSENSE Offers</span>
+        <span class="canvas-field-label-alt">The transformation — from → to</span>
         <div class="canvas-field-value">
           <div class="canvas-transform"><span class="canvas-transform-from">Technically skilled but reactive</span><span class="canvas-transform-arrow">→</span><span class="canvas-transform-to">Transformatively present — mental, somatic, emotional</span></div>
           <div class="canvas-transform" style="margin-top:8px"><span class="canvas-transform-from">Managing complexity from outside</span><span class="canvas-transform-arrow">→</span><span class="canvas-transform-to">Participating &amp; enacting — helping culture become self-regenerating</span></div>
@@ -1540,23 +1573,26 @@ body.edit-mode .edit-hint{display:inline;}
     </div>
     <div class="canvas-grid">
       <div class="canvas-cell">
-        <span class="canvas-field-label">Key Activities + Method</span>
-        <span class="canvas-field-label-alt">How we work — four modules, five days each</span>
-        <div class="canvas-field-value"><ul><li><strong>M1</strong> Apr 21–25, 2027 · <strong>M2</strong> Jun 16–20 · <strong>M3</strong> Sep 15–19 · <strong>M4</strong> Nov 17–21 · Q2 2028 closing</li><li>5-day in-person immersion per module · 12-person cohort</li><li>Supervision + community of practice throughout</li><li>Capacity development: mental, somatic, emotional</li><li>Assessment of practitioner capacities</li><li>Emotional aikido — helping others change state</li></ul></div>
-      </div>
-      <div class="canvas-cell">
-        <span class="canvas-field-label">Capacities Developed</span>
-        <span class="canvas-field-label-alt">What we build — the three dimensions</span>
+        <span class="canvas-field-label">The Six Capacities</span>
+        <span class="canvas-field-label-alt">Trainable skills — practised, assessed, developed progressively</span>
         <div class="canvas-field-value">
-          <div style="margin-bottom:8px"><strong>Mental</strong> — ability to witness thought (not identified with it), construct-awareness</div>
-          <div style="margin-bottom:8px"><strong>Emotional</strong> — willingness to feel unwanted emotions · transforming emotional energy</div>
-          <div><strong>Somatic</strong> — distress tolerance · containment (holding energy, higher frequencies) · building vagal tone · nervous system regulation</div>
+          <div style="margin-bottom:6px"><strong>Mental</strong> — Witnessing Thought: observing thought without being identified with it. Construct-awareness.</div>
+          <div style="margin-bottom:6px"><strong>Emotional</strong> — Willingness to Feel: staying present with unwanted emotions rather than suppressing or performing around them.</div>
+          <div style="margin-bottom:6px"><strong>Somatic</strong> — Distress Tolerance &amp; Containment: building vagal tone, nervous system regulation.</div>
+          <div style="margin-bottom:6px"><strong>Integrative</strong> — Passionate Detachment: present and witnessing simultaneously. Involved without being captured.</div>
+          <div style="margin-bottom:6px"><strong>Relational</strong> — Witnessing Systems: reading group dynamics and field conditions while actively participating in them.</div>
+          <div><strong>Transformational</strong> — Emotional Aikido: shifting others' emotional states without force, without their awareness, without losing one's own ground.</div>
         </div>
       </div>
       <div class="canvas-cell">
-        <span class="canvas-field-label">Key Partners</span>
-        <span class="canvas-field-label-alt">Who we co-create with</span>
-        <div class="canvas-field-value"><ul><li>Jesse (lead faculty)</li><li>Accreditation bodies (optional)</li><li>ESSENSE practitioner network</li><li>Supervision practitioners</li></ul></div>
+        <span class="canvas-field-label">Key Activities + Method</span>
+        <span class="canvas-field-label-alt">Four modules · Five days each · UK</span>
+        <div class="canvas-field-value"><ul><li><strong>M1</strong> Apr 21–25, 2027 · <strong>M2</strong> Jun 16–20 · <strong>M3</strong> Sep 15–19 · <strong>M4</strong> Nov 17–21 · Q2 2028 closing</li><li>5-day in-person immersion per module · 12-person cohort</li><li>Six to seven weeks between modules — momentum + integration</li><li>Supervision and peer intervision groups between modules</li><li>Participants practise in own client work, bring real cases back</li><li>Certification awarded on assessed capacity — woven into module design</li></ul></div>
+      </div>
+      <div class="canvas-cell">
+        <span class="canvas-field-label">Programme Lead</span>
+        <span class="canvas-field-label-alt">Jesse MacKey</span>
+        <div class="canvas-field-value">Co-founder of the first cohort of the Integral Institute in Canada. Over two decades working with leaders and organisations at the frontier of developmental psychology, adult development theory, and transformative practice. Brings the capacity to work simultaneously at the level of the individual nervous system, the group field, and the systemic architecture of an organisation — and to train others to do the same.</div>
       </div>
     </div>
     <div class="canvas-grid-wide">
@@ -1568,7 +1604,7 @@ body.edit-mode .edit-hint{display:inline;}
       <div class="canvas-cell">
         <span class="canvas-field-label">Revenue + Pathway</span>
         <span class="canvas-field-label-alt">Life-value exchange · Financial model</span>
-        <div class="canvas-field-value"><ul><li>£6,550 per participant · 20 participants per cohort</li><li>Annual revenue: £131,000 · Annual cost: £61,400</li><li>Annual profit: £69,600 · Margin: 53.1%</li><li>Facilitator: £870/h · 20 days facilitation</li><li>Break-even: 10 participants</li><li>Launch: 1 cohort 2027 · Expansion 2028+</li><li>Leads to: Practitioner Community, Mini Board, Re/Source the Mastery</li></ul></div>
+        <div class="canvas-field-value"><ul><li>£6,550 per participant · 20 participants per cohort</li><li>Annual revenue: £131,000 · Annual cost: £61,400</li><li>Annual profit: £69,600 · Margin: 53.1%</li><li>Break-even: 10 participants</li><li>Launch: 1 cohort 2027 · Expansion 2028+</li><li>→ Ecosystem Architect — Certification Programme (2029)<br>→ ESSENSE Consulting Method &amp; Development Partnership<br>→ Business Alchemy — Flagship Programme<br>→ ESSENSE Faculty Pathway</li></ul></div>
       </div>
     </div>
     <div class="canvas-grid-full">
@@ -1801,7 +1837,9 @@ body.edit-mode .edit-hint{display:inline;}
   line-height:1.65;
 }
 
-/* LEADERSHIP */
+/* LEADERSHIP — only renders inside essencePanel */
+.ess-leadership { display:none; }
+#essencePanel .ess-leadership { display:block; }
 .ess-leadership {
   background:#EDE8DF;
   padding:80px 120px;
@@ -1927,8 +1965,12 @@ body.edit-mode .edit-hint{display:inline;}
 <!-- HERO -->
 <div class="ess-hero">
   <div class="ess-logo-area">
-    <svg class="ess-logo-spiral" viewBox="0 0 40 40" fill="none">
-      <path d="M20 20 C20 20 20 12 12 12 C4 12 4 20 4 20 C4 28 12 32 20 32 C28 32 36 24 36 16 C36 8 28 4 20 4 C10 4 2 12 2 22 C2 32 10 38 20 38" stroke="rgba(28,28,26,0.5)" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+    <svg class="ess-logo-spiral" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="30" cy="30" r="26" stroke="rgba(28,28,26,0.55)" stroke-width="1.2" fill="none"/>
+      <circle cx="30" cy="30" r="20" stroke="rgba(28,28,26,0.55)" stroke-width="1.2" fill="none"/>
+      <circle cx="30" cy="30" r="14" stroke="rgba(28,28,26,0.55)" stroke-width="1.2" fill="none"/>
+      <circle cx="30" cy="30" r="8" stroke="rgba(28,28,26,0.55)" stroke-width="1.2" fill="none"/>
+      <circle cx="30" cy="30" r="3" stroke="rgba(28,28,26,0.55)" stroke-width="1.2" fill="none"/>
     </svg>
     <div class="ess-logo-text">ESSENSE<br>BUSINESS<br>SCHOOL</div>
   </div>
@@ -1965,7 +2007,7 @@ body.edit-mode .edit-hint{display:inline;}
 <div class="ess-intro">
   <div>
     <div class="ess-section-tag">THE MISSION</div>
-    <div class="ess-heading">Business,<br><em>back in tune<br>with life.</em></div>
+    <div class="ess-heading">Business,<br><em>in tune<br>with life.</em></div>
   </div>
   <div>
     <div class="ess-body">
@@ -2026,32 +2068,133 @@ body.edit-mode .edit-hint{display:inline;}
 <div class="ess-ecosystem">
   <div class="ess-section-tag">THE LIVING ECOSYSTEM</div>
   <div class="ess-heading" style="max-width:500px;">Roots, Trunk,<br><em>Branches & Fruits.</em></div>
-  <div class="ess-eco-grid">
-    <div class="ess-eco-cell roots">
-      <span class="ess-eco-icon">🌱</span>
-      <div class="ess-eco-label">Grounding Layer — Ecosystem Support</div>
-      <div class="ess-eco-title">Roots</div>
-      <div class="ess-eco-body">This is what nourishes the entire system.<br><br><strong>Administration</strong> — Operational coordination and organisational support.<br><br><strong>Finance & Fundraising</strong> — Financial sustainability and long-term growth.<br><br><strong>Marketing & Communications</strong> — Visibility, storytelling and ecosystem growth.<br><br>Without strong roots, the ecosystem cannot grow.</div>
-    </div>
-    <div class="ess-eco-cell trunk">
-      <span class="ess-eco-icon">🌳</span>
-      <div class="ess-eco-label">Core Energy</div>
-      <div class="ess-eco-title">Trunk</div>
-      <div class="ess-eco-body">The trunk represents the core energies that sustain and hold the ESSENSE ecosystem. These energies shape the direction, integrity and coherence of everything that grows within the system.<br><br>They include: philosophical direction · tone, language, metaphors and archetypal layer · the field and voice of the brand · the academic depth and learning experience · the ecosystem architecture and operational structure.<br><br>The trunk holds the living force of ESSENSE — the principles and leadership that allow the ecosystem to stand, grow and evolve.</div>
-    </div>
-    <div class="ess-eco-cell branches">
-      <span class="ess-eco-icon">🌿</span>
-      <div class="ess-eco-label">Learning Experiences</div>
-      <div class="ess-eco-title">Branches</div>
-      <div class="ess-eco-body">The branches represent the core learning experiences of ESSENSE: flagship programmes · retreats · leadership journeys · other pathways. Programmes are where the transformation of participants actually happens.<br><br>From the core learning experiences grow several interconnected branches:<br><br><strong>Learning Technologies</strong> — Frameworks, methodologies and tools that support the intellectual architecture of ESSENSE, allowing knowledge to scale beyond individual programmes.<br><br><strong>Producing</strong> — Speaker production and publishing capacity: digital content, collaborations with thinkers and educators, books.<br><br><strong>Community</strong> — Participants continue learning through dialogue, peer exchange, collaborative inquiry and community gatherings.<br><br><strong>Physical Spaces</strong> — Embodied environments: retreat centres, ESSENSE home / studio.</div>
-    </div>
-    <div class="ess-eco-cell fruits" style="grid-column:1/-1;padding:28px;">
-      <span class="ess-eco-icon">🍎</span>
-      <div class="ess-eco-label">New Knowledge & Initiatives</div>
-      <div class="ess-eco-title">Fruits</div>
-      <div class="ess-eco-body" style="columns:3;gap:40px;">As the ecosystem grows, it generates new outcomes: collaborations · innovation projects · new learning formats · emerging leaders and communities.<br><br>The Principle of the Ecosystem: ESSENSE is built as a living system where learning, community, knowledge and spaces continuously nourish one another. Programmes feed the community. Community feeds knowledge creation. Knowledge creation feeds learning technologies. Physical spaces anchor the ecosystem in the world.</div>
-    </div>
+
+  <!-- ECOSYSTEM TREE DIAGRAM -->
+  <div style="width:100%;overflow:hidden;margin:48px 0 40px;position:relative;">
+    <svg viewBox="0 0 1320 700" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-height:680px;font-family:'EB Garamond',Georgia,serif;">
+      <!-- Background subtle grid -->
+      <defs>
+        <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+          <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(28,28,26,0.04)" stroke-width="0.5"/>
+        </pattern>
+      </defs>
+      <rect width="1320" height="700" fill="url(#grid)"/>
+
+      <!-- TITLE -->
+      <text x="660" y="52" text-anchor="middle" font-family="'Playfair Display',Georgia,serif" font-size="16" fill="rgba(28,28,26,0.55)" letter-spacing="1" font-style="italic">ESSENSE: an ecosystem of interdependent business units</text>
+      <line x1="460" y1="60" x2="860" y2="60" stroke="rgba(28,28,26,0.12)" stroke-width="0.8"/>
+
+      <!-- ── TRUNK ── -->
+      <!-- Main vertical trunk -->
+      <path d="M660,580 C655,520 658,460 660,390 C662,320 660,280 660,220" stroke="rgba(28,28,26,0.7)" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+      <!-- Trunk texture lines -->
+      <path d="M657,500 C650,480 645,460 648,440" stroke="rgba(28,28,26,0.18)" stroke-width="1.2" fill="none"/>
+      <path d="M663,510 C670,490 672,470 668,450" stroke="rgba(28,28,26,0.18)" stroke-width="1.2" fill="none"/>
+
+      <!-- Arrow pointing up (future growth) -->
+      <line x1="660" y1="220" x2="660" y2="88" stroke="rgba(28,28,26,0.35)" stroke-width="1.2" stroke-dasharray="5,4"/>
+      <polygon points="660,82 655,92 665,92" fill="rgba(28,28,26,0.35)"/>
+
+      <!-- ── ROOTS (below, flowing outward) ── -->
+      <!-- Root 1 far left -->
+      <path d="M660,580 C640,590 580,600 500,610 C440,618 380,615 320,620" stroke="rgba(28,28,26,0.45)" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+      <!-- Root 2 left -->
+      <path d="M660,580 C645,595 610,608 560,618 C520,626 480,628 450,635" stroke="rgba(28,28,26,0.4)" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+      <!-- Root 3 centre-left -->
+      <path d="M660,580 C650,600 640,625 630,648 C624,660 618,668 610,675" stroke="rgba(28,28,26,0.38)" stroke-width="1.4" fill="none" stroke-linecap="round"/>
+      <!-- Root 4 centre -->
+      <path d="M660,580 C660,600 660,625 660,650 C660,662 660,670 660,678" stroke="rgba(28,28,26,0.4)" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+      <!-- Root 5 centre-right -->
+      <path d="M660,580 C670,600 680,625 690,648 C696,660 702,668 710,675" stroke="rgba(28,28,26,0.38)" stroke-width="1.4" fill="none" stroke-linecap="round"/>
+      <!-- Root 6 right -->
+      <path d="M660,580 C675,595 710,608 760,618 C800,626 840,628 870,635" stroke="rgba(28,28,26,0.4)" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+      <!-- Root 7 far right -->
+      <path d="M660,580 C680,590 740,600 820,610 C880,618 940,615 1000,620" stroke="rgba(28,28,26,0.45)" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+
+      <!-- ── BRANCHES — evenly spaced vertically to avoid overlap ── -->
+      <!-- Branch 1: Far Left — Essense Producing Studio (lowest, widest) -->
+      <path d="M660,460 C620,440 540,410 440,388 C370,372 290,366 210,362" stroke="rgba(28,28,26,0.52)" stroke-width="1.9" fill="none" stroke-linecap="round"/>
+      <!-- Branch 2: Left — Essense Learning Technologies -->
+      <path d="M660,415 C635,396 588,374 528,360 C478,348 428,344 375,341" stroke="rgba(28,28,26,0.52)" stroke-width="1.9" fill="none" stroke-linecap="round"/>
+      <!-- Branch 3: Centre-Left — Essense Programmes -->
+      <path d="M660,365 C642,346 614,322 578,308" stroke="rgba(28,28,26,0.62)" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+      <!-- Branch 4: Centre-Right — Essense Consulting -->
+      <path d="M660,365 C678,346 706,322 742,308" stroke="rgba(28,28,26,0.62)" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+      <!-- Branch 5: Right — Essense Community -->
+      <path d="M660,415 C685,396 732,374 792,360 C842,348 892,344 945,341" stroke="rgba(28,28,26,0.52)" stroke-width="1.9" fill="none" stroke-linecap="round"/>
+      <!-- Branch 6: Far Right — Essense Co-living (dashed = future) -->
+      <path d="M660,460 C700,440 780,410 880,388 C950,372 1030,366 1110,362" stroke="rgba(28,28,26,0.38)" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-dasharray="6,4"/>
+
+      <!-- ══ LABELS — positioned at branch endpoints with clear vertical separation ══ -->
+
+      <!-- Branch 3: Essense Programmes (centre-left) -->
+      <text x="432" y="284" font-family="'Playfair Display',Georgia,serif" font-size="13" fill="rgba(28,28,26,0.7)" font-weight="600">Essense Programmes</text>
+      <text x="432" y="299" font-family="'EB Garamond',Georgia,serif" font-size="11" fill="rgba(28,28,26,0.42)" font-style="italic">All products and delivery</text>
+      <text x="432" y="312" font-family="'EB Garamond',Georgia,serif" font-size="10" fill="rgba(28,28,26,0.30)">Programme Steward · 2026</text>
+
+      <!-- Branch 4: Essense Consulting (centre-right) -->
+      <text x="752" y="284" font-family="'Playfair Display',Georgia,serif" font-size="13" fill="rgba(28,28,26,0.7)" font-weight="600">Essense Consulting</text>
+      <text x="752" y="299" font-family="'EB Garamond',Georgia,serif" font-size="11" fill="rgba(28,28,26,0.42)" font-style="italic">Organisational &amp; advisory work</text>
+      <text x="752" y="312" font-family="'EB Garamond',Georgia,serif" font-size="10" fill="rgba(28,28,26,0.30)">2026</text>
+
+      <!-- Branch 2: Essense Learning Technologies (left) -->
+      <text x="178" y="318" font-family="'Playfair Display',Georgia,serif" font-size="13" fill="rgba(28,28,26,0.65)" font-weight="600">Essense Learning</text>
+      <text x="178" y="333" font-family="'Playfair Display',Georgia,serif" font-size="13" fill="rgba(28,28,26,0.65)" font-weight="600">Technologies</text>
+      <text x="178" y="348" font-family="'EB Garamond',Georgia,serif" font-size="11" fill="rgba(28,28,26,0.38)" font-style="italic">Knowledge &amp; learning platform</text>
+      <text x="178" y="361" font-family="'EB Garamond',Georgia,serif" font-size="10" fill="rgba(28,28,26,0.30)">(2026)</text>
+
+      <!-- Branch 5: Essense Community (right) -->
+      <text x="948" y="318" font-family="'Playfair Display',Georgia,serif" font-size="13" fill="rgba(28,28,26,0.65)" font-weight="600">Essense Community</text>
+      <text x="948" y="333" font-family="'EB Garamond',Georgia,serif" font-size="11" fill="rgba(28,28,26,0.38)" font-style="italic">Dialogue · peer exchange</text>
+      <text x="948" y="346" font-family="'EB Garamond',Georgia,serif" font-size="10" fill="rgba(28,28,26,0.30)">(Q3 2026)</text>
+
+      <!-- Branch 1: Essense Producing Studio (far left) -->
+      <text x="26" y="338" font-family="'Playfair Display',Georgia,serif" font-size="13" fill="rgba(28,28,26,0.58)" font-weight="600">Essense Producing</text>
+      <text x="26" y="353" font-family="'Playfair Display',Georgia,serif" font-size="13" fill="rgba(28,28,26,0.58)" font-weight="600">Studio</text>
+      <text x="26" y="368" font-family="'EB Garamond',Georgia,serif" font-size="11" fill="rgba(28,28,26,0.34)" font-style="italic">Publishing &amp; knowledge creation</text>
+      <text x="26" y="381" font-family="'EB Garamond',Georgia,serif" font-size="10" fill="rgba(28,28,26,0.28)">(Q2 2027)</text>
+
+      <!-- Branch 6: Essense Co-living (far right, future/dashed) -->
+      <text x="1000" y="338" font-family="'Playfair Display',Georgia,serif" font-size="13" fill="rgba(28,28,26,0.45)" font-weight="600">Essense Co-living</text>
+      <text x="1000" y="353" font-family="'EB Garamond',Georgia,serif" font-size="11" fill="rgba(28,28,26,0.30)" font-style="italic">Physical space · retreat venue</text>
+      <text x="1000" y="366" font-family="'EB Garamond',Georgia,serif" font-size="10" fill="rgba(28,28,26,0.25)">2028–2029</text>
+
+      <!-- Grounding label at bottom -->
+      <text x="660" y="640" text-anchor="middle" font-family="'Playfair Display',Georgia,serif" font-size="14" fill="rgba(28,28,26,0.6)" font-weight="600">Grounding — Ecosystem Support</text>
+      <text x="660" y="656" text-anchor="middle" font-family="'EB Garamond',Georgia,serif" font-size="12" fill="rgba(28,28,26,0.38)">Administration · Finance / fundraising · Marketing team · Student support</text>
+    </svg>
   </div>
+    <table style="width:100%;border-collapse:collapse;border:1px solid rgba(28,28,26,0.13);font-family:'EB Garamond',Georgia,serif;font-size:14px;margin-top:32px;">
+      <thead>
+        <tr style="background:rgba(28,28,26,0.06);">
+          <th style="padding:10px 16px;text-align:left;font-family:'Playfair Display SC',serif;font-size:9px;letter-spacing:1.8px;color:rgba(28,28,26,0.45);font-weight:400;border-right:1px solid rgba(28,28,26,0.1);width:12%;">LAYER</th>
+          <th style="padding:10px 16px;text-align:left;font-family:'Playfair Display SC',serif;font-size:9px;letter-spacing:1.8px;color:rgba(28,28,26,0.45);font-weight:400;border-right:1px solid rgba(28,28,26,0.1);width:14%;">ELEMENT</th>
+          <th style="padding:10px 16px;text-align:left;font-family:'Playfair Display SC',serif;font-size:9px;letter-spacing:1.8px;color:rgba(28,28,26,0.45);font-weight:400;">WHAT IT HOLDS</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="border-top:1px solid rgba(28,28,26,0.09);">
+          <td style="padding:14px 16px;border-right:1px solid rgba(28,28,26,0.09);vertical-align:top;"><span style="font-size:18px;">🌱</span></td>
+          <td style="padding:14px 16px;border-right:1px solid rgba(28,28,26,0.09);vertical-align:top;"><strong style="font-family:'Playfair Display',serif;font-size:15px;">Roots</strong><br><span style="font-size:12px;color:rgba(28,28,26,0.45);font-style:italic;">Grounding</span></td>
+          <td style="padding:14px 16px;vertical-align:top;color:#3A3830;line-height:1.6;"><strong>Administration</strong> — operational coordination · <strong>Finance &amp; Fundraising</strong> — sustainability and growth · <strong>Marketing &amp; Communications</strong> — visibility and storytelling. Without strong roots the ecosystem cannot grow.</td>
+        </tr>
+        <tr style="border-top:1px solid rgba(28,28,26,0.09);background:rgba(28,28,26,0.02);">
+          <td style="padding:14px 16px;border-right:1px solid rgba(28,28,26,0.09);vertical-align:top;"><span style="font-size:18px;">🌳</span></td>
+          <td style="padding:14px 16px;border-right:1px solid rgba(28,28,26,0.09);vertical-align:top;"><strong style="font-family:'Playfair Display',serif;font-size:15px;">Trunk</strong><br><span style="font-size:12px;color:rgba(28,28,26,0.45);font-style:italic;">Core Energy</span></td>
+          <td style="padding:14px 16px;vertical-align:top;color:#3A3830;line-height:1.6;">Philosophical direction · tone, language and archetypal layer · the field and voice of the brand · academic depth and learning experience · ecosystem architecture and operational structure. The trunk holds the living force of ESSENSE.</td>
+        </tr>
+        <tr style="border-top:1px solid rgba(28,28,26,0.09);">
+          <td style="padding:14px 16px;border-right:1px solid rgba(28,28,26,0.09);vertical-align:top;"><span style="font-size:18px;">🌿</span></td>
+          <td style="padding:14px 16px;border-right:1px solid rgba(28,28,26,0.09);vertical-align:top;"><strong style="font-family:'Playfair Display',serif;font-size:15px;">Branches</strong><br><span style="font-size:12px;color:rgba(28,28,26,0.45);font-style:italic;">Learning Experiences</span></td>
+          <td style="padding:14px 16px;vertical-align:top;color:#3A3830;line-height:1.6;">Flagship programmes · retreats · leadership journeys · other pathways. Growing from the core: <strong>Learning Technologies</strong> — frameworks, tools, platform · <strong>Producing</strong> — content, speakers, books · <strong>Community</strong> — dialogue, peer exchange, gatherings · <strong>Physical Spaces</strong> — retreat centres, ESSENSE home/studio.</td>
+        </tr>
+        <tr style="border-top:1px solid rgba(28,28,26,0.09);background:rgba(28,28,26,0.02);">
+          <td style="padding:14px 16px;border-right:1px solid rgba(28,28,26,0.09);vertical-align:top;"><span style="font-size:18px;">🍎</span></td>
+          <td style="padding:14px 16px;border-right:1px solid rgba(28,28,26,0.09);vertical-align:top;"><strong style="font-family:'Playfair Display',serif;font-size:15px;">Fruits</strong><br><span style="font-size:12px;color:rgba(28,28,26,0.45);font-style:italic;">New Knowledge &amp; Initiatives</span></td>
+          <td style="padding:14px 16px;vertical-align:top;color:#3A3830;line-height:1.6;">Collaborations · innovation projects · new learning formats · emerging leaders and communities. Programmes feed community; community feeds knowledge creation; knowledge feeds technologies; physical spaces anchor the ecosystem in the world.</td>
+        </tr>
+      </tbody>
+    </table>
 </div>
 
 <!-- LEADERSHIP -->
@@ -2060,17 +2203,17 @@ body.edit-mode .edit-hint{display:inline;}
   <div class="ess-heading">How the three<br><em>centres work together.</em></div>
   <div class="ess-lead-grid">
     <div class="ess-lead-card">
-      <div class="ess-lead-role">Co-Founder 1</div>
-      <div class="ess-lead-title">The Face &<br><em>Voice of ESSENSE</em></div>
+      <div class="ess-lead-role">Co-Founder · Inesa</div>
+      <div class="ess-lead-title">The Voice, Creative-Development<br><em>and Community</em></div>
       <ul class="ess-lead-body">
-        <li><strong>The Face and Voice of ESSENSE</strong> — Interviews, podcasts, public talks, texts, manifestos and storytelling of the brand. How ESSENSE sounds and appears in the world.</li>
-        <li><strong>Art Director</strong> — Defines the visual and aesthetic code: the visual language, atmosphere, how programmes, media, materials and retreat spaces look and feel.</li>
-        <li><strong>Producer</strong> — Initiates and produces key projects and formats (programmes, retreats, podcasts, special projects), connecting people, themes and contexts.</li>
-        <li>In essence — Co-Founder 1 holds the <em>soul, voice and image</em> of ESSENSE and defines the direction in which the field moves.</li>
+        <li><strong>The Voice of ESSENSE</strong> — Interviews, podcasts, public talks, texts, manifestos and storytelling of the brand. How ESSENSE sounds and appears in the world.</li>
+        <li><strong>Art Direction</strong> — Defines the visual and aesthetic code: the visual language, atmosphere, how programmes, media, materials and retreat spaces look and feel.</li>
+        <li><strong>Community Development</strong> — Builds and stewards the ESSENSE community: its culture, rituals, peer connections and long-term belonging.</li>
+        <li>In essence — Inesa holds the <em>soul, voice, image and living community</em> of ESSENSE.</li>
       </ul>
     </div>
     <div class="ess-lead-card">
-      <div class="ess-lead-role">Co-Founder 2</div>
+      <div class="ess-lead-role">Co-Founder · Anastasiya</div>
       <div class="ess-lead-title">Academic Core &<br><em>Learning Experience</em></div>
       <ul class="ess-lead-body">
         <li><strong>Academic framework and methodology</strong> — Defines the conceptual frameworks, curricula, intellectual depth and coherence of learning journeys. Ensures everything remains methodologically sound.</li>
@@ -2126,7 +2269,7 @@ body.edit-mode .edit-hint{display:inline;}
   <div>
     <div class="ess-closing-meta">
       ESSENSE is a learning community of choice for world-class inspirational teachers and practitioners — bold vision, honest delivery, authentic culture, inspired students, and fair contribution agreements.<br><br>
-      The three centres work together: Co-Founder 1 sets the field. Co-Founder 2 transforms it into rigorous learning. The CEO turns both into a sustainable, breathing ecosystem.
+      The three centres work together: Inesa sets the field. Anastasiya transforms it into rigorous learning. The CEO turns both into a sustainable, breathing ecosystem.
     </div>
     <div class="ess-closing-tagline">ESSENSE BUSINESS SCHOOL · MARCH 2026</div>
   </div>
@@ -2134,185 +2277,6 @@ body.edit-mode .edit-hint{display:inline;}
 
 </div><!-- /essencePanel -->
 
-<!-- ══ COLOUR PALETTE PANEL ══ -->
-<div class="palette-panel" id="palettePanel" style="display:none;padding:48px 40px 80px;">
-<style>
-.palette-panel { background:var(--parchment); }
-.pal-section-label {
-  font-family:'Playfair Display SC',serif;
-  font-size:8px; letter-spacing:3px;
-  color:rgba(28,28,26,0.3);
-  margin-bottom:2px; margin-top:40px;
-  padding-bottom:10px;
-  border-bottom:1px solid rgba(28,28,26,0.1);
-}
-.pal-section-label:first-of-type { margin-top:0; }
-.pal-row-5w { display:grid; grid-template-columns:repeat(5,1fr); gap:2px; height:280px; }
-.pal-row-5  { display:grid; grid-template-columns:repeat(5,1fr); gap:2px; height:170px; }
-.pal-row-4  { display:grid; grid-template-columns:repeat(4,1fr); gap:2px; height:155px; }
-.pal-row-3  { display:grid; grid-template-columns:repeat(3,1fr); gap:2px; height:76px; margin-top:2px; }
-.psw {
-  padding:18px 20px;
-  display:flex; flex-direction:column; justify-content:space-between;
-  overflow:hidden;
-}
-.psw-num  { font-family:'Playfair Display SC',serif; font-size:8px; letter-spacing:2px; opacity:0.4; }
-.psw-tag  {
-  font-family:'Playfair Display SC',serif; font-size:7px; letter-spacing:2px;
-  padding:2px 8px; border-radius:20px; width:fit-content; margin-bottom:4px;
-}
-.psw-name { font-family:'Playfair Display',serif; font-size:17px; font-weight:700; line-height:1.1; margin-bottom:2px; }
-.psw-idea { font-family:'EB Garamond',serif; font-size:12px; font-style:italic; opacity:0.62; }
-.psw-hex  { font-family:'Playfair Display SC',serif; font-size:7.5px; letter-spacing:1.5px; margin-top:5px; opacity:0.42; }
-.pl { color:#EDE8DF; }
-.pd { color:#1C1C1A; }
-.ptag-l { background:rgba(255,255,255,0.13); color:rgba(237,232,223,0.65); }
-.ptag-d { background:rgba(0,0,0,0.09); color:rgba(28,28,26,0.5); }
-.puc { padding:14px 20px; display:flex; flex-direction:column; justify-content:center; gap:4px; }
-.puc-label { font-family:'Playfair Display SC',serif; font-size:7.5px; letter-spacing:2px; color:rgba(237,232,223,0.28); }
-.puc-text  { font-family:'EB Garamond',serif; font-size:12px; font-style:italic; color:rgba(237,232,223,0.55); line-height:1.4; }
-.pal-header {
-  display:flex; align-items:flex-end; justify-content:space-between;
-  margin-bottom:48px;
-  border-bottom:1px solid rgba(28,28,26,0.1);
-  padding-bottom:24px;
-}
-.pal-title {
-  font-family:'Playfair Display',serif;
-  font-size:42px; font-weight:700;
-  letter-spacing:-1.5px; line-height:0.92; color:var(--ink);
-}
-.pal-title em { font-style:italic; font-weight:400; }
-.pal-subtitle {
-  font-family:'EB Garamond',serif; font-size:13px;
-  font-style:italic; color:var(--ink-light); line-height:1.9; text-align:right;
-}
-</style>
-
-<div class="pal-header">
-  <div>
-    <div style="font-family:'Playfair Display SC',serif;font-size:8px;letter-spacing:3px;color:var(--ink-faint);margin-bottom:8px;">ESSENSE BUSINESS SCHOOL</div>
-    <div class="pal-title">Visual<br><em>Identity</em><br>Palette</div>
-  </div>
-  <div class="pal-subtitle">
-    Business, in tune with life.<br>
-    Colour system · March 2026<br>
-    Drawn from nature
-  </div>
-</div>
-
-<!-- 01 FOUNDATION -->
-<div class="pal-section-label">01 — Foundation · Five elements · Primary brand palette · Drawn directly from nature</div>
-<div class="pal-row-5w">
-  <div class="psw" style="background:#566930;">
-    <span class="psw-num pl">01</span>
-    <div><div class="psw-tag ptag-l">Earth</div><div class="psw-name pl">Moss Field</div><div class="psw-idea pl">Grounding · Stability</div><div class="psw-hex pl">#566930</div></div>
-  </div>
-  <div class="psw" style="background:#1A5870;">
-    <span class="psw-num pl">02</span>
-    <div><div class="psw-tag ptag-l">Water</div><div class="psw-name pl">Open Sea</div><div class="psw-idea pl">Flow · Feeling · Depth</div><div class="psw-hex pl">#1A5870</div></div>
-  </div>
-  <div class="psw" style="background:#8898A0;">
-    <span class="psw-num pl">03</span>
-    <div><div class="psw-tag ptag-l">Air</div><div class="psw-name pl">Forest Mist</div><div class="psw-idea pl">Space · Breath · Perspective</div><div class="psw-hex pl">#8898A0</div></div>
-  </div>
-  <div class="psw" style="background:#A83010;">
-    <span class="psw-num pl">04</span>
-    <div><div class="psw-tag ptag-l">Fire</div><div class="psw-name pl">Ember</div><div class="psw-idea pl">Energy · Transformation</div><div class="psw-hex pl">#A83010</div></div>
-  </div>
-  <div class="psw" style="background:#500838;">
-    <span class="psw-num pl">05</span>
-    <div><div class="psw-tag ptag-l">Aether</div><div class="psw-name pl">Deep Cosmos</div><div class="psw-idea pl">Mystery · Spirit · Unseen</div><div class="psw-hex pl">#500838</div></div>
-  </div>
-</div>
-
-<!-- 02 NEUTRALS -->
-<div class="pal-section-label">02 — Neutrals · The constant ground — Ink through Parchment</div>
-<div class="pal-row-5">
-  <div class="psw" style="background:#1C1C1A;">
-    <span class="psw-num pl">06</span>
-    <div><div class="psw-name pl">Ink</div><div class="psw-idea pl">Stillness · Depth</div><div class="psw-hex pl">#1C1C1A</div></div>
-  </div>
-  <div class="psw" style="background:#3A3830;">
-    <span class="psw-num pl">07</span>
-    <div><div class="psw-name pl">Charcoal Earth</div><div class="psw-idea pl">Grounded depth</div><div class="psw-hex pl">#3A3830</div></div>
-  </div>
-  <div class="psw" style="background:#8A8478;">
-    <span class="psw-num pl">08</span>
-    <div><div class="psw-name pl">Warm Stone</div><div class="psw-idea pl">Middle tone</div><div class="psw-hex pl">#8A8478</div></div>
-  </div>
-  <div class="psw" style="background:#C8C0B0;">
-    <span class="psw-num pd">09</span>
-    <div><div class="psw-name pd">Pale Clay</div><div class="psw-idea pd">Soft light</div><div class="psw-hex pd">#C8C0B0</div></div>
-  </div>
-  <div class="psw" style="background:#EDE8DF; border:1px solid rgba(0,0,0,0.05);">
-    <span class="psw-num pd">10</span>
-    <div><div class="psw-name pd">Parchment</div><div class="psw-idea pd">Light · Ground · Base</div><div class="psw-hex pd">#EDE8DF</div></div>
-  </div>
-</div>
-
-<!-- 03 SECONDARY -->
-<div class="pal-section-label">03 — Secondary · Soft tints of each element — for panel backgrounds and subtle surfaces</div>
-<div class="pal-row-5">
-  <div class="psw" style="background:#8FA882;">
-    <span class="psw-num pl">11</span>
-    <div><div class="psw-tag ptag-l">Earth tint</div><div class="psw-name pl" style="font-size:15px;">Silver Sage</div><div class="psw-idea pl">Matcha · Stillness</div><div class="psw-hex pl">#8FA882</div></div>
-  </div>
-  <div class="psw" style="background:#88B8C8;">
-    <span class="psw-num pd">12</span>
-    <div><div class="psw-tag ptag-d">Water tint</div><div class="psw-name pd" style="font-size:15px;">Sea Glass</div><div class="psw-idea pd">Calm · Clear</div><div class="psw-hex pd">#88B8C8</div></div>
-  </div>
-  <div class="psw" style="background:#C8D4D8; border:1px solid rgba(0,0,0,0.04);">
-    <span class="psw-num pd">13</span>
-    <div><div class="psw-tag ptag-d">Air tint</div><div class="psw-name pd" style="font-size:15px;">Morning Haze</div><div class="psw-idea pd">Open · Airy</div><div class="psw-hex pd">#C8D4D8</div></div>
-  </div>
-  <div class="psw" style="background:#C8A040;">
-    <span class="psw-num pl">14</span>
-    <div><div class="psw-tag ptag-l">Fire tint</div><div class="psw-name pl" style="font-size:15px;">Golden Ochre</div><div class="psw-idea pl">Warm · Vital · Gold</div><div class="psw-hex pl">#C8A040</div></div>
-  </div>
-  <div class="psw" style="background:#A07898;">
-    <span class="psw-num pl">15</span>
-    <div><div class="psw-tag ptag-l">Aether tint</div><div class="psw-name pl" style="font-size:15px;">Dusk Rose</div><div class="psw-idea pl">Quiet · Intuitive</div><div class="psw-hex pl">#A07898</div></div>
-  </div>
-</div>
-
-<!-- 04 AUDIENCE -->
-<div class="pal-section-label">04 — Audience · Each audience rooted in an element — navigation + badge accents</div>
-<div class="pal-row-4">
-  <div class="psw" style="background:#500838;">
-    <span class="psw-num pl">16</span>
-    <div><div class="psw-tag ptag-l">Aether → Founders</div><div class="psw-name pl" style="font-size:15px;">Founders</div><div class="psw-idea pl">Vision · Leadership</div><div class="psw-hex pl">#500838</div></div>
-  </div>
-  <div class="psw" style="background:#A83010;">
-    <span class="psw-num pl">17</span>
-    <div><div class="psw-tag ptag-l">Fire → Executives</div><div class="psw-name pl" style="font-size:15px;">Executives</div><div class="psw-idea pl">Clarity · Drive</div><div class="psw-hex pl">#A83010</div></div>
-  </div>
-  <div class="psw" style="background:#3A6838;">
-    <span class="psw-num pl">18</span>
-    <div><div class="psw-tag ptag-l">Earth → Consultants</div><div class="psw-name pl" style="font-size:15px;">Consultants</div><div class="psw-idea pl">Growth · Systems</div><div class="psw-hex pl">#3A6838</div></div>
-  </div>
-  <div class="psw" style="background:#186878;">
-    <span class="psw-num pl">19</span>
-    <div><div class="psw-tag ptag-l">Water → Organisations</div><div class="psw-name pl" style="font-size:15px;">Organisations</div><div class="psw-idea pl">Flow · Structure</div><div class="psw-hex pl">#186878</div></div>
-  </div>
-</div>
-
-<div class="pal-row-3">
-  <div class="puc" style="background:#566930;">
-    <div class="puc-label">Foundation Use</div>
-    <div class="puc-text">Five element colours as primary surfaces and immersive programme panels</div>
-  </div>
-  <div class="puc" style="background:#1A5870;">
-    <div class="puc-label">Neutral Use</div>
-    <div class="puc-text">Ink + Parchment for all body text, headers, and UI ground surfaces</div>
-  </div>
-  <div class="puc" style="background:#500838;">
-    <div class="puc-label">Audience Use</div>
-    <div class="puc-text">Audience accents for badges and navigation · tints at 15% for backgrounds</div>
-  </div>
-</div>
-
-</div><!-- /palette-panel -->
 
 <!-- ══════════════════════════════════
      PRODUCT STRATEGY PANEL
@@ -2329,6 +2293,115 @@ body.edit-mode .edit-hint{display:inline;}
       <div class="pillar-question">"ESSENSE is a living learning ecosystem — not a funnel, but a spiral of engagement."</div>
       <div class="pillar-layer"><span class="layer-dot"></span>Three target groups: Leaders · Consultants · Teachers & Speakers</div>
       <div class="pillar-phase">Foundation Year 2026 · Expansion 2027 · Maturity 2028</div>
+    </div>
+  </div>
+
+  <!-- Structure Logic -->
+  <span class="strategy-section-title">PROGRAMME STRUCTURE LOGIC</span>
+  <div style="margin-bottom:36px;">
+
+    <!-- Row 1: Axes legend bar -->
+    <div style="display:grid;grid-template-columns:160px 1fr;gap:1px;margin-bottom:1px;">
+      <div style="background:var(--ink);padding:14px 18px;display:flex;align-items:center;">
+        <span style="font-family:'Playfair Display SC',serif;font-size:9px;letter-spacing:1.5px;color:rgba(237,232,223,0.4);">FORMAT ↓ · DEPTH →</span>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:1px;">
+        <div style="background:var(--parchment-dark);padding:12px 16px;text-align:center;border:1px solid var(--line-strong);">
+          <span style="font-family:'Playfair Display',serif;font-size:13px;font-weight:600;color:var(--ink);">Quick Entry</span>
+          <span style="display:block;font-family:'EB Garamond',serif;font-size:11px;font-style:italic;color:var(--ink-light);margin-top:2px;">Sensing the ESSENSE</span>
+        </div>
+        <div style="background:var(--ink);padding:12px 16px;text-align:center;">
+          <span style="font-family:'Playfair Display',serif;font-size:13px;font-weight:600;color:var(--parchment);">Deep Transformational</span>
+          <span style="display:block;font-family:'EB Garamond',serif;font-size:11px;font-style:italic;color:rgba(237,232,223,0.5);margin-top:2px;">Full inner–outer redesign</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Row 2: Cohort-based -->
+    <div style="display:grid;grid-template-columns:160px 1fr;gap:1px;margin-bottom:1px;">
+      <div style="background:var(--parchment-dark);padding:14px 18px;display:flex;align-items:center;border:1px solid var(--line-strong);">
+        <span style="font-family:'EB Garamond',serif;font-size:12px;font-weight:500;color:var(--ink-mid);">Cohort-based</span>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:1px;">
+        <div style="background:var(--parchment);padding:14px 18px;border:1px solid var(--line-strong);">
+          <div style="font-family:'EB Garamond',serif;font-size:13px;color:var(--ink-mid);line-height:1.6;">
+            "Makes Sense?" Talks · Your ESSENSE Day<br>
+            <span style="color:var(--ink-faint);font-style:italic;font-size:11px;">Online subscription · 1-day in-person</span>
+          </div>
+        </div>
+        <div style="background:var(--parchment);padding:14px 18px;border:1px solid var(--line-strong);">
+          <div style="font-family:'EB Garamond',serif;font-size:13px;color:var(--ink-mid);line-height:1.6;">
+            Business Redesign Lab · Retreats · Business Alchemy (FP)<br>
+            <span style="color:var(--ink-faint);font-style:italic;font-size:11px;">6-month cohort · Shadow Work · Year-long flagship</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Row 3: 1:1 -->
+    <div style="display:grid;grid-template-columns:160px 1fr;gap:1px;margin-bottom:1px;">
+      <div style="background:var(--parchment-dark);padding:14px 18px;display:flex;align-items:center;border:1px solid var(--line-strong);">
+        <span style="font-family:'EB Garamond',serif;font-size:12px;font-weight:500;color:var(--ink-mid);">1:1 Advisory</span>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:1px;">
+        <div style="background:var(--parchment);padding:14px 18px;border:1px solid var(--line-strong);">
+          <div style="font-family:'EB Garamond',serif;font-size:13px;color:var(--ink-faint);font-style:italic;">—</div>
+        </div>
+        <div style="background:var(--parchment);padding:14px 18px;border:1px solid var(--line-strong);">
+          <div style="font-family:'EB Garamond',serif;font-size:13px;color:var(--ink-mid);line-height:1.6;">
+            ESSENSE Individual Journey · Mini-Board<br>
+            <span style="color:var(--ink-faint);font-style:italic;font-size:11px;">Year-long · peer strategic advisory</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Row 4: Self-paced -->
+    <div style="display:grid;grid-template-columns:160px 1fr;gap:1px;margin-bottom:1px;">
+      <div style="background:var(--parchment-dark);padding:14px 18px;display:flex;align-items:center;border:1px solid var(--line-strong);">
+        <span style="font-family:'EB Garamond',serif;font-size:12px;font-weight:500;color:var(--ink-mid);">Self-paced</span>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:1px;">
+        <div style="background:var(--parchment);padding:14px 18px;border:1px solid var(--line-strong);">
+          <div style="font-family:'EB Garamond',serif;font-size:13px;color:var(--ink-mid);line-height:1.6;">
+            Book Club + Podcast · ESSENSE Other Online Courses<br>
+            <span style="color:var(--ink-faint);font-style:italic;font-size:11px;">Free · Open access</span>
+          </div>
+        </div>
+        <div style="background:var(--parchment);padding:14px 18px;border:1px solid var(--line-strong);">
+          <div style="font-family:'EB Garamond',serif;font-size:13px;color:var(--ink-mid);line-height:1.6;">
+            Re/Sense the Feminine · Transformative Presence<br>
+            <span style="color:var(--ink-faint);font-style:italic;font-size:11px;">Structured online · practitioner track</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Row 5: Organisational Immersions (2027+) -->
+    <div style="display:grid;grid-template-columns:160px 1fr;gap:1px;">
+      <div style="background:var(--parchment-deeper);padding:14px 18px;display:flex;align-items:center;border:1px solid var(--line-strong);">
+        <span style="font-family:'EB Garamond',serif;font-size:12px;font-weight:500;color:var(--ink-mid);">Organisational<br><span style="font-size:10px;font-style:italic;color:var(--ink-faint);">From 2027</span></span>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:1px;">
+        <div style="background:var(--parchment);padding:14px 18px;border:1px solid var(--line-strong);">
+          <div style="font-family:'EB Garamond',serif;font-size:13px;color:var(--ink-faint);font-style:italic;">—</div>
+        </div>
+        <div style="background:var(--parchment);padding:14px 18px;border:1px solid var(--line-strong);">
+          <div style="font-family:'EB Garamond',serif;font-size:13px;color:var(--ink-mid);line-height:1.6;">
+            Organisational Immersions · Business Alchemy (org track)<br>
+            <span style="color:var(--ink-faint);font-style:italic;font-size:11px;">Custom · systemic interventions · campfire circles</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Audience legend -->
+    <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:14px;">
+      <span style="font-family:'EB Garamond',serif;font-size:11px;font-style:italic;color:var(--ink-faint);">Audiences across all formats:</span>
+      <span class="aud-badge founder" style="font-size:10px;padding:2px 10px;">Founders</span>
+      <span class="aud-badge exec" style="font-size:10px;padding:2px 10px;">Executives</span>
+      <span class="aud-badge consult" style="font-size:10px;padding:2px 10px;">Consultants</span>
+      <span class="aud-badge org" style="font-size:10px;padding:2px 10px;">Organisations · 2027</span>
     </div>
   </div>
 
@@ -2417,128 +2490,6 @@ body.edit-mode .edit-hint{display:inline;}
     </div>
   </div>
 
-  <!-- Revenue Architecture -->
-  <span class="strategy-section-title">REVENUE ARCHITECTURE</span>
-  <div class="rev-arch-grid">
-    <div class="rev-tier">
-      <span class="rev-tier-label">COMMUNITY ENGINE · ENTRY</span>
-      <div class="rev-tier-name">Audience Building</div>
-      <div class="rev-tier-desc">Low barrier, high volume. Warm participants into the ecosystem.</div>
-      <table class="rev-products-table">
-        <tr><td>Talks "Make Sense?"</td><td class="price">~£700</td></tr>
-        <tr><td>Online Courses</td><td class="price">~£350</td></tr>
-        <tr><td>Essense Day</td><td class="price">£400</td></tr>
-      </table>
-    </div>
-    <div class="rev-tier" style="background:var(--parchment-dark);">
-      <span class="rev-tier-label">CASHFLOW ENGINE · MID</span>
-      <div class="rev-tier-name">Cohort &amp; Retreats</div>
-      <div class="rev-tier-desc">Cohort scale, manageable capacity, strong margin.</div>
-      <table class="rev-products-table">
-        <tr><td>Business Redesign Lab</td><td class="price">£700</td></tr>
-        <tr><td>Leadership Retreat</td><td class="price">£3,750–4,125</td></tr>
-        <tr><td>Shadow Retreat</td><td class="price">£3,750–4,125</td></tr>
-      </table>
-    </div>
-    <div class="rev-tier premium">
-      <span class="rev-tier-label">CORE SENSE · PREMIUM</span>
-      <div class="rev-tier-name">High-Touch Work</div>
-      <div class="rev-tier-desc">High impact, low volume. The deepest work in the ecosystem.</div>
-      <table class="rev-products-table">
-        <tr><td>FP Business Alchemy</td><td class="price">£17k</td></tr>
-        <tr><td>Transformative Presence</td><td class="price">£6k</td></tr>
-        <tr><td>Mini Board</td><td class="price">£20k</td></tr>
-        <tr><td>Individual Journeys</td><td class="price">£10k</td></tr>
-        <tr><td>Organisational Immersions</td><td class="price">£90k</td></tr>
-      </table>
-    </div>
-  </div>
-
-  <!-- Participant Journey & Principles -->
-  <span class="strategy-section-title">PARTICIPANT JOURNEY &amp; ECOSYSTEM PRINCIPLES</span>
-  <div class="journey-outer">
-    <div class="journey-steps">
-      <div style="font-family:'Playfair Display',serif;font-size:16px;font-weight:600;color:var(--ink);margin-bottom:20px;">The Developmental Spiral</div>
-      <!-- Steps -->
-      <div class="journey-step">
-        <div class="journey-connector"><div class="journey-dot"></div><div class="journey-line"></div></div>
-        <div class="journey-step-inner">
-          <span class="journey-label">curiosity</span>
-          <div class="journey-step-name">Talks "Make Sense?"</div>
-          <div class="journey-step-desc">First contact with the ESSENSE worldview. Public, accessible, resonant.</div>
-        </div>
-      </div>
-      <div class="journey-step">
-        <div class="journey-connector"><div class="journey-dot"></div><div class="journey-line"></div></div>
-        <div class="journey-step-inner">
-          <span class="journey-label">entry</span>
-          <div class="journey-step-name">Essense Day · Online Course</div>
-          <div class="journey-step-desc">Immersive introduction. The worldview deepens. Community forms.</div>
-        </div>
-      </div>
-      <div class="journey-step">
-        <div class="journey-connector"><div class="journey-dot"></div><div class="journey-line"></div></div>
-        <div class="journey-step-inner">
-          <span class="journey-label">embodied practice</span>
-          <div class="journey-step-name">Leadership &amp; Shadow Retreat</div>
-          <div class="journey-step-desc">Body-based, relational, transformative. The real work begins.</div>
-        </div>
-      </div>
-      <div class="journey-step">
-        <div class="journey-connector"><div class="journey-dot"></div><div class="journey-line"></div></div>
-        <div class="journey-step-inner">
-          <span class="journey-label">systemic redesign</span>
-          <div class="journey-step-name">Business Redesign Lab</div>
-          <div class="journey-step-desc">Apply the learning to a real business context. Cohort accountability.</div>
-        </div>
-      </div>
-      <div class="journey-step">
-        <div class="journey-connector"><div class="journey-dot"></div><div class="journey-line"></div></div>
-        <div class="journey-step-inner">
-          <span class="journey-label">alchemy</span>
-          <div class="journey-step-name">FP Business Alchemy</div>
-          <div class="journey-step-desc">Flagship programme. Deep transformation of self and organisation.</div>
-        </div>
-      </div>
-      <div class="journey-step">
-        <div class="journey-connector"><div class="journey-dot faint"></div><div class="journey-line"></div></div>
-        <div class="journey-step-inner">
-          <span class="journey-label">stewardship</span>
-          <div class="journey-step-name">Mini Board · Organisational Stewardship</div>
-          <div class="journey-step-desc">Mastery and institutional leadership. Holding the field for others.</div>
-        </div>
-      </div>
-      <div class="journey-step">
-        <div class="journey-connector"><div class="journey-dot faint" style="background:transparent;border-style:dashed;"></div></div>
-        <div class="journey-step-inner">
-          <span class="journey-label" style="opacity:0.5;">ongoing</span>
-          <div class="journey-step-name" style="color:var(--ink-light);font-style:italic;">Alumni Ecosystem</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="journey-principles">
-      <div style="font-family:'Playfair Display',serif;font-size:16px;font-weight:600;color:var(--parchment);margin-bottom:4px;">Ecosystem Principles</div>
-      <div style="font-family:'EB Garamond',serif;font-size:12px;font-style:italic;color:rgba(237,232,223,0.4);margin-bottom:20px;">What makes ESSENSE different from a traditional school</div>
-      <div class="journey-principle">
-        <div class="journey-principle-title">Multiple Entry Points</div>
-        <div class="journey-principle-body">Participants may enter through talks, courses, retreats, business labs, or organisational work. There is no single gate. The ecosystem meets each person where they are.</div>
-      </div>
-      <div class="journey-principle">
-        <div class="journey-principle-title">A Spiral, Not a Funnel</div>
-        <div class="journey-principle-body">Participants are not pushed through a conversion sequence. They are invited into a deepening relationship with the work — returning, going deeper, bringing others.</div>
-      </div>
-      <div class="journey-principle">
-        <div class="journey-principle-title">Ecosystem Coherence</div>
-        <div class="journey-principle-body">Each programme feeds the others: Talks → Courses → Retreats → Cohorts → Mastery. The system grows organically, not through aggressive marketing.</div>
-      </div>
-      <div class="journey-principle">
-        <div class="journey-principle-title">Regenerative by Design</div>
-        <div class="journey-principle-body">Alumni become faculty. Participants become co-creators. The school is sustained by the very transformation it catalyses — a living institution.</div>
-      </div>
-    </div>
-  </div>
-
   <!-- Launch Roadmap -->
   <span class="strategy-section-title">LAUNCH ROADMAP · 2026–2028</span>
   <div class="roadmap-grid">
@@ -2623,21 +2574,21 @@ body.edit-mode .edit-hint{display:inline;}
   .tl-cell{height:21px;border-radius:2px;}
   .tl-bar{border-radius:3px;display:flex;align-items:center;justify-content:center;font-family:'EB Garamond',serif;font-size:9px;font-weight:500;overflow:hidden;white-space:nowrap;}
   .tl-pill{justify-content:flex-start;padding-left:6px;}
-  .tl-sense {background:#D0E4F5;color:#1A4A72;}
-  .tl-fine  {background:#D4EAB8;color:#2A5A0A;}
-  .tl-design{background:#FAD898;color:#5A3800;}
-  .tl-source{background:#DDD9F8;color:#3A2A88;}
-  .tl-com   {background:#D8D6CC;color:#3A3A36;}
-  .tl-launch-dot{width:9px;height:9px;border-radius:50%;background:#A83010;margin:0 auto;}
+  .tl-sense {background:#C8D8C0;color:#253D20;}
+  .tl-fine  {background:#C4B8A8;color:#3A2A18;}
+  .tl-design{background:#B8C8D8;color:#1A2E3D;}
+  .tl-source{background:#D4C4A8;color:#3D2E10;}
+  .tl-com   {background:#1C1C1A;color:#EDE8DF;}
+  .tl-launch-dot{width:9px;height:9px;border-radius:50%;background:#8C3A20;margin:0 auto;}
   </style>
 
   <div class="tl-wrap">
     <div class="tl-legend">
-      <div class="tl-leg"><div class="tl-dot" style="background:#D0E4F5;"></div>Re—Sense the World</div>
-      <div class="tl-leg"><div class="tl-dot" style="background:#D4EAB8;"></div>Re—Fine the Leader</div>
-      <div class="tl-leg"><div class="tl-dot" style="background:#FAD898;"></div>Re—Design the Business</div>
-      <div class="tl-leg"><div class="tl-dot" style="background:#DDD9F8;"></div>Re—Source the Mastery</div>
-      <div class="tl-leg"><div class="tl-dot" style="background:#D8D6CC;"></div>Cross-pillar</div>
+      <div class="tl-leg"><div class="tl-dot" style="background:#C8D8C0;"></div>Re—Sense the World</div>
+      <div class="tl-leg"><div class="tl-dot" style="background:#C4B8A8;"></div>Re—Fine the Leader</div>
+      <div class="tl-leg"><div class="tl-dot" style="background:#B8C8D8;"></div>Re—Design the Business</div>
+      <div class="tl-leg"><div class="tl-dot" style="background:#D4C4A8;"></div>Re—Source the Mastery</div>
+      <div class="tl-leg"><div class="tl-dot" style="background:#1C1C1A;"></div>Cross-pillar</div>
     </div>
 
     <!-- 2026 -->
@@ -2677,6 +2628,13 @@ body.edit-mode .edit-hint{display:inline;}
         <div class="tl-cell"></div><div class="tl-cell"></div><div class="tl-cell"></div><div class="tl-cell"></div><div class="tl-cell"></div><div class="tl-cell"></div><div class="tl-cell"></div><div class="tl-cell"></div>
         <div class="tl-cell tl-bar tl-sense" style="grid-column:span 2;justify-content:center;">Sep–Oct</div>
         <div class="tl-cell"></div><div class="tl-cell"></div><div class="tl-cell"></div>
+      </div>
+      <!-- Shadow Work for Leaders - Portugal -->
+      <div class="tl-row">
+        <div class="tl-name"><strong>Shadow Work for Leaders</strong><span>Retreat · Portugal · 10–16 Aug</span></div>
+        <div class="tl-cell"></div><div class="tl-cell"></div><div class="tl-cell"></div><div class="tl-cell"></div><div class="tl-cell"></div><div class="tl-cell"></div><div class="tl-cell"></div>
+        <div class="tl-cell tl-bar tl-fine" style="grid-column:span 1;justify-content:center;">10–16 Aug</div>
+        <div class="tl-cell"></div><div class="tl-cell"></div><div class="tl-cell"></div><div class="tl-cell"></div>
       </div>
       <!-- Feminine Shadow Journey -->
       <div class="tl-row">
@@ -2820,7 +2778,7 @@ function showEssencePanel(btn) {
   document.querySelectorAll('.pillar-panel').forEach(p => p.classList.remove('active'));
   document.querySelectorAll('.targets-panel').forEach(p => p.classList.remove('active'));
   document.querySelectorAll('.canvas-panel').forEach(p => p.classList.remove('active'));
-  document.getElementById('palettePanel').style.display = 'none';
+  // palette panel removed
   document.getElementById('essencePanel').style.display = 'none';
   document.getElementById('strategyPanel').classList.remove('active');
   document.getElementById('essencePanel').style.display = 'block';
@@ -2833,13 +2791,13 @@ function showPalettePanel(btn) {
   document.querySelectorAll('.targets-panel').forEach(p => p.classList.remove('active'));
   document.querySelectorAll('.canvas-panel').forEach(p => p.classList.remove('active'));
   document.getElementById('strategyPanel').classList.remove('active');
-  document.getElementById('palettePanel').style.display = 'block';
+  // palette panel removed
   document.querySelectorAll('.pillar-tab').forEach(b => b.classList.remove('active'));
   btn.classList.add('active');
 }
 
 function showPillar(id, btn) {
-  document.getElementById('palettePanel').style.display = 'none';
+  // palette panel removed
   document.getElementById('essencePanel').style.display = 'none';
   document.getElementById('strategyPanel').classList.remove('active');
   document.querySelectorAll('.pillar-panel').forEach(p => p.classList.remove('active'));
@@ -2855,7 +2813,7 @@ function showTargets(btn) {
   document.querySelectorAll('.pillar-panel').forEach(p => p.classList.remove('active'));
   document.querySelectorAll('.targets-panel').forEach(p => p.classList.remove('active'));
   document.querySelectorAll('.canvas-panel').forEach(p => p.classList.remove('active'));
-  document.getElementById('palettePanel').style.display = 'none';
+  // palette panel removed
   document.getElementById('essencePanel').style.display = 'none';
   document.getElementById('strategyPanel').classList.remove('active');
   document.querySelectorAll('.pillar-tab').forEach(t => t.classList.remove('active'));
@@ -2867,7 +2825,7 @@ function showCanvasPanel(btn) {
   document.querySelectorAll('.pillar-panel').forEach(p => p.classList.remove('active'));
   document.querySelectorAll('.targets-panel').forEach(p => p.classList.remove('active'));
   document.querySelectorAll('.canvas-panel').forEach(p => p.classList.remove('active'));
-  document.getElementById('palettePanel').style.display = 'none';
+  // palette panel removed
   document.getElementById('essencePanel').style.display = 'none';
   document.getElementById('strategyPanel').classList.remove('active');
   document.querySelectorAll('.pillar-tab').forEach(t => t.classList.remove('active'));
@@ -2879,7 +2837,7 @@ function showStrategyPanel(btn) {
   document.querySelectorAll('.pillar-panel').forEach(p => p.classList.remove('active'));
   document.querySelectorAll('.targets-panel').forEach(p => p.classList.remove('active'));
   document.querySelectorAll('.canvas-panel').forEach(p => p.classList.remove('active'));
-  document.getElementById('palettePanel').style.display = 'none';
+  // palette panel removed
   document.getElementById('essencePanel').style.display = 'none';
   document.getElementById('strategyPanel').classList.add('active');
   document.querySelectorAll('.pillar-tab').forEach(t => t.classList.remove('active'));
@@ -3221,6 +3179,13 @@ function applyFontFamily(sel, font) {
   if (!font) return;
   document.querySelectorAll(sel).forEach(el => { el.style.fontFamily = font; });
 }
+
+function applyFontFamilyGlobal(selectors, font) {
+  if (!font) return;
+  selectors.forEach(sel => {
+    document.querySelectorAll(sel).forEach(el => { el.style.fontFamily = font; });
+  });
+}
 // Close toolbar when clicking elsewhere
 document.addEventListener('click', function(e) {
   if (!editMode) return;
@@ -3476,15 +3441,16 @@ async function publishToGitHub() {
 
   <!-- HOW TO EDIT hint -->
   <div style="background:rgba(74,140,74,0.15);border:1px solid rgba(74,140,74,0.3);border-radius:4px;padding:10px 12px;margin-bottom:18px;font-family:'EB Garamond',serif;font-size:12px;color:rgba(237,232,223,0.7);line-height:1.6;">
-    <strong style="color:#8EC98E;">Как редактировать:</strong><br>
-    • <b>Текст</b> — кликни прямо на любой текст<br>
-    • <b>Блок</b> — Shift+клик на блок → появится панель<br>
-    • <b>Картинка</b> — Shift+клик на блок → 🖼 Image
+    <strong style="color:#8EC98E;">How to edit:</strong><br>
+    • <b>Text</b> — click directly on any text<br>
+    • <b>Block</b> — Shift+click on a block → panel appears<br>
+    • <b>Image</b> — Shift+click → 🖼 Image button<br>
+    • <b>Move</b> — Shift+click → ↑↓ arrows
   </div>
 
   <!-- Global Colours -->
   <div style="margin-bottom:18px;">
-    <div style="font-family:'EB Garamond',serif;font-size:11px;font-style:italic;color:rgba(237,232,223,0.4);margin-bottom:10px;border-bottom:1px solid rgba(237,232,223,0.1);padding-bottom:6px;">Глобальные цвета</div>
+    <div style="font-family:'EB Garamond',serif;font-size:11px;font-style:italic;color:rgba(237,232,223,0.4);margin-bottom:10px;border-bottom:1px solid rgba(237,232,223,0.1);padding-bottom:6px;">Global Colours</div>
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
       <label style="font-family:'EB Garamond',serif;font-size:12px;color:rgba(237,232,223,0.7);display:flex;flex-direction:column;gap:4px;">Background
         <input type="color" value="#EDE8DF" oninput="applyColor('--parchment',this.value)" style="width:100%;height:30px;border:none;border-radius:3px;cursor:pointer;background:none;">
@@ -3509,58 +3475,100 @@ async function publishToGitHub() {
 
   <!-- Global Typography -->
   <div style="margin-bottom:18px;">
-    <div style="font-family:'EB Garamond',serif;font-size:11px;font-style:italic;color:rgba(237,232,223,0.4);margin-bottom:10px;border-bottom:1px solid rgba(237,232,223,0.1);padding-bottom:6px;">Глобальные шрифты</div>
+    <div style="font-family:'EB Garamond',serif;font-size:11px;font-style:italic;color:rgba(237,232,223,0.4);margin-bottom:10px;border-bottom:1px solid rgba(237,232,223,0.1);padding-bottom:6px;">Global Fonts</div>
     <div style="display:flex;flex-direction:column;gap:10px;">
+
       <label style="font-family:'EB Garamond',serif;font-size:12px;color:rgba(237,232,223,0.7);display:flex;justify-content:space-between;align-items:center;">
-        Заголовки пилларов
-        <select onchange="applyFontFamily('.pillar-title',this.value)" style="padding:3px 6px;background:rgba(255,255,255,0.08);border:1px solid rgba(237,232,223,0.15);border-radius:3px;color:#EDE8DF;font-size:11px;outline:none;">
+        Headings font
+        <select onchange="applyFontFamilyGlobal(['.pillar-title','.ess-heading','.canvas-prog-title','.roadmap-year-num','.engine-name'],this.value)" style="padding:3px 6px;background:rgba(255,255,255,0.08);border:1px solid rgba(237,232,223,0.15);border-radius:3px;color:#EDE8DF;font-size:11px;outline:none;">
           <option value="'Playfair Display',serif">Playfair Display</option>
           <option value="'EB Garamond',serif">EB Garamond</option>
           <option value="Georgia,serif">Georgia</option>
+          <option value="'Times New Roman',serif">Times New Roman</option>
         </select>
       </label>
-      <label style="font-family:'EB Garamond',serif;font-size:12px;color:rgba(237,232,223,0.7);display:flex;justify-content:space-between;align-items:center;">Размер заголовков пилларов
-        <input type="range" min="28" max="72" value="50" oninput="applyFontSize('.pillar-title',this.value);this.nextElementSibling.textContent=this.value+'px'" style="width:90px;">
-        <span style="font-size:11px;color:rgba(237,232,223,0.4);width:32px;text-align:right;">50px</span>
+
+      <label style="font-family:'EB Garamond',serif;font-size:12px;color:rgba(237,232,223,0.7);display:flex;justify-content:space-between;align-items:center;">
+        Body font
+        <select onchange="applyFontFamilyGlobal(['.canvas-field-value','.canvas-field-value-dark','.prog-detail','.aud-tagline','.ess-body','.target-note','.phase-items li'],this.value)" style="padding:3px 6px;background:rgba(255,255,255,0.08);border:1px solid rgba(237,232,223,0.15);border-radius:3px;color:#EDE8DF;font-size:11px;outline:none;">
+          <option value="'EB Garamond',serif">EB Garamond</option>
+          <option value="'Playfair Display',serif">Playfair Display</option>
+          <option value="Georgia,serif">Georgia</option>
+          <option value="'Times New Roman',serif">Times New Roman</option>
+        </select>
       </label>
-      <label style="font-family:'EB Garamond',serif;font-size:12px;color:rgba(237,232,223,0.7);display:flex;justify-content:space-between;align-items:center;">Размер программ
-        <input type="range" min="10" max="22" value="13" oninput="applyFontSize('.prog-name',this.value);this.nextElementSibling.textContent=this.value+'px'" style="width:90px;">
-        <span style="font-size:11px;color:rgba(237,232,223,0.4);width:32px;text-align:right;">13px</span>
+
+      <label style="font-family:'EB Garamond',serif;font-size:12px;color:rgba(237,232,223,0.7);display:flex;justify-content:space-between;align-items:center;">Pillar title size
+        <div style="display:flex;align-items:center;gap:6px;">
+          <input type="range" min="28" max="72" value="50" oninput="applyFontSize('.pillar-title',this.value);this.nextElementSibling.textContent=this.value+'px'" style="width:80px;">
+          <span style="font-size:11px;color:rgba(237,232,223,0.4);width:34px;text-align:right;">50px</span>
+        </div>
       </label>
-      <label style="font-family:'EB Garamond',serif;font-size:12px;color:rgba(237,232,223,0.7);display:flex;justify-content:space-between;align-items:center;">Canvas: тело текста
-        <input type="range" min="11" max="22" value="14" oninput="applyFontSize('.canvas-field-value',this.value);this.nextElementSibling.textContent=this.value+'px'" style="width:90px;">
-        <span style="font-size:11px;color:rgba(237,232,223,0.4);width:32px;text-align:right;">14px</span>
+
+      <label style="font-family:'EB Garamond',serif;font-size:12px;color:rgba(237,232,223,0.7);display:flex;justify-content:space-between;align-items:center;">Programme name size
+        <div style="display:flex;align-items:center;gap:6px;">
+          <input type="range" min="10" max="22" value="13" oninput="applyFontSize('.prog-name',this.value);this.nextElementSibling.textContent=this.value+'px'" style="width:80px;">
+          <span style="font-size:11px;color:rgba(237,232,223,0.4);width:34px;text-align:right;">13px</span>
+        </div>
       </label>
-      <label style="font-family:'EB Garamond',serif;font-size:12px;color:rgba(237,232,223,0.7);display:flex;justify-content:space-between;align-items:center;">Canvas: заголовки
-        <input type="range" min="20" max="56" value="36" oninput="applyFontSize('.canvas-prog-title',this.value);this.nextElementSibling.textContent=this.value+'px'" style="width:90px;">
-        <span style="font-size:11px;color:rgba(237,232,223,0.4);width:32px;text-align:right;">36px</span>
+
+      <label style="font-family:'EB Garamond',serif;font-size:12px;color:rgba(237,232,223,0.7);display:flex;justify-content:space-between;align-items:center;">Canvas body size
+        <div style="display:flex;align-items:center;gap:6px;">
+          <input type="range" min="11" max="22" value="14" oninput="applyFontSize('.canvas-field-value',this.value);applyFontSize('.canvas-field-value-dark',this.value);this.nextElementSibling.textContent=this.value+'px'" style="width:80px;">
+          <span style="font-size:11px;color:rgba(237,232,223,0.4);width:34px;text-align:right;">14px</span>
+        </div>
       </label>
-      <label style="font-family:'EB Garamond',serif;font-size:12px;color:rgba(237,232,223,0.7);display:flex;justify-content:space-between;align-items:center;">KPI числа
-        <input type="range" min="14" max="40" value="22" oninput="applyFontSize('.kpi-num',this.value);this.nextElementSibling.textContent=this.value+'px'" style="width:90px;">
-        <span style="font-size:11px;color:rgba(237,232,223,0.4);width:32px;text-align:right;">22px</span>
+
+      <label style="font-family:'EB Garamond',serif;font-size:12px;color:rgba(237,232,223,0.7);display:flex;justify-content:space-between;align-items:center;">Canvas title size
+        <div style="display:flex;align-items:center;gap:6px;">
+          <input type="range" min="20" max="56" value="36" oninput="applyFontSize('.canvas-prog-title',this.value);this.nextElementSibling.textContent=this.value+'px'" style="width:80px;">
+          <span style="font-size:11px;color:rgba(237,232,223,0.4);width:34px;text-align:right;">36px</span>
+        </div>
       </label>
+
+      <label style="font-family:'EB Garamond',serif;font-size:12px;color:rgba(237,232,223,0.7);display:flex;justify-content:space-between;align-items:center;">Pillar question size
+        <div style="display:flex;align-items:center;gap:6px;">
+          <input type="range" min="12" max="28" value="17" oninput="applyFontSize('.pillar-question',this.value);this.nextElementSibling.textContent=this.value+'px'" style="width:80px;">
+          <span style="font-size:11px;color:rgba(237,232,223,0.4);width:34px;text-align:right;">17px</span>
+        </div>
+      </label>
+
+      <label style="font-family:'EB Garamond',serif;font-size:12px;color:rgba(237,232,223,0.7);display:flex;justify-content:space-between;align-items:center;">Essence headings size
+        <div style="display:flex;align-items:center;gap:6px;">
+          <input type="range" min="24" max="72" value="48" oninput="applyFontSize('.ess-heading',this.value);this.nextElementSibling.textContent=this.value+'px'" style="width:80px;">
+          <span style="font-size:11px;color:rgba(237,232,223,0.4);width:34px;text-align:right;">48px</span>
+        </div>
+      </label>
+
+      <label style="font-family:'EB Garamond',serif;font-size:12px;color:rgba(237,232,223,0.7);display:flex;justify-content:space-between;align-items:center;">Body text size
+        <div style="display:flex;align-items:center;gap:6px;">
+          <input type="range" min="11" max="22" value="15" oninput="applyFontSize('.ess-body p',this.value);applyFontSize('.ess-body',this.value);this.nextElementSibling.textContent=this.value+'px'" style="width:80px;">
+          <span style="font-size:11px;color:rgba(237,232,223,0.4);width:34px;text-align:right;">15px</span>
+        </div>
+      </label>
+
     </div>
   </div>
 
-  <!-- Layout -->
+  <!-- Structure -->
   <div style="margin-bottom:18px;">
-    <div style="font-family:'EB Garamond',serif;font-size:11px;font-style:italic;color:rgba(237,232,223,0.4);margin-bottom:10px;border-bottom:1px solid rgba(237,232,223,0.1);padding-bottom:6px;">Структура</div>
+    <div style="font-family:'EB Garamond',serif;font-size:11px;font-style:italic;color:rgba(237,232,223,0.4);margin-bottom:10px;border-bottom:1px solid rgba(237,232,223,0.1);padding-bottom:6px;">Structure</div>
     <div style="display:flex;flex-direction:column;gap:8px;">
-      <button onclick="addProgrammeRow()" style="padding:9px 12px;background:rgba(255,255,255,0.07);border:1px solid rgba(237,232,223,0.15);border-radius:3px;color:rgba(237,232,223,0.8);font-family:'EB Garamond',serif;font-size:12px;cursor:pointer;text-align:left;">+ Добавить строку программы</button>
-      <button onclick="addCanvasColumn()" style="padding:9px 12px;background:rgba(255,255,255,0.07);border:1px solid rgba(237,232,223,0.15);border-radius:3px;color:rgba(237,232,223,0.8);font-family:'EB Garamond',serif;font-size:12px;cursor:pointer;text-align:left;">+ Добавить поле Canvas</button>
+      <button onclick="addProgrammeRow()" style="padding:9px 12px;background:rgba(255,255,255,0.07);border:1px solid rgba(237,232,223,0.15);border-radius:3px;color:rgba(237,232,223,0.8);font-family:'EB Garamond',serif;font-size:12px;cursor:pointer;text-align:left;">+ Add programme row</button>
+      <button onclick="addCanvasColumn()" style="padding:9px 12px;background:rgba(255,255,255,0.07);border:1px solid rgba(237,232,223,0.15);border-radius:3px;color:rgba(237,232,223,0.8);font-family:'EB Garamond',serif;font-size:12px;cursor:pointer;text-align:left;">+ Add canvas field</button>
     </div>
   </div>
 
-  <!-- Global image upload -->
+  <!-- Image insertion hint -->
   <div style="margin-bottom:18px;">
-    <div style="font-family:'EB Garamond',serif;font-size:11px;font-style:italic;color:rgba(237,232,223,0.4);margin-bottom:10px;border-bottom:1px solid rgba(237,232,223,0.1);padding-bottom:6px;">Вставка изображения</div>
-    <div style="font-family:'EB Garamond',serif;font-size:12px;color:rgba(237,232,223,0.5);margin-bottom:8px;line-height:1.5;">Shift+клик на блок → кнопка 🖼 Image в появившейся панели</div>
-    <div style="font-family:'EB Garamond',serif;font-size:12px;color:rgba(237,232,223,0.5);line-height:1.5;">Или: Shift+клик на блок → 🔗 URL для вставки по ссылке</div>
+    <div style="font-family:'EB Garamond',serif;font-size:11px;font-style:italic;color:rgba(237,232,223,0.4);margin-bottom:10px;border-bottom:1px solid rgba(237,232,223,0.1);padding-bottom:6px;">Images</div>
+    <div style="font-family:'EB Garamond',serif;font-size:12px;color:rgba(237,232,223,0.5);margin-bottom:8px;line-height:1.5;">Shift+click on a block → 🖼 Image button in the panel</div>
+    <div style="font-family:'EB Garamond',serif;font-size:12px;color:rgba(237,232,223,0.5);line-height:1.5;">Or: Shift+click on a block → 🔗 URL to insert by link</div>
   </div>
 
   <!-- Publish to GitHub -->
   <div style="margin-bottom:18px;">
-    <div style="font-family:'EB Garamond',serif;font-size:11px;font-style:italic;color:rgba(237,232,223,0.4);margin-bottom:10px;border-bottom:1px solid rgba(237,232,223,0.1);padding-bottom:6px;">Публикация на GitHub</div>
+    <div style="font-family:'EB Garamond',serif;font-size:11px;font-style:italic;color:rgba(237,232,223,0.4);margin-bottom:10px;border-bottom:1px solid rgba(237,232,223,0.1);padding-bottom:6px;">Publish to GitHub</div>
     <div style="display:flex;flex-direction:column;gap:8px;">
       <input id="ghRepo" type="text" placeholder="username/repo-name" value="inessagolubova/essense-architecture" style="padding:9px 12px;background:rgba(255,255,255,0.07);border:1px solid rgba(237,232,223,0.15);border-radius:3px;color:#EDE8DF;font-family:'EB Garamond',serif;font-size:12px;outline:none;">
       <input id="ghToken" type="password" placeholder="GitHub token (ghp_...)" style="padding:9px 12px;background:rgba(255,255,255,0.07);border:1px solid rgba(237,232,223,0.15);border-radius:3px;color:#EDE8DF;font-family:'EB Garamond',serif;font-size:12px;outline:none;">
@@ -3570,7 +3578,7 @@ async function publishToGitHub() {
   </div>
 
   <!-- Download -->
-  <button onclick="saveHTML()" style="width:100%;padding:10px;background:rgba(255,255,255,0.07);border:1px solid rgba(237,232,223,0.15);border-radius:3px;color:rgba(237,232,223,0.6);font-family:'EB Garamond',serif;font-size:12px;cursor:pointer;">↓ Скачать index.html</button>
+  <button onclick="saveHTML()" style="width:100%;padding:10px;background:rgba(255,255,255,0.07);border:1px solid rgba(237,232,223,0.15);border-radius:3px;color:rgba(237,232,223,0.6);font-family:'EB Garamond',serif;font-size:12px;cursor:pointer;">↓ Download index.html</button>
 </div>
 
 <!-- Sidebar toggle button (visible in edit mode) -->
