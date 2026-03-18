@@ -2605,6 +2605,208 @@ body.edit-mode .edit-hint{display:inline;}
     </div>
   </div>
 
+  <!-- Launch Timeline -->
+  <span class="strategy-section-title">PROGRAMME TIMELINE · 2026–2027</span>
+  <style>
+  .tl-wrap{margin-bottom:36px;}
+  .tl-legend{display:flex;flex-wrap:wrap;gap:8px 22px;margin-bottom:20px;}
+  .tl-leg{display:flex;align-items:center;gap:7px;font-family:'EB Garamond',serif;font-size:12px;color:var(--ink-light);}
+  .tl-dot{width:10px;height:10px;border-radius:2px;flex-shrink:0;}
+  .tl-year-label{font-family:'Playfair Display SC',serif;font-size:9px;letter-spacing:2px;color:var(--ink-faint);margin-bottom:10px;padding-bottom:8px;border-bottom:1px solid var(--line-strong);display:block;}
+  .tl-year-block{margin-bottom:28px;}
+  .tl-month-headers{display:grid;grid-template-columns:176px repeat(12,1fr);margin-bottom:4px;}
+  .tl-mh{font-family:'EB Garamond',serif;font-size:10px;color:var(--ink-faint);text-align:center;}
+  .tl-row{display:grid;grid-template-columns:176px repeat(12,1fr);gap:2px;margin-bottom:3px;align-items:center;}
+  .tl-name{font-family:'EB Garamond',serif;font-size:11px;color:var(--ink-light);padding-right:10px;line-height:1.3;text-align:right;}
+  .tl-name strong{display:block;font-size:11px;font-weight:500;color:var(--ink-mid);}
+  .tl-name span{font-size:10px;color:var(--ink-faint);}
+  .tl-cell{height:21px;border-radius:2px;}
+  .tl-bar{border-radius:3px;display:flex;align-items:center;justify-content:center;font-family:'EB Garamond',serif;font-size:9px;font-weight:500;overflow:hidden;white-space:nowrap;}
+  .tl-pill{justify-content:flex-start;padding-left:6px;}
+  .tl-sense {background:#D0E4F5;color:#1A4A72;}
+  .tl-fine  {background:#D4EAB8;color:#2A5A0A;}
+  .tl-design{background:#FAD898;color:#5A3800;}
+  .tl-source{background:#DDD9F8;color:#3A2A88;}
+  .tl-com   {background:#D8D6CC;color:#3A3A36;}
+  .tl-launch-dot{width:9px;height:9px;border-radius:50%;background:#A83010;margin:0 auto;}
+  </style>
+
+  <div class="tl-wrap">
+    <div class="tl-legend">
+      <div class="tl-leg"><div class="tl-dot" style="background:#D0E4F5;"></div>Re—Sense the World</div>
+      <div class="tl-leg"><div class="tl-dot" style="background:#D4EAB8;"></div>Re—Fine the Leader</div>
+      <div class="tl-leg"><div class="tl-dot" style="background:#FAD898;"></div>Re—Design the Business</div>
+      <div class="tl-leg"><div class="tl-dot" style="background:#DDD9F8;"></div>Re—Source the Mastery</div>
+      <div class="tl-leg"><div class="tl-dot" style="background:#D8D6CC;"></div>Cross-pillar</div>
+    </div>
+
+    <!-- 2026 -->
+    <div class="tl-year-block">
+      <span class="tl-year-label">2026 — FOUNDATION YEAR</span>
+      <div class="tl-month-headers">
+        <div></div>
+        <div class="tl-mh">Jan</div><div class="tl-mh">Feb</div><div class="tl-mh">Mar</div>
+        <div class="tl-mh">Apr</div><div class="tl-mh">May</div><div class="tl-mh">Jun</div>
+        <div class="tl-mh">Jul</div><div class="tl-mh">Aug</div><div class="tl-mh">Sep</div>
+        <div class="tl-mh">Oct</div><div class="tl-mh">Nov</div><div class="tl-mh">Dec</div>
+      </div>
+      <!-- Website launch -->
+      <div class="tl-row">
+        <div class="tl-name"><span>website launch</span></div>
+        <div class="tl-cell"></div><div class="tl-cell"></div><div class="tl-cell"></div>
+        <div class="tl-cell" style="display:flex;align-items:center;justify-content:center;"><div class="tl-launch-dot"></div></div>
+        <div class="tl-cell"></div><div class="tl-cell"></div><div class="tl-cell"></div><div class="tl-cell"></div><div class="tl-cell"></div><div class="tl-cell"></div><div class="tl-cell"></div><div class="tl-cell"></div>
+      </div>
+      <!-- Book Club + Podcast -->
+      <div class="tl-row">
+        <div class="tl-name"><strong>Book Club + Podcast</strong><span>Online · free</span></div>
+        <div class="tl-cell"></div><div class="tl-cell"></div><div class="tl-cell"></div><div class="tl-cell"></div>
+        <div class="tl-cell tl-bar tl-sense tl-pill" style="grid-column:span 8;">Pilot May → ongoing</div>
+        <div class="tl-cell"></div><div class="tl-cell"></div><div class="tl-cell"></div><div class="tl-cell"></div><div class="tl-cell"></div><div class="tl-cell"></div><div class="tl-cell"></div>
+      </div>
+      <!-- Makes Sense? Talks -->
+      <div class="tl-row">
+        <div class="tl-name"><strong>"Makes Sense?" Talks</strong><span>Online · subscription</span></div>
+        <div class="tl-cell"></div><div class="tl-cell"></div><div class="tl-cell"></div><div class="tl-cell"></div><div class="tl-cell"></div><div class="tl-cell"></div><div class="tl-cell"></div><div class="tl-cell"></div>
+        <div class="tl-cell tl-bar tl-sense tl-pill" style="grid-column:span 4;">Sep → ongoing</div>
+        <div class="tl-cell"></div><div class="tl-cell"></div><div class="tl-cell"></div>
+      </div>
+      <!-- Re/Sense the Feminine -->
+      <div class="tl-row">
+        <div class="tl-name"><strong>Re/Sense the Feminine</strong><span>Online course</span></div>
+        <div class="tl-cell"></div><div class="tl-cell"></div><div class="tl-cell"></div><div class="tl-cell"></div><div class="tl-cell"></div><div class="tl-cell"></div><div class="tl-cell"></div><div class="tl-cell"></div>
+        <div class="tl-cell tl-bar tl-sense" style="grid-column:span 2;justify-content:center;">Sep–Oct</div>
+        <div class="tl-cell"></div><div class="tl-cell"></div><div class="tl-cell"></div>
+      </div>
+      <!-- Feminine Shadow Journey -->
+      <div class="tl-row">
+        <div class="tl-name"><strong>Feminine Shadow Journey</strong><span>Retreat · Aug 28–Sep 4</span></div>
+        <div class="tl-cell"></div><div class="tl-cell"></div><div class="tl-cell"></div><div class="tl-cell"></div><div class="tl-cell"></div><div class="tl-cell"></div><div class="tl-cell"></div>
+        <div class="tl-cell tl-bar tl-fine" style="grid-column:span 2;justify-content:center;">28 Aug–4 Sep</div>
+        <div class="tl-cell"></div><div class="tl-cell"></div><div class="tl-cell"></div><div class="tl-cell"></div>
+      </div>
+      <!-- Leadership Retreat -->
+      <div class="tl-row">
+        <div class="tl-name"><strong>Leadership Essence Retreat</strong><span>Retreat · 5 days</span></div>
+        <div class="tl-cell"></div><div class="tl-cell"></div><div class="tl-cell"></div><div class="tl-cell"></div><div class="tl-cell"></div><div class="tl-cell"></div><div class="tl-cell"></div><div class="tl-cell"></div><div class="tl-cell"></div><div class="tl-cell"></div>
+        <div class="tl-cell tl-bar tl-fine" style="justify-content:center;">Nov</div>
+        <div class="tl-cell"></div>
+      </div>
+      <!-- Business Redesign Lab -->
+      <div class="tl-row">
+        <div class="tl-name"><strong>Business Redesign Lab</strong><span>Online · 3 months</span></div>
+        <div class="tl-cell"></div><div class="tl-cell"></div><div class="tl-cell"></div><div class="tl-cell"></div><div class="tl-cell"></div><div class="tl-cell"></div>
+        <div class="tl-cell tl-bar tl-design" style="grid-column:span 3;justify-content:center;">Jul–Sep</div>
+        <div class="tl-cell"></div><div class="tl-cell"></div><div class="tl-cell"></div><div class="tl-cell"></div>
+      </div>
+      <!-- ESSENSE Day -->
+      <div class="tl-row">
+        <div class="tl-name"><strong>Your ESSENSE Day</strong><span>In-person · 1 day</span></div>
+        <div class="tl-cell"></div><div class="tl-cell"></div><div class="tl-cell"></div><div class="tl-cell"></div><div class="tl-cell"></div><div class="tl-cell"></div><div class="tl-cell"></div><div class="tl-cell"></div>
+        <div class="tl-cell tl-bar tl-com" style="justify-content:center;">Sep</div>
+        <div class="tl-cell"></div><div class="tl-cell"></div><div class="tl-cell"></div>
+      </div>
+      <!-- Individual Journey -->
+      <div class="tl-row">
+        <div class="tl-name"><strong>Individual Journey</strong><span>1:1 · year-long</span></div>
+        <div class="tl-cell"></div><div class="tl-cell"></div><div class="tl-cell"></div>
+        <div class="tl-cell tl-bar tl-fine tl-pill" style="grid-column:span 9;">Opens April · rolling</div>
+        <div class="tl-cell"></div><div class="tl-cell"></div><div class="tl-cell"></div><div class="tl-cell"></div><div class="tl-cell"></div><div class="tl-cell"></div>
+      </div>
+    </div>
+
+    <!-- 2027 -->
+    <div class="tl-year-block">
+      <span class="tl-year-label">2027 — ECOSYSTEM EXPANSION</span>
+      <div class="tl-month-headers">
+        <div></div>
+        <div class="tl-mh">Jan</div><div class="tl-mh">Feb</div><div class="tl-mh">Mar</div>
+        <div class="tl-mh">Apr</div><div class="tl-mh">May</div><div class="tl-mh">Jun</div>
+        <div class="tl-mh">Jul</div><div class="tl-mh">Aug</div><div class="tl-mh">Sep</div>
+        <div class="tl-mh">Oct</div><div class="tl-mh">Nov</div><div class="tl-mh">Dec</div>
+      </div>
+      <!-- Business Alchemy -->
+      <div class="tl-row">
+        <div class="tl-name"><strong>FP Business Alchemy</strong><span>Beta cohort · 13 months</span></div>
+        <div class="tl-cell tl-bar tl-design tl-pill" style="grid-column:span 12;">Jan → Dec</div>
+      </div>
+      <!-- Makes Sense? -->
+      <div class="tl-row">
+        <div class="tl-name"><strong>"Makes Sense?" Talks</strong><span>Continuing</span></div>
+        <div class="tl-cell tl-bar tl-sense" style="grid-column:span 12;"></div>
+      </div>
+      <!-- Re/Sense the Feminine -->
+      <div class="tl-row">
+        <div class="tl-name"><strong>Re/Sense the Feminine</strong><span>Online course</span></div>
+        <div class="tl-cell"></div><div class="tl-cell"></div><div class="tl-cell"></div><div class="tl-cell"></div>
+        <div class="tl-cell tl-bar tl-sense" style="grid-column:span 2;justify-content:center;">May–Jun</div>
+        <div class="tl-cell"></div><div class="tl-cell"></div><div class="tl-cell"></div><div class="tl-cell"></div><div class="tl-cell"></div><div class="tl-cell"></div>
+      </div>
+      <!-- Transformative Presence -->
+      <div class="tl-row">
+        <div class="tl-name"><strong>Transformative Presence</strong><span>Jesse · 4 × 5 days</span></div>
+        <div class="tl-cell"></div><div class="tl-cell"></div><div class="tl-cell"></div>
+        <div class="tl-cell tl-bar tl-source" style="font-size:8px;justify-content:center;">M1 Apr</div>
+        <div class="tl-cell"></div>
+        <div class="tl-cell tl-bar tl-source" style="font-size:8px;justify-content:center;">M2 Jun</div>
+        <div class="tl-cell"></div><div class="tl-cell"></div>
+        <div class="tl-cell tl-bar tl-source" style="font-size:8px;justify-content:center;">M3 Sep</div>
+        <div class="tl-cell"></div>
+        <div class="tl-cell tl-bar tl-source" style="font-size:8px;justify-content:center;">M4 Nov</div>
+        <div class="tl-cell"></div>
+      </div>
+      <!-- Shadow Work -->
+      <div class="tl-row">
+        <div class="tl-name"><strong>Shadow Work for Leaders</strong><span>Retreat</span></div>
+        <div class="tl-cell"></div><div class="tl-cell"></div><div class="tl-cell"></div><div class="tl-cell"></div><div class="tl-cell"></div><div class="tl-cell"></div><div class="tl-cell"></div>
+        <div class="tl-cell tl-bar tl-fine" style="justify-content:center;">Aug</div>
+        <div class="tl-cell"></div><div class="tl-cell"></div><div class="tl-cell"></div><div class="tl-cell"></div>
+      </div>
+      <!-- Leadership Retreat -->
+      <div class="tl-row">
+        <div class="tl-name"><strong>Leadership Retreat</strong><span>Retreat</span></div>
+        <div class="tl-cell"></div><div class="tl-cell"></div><div class="tl-cell"></div><div class="tl-cell"></div><div class="tl-cell"></div><div class="tl-cell"></div><div class="tl-cell"></div><div class="tl-cell"></div><div class="tl-cell"></div>
+        <div class="tl-cell tl-bar tl-fine" style="justify-content:center;">Oct</div>
+        <div class="tl-cell"></div><div class="tl-cell"></div>
+      </div>
+      <!-- Business Redesign Lab -->
+      <div class="tl-row">
+        <div class="tl-name"><strong>Business Redesign Lab</strong><span>Online · 3 months</span></div>
+        <div class="tl-cell"></div><div class="tl-cell"></div><div class="tl-cell"></div><div class="tl-cell"></div>
+        <div class="tl-cell tl-bar tl-design" style="grid-column:span 3;justify-content:center;">May–Jul</div>
+        <div class="tl-cell"></div><div class="tl-cell"></div><div class="tl-cell"></div><div class="tl-cell"></div><div class="tl-cell"></div>
+      </div>
+      <!-- ESSENSE Day -->
+      <div class="tl-row">
+        <div class="tl-name"><strong>Your ESSENSE Day</strong><span>3 days</span></div>
+        <div class="tl-cell"></div><div class="tl-cell"></div><div class="tl-cell"></div>
+        <div class="tl-cell tl-bar tl-com" style="justify-content:center;">Apr</div>
+        <div class="tl-cell"></div><div class="tl-cell"></div>
+        <div class="tl-cell tl-bar tl-com" style="justify-content:center;">Jul</div>
+        <div class="tl-cell"></div><div class="tl-cell"></div>
+        <div class="tl-cell tl-bar tl-com" style="justify-content:center;">Oct</div>
+        <div class="tl-cell"></div><div class="tl-cell"></div>
+      </div>
+      <!-- Practitioner Community -->
+      <div class="tl-row">
+        <div class="tl-name"><strong>Practitioner Community</strong><span>Consultants</span></div>
+        <div class="tl-cell"></div>
+        <div class="tl-cell tl-bar tl-source tl-pill" style="grid-column:span 11;">Launches Q1</div>
+        <div class="tl-cell"></div><div class="tl-cell"></div><div class="tl-cell"></div><div class="tl-cell"></div><div class="tl-cell"></div><div class="tl-cell"></div><div class="tl-cell"></div><div class="tl-cell"></div><div class="tl-cell"></div><div class="tl-cell"></div>
+      </div>
+      <!-- Individual Journey -->
+      <div class="tl-row">
+        <div class="tl-name"><strong>Individual Journey</strong><span>1:1 · rolling</span></div>
+        <div class="tl-cell tl-bar tl-fine tl-pill" style="grid-column:span 12;">Continuing</div>
+      </div>
+    </div>
+
+    <div style="font-family:'EB Garamond',serif;font-size:11px;font-style:italic;color:var(--ink-faint);display:flex;align-items:center;gap:6px;">
+      <span style="width:8px;height:8px;border-radius:50%;background:#A83010;display:inline-block;flex-shrink:0;"></span>
+      Website launch April 2026
+    </div>
+  </div>
+
 </div><!-- /strategyPanel -->
 
 </div><!-- /main -->
