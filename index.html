@@ -337,6 +337,9 @@ body.edit-mode .edit-hint{display:inline;}
     <button class="pillar-tab canvas-tab" onclick="showCanvasPanel(this)">
       <span class="re">— —</span>PATHWAYS CANVAS
     </button>
+    <button class="pillar-tab canvas-tab" onclick="showQuizPanel(this)">
+      <span class="re">— —</span>REFLECTION
+    </button>
   </div>
 
   <div class="topbar-right">
@@ -2775,6 +2778,7 @@ let currentPillar = 'sense';
 let editMode = false;
 
 function showEssencePanel(btn) {
+  document.getElementById('quiz-panel').style.display='none';
   document.querySelectorAll('.pillar-panel').forEach(p => p.classList.remove('active'));
   document.querySelectorAll('.targets-panel').forEach(p => p.classList.remove('active'));
   document.querySelectorAll('.canvas-panel').forEach(p => p.classList.remove('active'));
@@ -2797,6 +2801,7 @@ function showPalettePanel(btn) {
 }
 
 function showPillar(id, btn) {
+  document.getElementById('quiz-panel').style.display='none';
   // palette panel removed
   document.getElementById('essencePanel').style.display = 'none';
   document.getElementById('strategyPanel').classList.remove('active');
@@ -2810,6 +2815,7 @@ function showPillar(id, btn) {
   currentPillar = id;
 }
 function showTargets(btn) {
+  document.getElementById('quiz-panel').style.display='none';
   document.querySelectorAll('.pillar-panel').forEach(p => p.classList.remove('active'));
   document.querySelectorAll('.targets-panel').forEach(p => p.classList.remove('active'));
   document.querySelectorAll('.canvas-panel').forEach(p => p.classList.remove('active'));
@@ -2822,6 +2828,7 @@ function showTargets(btn) {
   btn.classList.add('active');
 }
 function showCanvasPanel(btn) {
+  document.getElementById('quiz-panel').style.display='none';
   document.querySelectorAll('.pillar-panel').forEach(p => p.classList.remove('active'));
   document.querySelectorAll('.targets-panel').forEach(p => p.classList.remove('active'));
   document.querySelectorAll('.canvas-panel').forEach(p => p.classList.remove('active'));
@@ -2834,6 +2841,7 @@ function showCanvasPanel(btn) {
   btn.classList.add('active');
 }
 function showStrategyPanel(btn) {
+  document.getElementById('quiz-panel').style.display='none';
   document.querySelectorAll('.pillar-panel').forEach(p => p.classList.remove('active'));
   document.querySelectorAll('.targets-panel').forEach(p => p.classList.remove('active'));
   document.querySelectorAll('.canvas-panel').forEach(p => p.classList.remove('active'));
@@ -3580,6 +3588,205 @@ async function publishToGitHub() {
   <!-- Download -->
   <button onclick="saveHTML()" style="width:100%;padding:10px;background:rgba(255,255,255,0.07);border:1px solid rgba(237,232,223,0.15);border-radius:3px;color:rgba(237,232,223,0.6);font-family:'EB Garamond',serif;font-size:12px;cursor:pointer;">↓ Download index.html</button>
 </div>
+
+<!-- ── QUIZ PANEL ── -->
+<div id="quiz-panel" style="display:none;">
+<style>
+#quiz-panel {
+  min-height: calc(100vh - 46px);
+  background: var(--parchment);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 2rem;
+  font-family: 'EB Garamond', Georgia, serif;
+}
+.qz-screen { display: none; width: 100%; max-width: 660px; flex-direction: column; align-items: center; text-align: center; }
+.qz-screen.qz-active { display: flex; }
+.qz-eyebrow { font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: var(--ink-light); margin-bottom: 2rem; font-family: 'EB Garamond', serif; font-style: italic; }
+.qz-title { font-family: 'Playfair Display', serif; font-size: clamp(2.2rem, 5vw, 4rem); font-weight: 400; line-height: 1.1; color: var(--ink); margin-bottom: 0; }
+.qz-title em { font-style: italic; font-weight: 400; color: #4a6741; }
+.qz-wave { width: 280px; margin: 1.8rem auto; opacity: 0.2; }
+.qz-sub { font-size: 1rem; line-height: 1.8; color: var(--ink-light); max-width: 380px; margin: 0 auto 2.5rem; font-style: italic; }
+.qz-btn {
+  display: inline-block; padding: 0.8rem 2.8rem;
+  border: 1px solid var(--ink); background: transparent;
+  color: var(--ink); font-family: 'Playfair Display SC', serif;
+  font-size: 10px; font-weight: 400; letter-spacing: 2px;
+  text-transform: uppercase; cursor: pointer;
+  position: relative; overflow: hidden; transition: color 0.28s;
+}
+.qz-btn::before { content: ''; position: absolute; inset: 0; background: var(--ink); transform: translateX(-100%); transition: transform 0.28s ease; }
+.qz-btn:hover::before { transform: translateX(0); }
+.qz-btn:hover { color: var(--parchment); }
+.qz-btn span { position: relative; z-index: 1; }
+.qz-note { margin-top: 1.2rem; font-size: 11px; font-style: italic; color: var(--ink-faint); }
+.qz-progress { width: 100%; height: 1px; background: rgba(28,28,26,0.1); margin-bottom: 3rem; }
+.qz-progress-fill { height: 100%; background: #4a6741; transition: width 0.5s ease; width: 0%; }
+.qz-counter { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--ink-light); margin-bottom: 2.5rem; font-family: 'EB Garamond', serif; font-style: italic; }
+.qz-question { font-family: 'Playfair Display', serif; font-size: clamp(1.4rem, 3.2vw, 2.1rem); font-weight: 400; line-height: 1.25; margin-bottom: 2.5rem; color: var(--ink); }
+.qz-options { display: flex; flex-direction: column; gap: 0.8rem; width: 100%; }
+.qz-option {
+  padding: 1rem 1.5rem; border: 1px solid rgba(28,28,26,0.15);
+  background: rgba(250,248,244,0.5); cursor: pointer;
+  transition: all 0.2s; font-family: 'EB Garamond', serif;
+  font-size: 1.08rem; font-style: italic; line-height: 1.5;
+  text-align: left; color: var(--ink); position: relative; overflow: hidden;
+}
+.qz-option::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 0; background: rgba(74,103,65,0.1); transition: width 0.28s ease; }
+.qz-option:hover { border-color: #4a6741; }
+.qz-option:hover::before { width: 100%; }
+.qz-option.qz-selected { border-color: #4a6741; background: rgba(74,103,65,0.07); }
+.qz-option.qz-selected::before { width: 100%; }
+.qz-option span { position: relative; z-index: 1; }
+.qz-soc-title { font-family: 'Playfair Display', serif; font-size: clamp(1.6rem, 3.5vw, 2.5rem); font-weight: 400; line-height: 1.2; margin-bottom: 0.5rem; }
+.qz-soc-title em { font-style: italic; color: #4a6741; }
+.qz-quote { font-family: 'EB Garamond', serif; font-size: 1rem; font-style: italic; color: var(--ink-light); margin: 1.8rem auto; max-width: 420px; line-height: 1.85; padding: 1.3rem 1.8rem; border-left: 2px solid rgba(74,103,65,0.3); text-align: left; }
+.qz-body { font-size: 0.95rem; line-height: 1.9; color: var(--ink-light); max-width: 460px; margin: 0 auto 2.2rem; }
+.qz-stayed { font-family: 'Playfair Display', serif; font-size: clamp(1.1rem, 2.4vw, 1.5rem); font-weight: 400; line-height: 1.3; margin-bottom: 1.8rem; }
+.qz-list { display: flex; flex-direction: column; gap: 0.65rem; text-align: left; width: 100%; }
+.qz-choice {
+  padding: 0.9rem 1.4rem; border: 1px solid rgba(28,28,26,0.1);
+  background: rgba(250,248,244,0.4); cursor: pointer;
+  transition: all 0.2s; font-family: 'EB Garamond', serif;
+  font-size: 1rem; font-style: italic; line-height: 1.5;
+  color: var(--ink); position: relative; overflow: hidden;
+}
+.qz-choice::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 0; background: rgba(74,103,65,0.1); transition: width 0.28s ease; }
+.qz-choice:hover { border-color: #4a6741; }
+.qz-choice:hover::before { width: 100%; }
+.qz-choice span { position: relative; z-index: 1; }
+.qz-result-label { font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: #4a6741; margin-bottom: 1.8rem; font-family: 'EB Garamond', serif; }
+.qz-result-q { font-family: 'Playfair Display', serif; font-size: clamp(1.2rem, 2.6vw, 1.7rem); font-weight: 400; font-style: italic; line-height: 1.3; color: var(--ink); padding-bottom: 1.8rem; border-bottom: 1px solid rgba(74,103,65,0.25); margin-bottom: 1.8rem; }
+.qz-result-mirror { font-family: 'EB Garamond', serif; font-size: 1.1rem; font-weight: 400; line-height: 1.85; color: var(--ink); margin-bottom: 2.5rem; }
+.qz-result-mirror em { font-style: italic; color: #4a6741; }
+.qz-email-wrap { display: flex; flex-direction: column; gap: 0.8rem; align-items: center; width: 100%; max-width: 360px; margin: 0 auto 0.8rem; }
+.qz-email-input { width: 100%; padding: 0.8rem 1.3rem; border: 1px solid rgba(28,28,26,0.18); background: rgba(250,248,244,0.7); font-family: 'EB Garamond', serif; font-size: 1rem; color: var(--ink); outline: none; transition: border-color 0.2s; font-style: italic; }
+.qz-email-input:focus { border-color: #4a6741; }
+.qz-email-input::placeholder { color: var(--ink-faint); }
+.qz-restart { display: inline-block; margin-top: 1.8rem; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--ink-faint); cursor: pointer; border-bottom: 1px solid transparent; transition: all 0.2s; font-family: 'EB Garamond', serif; font-style: italic; }
+.qz-restart:hover { color: var(--ink); border-color: var(--ink); }
+</style>
+
+  <!-- Intro -->
+  <div class="qz-screen qz-active" id="qz-intro">
+    <p class="qz-eyebrow">A reflection for founders & leaders</p>
+    <h1 class="qz-title">What kind of leader<br><em>are you becoming?</em></h1>
+    <svg class="qz-wave" viewBox="0 0 280 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 7 Q35 1 70 7 Q105 13 140 7 Q175 1 210 7 Q245 13 280 7" stroke="#4a6741" stroke-width="1" fill="none"/>
+    </svg>
+    <button class="qz-btn" onclick="qzStart()"><span>Begin</span></button>
+    <p class="qz-note">Takes about three minutes</p>
+  </div>
+
+  <!-- Quiz -->
+  <div class="qz-screen" id="qz-quiz">
+    <div class="qz-progress"><div class="qz-progress-fill" id="qz-prog"></div></div>
+    <p class="qz-counter" id="qz-counter">1 / 8</p>
+    <div id="qz-wrap" style="width:100%">
+      <h2 class="qz-question" id="qz-qt"></h2>
+      <div class="qz-options" id="qz-opts"></div>
+    </div>
+  </div>
+
+  <!-- Socratic -->
+  <div class="qz-screen" id="qz-socratic">
+    <p class="qz-eyebrow">Your reflection</p>
+    <h2 class="qz-soc-title">At ESSENSE, we don't<br><em>teach answers.</em></h2>
+    <blockquote class="qz-quote">"I cannot teach anybody anything.<br>I can only make them think."<br><br>— Socrates</blockquote>
+    <p class="qz-body">We believe the most important questions are the ones you carry with you. The ones that stay. The ones that quietly reshape how you see everything else.</p>
+    <p class="qz-stayed">Which of these questions stayed with you?</p>
+    <div class="qz-list" id="qz-list"></div>
+  </div>
+
+  <!-- Result -->
+  <div class="qz-screen" id="qz-result">
+    <p class="qz-result-label">This is your starting point.</p>
+    <p class="qz-result-q" id="qz-rq"></p>
+    <p class="qz-result-mirror" id="qz-rm"></p>
+    <div class="qz-email-wrap">
+      <input type="email" class="qz-email-input" placeholder="your@email.com"/>
+      <button class="qz-btn" style="width:100%"><span>Stay in touch</span></button>
+    </div>
+    <p class="qz-note">No noise. Only what matters.</p>
+    <span class="qz-restart" onclick="qzRestart()">Start again</span>
+  </div>
+</div>
+
+<script>
+const qzQs = [
+  { q: "When you look at your business honestly — how much of it is really you?", opts: ["It is. And I want to take it somewhere I haven't been yet.","Less and less. It runs — but it no longer reflects who I'm becoming.","It never quite did. I built it for others' expectations as much as my own."], mirror: "A business built from expectation rather than essence will always feel like someone else's. The work of <em>re-sensing</em> begins here — with the question of what is truly yours." },
+  { q: "When your business drains you, what is it really asking for?", opts: ["A different version of me at the helm.","A different culture — one that doesn't run on pressure.","A different quality of presence in the room."], mirror: "Depletion is information. It points to something misaligned between the creator and the creation. The question is not how to manage the drain — but <em>what it's trying to tell you.</em>" },
+  { q: "Growth has happened. But what hasn't grown with it?", opts: ["The meaning behind it all.","The people and the way we work together.","My own capacity to hold what I've created."], mirror: "Outer growth without inner evolution creates a business that outpaces its creator. Or a creator who has outpaced their business. Either way — <em>something is asking to catch up.</em>" },
+  { q: "If your business were a living thing — what would it need right now?", opts: ["Space to breathe. It's been running too fast for too long.","Roots. Something to ground it beyond the next quarter.","A different kind of intelligence at its centre."], mirror: "When we treat business as a living system, the questions change. It's no longer what needs to be fixed — but <em>what needs to be nourished, rested, or released.</em>" },
+  { q: "What would it mean to build something that still matters in 120 years?", opts: ["That it contributed something real — beyond profit.","That the people inside it were strengthened, not consumed.","That it was built with the next generation already in mind."], mirror: "120 years is four or five generations. It moves the question beyond strategy, beyond legacy as concept — into <em>genuine responsibility for what you are creating and for whom.</em>" },
+  { q: "The gap between who you are and how you lead — how wide is it?", opts: ["Wider than I want to admit.","It closes sometimes. But pressure pulls it open again.","My business grew from me. But I've grown since then."], mirror: "Leadership that doesn't come from your inner essence eventually costs more than it creates. The gap doesn't close through technique. <em>It closes through coherence.</em>" },
+  { q: "What kind of ancestor does your business make you?", opts: ["I'm still figuring that out. The question stays with me.","One who built something lasting, I hope. But I'm not certain yet.","One who chose differently when the old model stopped making sense."], mirror: "Every decision leaves a trace in the future. This question asks you to feel the weight of that — <em>and to choose what kind of trace you want to leave.</em>" },
+  { q: "You sense something is shifting. What is it?", opts: ["The way I measure success is changing.","What I'm willing to sacrifice — and what I'm not — is changing.","Who I'm becoming is no longer the person who built this."], mirror: "The shift you sense is real. It's not a crisis — <em>it's an evolution asking to happen.</em> The question is whether you're building the conditions for it." }
+];
+
+let qzCur = 0;
+
+function showQuizPanel(btn) {
+  document.querySelectorAll('.pillar-panel,.essence-panel,.strategy-panel,.canvas-panel,.targets-panel').forEach(p => { if(p) p.style.display='none'; });
+  document.querySelectorAll('.pillar-tab').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.nav-targets-btn').forEach(b => b.classList.remove('active'));
+  if(btn) btn.classList.add('active');
+  document.getElementById('quiz-panel').style.display = 'flex';
+}
+
+function qzShow(id) {
+  document.querySelectorAll('.qz-screen').forEach(s => s.classList.remove('qz-active'));
+  document.getElementById(id).classList.add('qz-active');
+}
+
+function qzStart() { qzCur = 0; qzShow('qz-quiz'); qzRender(); }
+
+function qzRender() {
+  document.getElementById('qz-counter').textContent = `${qzCur + 1} / ${qzQs.length}`;
+  document.getElementById('qz-prog').style.width = `${(qzCur / qzQs.length) * 100}%`;
+  const w = document.getElementById('qz-wrap');
+  w.style.opacity = '0'; w.style.transform = 'translateY(12px)';
+  setTimeout(() => { w.style.transition = 'all 0.4s ease'; w.style.opacity = '1'; w.style.transform = 'translateY(0)'; }, 40);
+  document.getElementById('qz-qt').textContent = qzQs[qzCur].q;
+  const o = document.getElementById('qz-opts'); o.innerHTML = '';
+  qzQs[qzCur].opts.forEach(opt => {
+    const b = document.createElement('button'); b.className = 'qz-option';
+    b.innerHTML = `<span>${opt}</span>`;
+    b.onclick = () => {
+      document.querySelectorAll('.qz-option').forEach(x => x.classList.remove('qz-selected'));
+      b.classList.add('qz-selected');
+      setTimeout(() => { qzCur++; qzCur < qzQs.length ? qzRender() : qzSocratic(); }, 400);
+    };
+    o.appendChild(b);
+  });
+}
+
+function qzSocratic() {
+  document.getElementById('qz-prog').style.width = '95%';
+  qzShow('qz-socratic');
+  const l = document.getElementById('qz-list'); l.innerHTML = '';
+  qzQs.forEach((q, i) => {
+    const b = document.createElement('button'); b.className = 'qz-choice';
+    b.innerHTML = `<span>${q.q}</span>`;
+    b.onclick = () => {
+      document.querySelectorAll('.qz-choice').forEach(x => x.classList.remove('qz-selected'));
+      b.classList.add('qz-selected');
+      setTimeout(() => qzResult(i), 360);
+    };
+    l.appendChild(b);
+  });
+}
+
+function qzResult(i) {
+  document.getElementById('qz-prog').style.width = '100%';
+  qzShow('qz-result');
+  document.getElementById('qz-rq').textContent = qzQs[i].q;
+  document.getElementById('qz-rm').innerHTML = qzQs[i].mirror;
+}
+
+function qzRestart() { qzCur = 0; qzShow('qz-intro'); }
+</script>
 
 <!-- Sidebar toggle button (visible in edit mode) -->
 <button id="sidebarToggle" onclick="toggleSidebar()" style="display:none;position:fixed;bottom:28px;right:28px;z-index:300;background:#1C1C1A;color:#EDE8DF;border:1px solid rgba(237,232,223,0.2);border-radius:50px;padding:10px 18px;font-family:'Playfair Display SC',serif;font-size:10px;letter-spacing:1.5px;cursor:pointer;box-shadow:0 4px 20px rgba(0,0,0,0.3);">⚙ DESIGN</button>
